@@ -13,7 +13,7 @@ namespace fasilkom_prestasi.App.Core
         private static readonly string DB_HOST = "localhost";
         private static readonly string DB_DATABASE = "fasilkom-prestasi";
         private static readonly string DB_USERNAME = "postgres";
-        private static readonly string DB_PASSWORD = "tahutahu1";
+        private static readonly string DB_PASSWORD = "";
         private static readonly string DB_PORT = "5432";
 
         private static NpgsqlConnection connection;
