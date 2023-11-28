@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using fasilkom_prestasi.App.Core;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace fasilkom_prestasi.App.Context
+{
+    internal class PrestasiContext : DatabaseWrapper
+    {
+        private static string table = "prestasi";
+
+        public static DataTable showAll(int userRole)
+        {
+            string query = "";
+            if (userRole == 1)
+            {
+                query = $"SELECT {table}.nama_prestasi, bidang.bidang, region.region, tahapan.tahapan, dosen.nama as nama_dosen, validated " +
+                    $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
+                    $"LEFT JOIN admin ON {table}.id_admin = admin.id";
+            }
+            else if (userRole == 2)
+            {
+                query = $"SELECT {table}.id_mahasiswa, mahasiswa.nama as nama_mahasiswa, {table}.nama_prestasi, bidang.bidang, region.region, tahapan.tahapan, dosen.nama as nama_dosen, validated, admin.nama as nama_admin, {table}.create_at, {table}.update_at " +
+                    $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN mahasiswa ON {table}.id_mahasiswa = mahasiswa.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
+                    $"LEFT JOIN admin ON {table}.id_admin = admin.id";
+            }
+
+            DataTable dataPrestasi = queryExecutor(query);
+            return dataPrestasi;
+        }
+    }
+}
