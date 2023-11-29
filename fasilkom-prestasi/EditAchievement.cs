@@ -1,4 +1,6 @@
 ﻿using fasilkom_prestasi.App.Context;
+using fasilkom_prestasi.App.Models;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +26,8 @@ namespace fasilkom_prestasi
             tbxNamaLomba.Text = dataPrestasi.Rows[0]["nama_prestasi"].ToString();
             tbxSertifikat.Text = dataPrestasi.Rows[0]["sertifikat"].ToString();
 
+
+
             // Bidang
             DataTable dataBidang = BidangContext.all();
 
@@ -39,6 +43,7 @@ namespace fasilkom_prestasi
             cbxBidang.DataSource = bidang;
             cbxBidang.ValueMember = "Key";
             cbxBidang.DisplayMember = "Value";
+            cbxBidang.SelectedValue = int.Parse(dataPrestasi.Rows[0]["id_bidang"].ToString());
 
             // Region
             DataTable dataRegion = RegionContext.all();
@@ -55,6 +60,7 @@ namespace fasilkom_prestasi
             cbxRegion.DataSource = region;
             cbxRegion.ValueMember = "Key";
             cbxRegion.DisplayMember = "Value";
+            cbxRegion.SelectedValue = int.Parse(dataPrestasi.Rows[0]["id_region"].ToString());
 
             // Tahapan
             DataTable dataTahapan = TahapanContext.all();
@@ -71,6 +77,7 @@ namespace fasilkom_prestasi
             cbxTahapan.DataSource = tahapan;
             cbxTahapan.ValueMember = "Key";
             cbxTahapan.DisplayMember = "Value";
+            cbxTahapan.SelectedValue = int.Parse(dataPrestasi.Rows[0]["id_tahapan"].ToString());
 
             // Dosen
             DataTable dataDosen = DosenContext.all();
@@ -87,11 +94,69 @@ namespace fasilkom_prestasi
             cbxDosen.DataSource = dosen;
             cbxDosen.ValueMember = "Key";
             cbxDosen.DisplayMember = "Value";
+            cbxDosen.SelectedValue = int.Parse(dataPrestasi.Rows[0]["id_dosen"].ToString());
 
 
 
 
 
+        }
+
+        private void btnBackAchievement_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Record record = new Record();
+            record.Show();
+        }
+
+        private void btnSaveAchievement_Click(object sender, EventArgs e)
+        {
+            var namaPrestasi = tbxNamaLomba.Text;
+            var sertifikat = tbxSertifikat.Text;
+
+
+            // Bidang Selected ID
+            KeyValuePair<int, string> selectedBidang = (KeyValuePair<int, string>)cbxBidang.SelectedItem;
+            var idBidang = selectedBidang.Key;
+            // Region Selected ID
+            KeyValuePair<int, string> selectedRegion = (KeyValuePair<int, string>)cbxRegion.SelectedItem;
+            var idRegion = selectedRegion.Key;
+            // Tahapan Selected ID
+            KeyValuePair<int, string> selectedTahapan = (KeyValuePair<int, string>)cbxTahapan.SelectedItem;
+            var idTahapan = selectedTahapan.Key;
+            // Dosen Selected ID
+            KeyValuePair<int, string> selectedDosen = (KeyValuePair<int, string>)cbxDosen.SelectedItem;
+            var idDosen = selectedDosen.Key;
+
+            M_Prestasi prestasiBaru = new M_Prestasi
+            {
+                id = idPrestasi,
+                nama_prestasi = namaPrestasi,
+                sertifikat = sertifikat,
+                id_bidang = idBidang,
+                id_region = idRegion,
+                id_tahapan = idTahapan,
+                id_dosen = idDosen
+
+            };
+
+            try
+            {
+                PrestasiContext.update(prestasiBaru);
+                MessageBox.Show("Data Berhasil Diubah");
+
+                this.Close();
+                Record record = new Record();
+                record.Show();
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error! : {ex}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! : {ex}");
+            }
         }
     }
 }

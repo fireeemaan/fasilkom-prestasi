@@ -81,5 +81,24 @@ namespace fasilkom_prestasi.App.Context
 
             commandExecutor(query, parameters);
         }
+
+        public static void update(M_Prestasi prestasiEdit)
+        {
+            string query = $"UPDATE {table} SET nama_prestasi = @nama_prestasi, sertifikat = @sertifikat, id_bidang = @id_bidang, id_region = @id_region, id_tahapan = @id_tahapan, id_dosen = @id_dosen WHERE id = @id";
+
+            NpgsqlParameter[] parameters =
+{
+                new NpgsqlParameter("@nama_prestasi", NpgsqlDbType.Varchar){Value = prestasiEdit.nama_prestasi},
+                new NpgsqlParameter("@sertifikat", NpgsqlDbType.Text){Value = prestasiEdit.sertifikat},
+                new NpgsqlParameter("@id_bidang", NpgsqlDbType.Integer){Value = prestasiEdit.id_bidang},
+                new NpgsqlParameter("@id_region", NpgsqlDbType.Integer){Value = prestasiEdit.id_region},
+                new NpgsqlParameter("@id_tahapan", NpgsqlDbType.Integer){Value = prestasiEdit.id_tahapan},
+                new NpgsqlParameter("@id_dosen", NpgsqlDbType.Integer){Value = prestasiEdit.id_dosen},
+                new NpgsqlParameter("@id", NpgsqlDbType.Integer){Value = prestasiEdit.id}
+
+            };
+
+            commandExecutor(query, parameters); 
+        }
     }
 }

@@ -32,5 +32,15 @@ namespace fasilkom_prestasi.App.Context
             }
             return objects.ToArray();
         }
+        public static string getNames(int id)
+        {
+            string objects;
+
+            string query = $"SELECT * FROM {table} WHERE id = {id}";
+            DataTable dataTable = queryExecutor(query);
+
+
+            return dataTable.Rows[0][$"{table}"].ToString();
+        }
     }
 }

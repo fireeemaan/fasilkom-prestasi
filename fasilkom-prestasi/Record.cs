@@ -114,6 +114,7 @@ namespace fasilkom_prestasi
 
                 using (EditAchievement editPrestasi = new EditAchievement(idPrestasiUbah))
                 {
+                    this.Hide();
                     EditAchievement halamanEditPrestasi = new EditAchievement(idPrestasiUbah);
                     halamanEditPrestasi.ShowDialog();
                 }
