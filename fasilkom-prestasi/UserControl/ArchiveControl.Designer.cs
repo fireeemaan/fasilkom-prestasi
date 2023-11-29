@@ -155,6 +155,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(kryptonPanel1);
+            MaximumSize = new Size(1170, 672);
+            MinimumSize = new Size(1170, 672);
             Name = "ArchiveControl";
             Size = new Size(1170, 672);
             ((System.ComponentModel.ISupportInitialize)kryptonPanel1).EndInit();

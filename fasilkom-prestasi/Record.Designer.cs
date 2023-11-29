@@ -63,6 +63,8 @@
             btnRecord.Image = (Image)resources.GetObject("btnRecord.Image");
             btnRecord.ImageAlign = ContentAlignment.MiddleLeft;
             btnRecord.Location = new Point(11, 178);
+            btnRecord.MaximumSize = new Size(234, 58);
+            btnRecord.MinimumSize = new Size(234, 58);
             btnRecord.Name = "btnRecord";
             btnRecord.Size = new Size(234, 58);
             btnRecord.TabIndex = 2;
@@ -79,6 +81,8 @@
             btnHome.Image = (Image)resources.GetObject("btnHome.Image");
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(11, 114);
+            btnHome.MaximumSize = new Size(234, 58);
+            btnHome.MinimumSize = new Size(234, 58);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(234, 58);
             btnHome.TabIndex = 1;
@@ -89,6 +93,8 @@
             // kryptonPanel2
             // 
             kryptonPanel2.Location = new Point(0, 12);
+            kryptonPanel2.MaximumSize = new Size(245, 60);
+            kryptonPanel2.MinimumSize = new Size(245, 60);
             kryptonPanel2.Name = "kryptonPanel2";
             kryptonPanel2.Size = new Size(245, 60);
             kryptonPanel2.StateCommon.Color1 = Color.White;
@@ -99,6 +105,8 @@
             // archiveControl1
             // 
             archiveControl1.Location = new Point(343, 152);
+            archiveControl1.MaximumSize = new Size(1170, 672);
+            archiveControl1.MinimumSize = new Size(1170, 672);
             archiveControl1.Name = "archiveControl1";
             archiveControl1.Record = null;
             archiveControl1.Size = new Size(1170, 672);
@@ -109,6 +117,8 @@
             // 
             btnClose.ButtonStyle = Krypton.Toolkit.ButtonStyle.NavigatorStack;
             btnClose.Location = new Point(1530, 0);
+            btnClose.MaximumSize = new Size(70, 70);
+            btnClose.MinimumSize = new Size(70, 70);
             btnClose.Name = "btnClose";
             btnClose.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
             btnClose.OverrideDefault.Back.Color2 = Color.FromArgb(189, 209, 255);
@@ -135,6 +145,8 @@
             // 
             sidePanel.ForeColor = Color.White;
             sidePanel.Location = new Point(1, 178);
+            sidePanel.MaximumSize = new Size(10, 58);
+            sidePanel.MinimumSize = new Size(10, 58);
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(10, 58);
             sidePanel.TabIndex = 2;

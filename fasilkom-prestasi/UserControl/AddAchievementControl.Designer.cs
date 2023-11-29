@@ -192,6 +192,8 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
+            MaximumSize = new Size(1170, 672);
+            MinimumSize = new Size(1170, 672);
             Name = "AddAchievementControl";
             Size = new Size(1170, 672);
             panel1.ResumeLayout(false);
