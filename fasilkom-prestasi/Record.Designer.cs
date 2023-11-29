@@ -162,8 +162,8 @@
             // 
             // Record
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(189, 209, 255);
             ClientSize = new Size(1600, 900);
             Controls.Add(sidePanel);
@@ -182,7 +182,6 @@
             kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)kryptonPanel2).EndInit();
             ResumeLayout(false);
-            //a
         }
 
         #endregion

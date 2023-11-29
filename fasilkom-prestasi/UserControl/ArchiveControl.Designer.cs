@@ -152,8 +152,8 @@
             // 
             // ArchiveControl
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             Controls.Add(kryptonPanel1);
             MaximumSize = new Size(1170, 672);
             MinimumSize = new Size(1170, 672);
@@ -163,7 +163,6 @@
             kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).EndInit();
             ResumeLayout(false);
-            //a
         }
 
         #endregion

@@ -189,8 +189,8 @@
             // 
             // AddAchievementControl
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             Controls.Add(panel1);
             MaximumSize = new Size(1170, 672);
             MinimumSize = new Size(1170, 672);
@@ -199,7 +199,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            // test
         }
 
         #endregion
