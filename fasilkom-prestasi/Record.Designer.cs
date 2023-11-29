@@ -34,8 +34,6 @@
             btnHome = new Button();
             kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             archiveControl1 = new ArchiveControl();
-            archiveControl1.Record = this;
-            Controls.Add(archiveControl1);
             btnClose = new Krypton.Toolkit.KryptonButton();
             sidePanel = new Panel();
             addAchievementControl1 = new AddAchievementControl();
@@ -102,6 +100,7 @@
             // 
             archiveControl1.Location = new Point(343, 152);
             archiveControl1.Name = "archiveControl1";
+            archiveControl1.Record = null;
             archiveControl1.Size = new Size(1170, 672);
             archiveControl1.TabIndex = 1;
             archiveControl1.Load += archiveControl1_Load;
@@ -161,6 +160,8 @@
             Controls.Add(archiveControl1);
             Controls.Add(addAchievementControl1);
             FormBorderStyle = FormBorderStyle.None;
+            MaximumSize = new Size(1600, 900);
+            MinimumSize = new Size(1600, 900);
             Name = "Record";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Archive";

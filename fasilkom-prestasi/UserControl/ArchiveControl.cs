@@ -12,7 +12,7 @@ namespace fasilkom_prestasi
 {
     public partial class ArchiveControl : UserControl
     {
-        
+
 
         public ArchiveControl()
         {

@@ -8,6 +8,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using fasilkom_prestasi.App.Context;
 
 namespace fasilkom_prestasi
 {
@@ -22,8 +23,8 @@ namespace fasilkom_prestasi
 
         public Record Record
         {
-           get { return record; }
-           set { record = value; }
+            get { return record; }
+            set { record = value; }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

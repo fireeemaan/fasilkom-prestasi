@@ -54,6 +54,8 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.MaximumSize = new Size(1170, 672);
+            panel1.MinimumSize = new Size(1170, 672);
             panel1.Name = "panel1";
             panel1.Size = new Size(1170, 672);
             panel1.TabIndex = 1;
@@ -63,6 +65,8 @@
             // 
             btnBackAchievement.CornerRoundingRadius = 10F;
             btnBackAchievement.Location = new Point(37, 21);
+            btnBackAchievement.MaximumSize = new Size(45, 45);
+            btnBackAchievement.MinimumSize = new Size(45, 45);
             btnBackAchievement.Name = "btnBackAchievement";
             btnBackAchievement.OverrideDefault.Back.Color1 = Color.WhiteSmoke;
             btnBackAchievement.OverrideDefault.Back.Color2 = Color.WhiteSmoke;
@@ -87,6 +91,8 @@
             cbxTahapan.FlatStyle = FlatStyle.Flat;
             cbxTahapan.FormattingEnabled = true;
             cbxTahapan.Location = new Point(653, 334);
+            cbxTahapan.MaximumSize = new Size(445, 0);
+            cbxTahapan.MinimumSize = new Size(445, 0);
             cbxTahapan.Name = "cbxTahapan";
             cbxTahapan.Size = new Size(445, 33);
             cbxTahapan.TabIndex = 10;
@@ -98,6 +104,8 @@
             cbxDosen.FlatStyle = FlatStyle.Flat;
             cbxDosen.FormattingEnabled = true;
             cbxDosen.Location = new Point(68, 436);
+            cbxDosen.MaximumSize = new Size(480, 0);
+            cbxDosen.MinimumSize = new Size(480, 0);
             cbxDosen.Name = "cbxDosen";
             cbxDosen.Size = new Size(480, 33);
             cbxDosen.TabIndex = 9;
@@ -109,6 +117,8 @@
             cbxRegion.FlatStyle = FlatStyle.Flat;
             cbxRegion.FormattingEnabled = true;
             cbxRegion.Location = new Point(68, 334);
+            cbxRegion.MaximumSize = new Size(480, 0);
+            cbxRegion.MinimumSize = new Size(480, 0);
             cbxRegion.Name = "cbxRegion";
             cbxRegion.Size = new Size(480, 33);
             cbxRegion.TabIndex = 8;
@@ -120,6 +130,8 @@
             cbxBidang.FlatStyle = FlatStyle.Flat;
             cbxBidang.FormattingEnabled = true;
             cbxBidang.Location = new Point(68, 233);
+            cbxBidang.MaximumSize = new Size(480, 0);
+            cbxBidang.MinimumSize = new Size(480, 0);
             cbxBidang.Name = "cbxBidang";
             cbxBidang.Size = new Size(480, 33);
             cbxBidang.TabIndex = 7;
@@ -129,6 +141,8 @@
             // 
             kryptonButton1.CornerRoundingRadius = 30F;
             kryptonButton1.Location = new Point(430, 513);
+            kryptonButton1.MaximumSize = new Size(310, 59);
+            kryptonButton1.MinimumSize = new Size(310, 59);
             kryptonButton1.Name = "kryptonButton1";
             kryptonButton1.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
             kryptonButton1.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
@@ -152,6 +166,7 @@
             // tbxNamaLomba
             // 
             tbxNamaLomba.Location = new Point(68, 132);
+            tbxNamaLomba.MaximumSize = new Size(1023, 36);
             tbxNamaLomba.Name = "tbxNamaLomba";
             tbxNamaLomba.Size = new Size(1023, 36);
             tbxNamaLomba.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
@@ -165,6 +180,8 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Poppins SemiBold", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(456, 11);
+            label1.MaximumSize = new Size(258, 46);
+            label1.MinimumSize = new Size(258, 46);
             label1.Name = "label1";
             label1.Size = new Size(258, 46);
             label1.TabIndex = 0;

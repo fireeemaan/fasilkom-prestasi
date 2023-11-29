@@ -46,6 +46,8 @@
             kryptonPanel1.Controls.Add(dgvPrestasi);
             kryptonPanel1.Dock = DockStyle.Fill;
             kryptonPanel1.Location = new Point(0, 0);
+            kryptonPanel1.MaximumSize = new Size(1170, 672);
+            kryptonPanel1.MinimumSize = new Size(1170, 672);
             kryptonPanel1.Name = "kryptonPanel1";
             kryptonPanel1.Size = new Size(1170, 672);
             kryptonPanel1.StateCommon.Image = (Image)resources.GetObject("kryptonPanel1.StateCommon.Image");
@@ -54,6 +56,8 @@
             // btnConvertion
             // 
             btnConvertion.Location = new Point(822, 0);
+            btnConvertion.MaximumSize = new Size(249, 67);
+            btnConvertion.MinimumSize = new Size(249, 67);
             btnConvertion.Name = "btnConvertion";
             btnConvertion.OverrideDefault.Back.Color1 = Color.White;
             btnConvertion.OverrideDefault.Back.Color2 = Color.White;
@@ -85,6 +89,8 @@
             // btnAddAchievement
             // 
             btnAddAchievement.Location = new Point(567, 0);
+            btnAddAchievement.MaximumSize = new Size(249, 67);
+            btnAddAchievement.MinimumSize = new Size(249, 67);
             btnAddAchievement.Name = "btnAddAchievement";
             btnAddAchievement.OverrideDefault.Back.Color1 = Color.White;
             btnAddAchievement.OverrideDefault.Back.Color2 = Color.White;
@@ -126,6 +132,8 @@
             dgvPrestasi.ColumnHeadersHeight = 51;
             dgvPrestasi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvPrestasi.Location = new Point(0, 67);
+            dgvPrestasi.MaximumSize = new Size(1170, 571);
+            dgvPrestasi.MinimumSize = new Size(1170, 571);
             dgvPrestasi.Name = "dgvPrestasi";
             dgvPrestasi.ReadOnly = true;
             dgvPrestasi.RowHeadersVisible = false;
