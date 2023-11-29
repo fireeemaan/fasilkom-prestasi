@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAchievementControl));
             panel1 = new Panel();
+            btnBackAchievement = new Krypton.Toolkit.KryptonButton();
+            cbxTahapan = new ComboBox();
+            cbxDosen = new ComboBox();
+            cbxRegion = new ComboBox();
             cbxBidang = new ComboBox();
             kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             tbxNamaLomba = new Krypton.Toolkit.KryptonTextBox();
             label1 = new Label();
-            cbxRegion = new ComboBox();
-            cbxDosen = new ComboBox();
-            cbxTahapan = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(btnBackAchievement);
             panel1.Controls.Add(cbxTahapan);
             panel1.Controls.Add(cbxDosen);
             panel1.Controls.Add(cbxRegion);
@@ -56,6 +58,61 @@
             panel1.Size = new Size(1170, 672);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnBackAchievement
+            // 
+            btnBackAchievement.CornerRoundingRadius = 10F;
+            btnBackAchievement.Location = new Point(37, 21);
+            btnBackAchievement.Name = "btnBackAchievement";
+            btnBackAchievement.OverrideDefault.Back.Color1 = Color.WhiteSmoke;
+            btnBackAchievement.OverrideDefault.Back.Color2 = Color.WhiteSmoke;
+            btnBackAchievement.Size = new Size(45, 45);
+            btnBackAchievement.StateCommon.Back.Color1 = Color.Transparent;
+            btnBackAchievement.StateCommon.Back.Color2 = Color.Transparent;
+            btnBackAchievement.StateCommon.Back.Image = (Image)resources.GetObject("btnBackAchievement.StateCommon.Back.Image");
+            btnBackAchievement.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnBackAchievement.StateCommon.Border.Color1 = Color.White;
+            btnBackAchievement.StateCommon.Border.Color2 = Color.White;
+            btnBackAchievement.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnBackAchievement.StateCommon.Border.Rounding = 10F;
+            btnBackAchievement.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnBackAchievement.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnBackAchievement.TabIndex = 11;
+            btnBackAchievement.Values.Text = "";
+            btnBackAchievement.Click += btnBackAchievement_Click;
+            // 
+            // cbxTahapan
+            // 
+            cbxTahapan.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbxTahapan.FlatStyle = FlatStyle.Flat;
+            cbxTahapan.FormattingEnabled = true;
+            cbxTahapan.Location = new Point(653, 334);
+            cbxTahapan.Name = "cbxTahapan";
+            cbxTahapan.Size = new Size(445, 33);
+            cbxTahapan.TabIndex = 10;
+            cbxTahapan.Text = "Pilih Tahapan...";
+            // 
+            // cbxDosen
+            // 
+            cbxDosen.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbxDosen.FlatStyle = FlatStyle.Flat;
+            cbxDosen.FormattingEnabled = true;
+            cbxDosen.Location = new Point(68, 436);
+            cbxDosen.Name = "cbxDosen";
+            cbxDosen.Size = new Size(480, 33);
+            cbxDosen.TabIndex = 9;
+            cbxDosen.Text = "Pilih Dosen Pembimbing...";
+            // 
+            // cbxRegion
+            // 
+            cbxRegion.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbxRegion.FlatStyle = FlatStyle.Flat;
+            cbxRegion.FormattingEnabled = true;
+            cbxRegion.Location = new Point(68, 334);
+            cbxRegion.Name = "cbxRegion";
+            cbxRegion.Size = new Size(480, 33);
+            cbxRegion.TabIndex = 8;
+            cbxRegion.Text = "Pilih Region...";
             // 
             // cbxBidang
             // 
@@ -113,39 +170,6 @@
             label1.TabIndex = 0;
             label1.Text = "Add Achievement";
             // 
-            // cbxRegion
-            // 
-            cbxRegion.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbxRegion.FlatStyle = FlatStyle.Flat;
-            cbxRegion.FormattingEnabled = true;
-            cbxRegion.Location = new Point(68, 334);
-            cbxRegion.Name = "cbxRegion";
-            cbxRegion.Size = new Size(480, 33);
-            cbxRegion.TabIndex = 8;
-            cbxRegion.Text = "Pilih Region...";
-            // 
-            // cbxDosen
-            // 
-            cbxDosen.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbxDosen.FlatStyle = FlatStyle.Flat;
-            cbxDosen.FormattingEnabled = true;
-            cbxDosen.Location = new Point(68, 436);
-            cbxDosen.Name = "cbxDosen";
-            cbxDosen.Size = new Size(480, 33);
-            cbxDosen.TabIndex = 9;
-            cbxDosen.Text = "Pilih Dosen Pembimbing...";
-            // 
-            // cbxTahapan
-            // 
-            cbxTahapan.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbxTahapan.FlatStyle = FlatStyle.Flat;
-            cbxTahapan.FormattingEnabled = true;
-            cbxTahapan.Location = new Point(653, 334);
-            cbxTahapan.Name = "cbxTahapan";
-            cbxTahapan.Size = new Size(445, 33);
-            cbxTahapan.TabIndex = 10;
-            cbxTahapan.Text = "Pilih Tahapan...";
-            // 
             // AddAchievementControl
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -168,5 +192,6 @@
         private ComboBox cbxTahapan;
         private ComboBox cbxDosen;
         private ComboBox cbxRegion;
+        private Krypton.Toolkit.KryptonButton btnBackAchievement;
     }
 }

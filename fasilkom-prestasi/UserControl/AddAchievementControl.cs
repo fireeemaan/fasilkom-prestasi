@@ -18,6 +18,14 @@ namespace fasilkom_prestasi
             InitializeComponent();
         }
 
+        private Record record;
+
+        public Record Record
+        {
+           get { return record; }
+           set { record = value; }
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -31,5 +39,9 @@ namespace fasilkom_prestasi
             cbxDosen.Items.AddRange(cbx4);
         }
 
+        private void btnBackAchievement_Click(object sender, EventArgs e)
+        {
+            record.BringToFrontArchive();
+        }
     }
 }

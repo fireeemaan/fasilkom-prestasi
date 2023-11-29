@@ -34,6 +34,8 @@
             btnHome = new Button();
             kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             archiveControl1 = new ArchiveControl();
+            archiveControl1.Record = this;
+            Controls.Add(archiveControl1);
             btnClose = new Krypton.Toolkit.KryptonButton();
             sidePanel = new Panel();
             addAchievementControl1 = new AddAchievementControl();
@@ -133,7 +135,7 @@
             // sidePanel
             // 
             sidePanel.ForeColor = Color.White;
-            sidePanel.Location = new Point(1, 114);
+            sidePanel.Location = new Point(1, 178);
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(10, 58);
             sidePanel.TabIndex = 2;
@@ -143,6 +145,7 @@
             addAchievementControl1.BackgroundImage = (Image)resources.GetObject("addAchievementControl1.BackgroundImage");
             addAchievementControl1.Location = new Point(343, 152);
             addAchievementControl1.Name = "addAchievementControl1";
+            addAchievementControl1.Record = null;
             addAchievementControl1.Size = new Size(1170, 672);
             addAchievementControl1.TabIndex = 3;
             // 
@@ -155,8 +158,8 @@
             Controls.Add(sidePanel);
             Controls.Add(btnClose);
             Controls.Add(kryptonPanel1);
-            Controls.Add(addAchievementControl1);
             Controls.Add(archiveControl1);
+            Controls.Add(addAchievementControl1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Record";
             StartPosition = FormStartPosition.CenterScreen;

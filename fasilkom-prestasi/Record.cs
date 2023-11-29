@@ -18,6 +18,12 @@ namespace fasilkom_prestasi
             InitializeComponent();
             sidePanel.Height = btnRecord.Height;
 
+            archiveControl1.Record = this;
+            Controls.Add(archiveControl1);
+
+            addAchievementControl1.Record = this;
+            Controls.Add(addAchievementControl1);
+
             object[] bidang = BidangContext.getNames();
             object[] region = RegionContext.getNames();
             object[] tahapan = TahapanContext.getNames();
@@ -53,5 +59,16 @@ namespace fasilkom_prestasi
             sidePanel.Height = btnHome.Height;
             sidePanel.Top = btnHome.Top;
         }
+
+        public void BringToFrontArchive()
+        {
+            archiveControl1.BringToFront();
+        }
+
+        public void BringToFrontAddAchievement()
+        {
+            addAchievementControl1.BringToFront();
+        }
+
     }
 }

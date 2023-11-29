@@ -113,6 +113,7 @@
             btnAddAchievement.StateTracking.Back.Image = (Image)resources.GetObject("btnAddAchievement.StateTracking.Back.Image");
             btnAddAchievement.TabIndex = 1;
             btnAddAchievement.Values.Text = "";
+            btnAddAchievement.Click += btnAddAchievement_Click;
             // 
             // dgvPrestasi
             // 
