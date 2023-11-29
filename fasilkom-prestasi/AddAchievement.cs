@@ -1,22 +1,21 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using fasilkom_prestasi.App.Models;
+using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using fasilkom_prestasi.App.Context;
-using fasilkom_prestasi.App.Models;
-using Npgsql;
 
 namespace fasilkom_prestasi
 {
-    public partial class AddAchievementControl : UserControl
+    public partial class AddAchievement : Form
     {
-        public AddAchievementControl()
+        public AddAchievement()
         {
             InitializeComponent();
             // Bidang
@@ -86,46 +85,15 @@ namespace fasilkom_prestasi
             cbxDosen.ValueMember = "Key";
             cbxDosen.DisplayMember = "Value";
             cbxDosen.SelectedIndex = -1;
-
-
         }
-
-        private Record record;
-
-        public Record Record
-        {
-            get { return record; }
-            set { record = value; }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        public void clearField()
-        {
-            cbxBidang.SelectedIndex = -1;
-            cbxRegion.SelectedIndex = -1;
-            cbxTahapan.SelectedIndex = -1;
-            cbxDosen.SelectedIndex = -1;
-            tbxSertifikat.Text = "";
-            tbxNamaLomba.Text = "";
-        }
-
-        //public void setCombo(object[] cbx1, object[] cbx2, object[] cbx3, object[] cbx4)
-        //{
-        //    cbxBidang.Items.AddRange(cbx1);
-        //    cbxRegion.Items.AddRange(cbx2);
-        //    cbxTahapan.Items.AddRange(cbx3);
-        //    cbxDosen.Items.AddRange(cbx4);
-        //}
 
         private void btnBackAchievement_Click(object sender, EventArgs e)
         {
-            //record.BringToFrontArchive();
-        }
+            this.Close();
+            Record record = new Record();
+            record.Show();
 
+        }
 
         private void btnAddAchievement_Click(object sender, EventArgs e)
         {
@@ -162,7 +130,11 @@ namespace fasilkom_prestasi
             try
             {
                 PrestasiContext.store(prestasiBaru);
-                //record.refreshDataSource();
+                MessageBox.Show("Data Berhasil Ditambahkan!");
+
+                this.Close();
+                Record record = new Record();
+                record.Show();
             }
             catch (NpgsqlException ex)
             {
@@ -172,10 +144,8 @@ namespace fasilkom_prestasi
             {
                 MessageBox.Show($"Error! : {ex}");
             }
-            
 
-            MessageBox.Show("Data Berhasil Ditambahkan!");
-            //record.BringToFrontArchive();
+
 
         }
     }

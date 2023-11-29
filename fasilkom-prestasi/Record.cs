@@ -18,11 +18,6 @@ namespace fasilkom_prestasi
             InitializeComponent();
             sidePanel.Height = btnRecord.Height;
 
-            archiveControl1.Record = this;
-            Controls.Add(archiveControl1);
-
-            addAchievementControl1.Record = this;
-            Controls.Add(addAchievementControl1);
 
             //object[] bidang = BidangContext.getNames();
             //object[] region = RegionContext.getNames();
@@ -35,12 +30,13 @@ namespace fasilkom_prestasi
         {
             DataTable dataTable = PrestasiContext.showAll(1);
 
-            archiveControl1.setDataSource(dataTable);
         }
 
         private void Record_Load(object sender, EventArgs e)
         {
-
+            DataTable dataTable = PrestasiContext.showAll(1);
+            dgvPrestasi.DataSource = null;
+            dgvPrestasi.DataSource = dataTable;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -60,26 +56,21 @@ namespace fasilkom_prestasi
             sidePanel.Top = btnHome.Top;
         }
 
-        public void BringToFrontArchive()
+        private void btnAddAchievement_Click(object sender, EventArgs e)
         {
-            archiveControl1.BringToFront();
+            this.Hide();
+            using (AddAchievement addAchievement = new AddAchievement())
+            {
+                AddAchievement addAchievementPage = new AddAchievement();
+                addAchievementPage.ShowDialog();
+            }
+            dgvPrestasi.DataSource = null;
+            dgvPrestasi.DataSource = PrestasiContext.showAll(1);
         }
 
-        public void BringToFrontAddAchievement()
-        {
-            addAchievementControl1.BringToFront();
-        }
-
-        public void refreshDataSource()
-        {
-            DataTable dataTable = PrestasiContext.showAll(1);
-            archiveControl1.setDataSource(dataTable);
-        }
-
-        public void storeDataAchievement()
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
     }
 }

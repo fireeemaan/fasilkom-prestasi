@@ -36,7 +36,7 @@ namespace fasilkom_prestasi
 
         private void btnAddAchievement_Click(object sender, EventArgs e)
         {
-            record.BringToFrontAddAchievement();
+            //record.BringToFrontAddAchievement();
         }
     }
 }
