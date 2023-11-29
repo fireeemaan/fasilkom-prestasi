@@ -34,6 +34,10 @@
             btnHome = new Button();
             btnRecord = new Button();
             panel1 = new Panel();
+            panel2 = new Panel();
+            kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            label1 = new Label();
             btnConvertion = new Krypton.Toolkit.KryptonButton();
             btnAddAchievement = new Krypton.Toolkit.KryptonButton();
             dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
@@ -90,6 +94,10 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(kryptonButton2);
+            panel1.Controls.Add(kryptonButton1);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(btnConvertion);
             panel1.Controls.Add(btnAddAchievement);
             panel1.Controls.Add(dgvPrestasi);
@@ -101,6 +109,89 @@
             panel1.Size = new Size(1578, 844);
             panel1.TabIndex = 3;
             panel1.Paint += panel1_Paint;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(95, 120, 178);
+            panel2.Location = new Point(372, 126);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(73, 5);
+            panel2.TabIndex = 9;
+            // 
+            // kryptonButton2
+            // 
+            kryptonButton2.CornerRoundingRadius = 10F;
+            kryptonButton2.Location = new Point(500, 93);
+            kryptonButton2.Name = "kryptonButton2";
+            kryptonButton2.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.OverrideDefault.Back.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.OverrideDefault.Border.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.OverrideDefault.Border.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton2.OverrideFocus.Border.Color1 = Color.FromArgb(184, 206, 255);
+            kryptonButton2.OverrideFocus.Border.Color2 = Color.FromArgb(184, 206, 255);
+            kryptonButton2.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton2.Size = new Size(140, 38);
+            kryptonButton2.StateCommon.Back.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.StateCommon.Back.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton2.StateCommon.Border.Rounding = 10F;
+            kryptonButton2.StateCommon.Content.ShortText.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            kryptonButton2.StateNormal.Back.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.StateNormal.Back.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.StateNormal.Border.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.StateNormal.Border.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton2.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton2.StatePressed.Back.Color1 = Color.FromArgb(184, 206, 255);
+            kryptonButton2.StatePressed.Back.Color2 = Color.FromArgb(184, 206, 255);
+            kryptonButton2.StatePressed.Border.Color1 = Color.FromArgb(184, 206, 255);
+            kryptonButton2.StatePressed.Border.Color2 = Color.FromArgb(184, 206, 255);
+            kryptonButton2.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton2.TabIndex = 8;
+            kryptonButton2.Values.Text = "Convertion";
+            // 
+            // kryptonButton1
+            // 
+            kryptonButton1.CornerRoundingRadius = 10F;
+            kryptonButton1.Location = new Point(356, 93);
+            kryptonButton1.Name = "kryptonButton1";
+            kryptonButton1.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.OverrideDefault.Back.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.OverrideDefault.Border.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.OverrideDefault.Border.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton1.OverrideFocus.Border.Color1 = Color.FromArgb(184, 206, 255);
+            kryptonButton1.OverrideFocus.Border.Color2 = Color.FromArgb(184, 206, 255);
+            kryptonButton1.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton1.Size = new Size(109, 38);
+            kryptonButton1.StateCommon.Back.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.StateCommon.Back.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton1.StateCommon.Border.Rounding = 10F;
+            kryptonButton1.StateCommon.Content.ShortText.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            kryptonButton1.StateNormal.Back.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.StateNormal.Back.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.StateNormal.Border.Color1 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.StateNormal.Border.Color2 = Color.FromArgb(189, 209, 255);
+            kryptonButton1.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton1.StatePressed.Back.Color1 = Color.FromArgb(184, 206, 255);
+            kryptonButton1.StatePressed.Back.Color2 = Color.FromArgb(184, 206, 255);
+            kryptonButton1.StatePressed.Border.Color1 = Color.FromArgb(184, 206, 255);
+            kryptonButton1.StatePressed.Border.Color2 = Color.FromArgb(184, 206, 255);
+            kryptonButton1.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton1.TabIndex = 7;
+            kryptonButton1.Values.Text = "Archive";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins Medium", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(337, 30);
+            label1.Margin = new Padding(0);
+            label1.Name = "label1";
+            label1.Size = new Size(128, 50);
+            label1.TabIndex = 6;
+            label1.Text = "Record";
             // 
             // btnConvertion
             // 
@@ -183,7 +274,6 @@
             dgvPrestasi.Location = new Point(337, 216);
             dgvPrestasi.MaximumSize = new Size(1170, 571);
             dgvPrestasi.Name = "dgvPrestasi";
-            dgvPrestasi.ReadOnly = true;
             dgvPrestasi.RowHeadersVisible = false;
             dgvPrestasi.RowHeadersWidth = 62;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -214,6 +304,7 @@
             Text = "Archive";
             Load += Record_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).EndInit();
             ResumeLayout(false);
         }
@@ -226,5 +317,9 @@
         private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
         private Krypton.Toolkit.KryptonButton btnConvertion;
         private Krypton.Toolkit.KryptonButton btnAddAchievement;
+        private Label label1;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Panel panel2;
+        private Krypton.Toolkit.KryptonButton kryptonButton2;
     }
 }

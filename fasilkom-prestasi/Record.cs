@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Krypton.Toolkit;
 
 namespace fasilkom_prestasi
 {
@@ -18,12 +19,28 @@ namespace fasilkom_prestasi
             InitializeComponent();
             sidePanel.Height = btnRecord.Height;
 
+            DataTable dataTable = PrestasiContext.showAll(2);
+            dgvPrestasi.DataSource = dataTable;
 
-            //object[] bidang = BidangContext.getNames();
-            //object[] region = RegionContext.getNames();
-            //object[] tahapan = TahapanContext.getNames();
-            //object[] dosen = DosenContext.getNames();
-            //addAchievementControl1.setCombo(bidang, region, tahapan, dosen);
+
+            DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
+            editButton.HeaderText = "Edit";
+            editButton.Text = "Edit";
+            editButton.Name = "editButton";
+            editButton.UseColumnTextForButtonValue = true;
+
+
+            DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+            deleteButton.HeaderText = "Delete";
+            deleteButton.Text = "Delete";
+            deleteButton.Name = "deleteButton";
+            deleteButton.UseColumnTextForButtonValue = true;
+
+            dgvPrestasi.Columns.Add(editButton);
+            dgvPrestasi.Columns.Add(deleteButton);
+
+
+
         }
 
         private void archiveControl1_Load(object sender, EventArgs e)
