@@ -155,6 +155,8 @@
             // 
             addAchievementControl1.BackgroundImage = (Image)resources.GetObject("addAchievementControl1.BackgroundImage");
             addAchievementControl1.Location = new Point(343, 152);
+            addAchievementControl1.MaximumSize = new Size(1170, 672);
+            addAchievementControl1.MinimumSize = new Size(1170, 672);
             addAchievementControl1.Name = "addAchievementControl1";
             addAchievementControl1.Record = null;
             addAchievementControl1.Size = new Size(1170, 672);
@@ -169,8 +171,8 @@
             Controls.Add(sidePanel);
             Controls.Add(btnClose);
             Controls.Add(kryptonPanel1);
-            Controls.Add(archiveControl1);
             Controls.Add(addAchievementControl1);
+            Controls.Add(archiveControl1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1600, 900);
             MinimumSize = new Size(1600, 900);

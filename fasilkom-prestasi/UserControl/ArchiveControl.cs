@@ -29,8 +29,10 @@ namespace fasilkom_prestasi
 
         public void setDataSource(DataTable dataTable)
         {
+            dgvPrestasi.DataSource = null;
             dgvPrestasi.DataSource = dataTable;
         }
+        
 
         private void btnAddAchievement_Click(object sender, EventArgs e)
         {

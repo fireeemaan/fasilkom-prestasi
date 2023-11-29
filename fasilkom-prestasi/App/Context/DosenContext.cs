@@ -11,7 +11,12 @@ namespace fasilkom_prestasi.App.Context
     internal class DosenContext : DatabaseWrapper
     {
         private static string table = "dosen";
-
+        public static DataTable all()
+        {
+            string query = $"SELECT * FROM {table}";
+            DataTable objects = queryExecutor(query);
+            return objects;
+        }
         public static object[] getNames()
         {
             List<string> objects = new List<string>();

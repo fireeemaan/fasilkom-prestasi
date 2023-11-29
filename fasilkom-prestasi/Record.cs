@@ -24,11 +24,11 @@ namespace fasilkom_prestasi
             addAchievementControl1.Record = this;
             Controls.Add(addAchievementControl1);
 
-            object[] bidang = BidangContext.getNames();
-            object[] region = RegionContext.getNames();
-            object[] tahapan = TahapanContext.getNames();
-            object[] dosen = DosenContext.getNames();
-            addAchievementControl1.setCombo(bidang, region, tahapan, dosen);
+            //object[] bidang = BidangContext.getNames();
+            //object[] region = RegionContext.getNames();
+            //object[] tahapan = TahapanContext.getNames();
+            //object[] dosen = DosenContext.getNames();
+            //addAchievementControl1.setCombo(bidang, region, tahapan, dosen);
         }
 
         private void archiveControl1_Load(object sender, EventArgs e)
@@ -68,6 +68,17 @@ namespace fasilkom_prestasi
         public void BringToFrontAddAchievement()
         {
             addAchievementControl1.BringToFront();
+        }
+
+        public void refreshDataSource()
+        {
+            DataTable dataTable = PrestasiContext.showAll(1);
+            archiveControl1.setDataSource(dataTable);
+        }
+
+        public void storeDataAchievement()
+        {
+
         }
 
     }

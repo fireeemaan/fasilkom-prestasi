@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAchievementControl));
             panel1 = new Panel();
+            tbxSertifikat = new Krypton.Toolkit.KryptonTextBox();
             btnBackAchievement = new Krypton.Toolkit.KryptonButton();
             cbxTahapan = new ComboBox();
             cbxDosen = new ComboBox();
             cbxRegion = new ComboBox();
             cbxBidang = new ComboBox();
-            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            btnAddAchievement = new Krypton.Toolkit.KryptonButton();
             tbxNamaLomba = new Krypton.Toolkit.KryptonTextBox();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -44,12 +45,13 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(tbxSertifikat);
             panel1.Controls.Add(btnBackAchievement);
             panel1.Controls.Add(cbxTahapan);
             panel1.Controls.Add(cbxDosen);
             panel1.Controls.Add(cbxRegion);
             panel1.Controls.Add(cbxBidang);
-            panel1.Controls.Add(kryptonButton1);
+            panel1.Controls.Add(btnAddAchievement);
             panel1.Controls.Add(tbxNamaLomba);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
@@ -60,6 +62,17 @@
             panel1.Size = new Size(1170, 672);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // tbxSertifikat
+            // 
+            tbxSertifikat.Location = new Point(653, 334);
+            tbxSertifikat.MaximumSize = new Size(1023, 36);
+            tbxSertifikat.Name = "tbxSertifikat";
+            tbxSertifikat.Size = new Size(445, 36);
+            tbxSertifikat.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
+            tbxSertifikat.StateActive.Content.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxSertifikat.TabIndex = 12;
+            tbxSertifikat.Text = "\r\n";
             // 
             // btnBackAchievement
             // 
@@ -90,11 +103,10 @@
             cbxTahapan.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxTahapan.FlatStyle = FlatStyle.Flat;
             cbxTahapan.FormattingEnabled = true;
-            cbxTahapan.Location = new Point(653, 334);
-            cbxTahapan.MaximumSize = new Size(445, 0);
+            cbxTahapan.Location = new Point(68, 334);
             cbxTahapan.MinimumSize = new Size(445, 0);
             cbxTahapan.Name = "cbxTahapan";
-            cbxTahapan.Size = new Size(445, 33);
+            cbxTahapan.Size = new Size(480, 33);
             cbxTahapan.TabIndex = 10;
             cbxTahapan.Text = "Pilih Tahapan...";
             // 
@@ -116,17 +128,15 @@
             cbxRegion.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxRegion.FlatStyle = FlatStyle.Flat;
             cbxRegion.FormattingEnabled = true;
-            cbxRegion.Location = new Point(68, 334);
+            cbxRegion.Location = new Point(653, 233);
             cbxRegion.MaximumSize = new Size(480, 0);
-            cbxRegion.MinimumSize = new Size(480, 0);
             cbxRegion.Name = "cbxRegion";
-            cbxRegion.Size = new Size(480, 33);
+            cbxRegion.Size = new Size(445, 33);
             cbxRegion.TabIndex = 8;
             cbxRegion.Text = "Pilih Region...";
             // 
             // cbxBidang
             // 
-            cbxBidang.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxBidang.FlatStyle = FlatStyle.Flat;
             cbxBidang.FormattingEnabled = true;
             cbxBidang.Location = new Point(68, 233);
@@ -137,31 +147,32 @@
             cbxBidang.TabIndex = 7;
             cbxBidang.Text = "Pilih Bidang...";
             // 
-            // kryptonButton1
+            // btnAddAchievement
             // 
-            kryptonButton1.CornerRoundingRadius = 30F;
-            kryptonButton1.Location = new Point(430, 513);
-            kryptonButton1.MaximumSize = new Size(310, 59);
-            kryptonButton1.MinimumSize = new Size(310, 59);
-            kryptonButton1.Name = "kryptonButton1";
-            kryptonButton1.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.Size = new Size(310, 59);
-            kryptonButton1.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButton1.StateCommon.Border.Rounding = 30F;
-            kryptonButton1.StateCommon.Content.ShortText.Color1 = Color.White;
-            kryptonButton1.StateCommon.Content.ShortText.Color2 = Color.White;
-            kryptonButton1.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            kryptonButton1.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
-            kryptonButton1.TabIndex = 6;
-            kryptonButton1.Values.Text = "Add";
+            btnAddAchievement.CornerRoundingRadius = 30F;
+            btnAddAchievement.Location = new Point(430, 513);
+            btnAddAchievement.MaximumSize = new Size(310, 59);
+            btnAddAchievement.MinimumSize = new Size(310, 59);
+            btnAddAchievement.Name = "btnAddAchievement";
+            btnAddAchievement.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.Size = new Size(310, 59);
+            btnAddAchievement.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddAchievement.StateCommon.Border.Rounding = 30F;
+            btnAddAchievement.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddAchievement.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddAchievement.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddAchievement.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddAchievement.TabIndex = 6;
+            btnAddAchievement.Values.Text = "Add";
+            btnAddAchievement.Click += btnAddAchievement_Click;
             // 
             // tbxNamaLomba
             // 
@@ -206,11 +217,12 @@
         private Panel panel1;
         private Label label1;
         private Krypton.Toolkit.KryptonTextBox tbxNamaLomba;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton btnAddAchievement;
         private ComboBox cbxBidang;
         private ComboBox cbxTahapan;
         private ComboBox cbxDosen;
         private ComboBox cbxRegion;
         private Krypton.Toolkit.KryptonButton btnBackAchievement;
+        private Krypton.Toolkit.KryptonTextBox tbxSertifikat;
     }
 }

@@ -5,6 +5,9 @@ using System.Text;
 using fasilkom_prestasi.App.Core;
 using System.Threading.Tasks;
 using System.Data;
+using fasilkom_prestasi.App.Models;
+using Npgsql;
+using NpgsqlTypes;
 
 namespace fasilkom_prestasi.App.Context
 {
@@ -30,6 +33,23 @@ namespace fasilkom_prestasi.App.Context
 
             DataTable dataPrestasi = queryExecutor(query);
             return dataPrestasi;
+        }
+
+        public static void store(M_Prestasi prestasiBaru)
+        {
+            string query = $"INSERT INTO {table}(nama_prestasi, id_mahasiswa, sertifikat, id_bidang, id_region, id_tahapan, id_dosen) VALUES(@nama_prestasi, @id_mahasiswa, @sertifikat, @id_bidang, @id_region, @id_tahapan, @id_dosen)";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@nama_prestasi", NpgsqlDbType.Varchar){Value = prestasiBaru.nama_prestasi},
+                new NpgsqlParameter("@id_mahasiswa", NpgsqlDbType.Bigint){Value = prestasiBaru.id_mahasiswa},
+                new NpgsqlParameter("@sertifikat", NpgsqlDbType.Text){Value = prestasiBaru.sertifikat},
+                new NpgsqlParameter("@id_bidang", NpgsqlDbType.Integer){Value = prestasiBaru.id_bidang},
+                new NpgsqlParameter("@id_region", NpgsqlDbType.Integer){Value = prestasiBaru.id_region},
+                new NpgsqlParameter("@id_tahapan", NpgsqlDbType.Integer){Value = prestasiBaru.id_tahapan},
+                new NpgsqlParameter("@id_dosen", NpgsqlDbType.Integer){Value = prestasiBaru.id_dosen}
+            };
+
+            commandExecutor(query, parameters);
         }
     }
 }

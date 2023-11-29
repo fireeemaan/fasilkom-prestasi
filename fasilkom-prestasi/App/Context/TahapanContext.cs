@@ -12,6 +12,13 @@ namespace fasilkom_prestasi.App.Context
     {
         private static string table = "tahapan";
 
+        public static DataTable all()
+        {
+            string query = $"SELECT * FROM {table}";
+            DataTable objects = queryExecutor(query);
+            return objects;
+        }
+
         public static object[] getNames()
         {
             List<string> objects = new List<string>();
