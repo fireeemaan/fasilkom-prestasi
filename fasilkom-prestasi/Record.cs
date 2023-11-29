@@ -19,25 +19,24 @@ namespace fasilkom_prestasi
             InitializeComponent();
             sidePanel.Height = btnRecord.Height;
 
-            DataTable dataTable = PrestasiContext.showAll(2);
-            dgvPrestasi.DataSource = dataTable;
+            dgvPrestasi.DataSource = PrestasiContext.showAll(1);
 
 
             DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
-            editButton.HeaderText = "Edit";
+            editButton.HeaderText = "";
             editButton.Text = "Edit";
             editButton.Name = "editButton";
             editButton.UseColumnTextForButtonValue = true;
 
 
             DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
-            deleteButton.HeaderText = "Delete";
+            deleteButton.HeaderText = "";
             deleteButton.Text = "Delete";
             deleteButton.Name = "deleteButton";
             deleteButton.UseColumnTextForButtonValue = true;
 
-            dgvPrestasi.Columns.Add(editButton);
-            dgvPrestasi.Columns.Add(deleteButton);
+            dgvPrestasi.Columns.Insert(0, editButton);
+            dgvPrestasi.Columns.Insert(1, deleteButton);
 
 
 
@@ -45,15 +44,15 @@ namespace fasilkom_prestasi
 
         private void archiveControl1_Load(object sender, EventArgs e)
         {
-            DataTable dataTable = PrestasiContext.showAll(1);
+
 
         }
 
         private void Record_Load(object sender, EventArgs e)
         {
-            DataTable dataTable = PrestasiContext.showAll(1);
             dgvPrestasi.DataSource = null;
-            dgvPrestasi.DataSource = dataTable;
+            dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -88,6 +87,39 @@ namespace fasilkom_prestasi
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dgvPrestasi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvPrestasi.Columns["deleteButton"].Index && e.RowIndex >= 0)
+            {
+
+                int idPrestasiHapus = Convert.ToInt32(dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+
+                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                if (message == DialogResult.Yes)
+                {
+                    PrestasiContext.destroy(idPrestasiHapus);
+                    DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+                }
+
+                dgvPrestasi.DataSource = null;
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+            }
+
+            if (e.ColumnIndex == dgvPrestasi.Columns["editButton"].Index && e.RowIndex >= 0)
+            {
+
+                int idPrestasiUbah = Convert.ToInt32(dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+
+                using (EditAchievement editPrestasi = new EditAchievement(idPrestasiUbah))
+                {
+                    EditAchievement halamanEditPrestasi = new EditAchievement(idPrestasiUbah);
+                    halamanEditPrestasi.ShowDialog();
+                }
+                dgvPrestasi.DataSource = null;
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+            }
         }
     }
 }

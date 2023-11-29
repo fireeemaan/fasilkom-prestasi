@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Record));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             btnHome = new Button();
             btnRecord = new Button();
             panel1 = new Panel();
+            dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
             panel2 = new Panel();
             kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             label1 = new Label();
             btnConvertion = new Krypton.Toolkit.KryptonButton();
             btnAddAchievement = new Krypton.Toolkit.KryptonButton();
-            dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).BeginInit();
             SuspendLayout();
@@ -94,13 +93,13 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(dgvPrestasi);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(kryptonButton2);
             panel1.Controls.Add(kryptonButton1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnConvertion);
             panel1.Controls.Add(btnAddAchievement);
-            panel1.Controls.Add(dgvPrestasi);
             panel1.Controls.Add(btnHome);
             panel1.Controls.Add(btnRecord);
             panel1.Dock = DockStyle.Fill;
@@ -109,6 +108,26 @@
             panel1.Size = new Size(1578, 844);
             panel1.TabIndex = 3;
             panel1.Paint += panel1_Paint;
+            // 
+            // dgvPrestasi
+            // 
+            dgvPrestasi.AllowUserToAddRows = false;
+            dgvPrestasi.AllowUserToDeleteRows = false;
+            dgvPrestasi.AllowUserToResizeColumns = false;
+            dgvPrestasi.AllowUserToResizeRows = false;
+            dgvPrestasi.BorderStyle = BorderStyle.None;
+            dgvPrestasi.ColumnHeadersHeight = 51;
+            dgvPrestasi.Location = new Point(337, 216);
+            dgvPrestasi.Name = "dgvPrestasi";
+            dgvPrestasi.ReadOnly = true;
+            dgvPrestasi.RowHeadersVisible = false;
+            dgvPrestasi.RowHeadersWidth = 10;
+            dgvPrestasi.RowTemplate.Height = 50;
+            dgvPrestasi.Size = new Size(1170, 566);
+            dgvPrestasi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvPrestasi.StateCommon.DataCell.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom;
+            dgvPrestasi.TabIndex = 10;
+            dgvPrestasi.CellContentClick += dgvPrestasi_CellContentClick;
             // 
             // panel2
             // 
@@ -261,33 +280,6 @@
             btnAddAchievement.Values.Text = "";
             btnAddAchievement.Click += btnAddAchievement_Click;
             // 
-            // dgvPrestasi
-            // 
-            dgvPrestasi.AllowUserToAddRows = false;
-            dgvPrestasi.AllowUserToDeleteRows = false;
-            dgvPrestasi.AllowUserToResizeColumns = false;
-            dgvPrestasi.AllowUserToResizeRows = false;
-            dgvPrestasi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPrestasi.BorderStyle = BorderStyle.None;
-            dgvPrestasi.ColumnHeadersHeight = 51;
-            dgvPrestasi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvPrestasi.Location = new Point(337, 216);
-            dgvPrestasi.MaximumSize = new Size(1170, 571);
-            dgvPrestasi.Name = "dgvPrestasi";
-            dgvPrestasi.RowHeadersVisible = false;
-            dgvPrestasi.RowHeadersWidth = 62;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPrestasi.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvPrestasi.RowTemplate.Height = 50;
-            dgvPrestasi.Size = new Size(1170, 565);
-            dgvPrestasi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            dgvPrestasi.StateCommon.DataCell.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom;
-            dgvPrestasi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            dgvPrestasi.StateSelected.DataCell.Back.Color1 = Color.White;
-            dgvPrestasi.StateSelected.DataCell.Back.Color2 = Color.White;
-            dgvPrestasi.TabIndex = 3;
-            dgvPrestasi.TabStop = false;
-            // 
             // Record
             // 
             AutoScaleDimensions = new SizeF(144F, 144F);
@@ -314,12 +306,12 @@
         private Button btnHome;
         private Button btnRecord;
         private Panel panel1;
-        private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
         private Krypton.Toolkit.KryptonButton btnConvertion;
         private Krypton.Toolkit.KryptonButton btnAddAchievement;
         private Label label1;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private Panel panel2;
         private Krypton.Toolkit.KryptonButton kryptonButton2;
+        private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
     }
 }
