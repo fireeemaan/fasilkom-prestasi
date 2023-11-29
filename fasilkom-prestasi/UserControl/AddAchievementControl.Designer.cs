@@ -199,6 +199,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            // test
         }
 
         #endregion

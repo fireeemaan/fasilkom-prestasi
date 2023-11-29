@@ -80,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)kryptonPanel1).EndInit();
             kryptonPanel1.ResumeLayout(false);
             ResumeLayout(false);
+            
         }
 
         #endregion
