@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class _10 : Form
+    public partial class Form_ConvertionValidation_Admin : Form
     {
-        public _10()
+        public Form_ConvertionValidation_Admin()
         {
             InitializeComponent();
         }

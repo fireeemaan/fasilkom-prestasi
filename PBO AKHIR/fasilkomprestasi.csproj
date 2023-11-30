@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Krypton" Version="2.0.0" />
     <PackageReference Include="Krypton.Toolkit" Version="80.23.11.321" />
     <PackageReference Include="Npgsql" Version="8.0.0" />
   </ItemGroup>

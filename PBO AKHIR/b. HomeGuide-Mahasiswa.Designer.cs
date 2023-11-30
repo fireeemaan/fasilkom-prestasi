@@ -1,6 +1,6 @@
 ﻿namespace fasilkom_prestasi
 {
-    partial class b
+    partial class HomeGuide
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            SuspendLayout();
+            // 
+            // HomeGuide
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "b";
+            ClientSize = new Size(914, 600);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "HomeGuide";
+            Text = "HomeGuide";
+            ResumeLayout(false);
         }
 
         #endregion

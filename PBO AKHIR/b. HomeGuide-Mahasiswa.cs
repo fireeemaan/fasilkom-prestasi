@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class b : Form
+    public partial class HomeGuide : Form
     {
-        public b()
+        public HomeGuide()
         {
             InitializeComponent();
         }

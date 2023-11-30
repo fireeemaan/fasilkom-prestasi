@@ -1,6 +1,6 @@
 ﻿namespace fasilkom_prestasi
 {
-    partial class _10
+    partial class Form_ConvertionValidation_Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_10));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ConvertionValidation_Admin));
             textBox1 = new TextBox();
             kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
@@ -66,7 +66,7 @@
             kryptonComboBox1.TabIndex = 9;
             kryptonComboBox1.Text = "kryptonComboBox1";
             // 
-            // _10
+            // Form_ConvertionValidation_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -75,9 +75,9 @@
             Controls.Add(kryptonComboBox1);
             Controls.Add(kryptonDataGridView1);
             Controls.Add(textBox1);
-            Name = "_10";
+            Name = "Form_ConvertionValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "_10";
+            Text = "ConvertionValidation";
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ResumeLayout(false);
