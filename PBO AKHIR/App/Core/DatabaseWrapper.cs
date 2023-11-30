@@ -75,6 +75,22 @@ namespace fasilkom_prestasi.App.Core
                 throw new Exception(e.Message);
             }
         }
+        public static long commandExecutor2(string query, NpgsqlParameter[] parameters = null)
+        {
+            try
+            {
+                openConnection();
+                NpgsqlCommand cmd = new NpgsqlCommand(query, connection);
+
+                cmd.Parameters.AddRange(parameters);
+                long result = (long)cmd.ExecuteScalar();
+                return result;   
+            }        
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
 

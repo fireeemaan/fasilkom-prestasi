@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbxUser = new TextBox();
+            tbxPass = new TextBox();
             btnLogin = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
-            // textBox1
+            // tbxUser
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(983, 395);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(487, 27);
-            textBox1.TabIndex = 0;
+            tbxUser.BorderStyle = BorderStyle.None;
+            tbxUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxUser.Location = new Point(983, 395);
+            tbxUser.Name = "tbxUser";
+            tbxUser.Size = new Size(487, 27);
+            tbxUser.TabIndex = 0;
             // 
-            // textBox2
+            // tbxPass
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(983, 534);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(487, 27);
-            textBox2.TabIndex = 1;
+            tbxPass.BorderStyle = BorderStyle.None;
+            tbxPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbxPass.Location = new Point(983, 534);
+            tbxPass.Name = "tbxPass";
+            tbxPass.Size = new Size(487, 27);
+            tbxPass.TabIndex = 1;
             // 
             // btnLogin
             // 
@@ -71,6 +71,7 @@
             btnLogin.StatePressed.Back.Color2 = Color.FromArgb(52, 38, 132);
             btnLogin.TabIndex = 2;
             btnLogin.Values.Text = "Login";
+            btnLogin.Click += btnLogin_Click;
             // 
             // Login
             // 
@@ -79,8 +80,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(btnLogin);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbxPass);
+            Controls.Add(tbxUser);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -90,8 +91,8 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbxUser;
+        private TextBox tbxPass;
         private Krypton.Toolkit.KryptonButton btnLogin;
     }
 }
