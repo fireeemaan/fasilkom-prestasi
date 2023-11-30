@@ -1,6 +1,6 @@
-﻿namespace PBO_AKHIR
+﻿namespace fasilkom_prestasi
 {
-    partial class Form8
+    partial class Konversi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form8));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Konversi));
             button7 = new Button();
             button6 = new Button();
             button1 = new Button();

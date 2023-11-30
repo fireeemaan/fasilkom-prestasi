@@ -1,4 +1,4 @@
-﻿namespace PBO_AKHIR
+﻿namespace fasilkom_prestasi
 {
     partial class Form2
     {

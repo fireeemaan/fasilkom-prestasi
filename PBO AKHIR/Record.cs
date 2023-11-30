@@ -8,19 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBO_AKHIR
+namespace fasilkom_prestasi
 {
-    public partial class Form2 : Form
+    public partial class Record : Form
     {
-        public Form2()
+        public Record()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            var f = new Form3();
-            f.Show();
+
         }
     }
 }

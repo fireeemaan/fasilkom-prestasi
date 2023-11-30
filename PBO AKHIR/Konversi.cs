@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBO_AKHIR
+namespace fasilkom_prestasi
 {
-    public partial class FormAdmin3 : Form
+    public partial class Konversi : Form
     {
-        public FormAdmin3()
+        public Konversi()
         {
             InitializeComponent();
         }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBO_AKHIR
+namespace fasilkom_prestasi
 {
-    public partial class Form5 : Form
+    public partial class Validation : Form
     {
-        public Form5()
+        public Validation()
         {
             InitializeComponent();
-        }
-
-        private void Form5_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace PBO_AKHIR
+﻿namespace fasilkom_prestasi
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             button1 = new Button();
