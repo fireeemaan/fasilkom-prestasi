@@ -35,7 +35,7 @@
             btnHome = new Button();
             btnRecord = new Button();
             panel2 = new Panel();
-            this.btnConvertion = new Krypton.Toolkit.KryptonButton();
+            btnConvertion = new Krypton.Toolkit.KryptonButton();
             btnArchive = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
             SuspendLayout();
@@ -141,36 +141,36 @@
             // 
             // btnConvertion
             // 
-            this.btnConvertion.CornerRoundingRadius = 10F;
-            this.btnConvertion.Location = new Point(458, 107);
-            this.btnConvertion.Margin = new Padding(2);
-            this.btnConvertion.Name = "btnConvertion";
-            this.btnConvertion.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.OverrideDefault.Back.Color2 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.OverrideDefault.Border.Color1 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.OverrideDefault.Border.Color2 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            this.btnConvertion.OverrideFocus.Border.Color1 = Color.FromArgb(184, 206, 255);
-            this.btnConvertion.OverrideFocus.Border.Color2 = Color.FromArgb(184, 206, 255);
-            this.btnConvertion.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            this.btnConvertion.Size = new Size(139, 32);
-            this.btnConvertion.StateCommon.Back.Color1 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.StateCommon.Back.Color2 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            this.btnConvertion.StateCommon.Border.Rounding = 10F;
-            this.btnConvertion.StateCommon.Content.ShortText.Font = new Font("Poppins Medium", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            this.btnConvertion.StateNormal.Back.Color1 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.StateNormal.Back.Color2 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.StateNormal.Border.Color1 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.StateNormal.Border.Color2 = Color.FromArgb(189, 209, 255);
-            this.btnConvertion.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            this.btnConvertion.StatePressed.Back.Color1 = Color.FromArgb(184, 206, 255);
-            this.btnConvertion.StatePressed.Back.Color2 = Color.FromArgb(184, 206, 255);
-            this.btnConvertion.StatePressed.Border.Color1 = Color.FromArgb(184, 206, 255);
-            this.btnConvertion.StatePressed.Border.Color2 = Color.FromArgb(184, 206, 255);
-            this.btnConvertion.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            this.btnConvertion.TabIndex = 12;
-            this.btnConvertion.Values.Text = "Convertion";
+            btnConvertion.CornerRoundingRadius = 10F;
+            btnConvertion.Location = new Point(458, 107);
+            btnConvertion.Margin = new Padding(2);
+            btnConvertion.Name = "btnConvertion";
+            btnConvertion.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
+            btnConvertion.OverrideDefault.Back.Color2 = Color.FromArgb(189, 209, 255);
+            btnConvertion.OverrideDefault.Border.Color1 = Color.FromArgb(189, 209, 255);
+            btnConvertion.OverrideDefault.Border.Color2 = Color.FromArgb(189, 209, 255);
+            btnConvertion.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnConvertion.OverrideFocus.Border.Color1 = Color.FromArgb(184, 206, 255);
+            btnConvertion.OverrideFocus.Border.Color2 = Color.FromArgb(184, 206, 255);
+            btnConvertion.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnConvertion.Size = new Size(139, 32);
+            btnConvertion.StateCommon.Back.Color1 = Color.FromArgb(189, 209, 255);
+            btnConvertion.StateCommon.Back.Color2 = Color.FromArgb(189, 209, 255);
+            btnConvertion.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnConvertion.StateCommon.Border.Rounding = 10F;
+            btnConvertion.StateCommon.Content.ShortText.Font = new Font("Poppins Medium", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConvertion.StateNormal.Back.Color1 = Color.FromArgb(189, 209, 255);
+            btnConvertion.StateNormal.Back.Color2 = Color.FromArgb(189, 209, 255);
+            btnConvertion.StateNormal.Border.Color1 = Color.FromArgb(189, 209, 255);
+            btnConvertion.StateNormal.Border.Color2 = Color.FromArgb(189, 209, 255);
+            btnConvertion.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnConvertion.StatePressed.Back.Color1 = Color.FromArgb(184, 206, 255);
+            btnConvertion.StatePressed.Back.Color2 = Color.FromArgb(184, 206, 255);
+            btnConvertion.StatePressed.Border.Color1 = Color.FromArgb(184, 206, 255);
+            btnConvertion.StatePressed.Border.Color2 = Color.FromArgb(184, 206, 255);
+            btnConvertion.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnConvertion.TabIndex = 12;
+            btnConvertion.Values.Text = "Convertion";
             // 
             // btnArchive
             // 
@@ -212,7 +212,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(panel2);
-            Controls.Add(this.btnConvertion);
+            Controls.Add(btnConvertion);
             Controls.Add(btnArchive);
             Controls.Add(sidePanel);
             Controls.Add(btnHome);
@@ -235,7 +235,6 @@
         private Button btnHome;
         private Button btnRecord;
         private Panel panel2;
-        private Krypton.Toolkit.KryptonButton btnConvertion;
         private Krypton.Toolkit.KryptonButton btnArchive;
     }
 }

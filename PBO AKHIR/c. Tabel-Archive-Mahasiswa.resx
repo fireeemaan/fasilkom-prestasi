@@ -187,7 +187,7 @@
   <data name="btnAddAchievement.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKoAAAAWCAYAAABQfgeMAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAABjRJREFUaEPtWu1RZDcQvBAuA18IexF4IQEuAy4DLoMjA5wBLgPrn4TgEAiBEAjB
+        EQAACxEBf2RfkQAABjRJREFUaEPtWu1RZDcQvBAuA18IexF4IQEuAy4DLoMjA5wBLgPrn4TgEAiBEAjB
         7h51S6P3sW9Zlqty8bpqat8bjWakUWukXfi0YsWKFStWrFixYsWKFR8N55uH6+3m4fY1cr65/6Hup8N2
         c/sZ8oUi1SwOtTsF0rg+SzWJLZKy3ez+QYI2Uq04EZDT72ebh3+PEfS9kpsx0PizyN03qRYB262cP0s1
         ie3m7y8ehFSzoG0by3EEYl9N+KdUk4DNk+wepfqw4LojD9+Zf6neBK/B+df736RahHkyu25o2NBA8rJU
@@ -275,7 +275,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABkAAAAOECAYAAAD5Tf2iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAATWtJREFUeF7t3duv5vd13/f5E3xXoFfKRa6S1DoyCCA3umpkSbYDGAFSNIl8YbiN
+        EAAACxABrSO9dQAATWtJREFUeF7t3duv5vd13/f5E3xXoFfKRa6S1DoyCCA3umpkSbYDGAFSNIl8YbiN
         bEuyzDiID5Ks2kbVSBaTprAK15ITx3FQxSc6aGDXieCLWHIdW4eI1SESqQM5PB9meCaH8+t8Z/ZD/ubH
         tfd3z5Brjbh+rxfwBsk9z+y9Z48WDDwfP3ufWYBW/v3nJEmSJEmSJEkGEGgmOnRJkiRJkiRJ2lsGEGgm
         OnRJkiRJkiRJ2lsGEGgmOnRJkiRJkiRJ2lsGEGgmOnRJkiRJkiRJ2lsGEGgmOnRJkiRJkiRJ2lsGEGgm

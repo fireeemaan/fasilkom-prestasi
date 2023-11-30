@@ -12,6 +12,7 @@ namespace fasilkom_prestasi
             this.username = username;
             this.userRole = userRole;
             this.password = password;
+
         }
         private long username;
         private string password;
@@ -36,11 +37,11 @@ namespace fasilkom_prestasi
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            username = long.Parse(tbxUser.Text);
-            password = tbxPass.Text;
+            username = long.Parse(UserBox.Text);
+            password = PassBox.Text;
 
             var loginstatus = LoginContext.login(username, password);
-            
+
 
             if (loginstatus == 1)
             {
@@ -60,6 +61,18 @@ namespace fasilkom_prestasi
                     tableValidation.ShowDialog();
 
                 };
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                PassBox.PasswordChar = '\0';
+            }
+            else if (!checkBox1.Checked)
+            {
+                PassBox.PasswordChar = '*';
             }
         }
     }

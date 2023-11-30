@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            tbxUser = new TextBox();
-            tbxPass = new TextBox();
+            UserBox = new TextBox();
+            PassBox = new TextBox();
             btnLogin = new Krypton.Toolkit.KryptonButton();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
-            // tbxUser
+            // UserBox
             // 
-            tbxUser.BorderStyle = BorderStyle.None;
-            tbxUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxUser.Location = new Point(983, 395);
-            tbxUser.Name = "tbxUser";
-            tbxUser.Size = new Size(487, 27);
-            tbxUser.TabIndex = 0;
+            UserBox.BorderStyle = BorderStyle.None;
+            UserBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            UserBox.Location = new Point(983, 395);
+            UserBox.Name = "UserBox";
+            UserBox.Size = new Size(487, 27);
+            UserBox.TabIndex = 0;
             // 
-            // tbxPass
+            // PassBox
             // 
-            tbxPass.BorderStyle = BorderStyle.None;
-            tbxPass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxPass.Location = new Point(983, 534);
-            tbxPass.Name = "tbxPass";
-            tbxPass.Size = new Size(487, 27);
-            tbxPass.TabIndex = 1;
+            PassBox.BorderStyle = BorderStyle.None;
+            PassBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            PassBox.Location = new Point(983, 534);
+            PassBox.Name = "PassBox";
+            PassBox.PasswordChar = '*';
+            PassBox.Size = new Size(487, 27);
+            PassBox.TabIndex = 1;
             // 
             // btnLogin
             // 
@@ -73,15 +75,27 @@
             btnLogin.Values.Text = "Login";
             btnLogin.Click += btnLogin_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(1392, 603);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(101, 24);
+            checkBox1.TabIndex = 3;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(checkBox1);
             Controls.Add(btnLogin);
-            Controls.Add(tbxPass);
-            Controls.Add(tbxUser);
+            Controls.Add(PassBox);
+            Controls.Add(UserBox);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -91,8 +105,9 @@
 
         #endregion
 
-        private TextBox tbxUser;
-        private TextBox tbxPass;
+        private TextBox UserBox;
+        private TextBox PassBox;
         private Krypton.Toolkit.KryptonButton btnLogin;
+        private CheckBox checkBox1;
     }
 }
