@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class Form2 : Form
+    public partial class b : Form
     {
-        public Form2()
+        public b()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var f = new Record();
-            f.Show();
         }
     }
 }

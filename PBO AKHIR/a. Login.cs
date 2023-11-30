@@ -14,8 +14,6 @@ namespace fasilkom_prestasi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form2();
-            f.Show();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class Convertion : Form
+    public partial class Form_Convertion_Mahasiswa : Form
     {
-        public Convertion()
+        public Form_Convertion_Mahasiswa()
         {
             InitializeComponent();
         }
