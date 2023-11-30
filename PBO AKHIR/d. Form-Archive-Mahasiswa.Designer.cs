@@ -29,87 +29,106 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormArchiveMahasiswa));
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
-            kryptonComboBox2 = new Krypton.Toolkit.KryptonComboBox();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox2).BeginInit();
+            tbxNamaLomba = new TextBox();
+            panel1 = new Panel();
+            tbxSertifikat = new TextBox();
+            cbxRegion = new ComboBox();
+            cbxBidang = new ComboBox();
+            cbxTahapan = new ComboBox();
+            cbxDosen = new ComboBox();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // tbxNamaLomba
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(404, 296);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(483, 20);
-            textBox1.TabIndex = 0;
+            tbxNamaLomba.BorderStyle = BorderStyle.None;
+            tbxNamaLomba.Location = new Point(404, 296);
+            tbxNamaLomba.Name = "tbxNamaLomba";
+            tbxNamaLomba.Size = new Size(483, 20);
+            tbxNamaLomba.TabIndex = 0;
             // 
-            // textBox3
+            // panel1
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(404, 491);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(483, 20);
-            textBox3.TabIndex = 2;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(cbxDosen);
+            panel1.Controls.Add(cbxTahapan);
+            panel1.Controls.Add(cbxBidang);
+            panel1.Controls.Add(cbxRegion);
+            panel1.Controls.Add(tbxSertifikat);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1582, 853);
+            panel1.TabIndex = 4;
             // 
-            // textBox4
+            // tbxSertifikat
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Location = new Point(959, 296);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(483, 20);
-            textBox4.TabIndex = 3;
+            tbxSertifikat.BorderStyle = BorderStyle.None;
+            tbxSertifikat.Location = new Point(959, 490);
+            tbxSertifikat.Name = "tbxSertifikat";
+            tbxSertifikat.Size = new Size(483, 20);
+            tbxSertifikat.TabIndex = 5;
             // 
-            // kryptonComboBox1
+            // cbxRegion
             // 
-            kryptonComboBox1.DropDownWidth = 490;
-            kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(404, 391);
-            kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(483, 25);
-            kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kryptonComboBox1.TabIndex = 4;
-            kryptonComboBox1.Text = "kryptonComboBox1";
+            cbxRegion.FlatStyle = FlatStyle.Flat;
+            cbxRegion.FormattingEnabled = true;
+            cbxRegion.Location = new Point(404, 390);
+            cbxRegion.Name = "cbxRegion";
+            cbxRegion.Size = new Size(483, 28);
+            cbxRegion.TabIndex = 6;
             // 
-            // kryptonComboBox2
+            // cbxBidang
             // 
-            kryptonComboBox2.DropDownWidth = 490;
-            kryptonComboBox2.IntegralHeight = false;
-            kryptonComboBox2.Location = new Point(959, 391);
-            kryptonComboBox2.Name = "kryptonComboBox2";
-            kryptonComboBox2.Size = new Size(483, 25);
-            kryptonComboBox2.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kryptonComboBox2.TabIndex = 5;
-            kryptonComboBox2.Text = "kryptonComboBox2";
+            cbxBidang.FlatStyle = FlatStyle.Flat;
+            cbxBidang.FormattingEnabled = true;
+            cbxBidang.Location = new Point(959, 293);
+            cbxBidang.Name = "cbxBidang";
+            cbxBidang.Size = new Size(483, 28);
+            cbxBidang.TabIndex = 7;
+            // 
+            // cbxTahapan
+            // 
+            cbxTahapan.FlatStyle = FlatStyle.Flat;
+            cbxTahapan.FormattingEnabled = true;
+            cbxTahapan.Location = new Point(959, 390);
+            cbxTahapan.Name = "cbxTahapan";
+            cbxTahapan.Size = new Size(483, 28);
+            cbxTahapan.TabIndex = 8;
+            // 
+            // cbxDosen
+            // 
+            cbxDosen.FlatStyle = FlatStyle.Flat;
+            cbxDosen.FormattingEnabled = true;
+            cbxDosen.Location = new Point(404, 487);
+            cbxDosen.Name = "cbxDosen";
+            cbxDosen.Size = new Size(483, 28);
+            cbxDosen.TabIndex = 9;
             // 
             // FormArchiveMahasiswa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(kryptonComboBox2);
-            Controls.Add(kryptonComboBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
+            Controls.Add(tbxNamaLomba);
+            Controls.Add(panel1);
             Name = "FormArchiveMahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormArchiveMahasiswa";
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox2;
+        private TextBox tbxNamaLomba;
+        private Panel panel1;
+        private TextBox tbxSertifikat;
+        private ComboBox cbxDosen;
+        private ComboBox cbxTahapan;
+        private ComboBox cbxBidang;
+        private ComboBox cbxRegion;
     }
 }
