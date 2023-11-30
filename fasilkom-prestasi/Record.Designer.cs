@@ -123,6 +123,7 @@
             dgvPrestasi.RowHeadersVisible = false;
             dgvPrestasi.RowHeadersWidth = 10;
             dgvPrestasi.RowTemplate.Height = 50;
+            dgvPrestasi.RowTemplate.Resizable = DataGridViewTriState.True;
             dgvPrestasi.Size = new Size(1170, 566);
             dgvPrestasi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dgvPrestasi.StateCommon.DataCell.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom;
@@ -208,7 +209,7 @@
             label1.Location = new Point(337, 30);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(128, 50);
+            label1.Size = new Size(127, 49);
             label1.TabIndex = 6;
             label1.Text = "Record";
             // 
