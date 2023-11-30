@@ -36,19 +36,19 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(983, 395);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(487, 27);
+            textBox1.Size = new Size(487, 30);
             textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(983, 534);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(487, 27);
+            textBox2.Size = new Size(487, 30);
             textBox2.TabIndex = 1;
             // 
             // Login

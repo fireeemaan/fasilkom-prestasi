@@ -39,7 +39,7 @@
             // DataValid
             // 
             DataValid.AutoSize = true;
-            DataValid.Location = new Point(516, 249);
+            DataValid.Location = new Point(514, 624);
             DataValid.Name = "DataValid";
             DataValid.Size = new Size(17, 16);
             DataValid.TabIndex = 0;
@@ -49,7 +49,7 @@
             // DataInvalid
             // 
             DataInvalid.AutoSize = true;
-            DataInvalid.Location = new Point(667, 249);
+            DataInvalid.Location = new Point(659, 624);
             DataInvalid.Name = "DataInvalid";
             DataInvalid.Size = new Size(17, 16);
             DataInvalid.TabIndex = 1;
@@ -59,7 +59,7 @@
             // textBox5
             // 
             textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Location = new Point(426, 323);
+            textBox5.Location = new Point(426, 698);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(993, 20);
             textBox5.TabIndex = 5;
@@ -68,11 +68,11 @@
             // 
             kryptonDataGridView1.BorderStyle = BorderStyle.None;
             kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(338, 374);
+            kryptonDataGridView1.Location = new Point(338, 227);
             kryptonDataGridView1.Name = "kryptonDataGridView1";
             kryptonDataGridView1.RowHeadersWidth = 51;
             kryptonDataGridView1.RowTemplate.Height = 29;
-            kryptonDataGridView1.Size = new Size(1170, 355);
+            kryptonDataGridView1.Size = new Size(1170, 341);
             kryptonDataGridView1.TabIndex = 6;
             // 
             // Form_AchievementValidation_Admin
@@ -80,7 +80,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1582, 853);
+            ClientSize = new Size(1566, 853);
             Controls.Add(kryptonDataGridView1);
             Controls.Add(textBox5);
             Controls.Add(DataInvalid);

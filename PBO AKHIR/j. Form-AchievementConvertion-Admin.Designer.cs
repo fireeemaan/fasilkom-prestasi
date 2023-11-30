@@ -31,17 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_10));
             textBox1 = new TextBox();
             kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(681, 532);
+            textBox1.Location = new Point(677, 532);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(484, 20);
+            textBox1.Size = new Size(491, 20);
             textBox1.TabIndex = 7;
             // 
             // kryptonDataGridView1
@@ -55,16 +54,15 @@
             kryptonDataGridView1.Size = new Size(1170, 182);
             kryptonDataGridView1.TabIndex = 8;
             // 
-            // kryptonComboBox1
+            // comboBox1
             // 
-            kryptonComboBox1.DropDownWidth = 490;
-            kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(681, 453);
-            kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(484, 25);
-            kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kryptonComboBox1.TabIndex = 9;
-            kryptonComboBox1.Text = "kryptonComboBox1";
+            comboBox1.FlatStyle = FlatStyle.Flat;
+            comboBox1.ForeColor = Color.Transparent;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(677, 452);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(491, 28);
+            comboBox1.TabIndex = 9;
             // 
             // _10
             // 
@@ -72,14 +70,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(kryptonComboBox1);
+            Controls.Add(comboBox1);
             Controls.Add(kryptonDataGridView1);
             Controls.Add(textBox1);
             Name = "_10";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "_10";
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -87,6 +84,6 @@
         #endregion
         private TextBox textBox1;
         private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private ComboBox comboBox1;
     }
 }
