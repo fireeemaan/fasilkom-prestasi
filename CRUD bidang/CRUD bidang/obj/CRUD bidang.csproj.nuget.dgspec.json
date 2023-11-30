@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CINTA CODING\\KULIAH\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj": {}
+    "D:\\New folder\\tugas akhir elvira\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj": {}
   },
   "projects": {
-    "D:\\CINTA CODING\\KULIAH\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj": {
+    "D:\\New folder\\tugas akhir elvira\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CINTA CODING\\KULIAH\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj",
+        "projectUniqueName": "D:\\New folder\\tugas akhir elvira\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj",
         "projectName": "CRUD bidang",
-        "projectPath": "D:\\CINTA CODING\\KULIAH\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj",
+        "projectPath": "D:\\New folder\\tugas akhir elvira\\CRUD bidang\\CRUD bidang\\CRUD bidang.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\CINTA CODING\\KULIAH\\CRUD bidang\\CRUD bidang\\obj\\",
+        "outputPath": "D:\\New folder\\tugas akhir elvira\\CRUD bidang\\CRUD bidang\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
