@@ -39,7 +39,7 @@
             // 
             UserBox.BorderStyle = BorderStyle.None;
             UserBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            UserBox.Location = new Point(983, 395);
+            UserBox.Location = new Point(983, 393);
             UserBox.Name = "UserBox";
             UserBox.Size = new Size(487, 27);
             UserBox.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             PassBox.BorderStyle = BorderStyle.None;
             PassBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PassBox.Location = new Point(983, 534);
+            PassBox.Location = new Point(983, 532);
             PassBox.Name = "PassBox";
             PassBox.PasswordChar = '*';
             PassBox.Size = new Size(487, 27);
@@ -78,11 +78,11 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(1392, 603);
+            checkBox1.Location = new Point(1338, 601);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
+            checkBox1.Size = new Size(132, 24);
             checkBox1.TabIndex = 3;
-            checkBox1.Text = "checkBox1";
+            checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace fasilkom_prestasi
         public Validation()
         {
             InitializeComponent();
+            dgvValidation.DataSource = PrestasiContext.showAll(2);
+
+        }
+
+        public void setDataSource(DataTable dataTable)
+        {
+            dgvValidation.DataSource = null;
+            dgvValidation.DataSource = dataTable;
+        }
+
+        private void dgvValidation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
