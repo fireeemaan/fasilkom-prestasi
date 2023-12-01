@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using fasilkom_prestasi.App.Context;
+using Krypton.Toolkit;
 using Npgsql;
 
 namespace fasilkom_prestasi.App.Core
@@ -91,6 +93,7 @@ namespace fasilkom_prestasi.App.Core
                 throw new Exception(e.Message);
             }
         }
+
     }
 }
 

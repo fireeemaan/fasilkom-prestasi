@@ -11,7 +11,7 @@ namespace fasilkom_prestasi.App.Models
     internal class M_Mahasiswa
     {
         [Key, ForeignKey("M_Credentials")]
-        public int id { get; set; }
+        public long id { get; set; }
         [Required]
         public string nama { get; set; }
         public string nim { get; set; }

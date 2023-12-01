@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Record));
-            kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
             btnAddAchievement = new Krypton.Toolkit.KryptonButton();
             sidePanel = new Panel();
             btnHome = new Button();
@@ -37,19 +37,30 @@
             panel2 = new Panel();
             btnConvertion = new Krypton.Toolkit.KryptonButton();
             btnArchive = new Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPrestasi).BeginInit();
             SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvPrestasi
             // 
-            kryptonDataGridView1.BorderStyle = BorderStyle.None;
-            kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(338, 227);
-            kryptonDataGridView1.Name = "kryptonDataGridView1";
-            kryptonDataGridView1.RowHeadersWidth = 51;
-            kryptonDataGridView1.RowTemplate.Height = 29;
-            kryptonDataGridView1.Size = new Size(1170, 502);
-            kryptonDataGridView1.TabIndex = 0;
+            dgvPrestasi.AllowUserToAddRows = false;
+            dgvPrestasi.AllowUserToDeleteRows = false;
+            dgvPrestasi.AllowUserToResizeColumns = false;
+            dgvPrestasi.AllowUserToResizeRows = false;
+            dgvPrestasi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPrestasi.BorderStyle = BorderStyle.None;
+            dgvPrestasi.ColumnHeadersHeight = 36;
+            dgvPrestasi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvPrestasi.Location = new Point(338, 227);
+            dgvPrestasi.Name = "dgvPrestasi";
+            dgvPrestasi.RowHeadersVisible = false;
+            dgvPrestasi.RowHeadersWidth = 51;
+            dgvPrestasi.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPrestasi.RowTemplate.Height = 45;
+            dgvPrestasi.Size = new Size(1170, 578);
+            dgvPrestasi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvPrestasi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvPrestasi.TabIndex = 0;
+            dgvPrestasi.CellContentClick += dgvPrestasi_CellContentClick;
             // 
             // btnAddAchievement
             // 
@@ -85,6 +96,7 @@
             btnAddAchievement.StateTracking.Back.Image = (Image)resources.GetObject("btnAddAchievement.StateTracking.Back.Image");
             btnAddAchievement.TabIndex = 6;
             btnAddAchievement.Values.Text = "";
+            btnAddAchievement.Click += btnAddAchievement_Click;
             // 
             // sidePanel
             // 
@@ -218,17 +230,18 @@
             Controls.Add(btnHome);
             Controls.Add(btnRecord);
             Controls.Add(btnAddAchievement);
-            Controls.Add(kryptonDataGridView1);
+            Controls.Add(dgvPrestasi);
             Name = "Record";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
+            Load += Record_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvPrestasi).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
         private Krypton.Toolkit.KryptonButton btnConvertion;
         private Krypton.Toolkit.KryptonButton btnAddAchievement;
         private Panel sidePanel;
