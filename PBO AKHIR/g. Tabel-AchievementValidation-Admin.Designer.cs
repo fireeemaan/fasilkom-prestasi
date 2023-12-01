@@ -29,20 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Validation));
-            kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
+            dgvValidation = new Krypton.Toolkit.KryptonDataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvValidation).BeginInit();
             SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvValidation
             // 
-            kryptonDataGridView1.BorderStyle = BorderStyle.None;
-            kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(338, 227);
-            kryptonDataGridView1.Name = "kryptonDataGridView1";
-            kryptonDataGridView1.RowHeadersWidth = 51;
-            kryptonDataGridView1.RowTemplate.Height = 29;
-            kryptonDataGridView1.Size = new Size(1170, 502);
-            kryptonDataGridView1.TabIndex = 2;
+            dgvValidation.AllowUserToAddRows = false;
+            dgvValidation.AllowUserToDeleteRows = false;
+            dgvValidation.AllowUserToResizeColumns = false;
+            dgvValidation.AllowUserToResizeRows = false;
+            dgvValidation.BorderStyle = BorderStyle.None;
+            dgvValidation.ColumnHeadersHeight = 36;
+            dgvValidation.Location = new Point(338, 227);
+            dgvValidation.Name = "dgvValidation";
+            dgvValidation.ReadOnly = true;
+            dgvValidation.RowHeadersVisible = false;
+            dgvValidation.RowHeadersWidth = 51;
+            dgvValidation.RowTemplate.Height = 29;
+            dgvValidation.Size = new Size(1170, 502);
+            dgvValidation.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvValidation.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvValidation.TabIndex = 2;
+            dgvValidation.CellContentClick += dgvValidation_CellContentClick;
             // 
             // Validation
             // 
@@ -50,16 +59,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(kryptonDataGridView1);
+            Controls.Add(dgvValidation);
             Name = "Validation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormAdmin2";
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvValidation).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonDataGridView dgvValidation;
     }
 }
