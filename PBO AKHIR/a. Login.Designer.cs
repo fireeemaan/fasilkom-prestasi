@@ -39,7 +39,7 @@
             // 
             UserBox.BorderStyle = BorderStyle.None;
             UserBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            UserBox.Location = new Point(983, 395);
+            UserBox.Location = new Point(983, 393);
             UserBox.Name = "UserBox";
             UserBox.Size = new Size(487, 27);
             UserBox.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             PassBox.BorderStyle = BorderStyle.None;
             PassBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            PassBox.Location = new Point(983, 534);
+            PassBox.Location = new Point(983, 532);
             PassBox.Name = "PassBox";
             PassBox.PasswordChar = '*';
             PassBox.Size = new Size(487, 27);
