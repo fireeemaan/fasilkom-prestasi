@@ -36,6 +36,13 @@ namespace fasilkom_prestasi
             deleteButton.Name = "deleteButton";
             deleteButton.UseColumnTextForButtonValue = true;
 
+
+            DataGridViewButtonColumn convertButton = new DataGridViewButtonColumn();
+            deleteButton.HeaderText = "";
+            deleteButton.Text = "Convert";
+            deleteButton.Name = "convertButton";
+            deleteButton.UseColumnTextForButtonValue = true;
+
             dgvPrestasi.Columns.Insert(0, editButton);
             dgvPrestasi.Columns.Insert(1, deleteButton);
 

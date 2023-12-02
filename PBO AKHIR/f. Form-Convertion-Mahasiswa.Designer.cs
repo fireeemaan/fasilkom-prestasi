@@ -29,33 +29,101 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Convertion_Mahasiswa));
-            kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
+            tbxNamaLomba = new TextBox();
+            tbxRegion = new TextBox();
+            tbxTahapan = new TextBox();
+            tbxBidang = new TextBox();
+            tbxNilai = new TextBox();
+            cbxMatkulPilihan = new ComboBox();
+            btnAddConvertion = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // tbxNamaLomba
             // 
-            kryptonDataGridView1.BorderStyle = BorderStyle.None;
-            kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(338, 227);
-            kryptonDataGridView1.Name = "kryptonDataGridView1";
-            kryptonDataGridView1.RowHeadersWidth = 51;
-            kryptonDataGridView1.RowTemplate.Height = 29;
-            kryptonDataGridView1.Size = new Size(1170, 184);
-            kryptonDataGridView1.TabIndex = 2;
+            tbxNamaLomba.BackColor = Color.White;
+            tbxNamaLomba.BorderStyle = BorderStyle.None;
+            tbxNamaLomba.Location = new Point(402, 265);
+            tbxNamaLomba.Name = "tbxNamaLomba";
+            tbxNamaLomba.ReadOnly = true;
+            tbxNamaLomba.Size = new Size(483, 20);
+            tbxNamaLomba.TabIndex = 1;
             // 
-            // kryptonComboBox1
+            // tbxRegion
             // 
-            kryptonComboBox1.DropDownWidth = 490;
-            kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(681, 457);
-            kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(483, 25);
-            kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kryptonComboBox1.TabIndex = 5;
-            kryptonComboBox1.Text = "kryptonComboBox1";
+            tbxRegion.BackColor = Color.White;
+            tbxRegion.BorderStyle = BorderStyle.None;
+            tbxRegion.Location = new Point(402, 362);
+            tbxRegion.Name = "tbxRegion";
+            tbxRegion.ReadOnly = true;
+            tbxRegion.Size = new Size(483, 20);
+            tbxRegion.TabIndex = 2;
+            // 
+            // tbxTahapan
+            // 
+            tbxTahapan.BackColor = Color.White;
+            tbxTahapan.BorderStyle = BorderStyle.None;
+            tbxTahapan.Location = new Point(958, 362);
+            tbxTahapan.Name = "tbxTahapan";
+            tbxTahapan.ReadOnly = true;
+            tbxTahapan.Size = new Size(483, 20);
+            tbxTahapan.TabIndex = 3;
+            // 
+            // tbxBidang
+            // 
+            tbxBidang.BackColor = Color.White;
+            tbxBidang.BorderStyle = BorderStyle.None;
+            tbxBidang.Location = new Point(958, 265);
+            tbxBidang.Name = "tbxBidang";
+            tbxBidang.ReadOnly = true;
+            tbxBidang.Size = new Size(483, 20);
+            tbxBidang.TabIndex = 4;
+            // 
+            // tbxNilai
+            // 
+            tbxNilai.BackColor = Color.White;
+            tbxNilai.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxNilai.Location = new Point(895, 447);
+            tbxNilai.Name = "tbxNilai";
+            tbxNilai.ReadOnly = true;
+            tbxNilai.Size = new Size(54, 52);
+            tbxNilai.TabIndex = 5;
+            tbxNilai.TextAlign = HorizontalAlignment.Center;
+            // 
+            // cbxMatkulPilihan
+            // 
+            cbxMatkulPilihan.FlatStyle = FlatStyle.Flat;
+            cbxMatkulPilihan.FormattingEnabled = true;
+            cbxMatkulPilihan.Location = new Point(682, 576);
+            cbxMatkulPilihan.Name = "cbxMatkulPilihan";
+            cbxMatkulPilihan.Size = new Size(486, 28);
+            cbxMatkulPilihan.TabIndex = 6;
+            // 
+            // btnAddConvertion
+            // 
+            btnAddConvertion.CornerRoundingRadius = 30F;
+            btnAddConvertion.Location = new Point(799, 639);
+            btnAddConvertion.Margin = new Padding(2);
+            btnAddConvertion.MaximumSize = new Size(248, 47);
+            btnAddConvertion.MinimumSize = new Size(248, 47);
+            btnAddConvertion.Name = "btnAddConvertion";
+            btnAddConvertion.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.Size = new Size(248, 47);
+            btnAddConvertion.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddConvertion.StateCommon.Border.Rounding = 30F;
+            btnAddConvertion.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddConvertion.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddConvertion.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddConvertion.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.TabIndex = 23;
+            btnAddConvertion.Values.Text = "Add Convertion";
             // 
             // Form_Convertion_Mahasiswa
             // 
@@ -63,19 +131,28 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(kryptonComboBox1);
-            Controls.Add(kryptonDataGridView1);
+            Controls.Add(btnAddConvertion);
+            Controls.Add(cbxMatkulPilihan);
+            Controls.Add(tbxNilai);
+            Controls.Add(tbxBidang);
+            Controls.Add(tbxTahapan);
+            Controls.Add(tbxRegion);
+            Controls.Add(tbxNamaLomba);
             Name = "Form_Convertion_Mahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form_Convertion_Mahasiswa";
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private TextBox tbxNamaLomba;
+        private TextBox tbxRegion;
+        private TextBox tbxTahapan;
+        private TextBox tbxBidang;
+        private TextBox tbxNilai;
+        private ComboBox cbxMatkulPilihan;
+        private Krypton.Toolkit.KryptonButton btnAddConvertion;
     }
 }
