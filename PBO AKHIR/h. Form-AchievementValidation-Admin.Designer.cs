@@ -38,6 +38,7 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox6 = new TextBox();
+            btnSaveValidation = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
             // textBox5
@@ -122,12 +123,41 @@
             textBox6.Size = new Size(483, 20);
             textBox6.TabIndex = 13;
             // 
+            // btnSaveValidation
+            // 
+            btnSaveValidation.CornerRoundingRadius = 30F;
+            btnSaveValidation.Location = new Point(797, 687);
+            btnSaveValidation.Margin = new Padding(2);
+            btnSaveValidation.MaximumSize = new Size(248, 47);
+            btnSaveValidation.MinimumSize = new Size(248, 47);
+            btnSaveValidation.Name = "btnSaveValidation";
+            btnSaveValidation.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.Size = new Size(248, 47);
+            btnSaveValidation.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnSaveValidation.StateCommon.Border.Rounding = 30F;
+            btnSaveValidation.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnSaveValidation.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnSaveValidation.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSaveValidation.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnSaveValidation.TabIndex = 23;
+            btnSaveValidation.Values.Text = "Save Changes";
+            btnSaveValidation.Click += btnSaveValidation_Click;
+            // 
             // Form_AchievementValidation_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnSaveValidation);
             Controls.Add(textBox4);
             Controls.Add(textBox6);
             Controls.Add(textBox2);
@@ -155,5 +185,6 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox6;
+        private Krypton.Toolkit.KryptonButton btnSaveValidation;
     }
 }
