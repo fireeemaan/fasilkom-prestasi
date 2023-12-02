@@ -39,19 +39,22 @@ namespace fasilkom_prestasi
 
         private void dgvValidation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-             if (e.ColumnIndex == dgvValidation.Columns["validButton"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvValidation.Columns["validButton"].Index && e.RowIndex >= 0)
             {
 
+                long nimValidasi = Convert.ToInt64(dgvValidation.Rows[e.RowIndex].Cells["nim"].Value);
                 int prestasiValidasi = Convert.ToInt32(dgvValidation.Rows[e.RowIndex].Cells["id_prestasi"].Value);
 
-                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi))
+                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi,nimValidasi)) 
                 {
                     this.Hide();
-                    Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi);
-                    formValidasi.ShowDialog();   
+                    Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi);
+                    formValidasi.ShowDialog();
                 }
                 dgvValidation.DataSource = null;
                 dgvValidation.DataSource = PrestasiContext.showAll(2);
+
+                
             }
         }
     }

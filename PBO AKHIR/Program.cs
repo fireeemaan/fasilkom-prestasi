@@ -11,7 +11,7 @@ namespace fasilkom_prestasi
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Validation());
+            Application.Run(new Login());
         }
     }
 }

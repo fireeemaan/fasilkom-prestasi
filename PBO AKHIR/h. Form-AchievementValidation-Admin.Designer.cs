@@ -33,11 +33,11 @@
             rbtnInvalid = new RadioButton();
             rbtnValid = new RadioButton();
             tbxNamaLomba = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox6 = new TextBox();
+            tbxBidang = new TextBox();
+            tbxTahapan = new TextBox();
+            tbxRegion = new TextBox();
+            tbxSertifikat = new TextBox();
+            tbxDosen = new TextBox();
             btnSaveValidation = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
@@ -78,50 +78,50 @@
             tbxNamaLomba.Size = new Size(483, 20);
             tbxNamaLomba.TabIndex = 9;
             // 
-            // textBox1
+            // tbxBidang
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(959, 419);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(483, 20);
-            textBox1.TabIndex = 10;
+            tbxBidang.BorderStyle = BorderStyle.None;
+            tbxBidang.Location = new Point(959, 419);
+            tbxBidang.Name = "tbxBidang";
+            tbxBidang.ReadOnly = true;
+            tbxBidang.Size = new Size(483, 20);
+            tbxBidang.TabIndex = 10;
             // 
-            // textBox2
+            // tbxTahapan
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(959, 516);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(483, 20);
-            textBox2.TabIndex = 12;
+            tbxTahapan.BorderStyle = BorderStyle.None;
+            tbxTahapan.Location = new Point(959, 516);
+            tbxTahapan.Name = "tbxTahapan";
+            tbxTahapan.ReadOnly = true;
+            tbxTahapan.Size = new Size(483, 20);
+            tbxTahapan.TabIndex = 12;
             // 
-            // textBox3
+            // tbxRegion
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(404, 516);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(483, 20);
-            textBox3.TabIndex = 11;
+            tbxRegion.BorderStyle = BorderStyle.None;
+            tbxRegion.Location = new Point(404, 516);
+            tbxRegion.Name = "tbxRegion";
+            tbxRegion.ReadOnly = true;
+            tbxRegion.Size = new Size(483, 20);
+            tbxRegion.TabIndex = 11;
             // 
-            // textBox4
+            // tbxSertifikat
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Location = new Point(959, 613);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(483, 20);
-            textBox4.TabIndex = 14;
+            tbxSertifikat.BorderStyle = BorderStyle.None;
+            tbxSertifikat.Location = new Point(959, 613);
+            tbxSertifikat.Name = "tbxSertifikat";
+            tbxSertifikat.ReadOnly = true;
+            tbxSertifikat.Size = new Size(483, 20);
+            tbxSertifikat.TabIndex = 14;
             // 
-            // textBox6
+            // tbxDosen
             // 
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.Location = new Point(404, 613);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(483, 20);
-            textBox6.TabIndex = 13;
+            tbxDosen.BorderStyle = BorderStyle.None;
+            tbxDosen.Location = new Point(404, 613);
+            tbxDosen.Name = "tbxDosen";
+            tbxDosen.ReadOnly = true;
+            tbxDosen.Size = new Size(483, 20);
+            tbxDosen.TabIndex = 13;
             // 
             // btnSaveValidation
             // 
@@ -149,7 +149,6 @@
             btnSaveValidation.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
             btnSaveValidation.TabIndex = 23;
             btnSaveValidation.Values.Text = "Save Changes";
-            btnSaveValidation.Click += btnSaveValidation_Click;
             // 
             // Form_AchievementValidation_Admin
             // 
@@ -158,11 +157,11 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(btnSaveValidation);
-            Controls.Add(textBox4);
-            Controls.Add(textBox6);
-            Controls.Add(textBox2);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
+            Controls.Add(tbxSertifikat);
+            Controls.Add(tbxDosen);
+            Controls.Add(tbxTahapan);
+            Controls.Add(tbxRegion);
+            Controls.Add(tbxBidang);
             Controls.Add(tbxNamaLomba);
             Controls.Add(textBox5);
             Controls.Add(rbtnInvalid);
@@ -180,11 +179,11 @@
         private RadioButton rbtnInvalid;
         private RadioButton rbtnValid;
         private TextBox tbxNamaLomba;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox6;
+        private TextBox tbxBidang;
+        private TextBox tbxTahapan;
+        private TextBox tbxRegion;
+        private TextBox tbxSertifikat;
+        private TextBox tbxDosen;
         private Krypton.Toolkit.KryptonButton btnSaveValidation;
     }
 }
