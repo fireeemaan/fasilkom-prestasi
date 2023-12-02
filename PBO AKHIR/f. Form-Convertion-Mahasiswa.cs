@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,56 @@ namespace fasilkom_prestasi
 {
     public partial class Form_Convertion_Mahasiswa : Form
     {
-        public Form_Convertion_Mahasiswa()
+        long nim;
+        string idPrestasi;
+
+        public Form_Convertion_Mahasiswa(long nim, string idPrestasiKonversi)
         {
+            this.nim = nim;
+            this.idPrestasi = idPrestasiKonversi;
             InitializeComponent();
+
+            // Prestasi
+            DataTable dataPrestasi = PrestasiContext.show(idPrestasi);
+            tbxNamaLomba.Text = dataPrestasi.Rows[0]["nama_prestasi"].ToString();
+
+            //Region
+            DataTable dataRegion = RegionContext.all();
+            int id_region = int.Parse(dataPrestasi.Rows[0]["id_region"].ToString());
+            tbxRegion.Text = dataRegion.Select($"id = {id_region}")[0]["region"].ToString();
+
+            // Bidang
+            DataTable dataBidang = BidangContext.all();
+            int id_bidang = int.Parse(dataPrestasi.Rows[0]["id_bidang"].ToString());
+            tbxBidang.Text = dataBidang.Select($"id = {id_bidang}")[0]["bidang"].ToString();
+
+            // Tahapan
+            DataTable dataTahapan = TahapanContext.all();
+            int id_tahapan = int.Parse(dataPrestasi.Rows[0]["id_tahapan"].ToString());
+            tbxTahapan.Text = dataTahapan.Select($"id = {id_tahapan}")[0]["tahapan"].ToString();
+
+            // Nilai
+
+            DataTable dataNilai = NilaiContext.getNilai(id_region, id_tahapan);
+            tbxNilai.Text = dataNilai.Rows[0]["nilai"].ToString();
+            
+            // Mata Kuliah
+
+
+
+
+        }
+
+        private void btnBackConvertion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Record record = new Record();
+            record.Show();
+        }
+
+        private void Form_Convertion_Mahasiswa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

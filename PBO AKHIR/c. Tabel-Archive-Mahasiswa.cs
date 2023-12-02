@@ -38,13 +38,14 @@ namespace fasilkom_prestasi
 
 
             DataGridViewButtonColumn convertButton = new DataGridViewButtonColumn();
-            deleteButton.HeaderText = "";
-            deleteButton.Text = "Convert";
-            deleteButton.Name = "convertButton";
-            deleteButton.UseColumnTextForButtonValue = true;
+            convertButton.HeaderText = "";
+            convertButton.Text = "Convert";
+            convertButton.Name = "convertButton";
+            convertButton.UseColumnTextForButtonValue = true;
 
             dgvPrestasi.Columns.Insert(0, editButton);
             dgvPrestasi.Columns.Insert(1, deleteButton);
+            dgvPrestasi.Columns.Insert(2, convertButton);
 
         }
 
@@ -82,7 +83,7 @@ namespace fasilkom_prestasi
             if (e.ColumnIndex == dgvPrestasi.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
 
-                int idPrestasiHapus = Convert.ToInt32(dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+                string idPrestasiHapus = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
                 DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
                 if (message == DialogResult.Yes)
@@ -109,6 +110,27 @@ namespace fasilkom_prestasi
                 }
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+            }
+
+            if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() == "Validated")
+            {
+
+              
+                string idConvertPrestasi = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
+
+                using (Form_Convertion_Mahasiswa convertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi))
+                {
+                    this.Hide();
+                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi);
+                    formConvertPrestasi.ShowDialog();
+                }
+
+                dgvPrestasi.DataSource = null;
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+            }
+            else if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() != "Validated")
+            {
+                MessageBox.Show("Belum Validasi Goblok");
             }
         }
     }

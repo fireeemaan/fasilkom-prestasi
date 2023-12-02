@@ -70,13 +70,13 @@ namespace fasilkom_prestasi.App.Context
             commandExecutor(query, parameters);
         }
 
-        public static void destroy(int id)
+        public static void destroy(string id)
         {
             string query = $"DELETE FROM {table} WHERE id = @id";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id", NpgsqlDbType.Integer) {Value = id},
+                new NpgsqlParameter("@id", NpgsqlDbType.Varchar) {Value = id},
             };
 
             commandExecutor(query, parameters);
