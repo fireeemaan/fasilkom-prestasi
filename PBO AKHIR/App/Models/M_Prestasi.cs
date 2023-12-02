@@ -12,7 +12,7 @@ namespace fasilkom_prestasi.App.Model
     internal class M_Prestasi
     {
         [Key]
-        public int id { get; set; }
+        public string id { get; set; }
         [Required]
         public string nama_prestasi { get; set; }
         public string surat_tugas { get; set; }

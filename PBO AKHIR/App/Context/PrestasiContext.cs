@@ -41,13 +41,13 @@ namespace fasilkom_prestasi.App.Context
             return dataPrestasi;
         }
 
-        public static DataTable show(int id)
+        public static DataTable show(string id)
         {
             string query = $"SELECT * FROM {table} WHERE id = @id";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id", NpgsqlDbType.Integer) { Value = id }
+                new NpgsqlParameter("@id", NpgsqlDbType.Varchar) { Value = id }
             };
             DataTable dataPrestasi = queryExecutor(query, parameters);
             return dataPrestasi;
@@ -94,7 +94,7 @@ namespace fasilkom_prestasi.App.Context
                 new NpgsqlParameter("@id_region", NpgsqlDbType.Integer){Value = prestasiEdit.id_region},
                 new NpgsqlParameter("@id_tahapan", NpgsqlDbType.Integer){Value = prestasiEdit.id_tahapan},
                 new NpgsqlParameter("@id_dosen", NpgsqlDbType.Integer){Value = prestasiEdit.id_dosen},
-                new NpgsqlParameter("@id", NpgsqlDbType.Integer){Value = prestasiEdit.id}
+                new NpgsqlParameter("@id", NpgsqlDbType.Varchar){Value = prestasiEdit.id}
 
             };
 

@@ -90,8 +90,8 @@ namespace fasilkom_prestasi
 
             if (e.ColumnIndex == dgvPrestasi.Columns["editButton"].Index && e.RowIndex >= 0)
             {
-                
-                int idPrestasiUbah = Convert.ToInt32(dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+
+                string idPrestasiUbah = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
 
                 using (FormArchiveMahasiswa editPrestasi = new FormArchiveMahasiswa(222410101000, idPrestasiUbah))
