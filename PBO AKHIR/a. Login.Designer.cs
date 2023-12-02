@@ -96,6 +96,7 @@
             Controls.Add(btnLogin);
             Controls.Add(PassBox);
             Controls.Add(UserBox);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";

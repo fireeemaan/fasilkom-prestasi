@@ -39,6 +39,7 @@
             btnBackConvertion = new Krypton.Toolkit.KryptonButton();
             dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
             tbxSKS = new TextBox();
+            btnAddMK = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).BeginInit();
             SuspendLayout();
             // 
@@ -105,7 +106,7 @@
             cbxMatkulPilihan.FormattingEnabled = true;
             cbxMatkulPilihan.Location = new Point(650, 475);
             cbxMatkulPilihan.Name = "cbxMatkulPilihan";
-            cbxMatkulPilihan.Size = new Size(791, 28);
+            cbxMatkulPilihan.Size = new Size(732, 28);
             cbxMatkulPilihan.TabIndex = 6;
             // 
             // btnAddConvertion
@@ -194,12 +195,27 @@
             tbxSKS.TabIndex = 26;
             tbxSKS.TextAlign = HorizontalAlignment.Center;
             // 
+            // btnAddMK
+            // 
+            btnAddMK.CornerRoundingRadius = 12F;
+            btnAddMK.Location = new Point(1410, 470);
+            btnAddMK.Name = "btnAddMK";
+            btnAddMK.Size = new Size(40, 39);
+            btnAddMK.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddMK.StateCommon.Border.Rounding = 12F;
+            btnAddMK.StateCommon.Content.ShortText.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddMK.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            btnAddMK.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            btnAddMK.TabIndex = 27;
+            btnAddMK.Values.Text = "+";
+            // 
             // Form_Convertion_Mahasiswa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnAddMK);
             Controls.Add(tbxSKS);
             Controls.Add(dgvPrestasi);
             Controls.Add(btnBackConvertion);
@@ -231,5 +247,6 @@
         private Krypton.Toolkit.KryptonButton btnBackConvertion;
         private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
         private TextBox tbxSKS;
+        private Krypton.Toolkit.KryptonButton btnAddMK;
     }
 }
