@@ -227,6 +227,7 @@
             Controls.Add(tbxRegion);
             Controls.Add(tbxNamaLomba);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form_Convertion_Mahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Convertion Mahasiswa";

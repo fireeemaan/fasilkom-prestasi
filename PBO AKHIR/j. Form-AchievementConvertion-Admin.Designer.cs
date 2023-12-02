@@ -76,6 +76,7 @@
             Controls.Add(kryptonDataGridView1);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form_ConvertionValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Achievement Convertion Admin";

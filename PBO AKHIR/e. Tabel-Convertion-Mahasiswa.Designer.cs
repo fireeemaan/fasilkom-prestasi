@@ -52,6 +52,7 @@
             ClientSize = new Size(1582, 853);
             Controls.Add(kryptonDataGridView1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Konversi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tabel Convertion Mahasiswa";
