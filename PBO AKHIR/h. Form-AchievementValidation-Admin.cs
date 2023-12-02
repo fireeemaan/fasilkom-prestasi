@@ -1,4 +1,6 @@
 ﻿using fasilkom_prestasi.App.Context;
+using fasilkom_prestasi.App.Model;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +43,7 @@ namespace fasilkom_prestasi
 
             int id_region = int.Parse(dataPrestasi.Rows[0]["id_region"].ToString());
             tbxRegion.Text = dataRegion.Select($"id = {id_region}")[0]["region"].ToString();
-        
+
 
             int id_tahapan = int.Parse(dataPrestasi.Rows[0]["id_tahapan"].ToString());
             tbxTahapan.Text = dataTahapan.Select($"id = {id_tahapan}")[0]["tahapan"].ToString();
@@ -50,19 +52,67 @@ namespace fasilkom_prestasi
             tbxDosen.Text = dataDosen.Select($"id = {id_dosen}")[0]["nama"].ToString();
 
             string sertifikat = dataPrestasi.Rows[0]["sertifikat"].ToString();
-            tbxSertifikat.Text = sertifikat;   
+            tbxSertifikat.Text = sertifikat;
 
-        
 
-           
 
-            
+
+
+
         }
         private void btnSaveValidation_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void btnBackAchievement_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Validation validation = new Validation(nim);
+            validation.Show();
+        }
 
+        private void btnEditAchievement_Click(object sender, EventArgs e)
+        {
+            var namaPrestasi = tbxNamaLomba.Text;
+            var sertifikat = tbxSertifikat.Text;
+
+
+            // Bidang Selected ID
+
+
+            M_Prestasi prestasiBaru = new M_Prestasi
+            {
+                id = idPrestasi,
+                nama_prestasi = namaPrestasi,
+                sertifikat = sertifikat,
+
+            };
+
+            try
+            {
+                PrestasiContext.update_admin(prestasiBaru);
+                MessageBox.Show("Data Berhasil Diubah");
+
+                
+                this.Close();
+                Validation validation = new Validation(nim);
+                validation.Show();
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error! : {ex}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! : {ex}");
+            }
+
+        }
+
+        private void rbtnValid_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

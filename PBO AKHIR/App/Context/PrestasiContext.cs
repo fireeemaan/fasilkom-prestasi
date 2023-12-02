@@ -119,10 +119,11 @@ namespace fasilkom_prestasi.App.Context
         }
         public static void update_admin(M_Prestasi prestasiValidasi)
         {
-            string query = $"UPDATE {table} SET validated = @validated,surat_tugas = @surat_tugas";
+            string query = $"UPDATE {table} SET validated = @validated,surat_tugas = @surat_tugas WHERE id = @id";
 
             NpgsqlParameter[] parameters =
-{
+            {
+                new NpgsqlParameter("@id", NpgsqlDbType.Varchar){Value = prestasiValidasi.id},
                 new NpgsqlParameter("@validated", NpgsqlDbType.Varchar){Value =  prestasiValidasi.validated},
                 new NpgsqlParameter("@surat_tugas", NpgsqlDbType.Text){Value =  prestasiValidasi.surat_tugas},
 

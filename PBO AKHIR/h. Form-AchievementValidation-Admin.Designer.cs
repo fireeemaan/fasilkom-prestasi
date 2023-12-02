@@ -38,7 +38,9 @@
             tbxRegion = new TextBox();
             tbxSertifikat = new TextBox();
             tbxDosen = new TextBox();
-            btnSaveValidation = new Krypton.Toolkit.KryptonButton();
+            btnBackAchievement = new Krypton.Toolkit.KryptonButton();
+            btnEditAchievement = new Krypton.Toolkit.KryptonButton();
+            radioButton1 = new RadioButton();
             SuspendLayout();
             // 
             // textBox5
@@ -56,7 +58,6 @@
             rbtnInvalid.Name = "rbtnInvalid";
             rbtnInvalid.Size = new Size(17, 16);
             rbtnInvalid.TabIndex = 7;
-            rbtnInvalid.TabStop = true;
             rbtnInvalid.UseVisualStyleBackColor = true;
             // 
             // rbtnValid
@@ -66,8 +67,8 @@
             rbtnValid.Name = "rbtnValid";
             rbtnValid.Size = new Size(17, 16);
             rbtnValid.TabIndex = 6;
-            rbtnValid.TabStop = true;
             rbtnValid.UseVisualStyleBackColor = true;
+            rbtnValid.CheckedChanged += rbtnValid_CheckedChanged;
             // 
             // tbxNamaLomba
             // 
@@ -123,32 +124,70 @@
             tbxDosen.Size = new Size(483, 20);
             tbxDosen.TabIndex = 13;
             // 
-            // btnSaveValidation
+            // btnBackAchievement
             // 
-            btnSaveValidation.CornerRoundingRadius = 30F;
-            btnSaveValidation.Location = new Point(797, 687);
-            btnSaveValidation.Margin = new Padding(2);
-            btnSaveValidation.MaximumSize = new Size(248, 47);
-            btnSaveValidation.MinimumSize = new Size(248, 47);
-            btnSaveValidation.Name = "btnSaveValidation";
-            btnSaveValidation.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.Size = new Size(248, 47);
-            btnSaveValidation.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnSaveValidation.StateCommon.Border.Rounding = 30F;
-            btnSaveValidation.StateCommon.Content.ShortText.Color1 = Color.White;
-            btnSaveValidation.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnSaveValidation.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSaveValidation.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnSaveValidation.TabIndex = 23;
-            btnSaveValidation.Values.Text = "Save Changes";
+            btnBackAchievement.CornerRoundingRadius = 10F;
+            btnBackAchievement.Location = new Point(359, 171);
+            btnBackAchievement.Margin = new Padding(2);
+            btnBackAchievement.MaximumSize = new Size(36, 36);
+            btnBackAchievement.MinimumSize = new Size(36, 36);
+            btnBackAchievement.Name = "btnBackAchievement";
+            btnBackAchievement.OverrideDefault.Back.Color1 = Color.WhiteSmoke;
+            btnBackAchievement.OverrideDefault.Back.Color2 = Color.WhiteSmoke;
+            btnBackAchievement.Size = new Size(36, 36);
+            btnBackAchievement.StateCommon.Back.Color1 = Color.Transparent;
+            btnBackAchievement.StateCommon.Back.Color2 = Color.Transparent;
+            btnBackAchievement.StateCommon.Back.Image = (Image)resources.GetObject("btnBackAchievement.StateCommon.Back.Image");
+            btnBackAchievement.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnBackAchievement.StateCommon.Border.Color1 = Color.White;
+            btnBackAchievement.StateCommon.Border.Color2 = Color.White;
+            btnBackAchievement.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnBackAchievement.StateCommon.Border.Rounding = 10F;
+            btnBackAchievement.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnBackAchievement.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnBackAchievement.TabIndex = 24;
+            btnBackAchievement.Values.Text = "";
+            btnBackAchievement.Click += btnBackAchievement_Click;
+            // 
+            // btnEditAchievement
+            // 
+            btnEditAchievement.CornerRoundingRadius = 30F;
+            btnEditAchievement.Location = new Point(799, 690);
+            btnEditAchievement.Margin = new Padding(2);
+            btnEditAchievement.MaximumSize = new Size(248, 47);
+            btnEditAchievement.MinimumSize = new Size(248, 47);
+            btnEditAchievement.Name = "btnEditAchievement";
+            btnEditAchievement.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.Size = new Size(248, 47);
+            btnEditAchievement.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnEditAchievement.StateCommon.Border.Rounding = 30F;
+            btnEditAchievement.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnEditAchievement.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnEditAchievement.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditAchievement.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditAchievement.TabIndex = 25;
+            btnEditAchievement.Values.Text = "Save Changes";
+            btnEditAchievement.Click += btnEditAchievement_Click;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.BackColor = Color.Transparent;
+            radioButton1.FlatAppearance.BorderSize = 0;
+            radioButton1.FlatStyle = FlatStyle.Flat;
+            radioButton1.Location = new Point(-531, 192);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(16, 15);
+            radioButton1.TabIndex = 26;
+            radioButton1.UseVisualStyleBackColor = false;
             // 
             // Form_AchievementValidation_Admin
             // 
@@ -156,7 +195,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(btnSaveValidation);
+            Controls.Add(radioButton1);
+            Controls.Add(btnEditAchievement);
+            Controls.Add(btnBackAchievement);
             Controls.Add(tbxSertifikat);
             Controls.Add(tbxDosen);
             Controls.Add(tbxTahapan);
@@ -184,6 +225,8 @@
         private TextBox tbxRegion;
         private TextBox tbxSertifikat;
         private TextBox tbxDosen;
-        private Krypton.Toolkit.KryptonButton btnSaveValidation;
+        private Krypton.Toolkit.KryptonButton btnBackAchievement;
+        private Krypton.Toolkit.KryptonButton btnEditAchievement;
+        private RadioButton radioButton1;
     }
 }

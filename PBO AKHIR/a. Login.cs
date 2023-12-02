@@ -62,7 +62,7 @@ namespace fasilkom_prestasi
                 else if (userRole == 2)
                 {
                     this.Hide();
-                    Validation tableValidation = new Validation();
+                    Validation tableValidation = new Validation(username);
                     tableValidation.ShowDialog();
 
                 };

@@ -13,8 +13,10 @@ namespace fasilkom_prestasi
 {
     public partial class Validation : Form
     {
-        public Validation()
+        long nim;
+        public Validation(long nim)
         {
+            this.nim = nim;
             InitializeComponent();
             dgvValidation.DataSource = PrestasiContext.showAll(2);
 
