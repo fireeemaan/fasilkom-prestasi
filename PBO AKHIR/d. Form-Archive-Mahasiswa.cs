@@ -133,7 +133,6 @@ namespace fasilkom_prestasi
         private void btnAddAchievement_Click(object sender, EventArgs e)
         {
             var namaPrestasi = tbxNamaLomba.Text;
-            var nim = 222410101000;
             var sertifikat = tbxSertifikat.Text;
 
 

@@ -33,6 +33,8 @@
             PassBox = new TextBox();
             btnLogin = new Krypton.Toolkit.KryptonButton();
             checkBox1 = new CheckBox();
+            btnFillAdmin = new Button();
+            btnFillMhs = new Button();
             SuspendLayout();
             // 
             // UserBox
@@ -86,12 +88,34 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // btnFillAdmin
+            // 
+            btnFillAdmin.Location = new Point(1116, 759);
+            btnFillAdmin.Name = "btnFillAdmin";
+            btnFillAdmin.Size = new Size(94, 29);
+            btnFillAdmin.TabIndex = 4;
+            btnFillAdmin.Text = "admin";
+            btnFillAdmin.UseVisualStyleBackColor = true;
+            btnFillAdmin.Click += btnFillAdmin_Click;
+            // 
+            // btnFillMhs
+            // 
+            btnFillMhs.Location = new Point(1237, 759);
+            btnFillMhs.Name = "btnFillMhs";
+            btnFillMhs.Size = new Size(94, 29);
+            btnFillMhs.TabIndex = 5;
+            btnFillMhs.Text = "mahasiswa";
+            btnFillMhs.UseVisualStyleBackColor = true;
+            btnFillMhs.Click += btnFillMhs_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnFillMhs);
+            Controls.Add(btnFillAdmin);
             Controls.Add(checkBox1);
             Controls.Add(btnLogin);
             Controls.Add(PassBox);
@@ -111,5 +135,7 @@
         private TextBox PassBox;
         private Krypton.Toolkit.KryptonButton btnLogin;
         private CheckBox checkBox1;
+        private Button btnFillAdmin;
+        private Button btnFillMhs;
     }
 }

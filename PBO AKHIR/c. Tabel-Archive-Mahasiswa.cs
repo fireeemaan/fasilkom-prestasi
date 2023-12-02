@@ -25,7 +25,7 @@ namespace fasilkom_prestasi
             this.userRole = userRole;
 
             InitializeComponent();
-            DataTable dataPrestasi = PrestasiContext.showAll(1);
+            DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
             dgvPrestasi.DataSource = dataPrestasi;
 
@@ -59,7 +59,7 @@ namespace fasilkom_prestasi
         {
             this.nim = nim;
             InitializeComponent();
-            DataTable dataPrestasi = PrestasiContext.showAll(1);
+            DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
             dgvPrestasi.DataSource = dataPrestasi;
 
@@ -100,7 +100,7 @@ namespace fasilkom_prestasi
             this.Hide();
 
 
-            DataTable dataPrestasi = PrestasiContext.showAll(1);
+            DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
             using (FormArchiveMahasiswa addAchievement = new FormArchiveMahasiswa(nim))
             {
@@ -108,7 +108,7 @@ namespace fasilkom_prestasi
                 addAchievementPage.ShowDialog();
             }
             dgvPrestasi.DataSource = null;
-            dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+            dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
         }
 
         private void Record_Load(object sender, EventArgs e)
@@ -132,7 +132,7 @@ namespace fasilkom_prestasi
                 }
 
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
             }
 
             if (e.ColumnIndex == dgvPrestasi.Columns["editButton"].Index && e.RowIndex >= 0)
@@ -148,11 +148,13 @@ namespace fasilkom_prestasi
                     formEditPrestasi.ShowDialog();
                 }
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
             }
 
             if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() == "Validated")
             {
+
+                
 
 
                 string idConvertPrestasi = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
@@ -165,7 +167,7 @@ namespace fasilkom_prestasi
                 }
 
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1);
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
             }
             else if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() != "Validated")
             {

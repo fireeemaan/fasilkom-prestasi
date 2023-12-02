@@ -84,5 +84,17 @@ namespace fasilkom_prestasi
                 PassBox.PasswordChar = '*';
             }
         }
+
+        private void btnFillAdmin_Click(object sender, EventArgs e)
+        {
+            UserBox.Text = 12345678912.ToString();
+            PassBox.Text = "admin";
+        }
+
+        private void btnFillMhs_Click(object sender, EventArgs e)
+        {
+            UserBox.Text = 222410101000.ToString();
+            PassBox.Text = "user";
+        }
     }
 }

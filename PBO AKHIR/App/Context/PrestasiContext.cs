@@ -40,6 +40,30 @@ namespace fasilkom_prestasi.App.Context
             DataTable dataPrestasi = queryExecutor(query);
             return dataPrestasi;
         }
+        public static DataTable showAll(int userRole, long nim)
+        {
+
+            string query = "";
+            if (userRole == 1)
+            {
+                query = $"SELECT {table}.id as id_prestasi, {table}.nama_prestasi, bidang.bidang, region.region, tahapan.tahapan, dosen.nama as nama_dosen, validated " +
+                    $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
+                    $"LEFT JOIN admin ON {table}.id_admin = admin.id WHERE id_mahasiswa = @id_mahasiswa";
+
+
+
+            }
+
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id_Mahasiswa", NpgsqlDbType.Bigint) {Value =  nim }
+            };
+            
+
+            DataTable dataPrestasi = queryExecutor(query, parameters);
+            return dataPrestasi;
+        }
 
         public static DataTable show(string id)
         {

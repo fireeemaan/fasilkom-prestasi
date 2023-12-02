@@ -200,14 +200,35 @@
             btnAddMK.CornerRoundingRadius = 12F;
             btnAddMK.Location = new Point(1410, 470);
             btnAddMK.Name = "btnAddMK";
+            btnAddMK.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMK.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMK.OverrideDefault.Border.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMK.OverrideDefault.Border.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMK.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnAddMK.Size = new Size(40, 39);
+            btnAddMK.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateCommon.Back.Image = (Image)resources.GetObject("btnAddMK.StateCommon.Back.Image");
+            btnAddMK.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnAddMK.StateCommon.Border.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateCommon.Border.Color2 = Color.FromArgb(128, 167, 255);
             btnAddMK.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnAddMK.StateCommon.Border.Rounding = 12F;
             btnAddMK.StateCommon.Content.ShortText.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnAddMK.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             btnAddMK.StateCommon.Content.ShortText.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            btnAddMK.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateNormal.Border.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateNormal.Border.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMK.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddMK.StatePressed.Back.Color1 = Color.FromArgb(124, 161, 246);
+            btnAddMK.StatePressed.Back.Color2 = Color.FromArgb(124, 161, 246);
+            btnAddMK.StatePressed.Border.Color1 = Color.FromArgb(124, 161, 246);
+            btnAddMK.StatePressed.Border.Color2 = Color.FromArgb(124, 161, 246);
+            btnAddMK.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnAddMK.TabIndex = 27;
-            btnAddMK.Values.Text = "+";
+            btnAddMK.Values.Text = "";
             // 
             // Form_Convertion_Mahasiswa
             // 
