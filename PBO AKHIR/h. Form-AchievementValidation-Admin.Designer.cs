@@ -222,6 +222,7 @@
             Controls.Add(rbtnInvalid);
             Controls.Add(rbtnValid);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form_AchievementValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Achievement Validation Admin";

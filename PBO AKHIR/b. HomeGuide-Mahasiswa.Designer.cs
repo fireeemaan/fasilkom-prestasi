@@ -89,6 +89,7 @@
             Controls.Add(btnHome);
             Controls.Add(btnRecord);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "HomeGuide";
             StartPosition = FormStartPosition.CenterScreen;

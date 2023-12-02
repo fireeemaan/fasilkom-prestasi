@@ -62,6 +62,7 @@
             ClientSize = new Size(1582, 853);
             Controls.Add(dgvValidation);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Validation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tabel Achievement Validation Admin";

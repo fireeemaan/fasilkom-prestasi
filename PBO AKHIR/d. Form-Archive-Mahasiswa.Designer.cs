@@ -251,6 +251,7 @@
             Controls.Add(tbxNamaLomba);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormArchiveMahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Archive Mahasiswa";

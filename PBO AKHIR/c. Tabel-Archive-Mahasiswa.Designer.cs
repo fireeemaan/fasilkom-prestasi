@@ -233,6 +233,7 @@
             Controls.Add(btnAddAchievement);
             Controls.Add(dgvPrestasi);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Record";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tabel Archive Mahasiswa";
