@@ -36,6 +36,13 @@ namespace fasilkom_prestasi
             deleteButton.Name = "deleteButton";
             deleteButton.UseColumnTextForButtonValue = true;
 
+
+            DataGridViewButtonColumn convertButton = new DataGridViewButtonColumn();
+            deleteButton.HeaderText = "";
+            deleteButton.Text = "Convert";
+            deleteButton.Name = "convertButton";
+            deleteButton.UseColumnTextForButtonValue = true;
+
             dgvPrestasi.Columns.Insert(0, editButton);
             dgvPrestasi.Columns.Insert(1, deleteButton);
 
@@ -90,8 +97,8 @@ namespace fasilkom_prestasi
 
             if (e.ColumnIndex == dgvPrestasi.Columns["editButton"].Index && e.RowIndex >= 0)
             {
-                
-                int idPrestasiUbah = Convert.ToInt32(dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+
+                string idPrestasiUbah = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
 
                 using (FormArchiveMahasiswa editPrestasi = new FormArchiveMahasiswa(222410101000, idPrestasiUbah))

@@ -16,5 +16,18 @@ namespace fasilkom_prestasi
         {
             InitializeComponent();
         }
+
+        private void HomeGuide_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Record record = new Record();
+            record.Show();
+        }
     }
 }

@@ -16,21 +16,21 @@ namespace fasilkom_prestasi
     public partial class FormArchiveMahasiswa : Form
     {
         long nim;
-        int idPrestasi;
-        public FormArchiveMahasiswa(long nim, int idPrestasi = 0)
+        string idPrestasi;
+        public FormArchiveMahasiswa(long nim, string idPrestasi = null)
         {
             this.idPrestasi = idPrestasi;
 
 
             InitializeComponent();
 
-            if (idPrestasi != 0)
+            if (idPrestasi != null)
             {
                 this.idPrestasi = idPrestasi;
                 btnAddAchievement.Hide();
                 btnEditAchievement.Show();
             }
-            else if (idPrestasi == 0)
+            else if (idPrestasi == null)
             {
                 btnEditAchievement.Hide();
                 btnAddAchievement.Show();
@@ -104,7 +104,7 @@ namespace fasilkom_prestasi
             cbxDosen.DisplayMember = "Value";
 
 
-            if (idPrestasi != 0)
+            if (idPrestasi != null)
             {
                 this.idPrestasi = idPrestasi;
 
@@ -118,7 +118,7 @@ namespace fasilkom_prestasi
                 cbxDosen.SelectedValue = int.Parse(dataPrestasi.Rows[0]["id_dosen"].ToString());
 
             }
-            else if (idPrestasi == 0)
+            else if (idPrestasi == null)
             {
                 cbxBidang.SelectedIndex = -1;
                 cbxRegion.SelectedIndex = -1;
