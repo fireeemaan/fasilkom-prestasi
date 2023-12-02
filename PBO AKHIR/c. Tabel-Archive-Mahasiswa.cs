@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using fasilkom_prestasi.App.Core;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace fasilkom_prestasi
 {
@@ -97,7 +98,7 @@ namespace fasilkom_prestasi
         private void btnAddAchievement_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+
 
             DataTable dataPrestasi = PrestasiContext.showAll(1);
 
@@ -117,7 +118,7 @@ namespace fasilkom_prestasi
 
         private void dgvPrestasi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
             if (e.ColumnIndex == dgvPrestasi.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
 
@@ -153,7 +154,7 @@ namespace fasilkom_prestasi
             if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() == "Validated")
             {
 
-              
+
                 string idConvertPrestasi = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
                 using (Form_Convertion_Mahasiswa convertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi))
@@ -170,6 +171,13 @@ namespace fasilkom_prestasi
             {
                 MessageBox.Show("Belum Validasi Goblok");
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeGuide homeGuide = new HomeGuide(1, nim);
+            homeGuide.ShowDialog();
         }
     }
 }

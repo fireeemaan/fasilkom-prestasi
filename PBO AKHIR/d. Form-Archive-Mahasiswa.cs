@@ -20,6 +20,7 @@ namespace fasilkom_prestasi
         public FormArchiveMahasiswa(long nim, string idPrestasi = null)
         {
             this.idPrestasi = idPrestasi;
+            this.nim = nim;
 
 
             InitializeComponent();
@@ -234,6 +235,13 @@ namespace fasilkom_prestasi
             {
                 MessageBox.Show($"Error! : {ex}");
             }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeGuide homeGuide = new HomeGuide(1, nim);
+            homeGuide.ShowDialog();
         }
     }
 }
