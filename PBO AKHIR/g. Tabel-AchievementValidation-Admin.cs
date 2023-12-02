@@ -18,6 +18,17 @@ namespace fasilkom_prestasi
             InitializeComponent();
             dgvValidation.DataSource = PrestasiContext.showAll(2);
 
+            DataGridViewButtonColumn validButton = new DataGridViewButtonColumn();
+            validButton.HeaderText = "";
+            validButton.Text = "Validasi";
+            validButton.Name = "validButton";
+            validButton.UseColumnTextForButtonValue = true;
+
+
+
+
+            dgvValidation.Columns.Insert(0, validButton);
+
         }
 
         public void setDataSource(DataTable dataTable)
@@ -28,7 +39,20 @@ namespace fasilkom_prestasi
 
         private void dgvValidation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+             if (e.ColumnIndex == dgvValidation.Columns["validButton"].Index && e.RowIndex >= 0)
+            {
 
+                int prestasiValidasi = Convert.ToInt32(dgvValidation.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+
+                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi))
+                {
+                    this.Hide();
+                    Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi);
+                    formValidasi.ShowDialog();   
+                }
+                dgvValidation.DataSource = null;
+                dgvValidation.DataSource = PrestasiContext.showAll(2);
+            }
         }
     }
 }

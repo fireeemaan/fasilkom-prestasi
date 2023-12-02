@@ -12,9 +12,14 @@ namespace fasilkom_prestasi
 {
     public partial class Form_AchievementValidation_Admin : Form
     {
-        public Form_AchievementValidation_Admin()
+        public Form_AchievementValidation_Admin(int id_prestasi)
         {
             InitializeComponent();
+        }
+
+        private void btnSaveValidation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
