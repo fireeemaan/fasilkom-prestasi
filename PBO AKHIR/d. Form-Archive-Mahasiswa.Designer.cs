@@ -250,9 +250,10 @@
             ClientSize = new Size(1582, 853);
             Controls.Add(tbxNamaLomba);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormArchiveMahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormArchiveMahasiswa";
+            Text = "Form Archive Mahasiswa";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

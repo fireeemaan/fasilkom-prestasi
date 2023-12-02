@@ -226,9 +226,10 @@
             Controls.Add(tbxTahapan);
             Controls.Add(tbxRegion);
             Controls.Add(tbxNamaLomba);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form_Convertion_Mahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form_Convertion_Mahasiswa";
+            Text = "Form Convertion Mahasiswa";
             FormClosing += Form_Convertion_Mahasiswa_FormClosing;
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).EndInit();
             ResumeLayout(false);

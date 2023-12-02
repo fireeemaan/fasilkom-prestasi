@@ -61,9 +61,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(dgvValidation);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Validation";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormAdmin2";
+            Text = "Tabel Achievement Validation Admin";
             ((System.ComponentModel.ISupportInitialize)dgvValidation).EndInit();
             ResumeLayout(false);
         }

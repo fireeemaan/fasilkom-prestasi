@@ -232,9 +232,10 @@
             Controls.Add(btnRecord);
             Controls.Add(btnAddAchievement);
             Controls.Add(dgvPrestasi);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Record";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form3";
+            Text = "Tabel Archive Mahasiswa";
             Load += Record_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).EndInit();
             ResumeLayout(false);

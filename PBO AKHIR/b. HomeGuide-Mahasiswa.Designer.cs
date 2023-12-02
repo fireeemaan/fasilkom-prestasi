@@ -88,10 +88,11 @@
             Controls.Add(sidePanel);
             Controls.Add(btnHome);
             Controls.Add(btnRecord);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 4, 3, 4);
             Name = "HomeGuide";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "HomeGuide";
+            Text = "Home Guide";
             Load += HomeGuide_Load;
             ResumeLayout(false);
         }

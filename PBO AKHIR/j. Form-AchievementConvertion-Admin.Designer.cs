@@ -75,9 +75,10 @@
             Controls.Add(kryptonComboBox1);
             Controls.Add(kryptonDataGridView1);
             Controls.Add(textBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form_ConvertionValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ConvertionValidation";
+            Text = "Form Achievement Convertion Admin";
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ResumeLayout(false);
