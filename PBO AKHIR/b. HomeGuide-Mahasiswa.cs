@@ -12,9 +12,14 @@ namespace fasilkom_prestasi
 {
     public partial class HomeGuide : Form
     {
-        public HomeGuide()
+        long nim;
+        int userRole;
+
+        public HomeGuide(int userRole, long nim)
         {
             InitializeComponent();
+            this.nim = nim;
+            this.userRole = userRole;
         }
 
         private void HomeGuide_Load(object sender, EventArgs e)
@@ -26,7 +31,7 @@ namespace fasilkom_prestasi
         {
             this.Hide();
 
-            Record record = new Record();
+            Record record = new Record(userRole, nim);
             record.Show();
         }
     }

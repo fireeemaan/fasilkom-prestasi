@@ -17,7 +17,7 @@ namespace fasilkom_prestasi.App.Context
 
         public static DataTable showAll(int userRole)
         {
-            Console.WriteLine(userRole);
+            
             string query = "";
             if (userRole == 1)
             {

@@ -90,6 +90,7 @@
             Controls.Add(btnRecord);
             Margin = new Padding(3, 4, 3, 4);
             Name = "HomeGuide";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "HomeGuide";
             Load += HomeGuide_Load;
             ResumeLayout(false);

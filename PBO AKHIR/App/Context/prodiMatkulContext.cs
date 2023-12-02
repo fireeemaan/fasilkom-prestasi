@@ -12,10 +12,10 @@ namespace fasilkom_prestasi.App.Context
 {
     internal class prodiMatkulContext : DatabaseWrapper
     {
-        private static string table = "prodiMatkul";
+        private static string table = "\"prodiMatkul\"";
         public static DataTable all(int id_prodi, int id_bidang, int semester)
         {
-            string query = $"SELECT *, matkul.matkul FROM {table} WHERE id_prodi = @id_prodi AND id_bidang = @id_bidang AND semester = @semester";
+            string query = $"SELECT *, matkul.matkul FROM {table} JOIN matkul ON {table}.kd_matkul = matkul.kode WHERE id_prodi = @id_prodi AND id_bidang = @id_bidang AND semester = @semester";
 
             NpgsqlParameter[] parameters =
             {
@@ -27,5 +27,6 @@ namespace fasilkom_prestasi.App.Context
             DataTable dataMatkul = queryExecutor(query, parameters);
             return dataMatkul;
         }
+
     }
 }

@@ -167,7 +167,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Ditambahkan!");
 
                 this.Close();
-                Record record = new Record();
+                Record record = new Record(nim);
                 record.Show();
             }
             catch (NpgsqlException ex)
@@ -183,7 +183,7 @@ namespace fasilkom_prestasi
         private void btnBackAchievement_Click(object sender, EventArgs e)
         {
             this.Close();
-            Record record = new Record();
+            Record record = new Record(nim);
             record.Show();
         }
 
@@ -223,7 +223,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Diubah");
 
                 this.Close();
-                Record record = new Record();
+                Record record = new Record(nim);
                 record.Show();
             }
             catch (NpgsqlException ex)

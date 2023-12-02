@@ -6,17 +6,17 @@ namespace fasilkom_prestasi
 {
     public partial class Login : Form
     {
-        public Login()
-        {
-            InitializeComponent();
-            this.username = username;
-            this.userRole = userRole;
-            this.password = password;
-
-        }
         private long username;
         private string password;
         private int userRole;
+
+        public Login()
+        {
+            InitializeComponent();
+
+
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -48,11 +48,16 @@ namespace fasilkom_prestasi
                 DataTable dataCreditials = LoginContext.show(username);
                 userRole = int.Parse(dataCreditials.Rows[0]["user_role"].ToString());
 
+
                 if (userRole == 1)
                 {
+                    DataTable dataMahasiswa = MahasiswaContext.show(username);
+                    
+
                     this.Hide();
-                    Record tableRecord = new Record();
-                    tableRecord.ShowDialog();
+                    HomeGuide homeGuide = new HomeGuide(1, username);
+                    homeGuide.ShowDialog();
+
                 }
                 else if (userRole == 2)
                 {
@@ -61,6 +66,10 @@ namespace fasilkom_prestasi
                     tableValidation.ShowDialog();
 
                 };
+            }
+            else
+            {
+                MessageBox.Show("Username atau Password anda salah!", "Data Salah", MessageBoxButtons.OK);
             }
         }
 

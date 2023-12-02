@@ -38,6 +38,7 @@
             btnAddConvertion = new Krypton.Toolkit.KryptonButton();
             btnBackConvertion = new Krypton.Toolkit.KryptonButton();
             dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
+            tbxSKS = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvPrestasi).BeginInit();
             SuspendLayout();
             // 
@@ -102,9 +103,9 @@
             // 
             cbxMatkulPilihan.FlatStyle = FlatStyle.Flat;
             cbxMatkulPilihan.FormattingEnabled = true;
-            cbxMatkulPilihan.Location = new Point(529, 475);
+            cbxMatkulPilihan.Location = new Point(650, 475);
             cbxMatkulPilihan.Name = "cbxMatkulPilihan";
-            cbxMatkulPilihan.Size = new Size(912, 28);
+            cbxMatkulPilihan.Size = new Size(791, 28);
             cbxMatkulPilihan.TabIndex = 6;
             // 
             // btnAddConvertion
@@ -180,12 +181,26 @@
             dgvPrestasi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvPrestasi.TabIndex = 25;
             // 
+            // tbxSKS
+            // 
+            tbxSKS.BackColor = Color.White;
+            tbxSKS.BorderStyle = BorderStyle.None;
+            tbxSKS.Enabled = false;
+            tbxSKS.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxSKS.Location = new Point(527, 448);
+            tbxSKS.Name = "tbxSKS";
+            tbxSKS.ReadOnly = true;
+            tbxSKS.Size = new Size(54, 45);
+            tbxSKS.TabIndex = 26;
+            tbxSKS.TextAlign = HorizontalAlignment.Center;
+            // 
             // Form_Convertion_Mahasiswa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(tbxSKS);
             Controls.Add(dgvPrestasi);
             Controls.Add(btnBackConvertion);
             Controls.Add(btnAddConvertion);
@@ -215,5 +230,6 @@
         private Krypton.Toolkit.KryptonButton btnAddConvertion;
         private Krypton.Toolkit.KryptonButton btnBackConvertion;
         private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
+        private TextBox tbxSKS;
     }
 }

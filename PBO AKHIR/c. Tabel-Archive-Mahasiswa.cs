@@ -14,10 +14,15 @@ namespace fasilkom_prestasi
 {
     public partial class Record : Form
     {
+        int userRole;
         long nim;
-        public Record()
+
+        public Record(int userRole, long nim)
         {
-            this.nim = 222410101000;
+            this.nim = nim;
+
+            this.userRole = userRole;
+
             InitializeComponent();
             DataTable dataPrestasi = PrestasiContext.showAll(1);
 
@@ -47,6 +52,39 @@ namespace fasilkom_prestasi
             dgvPrestasi.Columns.Insert(1, deleteButton);
             dgvPrestasi.Columns.Insert(2, convertButton);
 
+        }
+
+        public Record(long nim)
+        {
+            this.nim = nim;
+            InitializeComponent();
+            DataTable dataPrestasi = PrestasiContext.showAll(1);
+
+            dgvPrestasi.DataSource = dataPrestasi;
+
+            DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
+            editButton.HeaderText = "";
+            editButton.Text = "Edit";
+            editButton.Name = "editButton";
+            editButton.UseColumnTextForButtonValue = true;
+
+
+            DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+            deleteButton.HeaderText = "";
+            deleteButton.Text = "Delete";
+            deleteButton.Name = "deleteButton";
+            deleteButton.UseColumnTextForButtonValue = true;
+
+
+            DataGridViewButtonColumn convertButton = new DataGridViewButtonColumn();
+            convertButton.HeaderText = "";
+            convertButton.Text = "Convert";
+            convertButton.Name = "convertButton";
+            convertButton.UseColumnTextForButtonValue = true;
+
+            dgvPrestasi.Columns.Insert(0, editButton);
+            dgvPrestasi.Columns.Insert(1, deleteButton);
+            dgvPrestasi.Columns.Insert(2, convertButton);
         }
 
 
@@ -102,10 +140,10 @@ namespace fasilkom_prestasi
                 string idPrestasiUbah = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
 
-                using (FormArchiveMahasiswa editPrestasi = new FormArchiveMahasiswa(222410101000, idPrestasiUbah))
+                using (FormArchiveMahasiswa editPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah))
                 {
                     this.Hide();
-                    FormArchiveMahasiswa formEditPrestasi = new FormArchiveMahasiswa(222410101000, idPrestasiUbah);
+                    FormArchiveMahasiswa formEditPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah);
                     formEditPrestasi.ShowDialog();
                 }
                 dgvPrestasi.DataSource = null;
