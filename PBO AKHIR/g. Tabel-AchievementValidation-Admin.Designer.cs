@@ -52,6 +52,7 @@
             dgvValidation.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvValidation.TabIndex = 2;
             dgvValidation.CellContentClick += dgvValidation_CellContentClick;
+            dgvValidation.CellContentDoubleClick += dgvValidation_CellContentDoubleClick;
             // 
             // Validation
             // 

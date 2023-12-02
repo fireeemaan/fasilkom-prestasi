@@ -24,6 +24,10 @@ namespace fasilkom_prestasi
             InitializeComponent();
 
 
+
+            
+
+
             // Region
             DataTable dataRegion = RegionContext.all();
 
@@ -37,6 +41,9 @@ namespace fasilkom_prestasi
 
             DataTable dataPrestasi = PrestasiContext.show(idPrestasi);
             tbxNamaLomba.Text = dataPrestasi.Rows[0]["nama_prestasi"].ToString();
+
+            tbxSuratTugas.Text = dataPrestasi.Rows[0]["surat_tugas"].ToString();
+
 
             int id_bidang = int.Parse(dataPrestasi.Rows[0]["id_bidang"].ToString());
             tbxBidang.Text = dataBidang.Select($"id = {id_bidang}")[0]["bidang"].ToString();
@@ -53,6 +60,8 @@ namespace fasilkom_prestasi
 
             string sertifikat = dataPrestasi.Rows[0]["sertifikat"].ToString();
             tbxSertifikat.Text = sertifikat;
+
+           
 
 
 
@@ -74,19 +83,28 @@ namespace fasilkom_prestasi
 
         private void btnEditAchievement_Click(object sender, EventArgs e)
         {
-            var namaPrestasi = tbxNamaLomba.Text;
-            var sertifikat = tbxSertifikat.Text;
+            string statusValidasi = "Process";
 
 
             // Bidang Selected ID
+            if (rbtnValid.Checked)
+            {
+                statusValidasi = "Validated";
+            }
+            else if (rbtnInvalid.Checked)
+            {
+                statusValidasi = "Invalid";
+            }
+
+
+
 
 
             M_Prestasi prestasiBaru = new M_Prestasi
             {
                 id = idPrestasi,
-                nama_prestasi = namaPrestasi,
-                sertifikat = sertifikat,
-
+                surat_tugas = tbxSuratTugas.Text,
+                validated = statusValidasi
             };
 
             try
@@ -94,7 +112,7 @@ namespace fasilkom_prestasi
                 PrestasiContext.update_admin(prestasiBaru);
                 MessageBox.Show("Data Berhasil Diubah");
 
-                
+
                 this.Close();
                 Validation validation = new Validation(nim);
                 validation.Show();

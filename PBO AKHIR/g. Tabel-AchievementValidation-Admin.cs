@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using static System.Net.WebRequestMethods;
 
 namespace fasilkom_prestasi
 {
@@ -47,7 +49,7 @@ namespace fasilkom_prestasi
                 long nimValidasi = Convert.ToInt64(dgvValidation.Rows[e.RowIndex].Cells["nim"].Value.ToString());
                 string prestasiValidasi = dgvValidation.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
-                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi,nimValidasi)) 
+                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi))
                 {
                     this.Hide();
                     Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi);
@@ -56,7 +58,94 @@ namespace fasilkom_prestasi
                 dgvValidation.DataSource = null;
                 dgvValidation.DataSource = PrestasiContext.showAll(2);
 
-                
+
+            }
+
+
+
+
+
+        }
+
+        private void dgvValidation_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvValidation.Columns["surat_tugas"].Index && e.RowIndex >= 0)
+            {
+
+
+                string link = dgvValidation.Rows[e.RowIndex].Cells["surat_tugas"].Value.ToString();
+
+
+                try
+                {
+                    ProcessStartInfo psInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{link}",
+                        UseShellExecute = true
+                    };
+
+                    Process.Start(psInfo);
+                }
+
+
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        ProcessStartInfo psInfo = new ProcessStartInfo
+                        {
+                            FileName = $"https://{link}",
+                            UseShellExecute = true
+                        };
+
+                        Process.Start(psInfo);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Link tidak valid!");
+                    }
+
+
+                }
+            }
+            if (e.ColumnIndex == dgvValidation.Columns["sertifikat"].Index && e.RowIndex >= 0)
+            {
+
+
+                string link = dgvValidation.Rows[e.RowIndex].Cells["sertifikat"].Value.ToString();
+
+
+                try
+                {
+                    ProcessStartInfo psInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{link}",
+                        UseShellExecute = true
+                    };
+
+                    Process.Start(psInfo);
+                }
+
+
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        ProcessStartInfo psInfo = new ProcessStartInfo
+                        {
+                            FileName = $"https://{link}",
+                            UseShellExecute = true
+                        };
+
+                        Process.Start(psInfo);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Link tidak valid!");
+                    }
+
+
+                }
             }
         }
     }

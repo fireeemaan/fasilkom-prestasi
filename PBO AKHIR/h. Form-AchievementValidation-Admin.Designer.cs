@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_AchievementValidation_Admin));
-            textBox5 = new TextBox();
+            tbxSuratTugas = new TextBox();
             rbtnInvalid = new RadioButton();
             rbtnValid = new RadioButton();
             tbxNamaLomba = new TextBox();
@@ -43,13 +43,13 @@
             radioButton1 = new RadioButton();
             SuspendLayout();
             // 
-            // textBox5
+            // tbxSuratTugas
             // 
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Location = new Point(426, 327);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(993, 20);
-            textBox5.TabIndex = 8;
+            tbxSuratTugas.BorderStyle = BorderStyle.None;
+            tbxSuratTugas.Location = new Point(426, 327);
+            tbxSuratTugas.Name = "tbxSuratTugas";
+            tbxSuratTugas.Size = new Size(993, 20);
+            tbxSuratTugas.TabIndex = 8;
             // 
             // rbtnInvalid
             // 
@@ -204,7 +204,7 @@
             Controls.Add(tbxRegion);
             Controls.Add(tbxBidang);
             Controls.Add(tbxNamaLomba);
-            Controls.Add(textBox5);
+            Controls.Add(tbxSuratTugas);
             Controls.Add(rbtnInvalid);
             Controls.Add(rbtnValid);
             Name = "Form_AchievementValidation_Admin";
@@ -216,7 +216,7 @@
 
         #endregion
 
-        private TextBox textBox5;
+        private TextBox tbxSuratTugas;
         private RadioButton rbtnInvalid;
         private RadioButton rbtnValid;
         private TextBox tbxNamaLomba;
