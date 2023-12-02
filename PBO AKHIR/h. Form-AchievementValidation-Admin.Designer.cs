@@ -221,9 +221,10 @@
             Controls.Add(tbxSuratTugas);
             Controls.Add(rbtnInvalid);
             Controls.Add(rbtnValid);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form_AchievementValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form_AchievementValidation_Admin";
+            Text = "Form Achievement Validation Admin";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -51,9 +51,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(kryptonDataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Konversi";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form8";
+            Text = "Tabel Convertion Mahasiswa";
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
             ResumeLayout(false);
         }

@@ -51,9 +51,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(kryptonDataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "KonversiAdmin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormAdmin4";
+            Text = "Tabel Achievement Convertion Admin";
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
             ResumeLayout(false);
         }
