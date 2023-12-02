@@ -49,8 +49,8 @@ namespace fasilkom_prestasi
             int id_dosen = int.Parse(dataPrestasi.Rows[0]["id_dosen"].ToString());
             tbxDosen.Text = dataDosen.Select($"id = {id_dosen}")[0]["nama"].ToString();
 
-            string sertfikat = dataPrestasi.Rows[0]["sertifikat"].ToString();
-            tbxSertifikat.Text = sertfikat;   
+            string sertifikat = dataPrestasi.Rows[0]["sertifikat"].ToString();
+            tbxSertifikat.Text = sertifikat;   
 
         
 
