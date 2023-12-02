@@ -25,7 +25,7 @@ namespace fasilkom_prestasi
 
 
 
-            
+
 
 
             // Region
@@ -61,7 +61,7 @@ namespace fasilkom_prestasi
             string sertifikat = dataPrestasi.Rows[0]["sertifikat"].ToString();
             tbxSertifikat.Text = sertifikat;
 
-           
+
 
 
 

@@ -54,25 +54,29 @@
             // rbtnInvalid
             // 
             rbtnInvalid.AutoSize = true;
+            rbtnInvalid.BackColor = Color.White;
             rbtnInvalid.Location = new Point(658, 251);
             rbtnInvalid.Name = "rbtnInvalid";
             rbtnInvalid.Size = new Size(17, 16);
             rbtnInvalid.TabIndex = 7;
-            rbtnInvalid.UseVisualStyleBackColor = true;
+            rbtnInvalid.UseVisualStyleBackColor = false;
             // 
             // rbtnValid
             // 
             rbtnValid.AutoSize = true;
+            rbtnValid.BackColor = Color.White;
             rbtnValid.Location = new Point(512, 251);
             rbtnValid.Name = "rbtnValid";
             rbtnValid.Size = new Size(17, 16);
             rbtnValid.TabIndex = 6;
-            rbtnValid.UseVisualStyleBackColor = true;
+            rbtnValid.UseVisualStyleBackColor = false;
             rbtnValid.CheckedChanged += rbtnValid_CheckedChanged;
             // 
             // tbxNamaLomba
             // 
+            tbxNamaLomba.BackColor = Color.White;
             tbxNamaLomba.BorderStyle = BorderStyle.None;
+            tbxNamaLomba.Enabled = false;
             tbxNamaLomba.Location = new Point(404, 419);
             tbxNamaLomba.Name = "tbxNamaLomba";
             tbxNamaLomba.ReadOnly = true;
@@ -81,7 +85,9 @@
             // 
             // tbxBidang
             // 
+            tbxBidang.BackColor = Color.White;
             tbxBidang.BorderStyle = BorderStyle.None;
+            tbxBidang.Enabled = false;
             tbxBidang.Location = new Point(959, 419);
             tbxBidang.Name = "tbxBidang";
             tbxBidang.ReadOnly = true;
@@ -90,7 +96,9 @@
             // 
             // tbxTahapan
             // 
+            tbxTahapan.BackColor = Color.White;
             tbxTahapan.BorderStyle = BorderStyle.None;
+            tbxTahapan.Enabled = false;
             tbxTahapan.Location = new Point(959, 516);
             tbxTahapan.Name = "tbxTahapan";
             tbxTahapan.ReadOnly = true;
@@ -99,7 +107,9 @@
             // 
             // tbxRegion
             // 
+            tbxRegion.BackColor = Color.White;
             tbxRegion.BorderStyle = BorderStyle.None;
+            tbxRegion.Enabled = false;
             tbxRegion.Location = new Point(404, 516);
             tbxRegion.Name = "tbxRegion";
             tbxRegion.ReadOnly = true;
@@ -108,7 +118,9 @@
             // 
             // tbxSertifikat
             // 
+            tbxSertifikat.BackColor = Color.White;
             tbxSertifikat.BorderStyle = BorderStyle.None;
+            tbxSertifikat.Enabled = false;
             tbxSertifikat.Location = new Point(959, 613);
             tbxSertifikat.Name = "tbxSertifikat";
             tbxSertifikat.ReadOnly = true;
@@ -117,7 +129,9 @@
             // 
             // tbxDosen
             // 
+            tbxDosen.BackColor = Color.White;
             tbxDosen.BorderStyle = BorderStyle.None;
+            tbxDosen.Enabled = false;
             tbxDosen.Location = new Point(404, 613);
             tbxDosen.Name = "tbxDosen";
             tbxDosen.ReadOnly = true;
