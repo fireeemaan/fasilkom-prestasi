@@ -30,7 +30,7 @@ namespace fasilkom_prestasi.App.Context
             }
             else if (userRole == 2)
             {
-                query = $"SELECT  {table}.id as id_prestasi,{table}.id_mahasiswa, mahasiswa.nama as nama_mahasiswa, {table}.nama_prestasi, bidang.bidang, region.region, tahapan.tahapan, dosen.nama as nama_dosen, validated, admin.nama as nama_admin, {table}.create_at, {table}.update_at " +
+                query = $"SELECT  {table}.id as id_prestasi,{table}.id_mahasiswa as nim, mahasiswa.nama as nama_mahasiswa, {table}.nama_prestasi, bidang.bidang, region.region , tahapan.tahapan, dosen.nama as nama_dosen, validated, admin.nama as nama_admin, {table}.create_at, {table}.update_at " +
                     $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN mahasiswa ON {table}.id_mahasiswa = mahasiswa.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
                     $"LEFT JOIN admin ON {table}.id_admin = admin.id";
 
@@ -53,6 +53,23 @@ namespace fasilkom_prestasi.App.Context
             return dataPrestasi;
 
         }
+
+        public static DataTable show(int id,long nim)
+        {
+            string query = $"SELECT * FROM {table} WHERE id = @id AND id_mahasiswa = @nim";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id", NpgsqlDbType.Integer) { Value = id },
+                new NpgsqlParameter("@nim", NpgsqlDbType.Bigint) {Value = nim }
+                
+            };
+            DataTable dataPrestasi = queryExecutor(query, parameters);
+            return dataPrestasi;
+
+        }
+
+
         public static void store(M_Prestasi prestasiBaru)
         {
             string query = $"INSERT INTO {table}(nama_prestasi, id_mahasiswa, sertifikat, id_bidang, id_region, id_tahapan, id_dosen) VALUES(@nama_prestasi, @id_mahasiswa, @sertifikat, @id_bidang, @id_region, @id_tahapan, @id_dosen)";
@@ -95,6 +112,19 @@ namespace fasilkom_prestasi.App.Context
                 new NpgsqlParameter("@id_tahapan", NpgsqlDbType.Integer){Value = prestasiEdit.id_tahapan},
                 new NpgsqlParameter("@id_dosen", NpgsqlDbType.Integer){Value = prestasiEdit.id_dosen},
                 new NpgsqlParameter("@id", NpgsqlDbType.Varchar){Value = prestasiEdit.id}
+
+            };
+
+            commandExecutor(query, parameters);
+        }
+        public static void update_admin(M_Prestasi prestasiValidasi)
+        {
+            string query = $"UPDATE {table} SET validated = @validated,surat_tugas = @surat_tugas";
+
+            NpgsqlParameter[] parameters =
+{
+                new NpgsqlParameter("@validated", NpgsqlDbType.Varchar){Value =  prestasiValidasi.validated},
+                new NpgsqlParameter("@surat_tugas", NpgsqlDbType.Text){Value =  prestasiValidasi.surat_tugas},
 
             };
 

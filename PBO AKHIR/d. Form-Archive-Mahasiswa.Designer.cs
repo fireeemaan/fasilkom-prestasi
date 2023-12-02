@@ -39,9 +39,9 @@
             btnAddAchievement = new Krypton.Toolkit.KryptonButton();
             cbxDosen = new ComboBox();
             cbxTahapan = new ComboBox();
-            cbxBidang = new ComboBox();
             cbxRegion = new ComboBox();
             tbxSertifikat = new TextBox();
+            cbxBidang = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -216,15 +216,6 @@
             cbxTahapan.Size = new Size(483, 28);
             cbxTahapan.TabIndex = 8;
             // 
-            // cbxBidang
-            // 
-            cbxBidang.FlatStyle = FlatStyle.Flat;
-            cbxBidang.FormattingEnabled = true;
-            cbxBidang.Location = new Point(959, 293);
-            cbxBidang.Name = "cbxBidang";
-            cbxBidang.Size = new Size(483, 28);
-            cbxBidang.TabIndex = 7;
-            // 
             // cbxRegion
             // 
             cbxRegion.FlatStyle = FlatStyle.Flat;
@@ -241,6 +232,15 @@
             tbxSertifikat.Name = "tbxSertifikat";
             tbxSertifikat.Size = new Size(483, 20);
             tbxSertifikat.TabIndex = 5;
+            // 
+            // cbxBidang
+            // 
+            cbxBidang.FlatStyle = FlatStyle.Flat;
+            cbxBidang.FormattingEnabled = true;
+            cbxBidang.Location = new Point(959, 293);
+            cbxBidang.Name = "cbxBidang";
+            cbxBidang.Size = new Size(483, 28);
+            cbxBidang.TabIndex = 7;
             // 
             // FormArchiveMahasiswa
             // 
@@ -265,7 +265,6 @@
         private TextBox tbxSertifikat;
         private ComboBox cbxDosen;
         private ComboBox cbxTahapan;
-        private ComboBox cbxBidang;
         private ComboBox cbxRegion;
         private Krypton.Toolkit.KryptonButton btnAddAchievement;
         private Krypton.Toolkit.KryptonButton btnBackAchievement;
@@ -273,5 +272,6 @@
         private Panel sidePanel;
         private Button btnHome;
         private Button btnRecord;
+        private ComboBox cbxBidang;
     }
 }
