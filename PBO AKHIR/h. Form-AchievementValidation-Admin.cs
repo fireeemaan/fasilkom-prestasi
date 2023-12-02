@@ -63,6 +63,19 @@ namespace fasilkom_prestasi
 
 
 
+            string statusValidasi = dataPrestasi.Rows[0]["validated"].ToString();
+
+            if (statusValidasi == "Validated")
+            {
+                rbtnValid.Checked = true;
+            }
+            else if (statusValidasi == "Invalid")
+            {
+                rbtnInvalid.Checked = true;
+            }
+
+
+
 
 
 
