@@ -42,8 +42,8 @@ namespace fasilkom_prestasi
             if (e.ColumnIndex == dgvValidation.Columns["validButton"].Index && e.RowIndex >= 0)
             {
 
-                long nimValidasi = Convert.ToInt64(dgvValidation.Rows[e.RowIndex].Cells["nim"].Value);
-                int prestasiValidasi = Convert.ToInt32(dgvValidation.Rows[e.RowIndex].Cells["id_prestasi"].Value);
+                long nimValidasi = Convert.ToInt64(dgvValidation.Rows[e.RowIndex].Cells["nim"].Value.ToString());
+                string prestasiValidasi = dgvValidation.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
                 using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi,nimValidasi)) 
                 {

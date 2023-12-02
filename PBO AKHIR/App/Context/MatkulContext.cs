@@ -13,9 +13,10 @@ namespace fasilkom_prestasi.App.Context
     {
         private static string table = "matkul";
 
-        public static DataTable all(int id_prodi, int id_bidang)
-        {
-            string query = $"SELECT * FROM {table} WHERE ";
-        }
+        //public static DataTable all(int id_prodi, int id_bidang)
+        //{
+        //    string query = $"SELECT * FROM {table} WHERE ";
+            
+        //}
     }
 }

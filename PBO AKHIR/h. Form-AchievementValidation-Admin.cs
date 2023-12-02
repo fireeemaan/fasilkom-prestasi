@@ -14,8 +14,8 @@ namespace fasilkom_prestasi
     public partial class Form_AchievementValidation_Admin : Form
     {
         long nim;
-        int idPrestasi;
-        public Form_AchievementValidation_Admin(int idPrestasi, long nim)
+        string idPrestasi;
+        public Form_AchievementValidation_Admin(string idPrestasi, long nim)
         {
             this.nim = nim;
             this.idPrestasi = idPrestasi;
@@ -34,7 +34,6 @@ namespace fasilkom_prestasi
             DataTable dataDosen = DosenContext.all();
 
             DataTable dataPrestasi = PrestasiContext.show(idPrestasi);
-            int id_prestasi = int.Parse(dataPrestasi.Rows[0]["id"].ToString());
             tbxNamaLomba.Text = dataPrestasi.Rows[0]["nama_prestasi"].ToString();
 
             int id_bidang = int.Parse(dataPrestasi.Rows[0]["id_bidang"].ToString());
@@ -50,8 +49,8 @@ namespace fasilkom_prestasi
             int id_dosen = int.Parse(dataPrestasi.Rows[0]["id_dosen"].ToString());
             tbxDosen.Text = dataDosen.Select($"id = {id_dosen}")[0]["nama"].ToString();
 
-            int sertfikat = int.Parse(dataPrestasi.Rows[0]["id"].ToString());
-            tbxSertifikat.Text = dataPrestasi.Select($"id = {sertfikat}")[0]["sertifikat"].ToString();   
+            string sertfikat = dataPrestasi.Rows[0]["sertifikat"].ToString();
+            tbxSertifikat.Text = sertfikat;   
 
         
 
