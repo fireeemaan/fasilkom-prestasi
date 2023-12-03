@@ -15,12 +15,14 @@ namespace fasilkom_prestasi
 {
     public partial class Validation : Form
     {
-        long nim;
-        public Validation(long nim)
+       
+        long id_admin;
+        public Validation(long id_admin)
         {
-            this.nim = nim;
+            this.id_admin = id_admin;
             InitializeComponent();
             dgvValidation.DataSource = PrestasiContext.showAll(2);
+
 
             DataGridViewButtonColumn validButton = new DataGridViewButtonColumn();
             validButton.HeaderText = "";
@@ -48,11 +50,13 @@ namespace fasilkom_prestasi
 
                 long nimValidasi = Convert.ToInt64(dgvValidation.Rows[e.RowIndex].Cells["nim"].Value.ToString());
                 string prestasiValidasi = dgvValidation.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
+                /*string idAdmin = (dgvValidation.Rows[e.RowIndex].Cells["nama_admin"].Value.ToString());*/
 
-                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi))
+
+                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin))
                 {
                     this.Hide();
-                    Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi);
+                    Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin);
                     formValidasi.ShowDialog();
                 }
                 dgvValidation.DataSource = null;

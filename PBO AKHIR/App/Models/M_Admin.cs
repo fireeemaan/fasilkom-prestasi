@@ -8,7 +8,7 @@ namespace fasilkom_prestasi.App.Models
 {
     internal class M_Admin
     {
-        public int id { get; set; }
+        public long id { get; set; }
         public string nama { get; set; }
         public string nip { get; set; }
     }

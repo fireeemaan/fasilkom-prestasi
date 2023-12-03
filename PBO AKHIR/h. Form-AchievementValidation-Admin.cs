@@ -1,10 +1,12 @@
 ﻿using fasilkom_prestasi.App.Context;
 using fasilkom_prestasi.App.Model;
+using fasilkom_prestasi.App.Models;
 using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,13 +17,23 @@ namespace fasilkom_prestasi
 {
     public partial class Form_AchievementValidation_Admin : Form
     {
+        
         long nim;
         string idPrestasi;
-        public Form_AchievementValidation_Admin(string idPrestasi, long nim)
+        long id_admin;
+        
+
+        
+        
+        
+        public Form_AchievementValidation_Admin(string idPrestasi, long nim, long id_admin)
         {
             this.nim = nim;
             this.idPrestasi = idPrestasi;
+            this.id_admin = id_admin;
             InitializeComponent();
+
+           
 
 
 
@@ -117,7 +129,10 @@ namespace fasilkom_prestasi
             {
                 id = idPrestasi,
                 surat_tugas = tbxSuratTugas.Text,
-                validated = statusValidasi
+                validated = statusValidasi,
+                id_admin = id_admin
+                 
+                
             };
 
             try
