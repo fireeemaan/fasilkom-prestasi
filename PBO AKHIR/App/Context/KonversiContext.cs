@@ -39,6 +39,20 @@ namespace fasilkom_prestasi.App.Context
             DataTable dataKonversi = queryExecutor(query, parameters);
             return dataKonversi;
         }
+        public static DataTable allSelected(long nim, string id_prestasi)
+        {
+            string query = $"SELECT * FROM {table} WHERE nim = @nim AND id_prestasi = @id_prestasi AND status = 'Invalid'";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@nim", NpgsqlDbType.Bigint){Value = nim},
+                new NpgsqlParameter("@id_prestasi", NpgsqlDbType.Varchar){Value = id_prestasi}
+            };
+
+            DataTable dataKonversi = queryExecutor(query, parameters);
+            return dataKonversi;
+        }
+
 
         public static DataTable all()
         {

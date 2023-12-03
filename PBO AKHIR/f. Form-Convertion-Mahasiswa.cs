@@ -33,7 +33,9 @@ namespace fasilkom_prestasi
 
             InitializeComponent();
 
-            DataTable dataKonversi = KonversiContext.allSelected(nim);
+            DataTable dataKonversi = KonversiContext.allSelected(nim, idPrestasi);
+
+            //MessageBox.Show($"{KonversiContext.checkData(idPrestasi)}");
 
             if (KonversiContext.checkData(idPrestasi) == 1)
             {
@@ -41,13 +43,13 @@ namespace fasilkom_prestasi
             }
 
 
-
-            dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi_invalid);
+            dgvKonversiMatkul.DataSource = null;
+            dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi);
             dgvKonversiMatkul.Columns["id"].Visible = false;
 
             DataTable dataMahasiswa = MahasiswaContext.show(nim);
 
-            Console.WriteLine(dataMahasiswa.Rows.Count);
+            //Console.WriteLine(dataMahasiswa.Rows.Count);
 
             semester = int.Parse(dataMahasiswa.Rows[0]["semester"].ToString());
             id_prodi = int.Parse(dataMahasiswa.Rows[0]["id_prodi"].ToString());
@@ -128,10 +130,11 @@ namespace fasilkom_prestasi
 
         private void btnAddMK_Click(object sender, EventArgs e)
         {
-
-            DataTable dataProdiMatkul = prodiMatkulContext.all(id_prodi, id_bidang, semester);
-
             KeyValuePair<int, string> selectedMatkul = (KeyValuePair<int, string>)cbxMatkulPilihan.SelectedItem;
+            string namaMatkul = selectedMatkul.Value.ToString();
+
+            DataTable dataProdiMatkul = prodiMatkulContext.all(id_prodi, id_bidang, semester, namaMatkul);
+
             string kdMatkul = dataProdiMatkul.Rows[0]["kd_matkul"].ToString();
             int semesterMK = int.Parse(dataProdiMatkul.Rows[0]["semester"].ToString());
             int sksMK = int.Parse(dataProdiMatkul.Rows[0]["sks"].ToString());
