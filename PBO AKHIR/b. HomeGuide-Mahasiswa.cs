@@ -32,7 +32,7 @@ namespace fasilkom_prestasi
             this.Hide();
 
             Record record = new Record(userRole, nim);
-            record.Show();
+            record.ShowDialog();
         }
     }
 }

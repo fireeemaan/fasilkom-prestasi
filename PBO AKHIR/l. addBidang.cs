@@ -14,59 +14,36 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    
+
     public partial class addBidang : Form
     {
-        
+
         int id_bidang;
         public addBidang()
         {
 
-            
+
             InitializeComponent();
             DataTable dataBidang = BidangContext.all();
+            btnEditBidang.Hide();
 
         }
         public addBidang(int id_bidang)
         {
             this.id_bidang = id_bidang;
 
-            
+
             InitializeComponent();
+            btnAddBidang.Hide();
             DataTable dataBidang = BidangContext.all();
             DataTable Bidang = BidangContext.show(id_bidang);
             tbxNamaBidang.Text = dataBidang.Select($"id = {id_bidang}")[0]["bidang"].ToString();
 
-            var idBidang = tbxNamaBidang.Text;
-            M_Bidang bidangBaru = new M_Bidang
-
-
-            {
-                id = id_bidang,
-                bidang = idBidang
-            };
-
-
-            try
-            {
-                BidangContext.update(bidangBaru);
-           
-
-                this.Close();
-                Bidang bidang = new Bidang();
-                bidang.Show();
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
-            }
         }
-        
-        private void btnAddConvertion_Click(object sender, EventArgs e)
+
+
+
+        private void btnAddBidang_Click(object sender, EventArgs e)
         {
             var namaBidang = tbxNamaBidang.Text;
             M_Bidang bidangBaru = new M_Bidang
@@ -92,6 +69,35 @@ namespace fasilkom_prestasi
             {
                 MessageBox.Show($"Error! : {ex}");
             }
+        }
+
+        private void btnEditBidang_Click(object sender, EventArgs e)
+        {
+            var idBidang = tbxNamaBidang.Text;
+
+            M_Bidang bidangBaru = new M_Bidang
+
+
+            {
+                id = id_bidang,
+                bidang = idBidang
+            };
+            try
+            {
+                BidangContext.update(bidangBaru);
+                this.Close();
+                Bidang bidang = new Bidang();
+                bidang.Show();
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Error! : {ex}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error! : {ex}");
+            }
+
         }
     }
 }

@@ -53,7 +53,7 @@ namespace fasilkom_prestasi.App.Context
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@bidang", NpgsqlDbType.Varchar){Value = bidangBaru.bidang},
-                
+
             };
 
             commandExecutor(query, parameters);
@@ -90,11 +90,12 @@ namespace fasilkom_prestasi.App.Context
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@bidang", NpgsqlDbType.Varchar){Value = bidangEdit.bidang},
+                new NpgsqlParameter("@id", NpgsqlDbType.Integer){Value = bidangEdit.id },
+                new NpgsqlParameter("@bidang", NpgsqlDbType.Varchar) { Value = bidangEdit.bidang }
 
             };
-
             commandExecutor(query, parameters);
-        }
+        }   
+        
     }
 }
