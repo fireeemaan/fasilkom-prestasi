@@ -165,7 +165,7 @@ namespace fasilkom_prestasi
         private void btnValidShow_Click(object sender, EventArgs e)
         {
             dgvValidation.DataSource = null;
-            
+
         }
     }
 }

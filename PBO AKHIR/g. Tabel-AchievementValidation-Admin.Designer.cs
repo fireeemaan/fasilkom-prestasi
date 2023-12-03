@@ -85,7 +85,7 @@
             btnRecord.Name = "btnRecord";
             btnRecord.Size = new Size(232, 48);
             btnRecord.TabIndex = 27;
-            btnRecord.Text = "Record";
+            btnRecord.Text = "Validation";
             btnRecord.UseVisualStyleBackColor = false;
             btnRecord.Click += btnRecord_Click;
             // 
