@@ -61,6 +61,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(panel1);
             Name = "InvalidUsernamePasswordControl";
             Size = new Size(543, 73);
