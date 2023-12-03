@@ -52,7 +52,7 @@ namespace fasilkom_prestasi
                 {
                     this.Hide();
                     Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi, id_admin);
-                    formValidasi.ShowDialog();
+                    formValidasi.Show();
                 }
                 dgvKonversiMatkul.DataSource = null;
                 dgvKonversiMatkul.DataSource = KonversiContext.all() ;

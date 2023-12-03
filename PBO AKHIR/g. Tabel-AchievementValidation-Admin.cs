@@ -57,7 +57,7 @@ namespace fasilkom_prestasi
                 {
                     this.Hide();
                     Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin);
-                    formValidasi.ShowDialog();
+                    formValidasi.Show();
                 }
                 dgvValidation.DataSource = null;
                 dgvValidation.DataSource = PrestasiContext.showAll(2);
@@ -192,7 +192,7 @@ namespace fasilkom_prestasi
         {
             this.Close();
             KonversiAdmin konversi = new KonversiAdmin(id_admin);
-            konversi.ShowDialog();
+            konversi.Show();
         }
     }
 }

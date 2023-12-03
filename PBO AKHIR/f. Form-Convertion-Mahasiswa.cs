@@ -155,18 +155,14 @@ namespace fasilkom_prestasi
 
                 if (dataKonversi.Rows[0]["status"] != "Invalid")
                 {
-                    cbxMatkulPilihan.Enabled = false;
+                    cbxMatkulPilihan.Hide();
                     btnAddMK.Hide();
                     btnAddConvertion.Hide();
                     deleteButton.Visible = false;
                 }
             }
-            
-
 
         }
-        
-
         private void btnBackConvertion_Click(object sender, EventArgs e)
         {
 
@@ -214,10 +210,6 @@ namespace fasilkom_prestasi
                 Record record = new Record(nim);
                 record.Show();
             }
-
-           
-
-
         }
 
         private void Form_Convertion_Mahasiswa_FormClosing(object sender, FormClosingEventArgs e)
@@ -228,8 +220,6 @@ namespace fasilkom_prestasi
         private void btnAddMK_Click(object sender, EventArgs e)
         {
             dgvKonversiMatkul.Columns["id"].Visible = false;
-
-
 
             KeyValuePair<int, string> selectedMatkul = (KeyValuePair<int, string>)cbxMatkulPilihan.SelectedItem;
             string namaMatkul = selectedMatkul.Value.ToString();

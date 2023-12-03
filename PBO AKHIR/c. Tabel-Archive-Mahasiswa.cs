@@ -110,7 +110,7 @@ namespace fasilkom_prestasi
             using (FormArchiveMahasiswa addAchievement = new FormArchiveMahasiswa(nim))
             {
                 FormArchiveMahasiswa addAchievementPage = new FormArchiveMahasiswa(nim);
-                addAchievementPage.ShowDialog();
+                addAchievementPage.Show();
             }
             dgvPrestasi.DataSource = null;
             dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
@@ -151,7 +151,7 @@ namespace fasilkom_prestasi
                 {
                     this.Hide();
                     FormArchiveMahasiswa formEditPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah);
-                    formEditPrestasi.ShowDialog();
+                    formEditPrestasi.Show();
                 }
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = dataPrestasi;
@@ -202,7 +202,7 @@ namespace fasilkom_prestasi
 
                 this.Hide();
                 Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
-                formConvertPrestasi.ShowDialog();
+                formConvertPrestasi.Show();
 
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
@@ -217,14 +217,14 @@ namespace fasilkom_prestasi
         {
             this.Hide();
             HomeGuide homeGuide = new HomeGuide(1, nim);
-            homeGuide.ShowDialog();
+            homeGuide.Show();
         }
 
         private void btnConvertion_Click(object sender, EventArgs e)
         {
             this.Hide();
             Konversi konversi = new Konversi(nim);
-            konversi.ShowDialog();
+            konversi.Show();
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
