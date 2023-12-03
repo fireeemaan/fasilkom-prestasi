@@ -52,12 +52,13 @@
             dgvKonversi.Name = "dgvKonversi";
             dgvKonversi.RowHeadersVisible = false;
             dgvKonversi.RowHeadersWidth = 51;
-            dgvKonversi.RowTemplate.Height = 29;
+            dgvKonversi.RowTemplate.Height = 45;
             dgvKonversi.Size = new Size(1170, 502);
             dgvKonversi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dgvKonversi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvKonversi.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvKonversi.TabIndex = 1;
+            dgvKonversi.CellContentClick += dgvKonversi_CellContentClick;
             // 
             // panel2
             // 

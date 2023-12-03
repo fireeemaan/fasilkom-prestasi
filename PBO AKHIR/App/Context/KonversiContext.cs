@@ -27,9 +27,22 @@ namespace fasilkom_prestasi.App.Context
   
         }
 
+        public static DataTable show(string id_konversi)
+        {
+            string query = $"SELECT * FROM {table} WHERE id = @id_konversi";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Varchar){Value = id_konversi},
+            };
+
+            DataTable dataKonversi = queryExecutor(query, parameters);
+            return dataKonversi;
+        }
+
         public static DataTable allSelected(long nim)
         {
-            string query = $"SELECT {table}.id, prestasi.nama_prestasi, nilai.nilai, {table}.sks_used, {table}.status FROM {table} JOIN prestasi ON {table}.id_prestasi = prestasi.id JOIN nilai ON {table}.id_nilai = nilai.id WHERE nim = @nim";
+            string query = $"SELECT {table}.id, prestasi.id as id_prestasi, prestasi.nama_prestasi, nilai.nilai, {table}.sks_used, {table}.status FROM {table} JOIN prestasi ON {table}.id_prestasi = prestasi.id JOIN nilai ON {table}.id_nilai = nilai.id WHERE nim = @nim";
 
             NpgsqlParameter[] parameters =
             {
