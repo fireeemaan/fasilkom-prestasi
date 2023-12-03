@@ -187,5 +187,12 @@ namespace fasilkom_prestasi
 
             dgvValidation.DataSource = PrestasiContext.showAll(2);
         }
+
+        private void btnConvertion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            KonversiAdmin konversi = new KonversiAdmin(id_admin);
+            konversi.ShowDialog();
+        }
     }
 }

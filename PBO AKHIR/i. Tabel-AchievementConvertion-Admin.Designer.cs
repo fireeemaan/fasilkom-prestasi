@@ -29,39 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KonversiAdmin));
-            kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
+            dgvKonversiMatkul = new Krypton.Toolkit.KryptonDataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvKonversiMatkul).BeginInit();
             SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvKonversiMatkul
             // 
-            kryptonDataGridView1.BorderStyle = BorderStyle.None;
-            kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(338, 227);
-            kryptonDataGridView1.Name = "kryptonDataGridView1";
-            kryptonDataGridView1.RowHeadersWidth = 51;
-            kryptonDataGridView1.RowTemplate.Height = 29;
-            kryptonDataGridView1.Size = new Size(1170, 502);
-            kryptonDataGridView1.TabIndex = 2;
+            dgvKonversiMatkul.AllowUserToAddRows = false;
+            dgvKonversiMatkul.AllowUserToDeleteRows = false;
+            dgvKonversiMatkul.AllowUserToResizeColumns = false;
+            dgvKonversiMatkul.AllowUserToResizeRows = false;
+            dgvKonversiMatkul.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvKonversiMatkul.BorderStyle = BorderStyle.None;
+            dgvKonversiMatkul.ColumnHeadersHeight = 36;
+            dgvKonversiMatkul.Location = new Point(337, 227);
+            dgvKonversiMatkul.Name = "dgvKonversiMatkul";
+            dgvKonversiMatkul.ReadOnly = true;
+            dgvKonversiMatkul.RowHeadersVisible = false;
+            dgvKonversiMatkul.RowHeadersWidth = 51;
+            dgvKonversiMatkul.RowTemplate.Height = 29;
+            dgvKonversiMatkul.Size = new Size(1170, 502);
+            dgvKonversiMatkul.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvKonversiMatkul.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvKonversiMatkul.TabIndex = 3;
+            dgvKonversiMatkul.CellContentClick += dgvValidation_CellContentClick;
             // 
             // KonversiAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(kryptonDataGridView1);
+            Controls.Add(dgvKonversiMatkul);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "KonversiAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tabel Achievement Convertion Admin";
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKonversiMatkul).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonDataGridView dgvKonversiMatkul;
     }
 }
