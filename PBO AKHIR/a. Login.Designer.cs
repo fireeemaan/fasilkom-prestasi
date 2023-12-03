@@ -35,6 +35,7 @@
             checkBox1 = new CheckBox();
             btnFillAdmin = new Button();
             btnFillMhs = new Button();
+            invalidUsernamePasswordControl1 = new InvalidUsernamePasswordControl();
             SuspendLayout();
             // 
             // UserBox
@@ -108,12 +109,21 @@
             btnFillMhs.UseVisualStyleBackColor = true;
             btnFillMhs.Click += btnFillMhs_Click;
             // 
+            // invalidUsernamePasswordControl1
+            // 
+            invalidUsernamePasswordControl1.Location = new Point(942, 43);
+            invalidUsernamePasswordControl1.Name = "invalidUsernamePasswordControl1";
+            invalidUsernamePasswordControl1.Size = new Size(543, 73);
+            invalidUsernamePasswordControl1.TabIndex = 6;
+            invalidUsernamePasswordControl1.Load += invalidUsernamePasswordControl1_Load;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(invalidUsernamePasswordControl1);
             Controls.Add(btnFillMhs);
             Controls.Add(btnFillAdmin);
             Controls.Add(checkBox1);
@@ -137,5 +147,6 @@
         private CheckBox checkBox1;
         private Button btnFillAdmin;
         private Button btnFillMhs;
+        private InvalidUsernamePasswordControl invalidUsernamePasswordControl1;
     }
 }

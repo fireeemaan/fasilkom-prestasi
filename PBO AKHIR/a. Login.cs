@@ -1,6 +1,8 @@
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Data;
 using fasilkom_prestasi.App.Context;
+using System.Threading;
+
 
 namespace fasilkom_prestasi
 {
@@ -13,6 +15,7 @@ namespace fasilkom_prestasi
         public Login()
         {
             InitializeComponent();
+            invalidUsernamePasswordControl1.Hide();
 
 
         }
@@ -37,39 +40,51 @@ namespace fasilkom_prestasi
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            username = long.Parse(UserBox.Text);
-            password = PassBox.Text;
-
-            var loginstatus = LoginContext.login(username, password);
-
-
-            if (loginstatus == 1)
+            try
             {
-                DataTable dataCreditials = LoginContext.show(username);
-                userRole = int.Parse(dataCreditials.Rows[0]["user_role"].ToString());
 
 
-                if (userRole == 1)
+                username = long.Parse(UserBox.Text);
+                password = PassBox.Text;
+
+                var loginstatus = LoginContext.login(username, password);
+
+
+                if (loginstatus == 1)
                 {
-                    DataTable dataMahasiswa = MahasiswaContext.show(username);
+                    DataTable dataCreditials = LoginContext.show(username);
+                    userRole = int.Parse(dataCreditials.Rows[0]["user_role"].ToString());
 
 
-                    this.Hide();
-                    HomeGuide homeGuide = new HomeGuide(1, username);
-                    homeGuide.ShowDialog();
+                    if (userRole == 1)
+                    {
+                        DataTable dataMahasiswa = MahasiswaContext.show(username);
 
+
+                        this.Hide();
+                        HomeGuide homeGuide = new HomeGuide(1, username);
+                        homeGuide.ShowDialog();
+
+                    }
+                    else if (userRole == 2)
+                    {
+                        this.Hide();
+                        Validation tableValidation = new Validation(username);
+                        tableValidation.ShowDialog();
+
+                    };
                 }
-                else if (userRole == 2)
+                else
                 {
-                    this.Hide();
-                    Validation tableValidation = new Validation(username);
-                    tableValidation.ShowDialog();
-
-                };
+                    invalidUsernamePasswordControl1.Show();
+                    invalidUsernamePasswordControl1.Hide();
+                    //MessageBox.Show("Username atau Password anda salah!", "Data Salah", MessageBoxButtons.OK);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Username atau Password anda salah!", "Data Salah", MessageBoxButtons.OK);
+                invalidUsernamePasswordControl1.Show();
+                invalidUsernamePasswordControl1.Hide();
             }
         }
 
@@ -95,6 +110,11 @@ namespace fasilkom_prestasi
         {
             UserBox.Text = 222410101000.ToString();
             PassBox.Text = "user";
+        }
+
+        private void invalidUsernamePasswordControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
