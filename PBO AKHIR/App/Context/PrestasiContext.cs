@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using fasilkom_prestasi.App.Model;
+using System.Collections;
 
 namespace fasilkom_prestasi.App.Context
 {
@@ -156,7 +157,10 @@ namespace fasilkom_prestasi.App.Context
             };
 
             commandExecutor(query, parameters);
+
         }
+
+       
     }
 }
     

@@ -15,7 +15,7 @@ namespace fasilkom_prestasi
 {
     public partial class Validation : Form
     {
-       
+
         long id_admin;
         public Validation(long id_admin)
         {
@@ -151,6 +151,21 @@ namespace fasilkom_prestasi
 
                 }
             }
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sidePanel_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void btnValidShow_Click(object sender, EventArgs e)
+        {
+            dgvValidation.DataSource = null;
+            
         }
     }
 }
