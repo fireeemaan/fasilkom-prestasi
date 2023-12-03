@@ -66,6 +66,20 @@ namespace fasilkom_prestasi.App.Context
             return dataPrestasi;
         }
 
+        public static DataTable showPrestasiKonversi(string id_konversi)
+        {
+            string query = $"SELECT * FROM {table} JOIN konversi ON {table}.id = konversi.id_prestasi WHERE konversi.id = @id_konversi";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Varchar) { Value = id_konversi }
+            };
+            DataTable dataPrestasi = queryExecutor(query, parameters);
+            return dataPrestasi;
+
+        }
+
+
         public static DataTable show(string id)
         {
             string query = $"SELECT * FROM {table} WHERE id = @id";

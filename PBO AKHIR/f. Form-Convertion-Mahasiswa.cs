@@ -30,11 +30,11 @@ namespace fasilkom_prestasi
 
 
 
-        public Form_Convertion_Mahasiswa(long nim, string idPrestasiKonversi, string idKonversiInvalid)
+        public Form_Convertion_Mahasiswa(long nim, string idPrestasi, string idKonversi)
         {
             this.nim = nim;
-            this.idPrestasi = idPrestasiKonversi;
-            id_konversi_invalid = idKonversiInvalid;
+            this.idPrestasi = idPrestasi;
+            id_konversi_invalid = idKonversi;
 
             InitializeComponent();
 
@@ -50,17 +50,25 @@ namespace fasilkom_prestasi
             DataTable dataKonversi = KonversiContext.allSelected(nim, idPrestasi);
 
 
-
-
-
             if (KonversiContext.checkData(idPrestasi) == 1)
             {
                 id_konversi = dataKonversi.Rows[0]["id"].ToString();
             }
 
+            DataTable dataKonversiMatkul = null;
 
+            
+            if (id_konversi != null)
+            {
+                dataKonversiMatkul = KonversiMatkulContext.show(id_konversi);
+            }
+            else
+            {
+                dataKonversiMatkul = KonversiMatkulContext.show(id_konversi_invalid);
+            }
+
+            //DataTable dataKonversiMatkul = KonversiMatkulContext.show(id_konversi_invalid);
             dgvKonversiMatkul.DataSource = null;
-            DataTable dataKonversiMatkul = KonversiMatkulContext.show(id_konversi);
             dgvKonversiMatkul.DataSource = dataKonversiMatkul;
 
 
@@ -140,7 +148,24 @@ namespace fasilkom_prestasi
             cbxMatkulPilihan.ValueMember = "Key";
             cbxMatkulPilihan.DisplayMember = "Value";
 
+
+            if (id_konversi_invalid != null)
+            {
+                dataKonversi = KonversiContext.show(id_konversi_invalid);
+
+                if (dataKonversi.Rows[0]["status"] != "Invalid")
+                {
+                    cbxMatkulPilihan.Enabled = false;
+                    btnAddMK.Hide();
+                    btnAddConvertion.Hide();
+                    deleteButton.Visible = false;
+                }
+            }
+            
+
+
         }
+        
 
         private void btnBackConvertion_Click(object sender, EventArgs e)
         {
@@ -164,17 +189,35 @@ namespace fasilkom_prestasi
                 {
 
                 }
-
-
-
             }
 
+            if (id_konversi_invalid != null)
+            {
+                DataTable dataKonversi = KonversiContext.show(id_konversi_invalid);
+
+                if (dataKonversi.Rows[0]["status"] != "Invalid")
+                {
+                    this.Close();
+                    Konversi konversi = new Konversi(nim);
+                    konversi.Show();
+                }
+                else if (dataKonversi.Rows[0]["status"] == "Invalid")
+                {
+                    this.Close();
+                    Record record = new Record(nim);
+                    record.Show();
+                }
+            }
+            else
+            {
+                this.Close();
+                Record record = new Record(nim);
+                record.Show();
+            }
+
+           
 
 
-
-            this.Close();
-            Record record = new Record(nim);
-            record.Show();
         }
 
         private void Form_Convertion_Mahasiswa_FormClosing(object sender, FormClosingEventArgs e)

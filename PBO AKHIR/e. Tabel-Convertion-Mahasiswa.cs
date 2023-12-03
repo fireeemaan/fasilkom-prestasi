@@ -14,10 +14,20 @@ namespace fasilkom_prestasi
     public partial class Konversi : Form
     {
         long nim;
+        
         public Konversi(long nim)
         {
             this.nim = nim;
             InitializeComponent();
+
+            DataGridViewButtonColumn detailButton = new DataGridViewButtonColumn();
+            detailButton.HeaderText = "";
+            detailButton.Text = "Detail";
+            detailButton.Name = "detailButton";
+            detailButton.UseColumnTextForButtonValue = true;
+
+            dgvKonversi.Columns.Insert(0, detailButton);
+
 
             DataTable dataKonversi = KonversiContext.allSelected(nim);
             dgvKonversi.DataSource = dataKonversi;
@@ -39,6 +49,30 @@ namespace fasilkom_prestasi
             this.Hide();
             HomeGuide homeGuide = new HomeGuide(1, nim);
             homeGuide.ShowDialog();
+        }
+
+        private void dgvKonversi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvKonversi.Columns["detailButton"].Index && e.RowIndex >= 0)
+            {
+                DataTable dataKonversi = KonversiContext.allSelected(nim);
+
+
+
+                string idKonversiDetail = dgvKonversi.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                DataTable dataPrestasi = PrestasiContext.showPrestasiKonversi(idKonversiDetail);
+
+                string idPrestasi = dataPrestasi.Rows[0]["id"].ToString();
+
+
+                this.Hide();
+                Form_Convertion_Mahasiswa formKonversiMhs = new Form_Convertion_Mahasiswa(nim, idPrestasi, idKonversiDetail);
+                formKonversiMhs.ShowDialog();
+
+
+
+
+            }
         }
     }
 }
