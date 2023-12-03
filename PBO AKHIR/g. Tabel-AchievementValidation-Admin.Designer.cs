@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Validation));
             dgvValidation = new Krypton.Toolkit.KryptonDataGridView();
             sidePanel = new Panel();
-            btnRecord = new Button();
             btnArchive = new Krypton.Toolkit.KryptonButton();
             btnValidShow = new Krypton.Toolkit.KryptonButton();
             btnInvalidShow = new Krypton.Toolkit.KryptonButton();
@@ -72,23 +71,6 @@
             sidePanel.TabIndex = 26;
             sidePanel.Paint += sidePanel_Paint;
             // 
-            // btnRecord
-            // 
-            btnRecord.BackColor = Color.White;
-            btnRecord.FlatAppearance.BorderSize = 0;
-            btnRecord.FlatStyle = FlatStyle.Flat;
-            btnRecord.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRecord.Image = (Image)resources.GetObject("btnRecord.Image");
-            btnRecord.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRecord.Location = new Point(11, 159);
-            btnRecord.Margin = new Padding(2);
-            btnRecord.Name = "btnRecord";
-            btnRecord.Size = new Size(232, 48);
-            btnRecord.TabIndex = 27;
-            btnRecord.Text = "Record";
-            btnRecord.UseVisualStyleBackColor = false;
-            btnRecord.Click += btnRecord_Click;
-            // 
             // btnArchive
             // 
             btnArchive.CornerRoundingRadius = 10F;
@@ -121,6 +103,7 @@
             btnArchive.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnArchive.TabIndex = 28;
             btnArchive.Values.Text = "Process";
+            btnArchive.Click += btnArchive_Click;
             // 
             // btnValidShow
             // 
@@ -188,6 +171,7 @@
             btnInvalidShow.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnInvalidShow.TabIndex = 30;
             btnInvalidShow.Values.Text = "Invalid";
+            btnInvalidShow.Click += btnInvalidShow_Click;
             // 
             // Validation
             // 
@@ -199,7 +183,6 @@
             Controls.Add(btnValidShow);
             Controls.Add(btnArchive);
             Controls.Add(sidePanel);
-            Controls.Add(btnRecord);
             Controls.Add(dgvValidation);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -214,7 +197,6 @@
 
         private Krypton.Toolkit.KryptonDataGridView dgvValidation;
         private Panel sidePanel;
-        private Button btnRecord;
         private Krypton.Toolkit.KryptonButton btnArchive;
         private Krypton.Toolkit.KryptonButton btnValidShow;
         private Krypton.Toolkit.KryptonButton btnInvalidShow;

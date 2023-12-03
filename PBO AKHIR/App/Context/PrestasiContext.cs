@@ -160,6 +160,28 @@ namespace fasilkom_prestasi.App.Context
 
         }
 
+
+        public static DataTable showsorted(string clicked)
+        {
+            string query = "";
+            if (clicked == "Valid")
+            {
+                query = $"SELECT  {table}.id as id_prestasi,{table}.id_mahasiswa as nim, mahasiswa.nama as nama_mahasiswa, {table}.nama_prestasi, bidang.bidang, region.region , tahapan.tahapan, {table}.sertifikat, dosen.nama as nama_dosen, {table}.surat_tugas,  validated, admin.nama as nama_admin, {table}.create_at, {table}.update_at " +
+                   $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN mahasiswa ON {table}.id_mahasiswa = mahasiswa.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
+                   $"LEFT JOIN admin ON {table}.id_admin = admin.id WHERE validated = 'Validated'";
+
+            }
+            else if (clicked == "Invalid")
+            {
+                query = $"SELECT  {table}.id as id_prestasi,{table}.id_mahasiswa as nim, mahasiswa.nama as nama_mahasiswa, {table}.nama_prestasi, bidang.bidang, region.region , tahapan.tahapan, {table}.sertifikat, dosen.nama as nama_dosen, {table}.surat_tugas,  validated, admin.nama as nama_admin, {table}.create_at, {table}.update_at " +
+                                   $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN mahasiswa ON {table}.id_mahasiswa = mahasiswa.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
+                                   $"LEFT JOIN admin ON {table}.id_admin = admin.id WHERE validated = 'Invalid'";
+            }
+
+            DataTable dataPrestasi = queryExecutor(query);
+            return dataPrestasi;
+        }
+
        
     }
 }

@@ -218,7 +218,7 @@
             btnArchive.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnArchive.TabIndex = 11;
             btnArchive.Values.Text = "Archive";
-            btnArchive.Click += btnArchive_Click;
+            
             // 
             // Record
             // 

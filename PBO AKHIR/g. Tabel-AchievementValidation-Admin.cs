@@ -164,8 +164,28 @@ namespace fasilkom_prestasi
 
         private void btnValidShow_Click(object sender, EventArgs e)
         {
+
             dgvValidation.DataSource = null;
-            
+
+            dgvValidation.DataSource = PrestasiContext.showsorted("Valid");
+
+
+
+        }
+
+        private void btnInvalidShow_Click(object sender, EventArgs e)
+        {
+            dgvValidation.DataSource = null;
+
+            dgvValidation.DataSource = PrestasiContext.showsorted("Invalid");
+        }
+
+        private void btnArchive_Click(object sender, EventArgs e)
+        {
+
+            dgvValidation.DataSource = null;
+
+            dgvValidation.DataSource = PrestasiContext.showAll(2);
         }
     }
 }

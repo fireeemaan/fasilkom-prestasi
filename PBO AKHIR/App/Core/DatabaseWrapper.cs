@@ -58,6 +58,8 @@ namespace fasilkom_prestasi.App.Core
                 throw new Exception(e.Message);
             }
         }
+
+        
         public static int queryExecutorInt(string query, NpgsqlParameter[] parameters = null)
         {
             try
