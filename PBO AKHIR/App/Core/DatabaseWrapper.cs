@@ -24,7 +24,7 @@ namespace fasilkom_prestasi.App.Core
         // Method Untuk Open & Close Koneksi Database
         public static void openConnection()
         {
-            connection = new NpgsqlConnection($"Host={DB_HOST};Username={DB_USERNAME};Password={DB_PASSWORD};Database={DB_DATABASE};Port={DB_PORT}");
+            connection = new NpgsqlConnection($"Host={DB_HOST};Username={DB_USERNAME};Password={DB_PASSWORD};Database={DB_DATABASE};Port={DB_PORT};Include Error Detail=true");
             connection.Open();
             command = new NpgsqlCommand();
             command.Connection = connection;
@@ -58,6 +58,39 @@ namespace fasilkom_prestasi.App.Core
                 throw new Exception(e.Message);
             }
         }
+        public static int queryExecutorInt(string query, NpgsqlParameter[] parameters = null)
+        {
+            try
+            {
+                openConnection();
+                command.CommandText = query;
+
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                    command.Prepare();
+                }
+
+                // ExecuteScalar is used for queries that return a single value
+                object resultObj = command.ExecuteScalar();
+
+                // Check if the result is not null before converting to int
+                if (resultObj != null && int.TryParse(resultObj.ToString(), out int result))
+                {
+                    return result;
+                }
+
+                closeConnection();
+
+                // Return a default value or throw an exception based on your requirements
+                return 0; // Default value or throw an exception
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
 
         // Method Command Wrapper
         public static void commandExecutor(string query, NpgsqlParameter[] parameters = null)

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using fasilkom_prestasi.App.Core;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using fasilkom_prestasi.App.Models;
+using fasilkom_prestasi.App.Model;
+using Npgsql;
 
 namespace fasilkom_prestasi
 {
@@ -17,6 +20,8 @@ namespace fasilkom_prestasi
     {
         int userRole;
         long nim;
+
+        int idKonversiInvalid = 0;
 
         public Record(int userRole, long nim)
         {
@@ -118,6 +123,7 @@ namespace fasilkom_prestasi
 
         private void dgvPrestasi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
             if (e.ColumnIndex == dgvPrestasi.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
@@ -132,7 +138,7 @@ namespace fasilkom_prestasi
                 }
 
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                dgvPrestasi.DataSource = dataPrestasi;
             }
 
             if (e.ColumnIndex == dgvPrestasi.Columns["editButton"].Index && e.RowIndex >= 0)
@@ -148,21 +154,55 @@ namespace fasilkom_prestasi
                     formEditPrestasi.ShowDialog();
                 }
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                dgvPrestasi.DataSource = dataPrestasi;
             }
 
             if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() == "Validated")
             {
 
-                
-
-
                 string idConvertPrestasi = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
-                using (Form_Convertion_Mahasiswa convertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi))
+                DataTable selectedDataPrestasi = PrestasiContext.show(idConvertPrestasi);
+                int idRegion = int.Parse(selectedDataPrestasi.Rows[0]["id_region"].ToString());
+                int idTahapan = int.Parse(selectedDataPrestasi.Rows[0]["id_tahapan"].ToString());
+                
+                DataTable dataNilai = NilaiContext.getNilai(idRegion, idTahapan);
+                int idNilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
+
+                DataTable dataKonversi = KonversiContext.all();
+
+                DataTable dataKonversiMatkul = KonversiMatkulContext.all();
+
+                M_Konversi konversiBaru = new M_Konversi
+                {
+                    id_prestasi = idConvertPrestasi,
+                    nim = this.nim,
+                    id_nilai = idNilai
+                };
+
+                DataTable dataKonversiSelected = KonversiContext.allSelected(nim);
+
+                int rowsCountKonversi = KonversiContext.checkData(idConvertPrestasi);
+                
+
+                if (KonversiContext.checkData(idConvertPrestasi) > 0)
+                {
+                    if (KonversiMatkulContext.checkData(idConvertPrestasi) > 0)
+                    {
+                        DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
+
+                        int idKonversiInvalid = int.Parse(dataKonversiInvalid.Rows[0]["id"].ToString());
+                    }
+                }
+                else
+                {
+                    KonversiContext.store(konversiBaru);
+                }
+
+                using (Form_Convertion_Mahasiswa convertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid))
                 {
                     this.Hide();
-                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi);
+                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
                     formConvertPrestasi.ShowDialog();
                 }
 

@@ -37,10 +37,10 @@
             cbxMatkulPilihan = new ComboBox();
             btnAddConvertion = new Krypton.Toolkit.KryptonButton();
             btnBackConvertion = new Krypton.Toolkit.KryptonButton();
-            dgvPrestasi = new Krypton.Toolkit.KryptonDataGridView();
+            dgvKonversiMatkul = new Krypton.Toolkit.KryptonDataGridView();
             tbxSKS = new TextBox();
             btnAddMK = new Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)dgvPrestasi).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKonversiMatkul).BeginInit();
             SuspendLayout();
             // 
             // tbxNamaLomba
@@ -161,26 +161,26 @@
             btnBackConvertion.Values.Text = "";
             btnBackConvertion.Click += btnBackConvertion_Click;
             // 
-            // dgvPrestasi
+            // dgvKonversiMatkul
             // 
-            dgvPrestasi.AllowUserToAddRows = false;
-            dgvPrestasi.AllowUserToDeleteRows = false;
-            dgvPrestasi.AllowUserToResizeColumns = false;
-            dgvPrestasi.AllowUserToResizeRows = false;
-            dgvPrestasi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPrestasi.BorderStyle = BorderStyle.None;
-            dgvPrestasi.ColumnHeadersHeight = 36;
-            dgvPrestasi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvPrestasi.Location = new Point(338, 523);
-            dgvPrestasi.Name = "dgvPrestasi";
-            dgvPrestasi.RowHeadersVisible = false;
-            dgvPrestasi.RowHeadersWidth = 51;
-            dgvPrestasi.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvPrestasi.RowTemplate.Height = 45;
-            dgvPrestasi.Size = new Size(1170, 187);
-            dgvPrestasi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            dgvPrestasi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            dgvPrestasi.TabIndex = 25;
+            dgvKonversiMatkul.AllowUserToAddRows = false;
+            dgvKonversiMatkul.AllowUserToDeleteRows = false;
+            dgvKonversiMatkul.AllowUserToResizeColumns = false;
+            dgvKonversiMatkul.AllowUserToResizeRows = false;
+            dgvKonversiMatkul.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvKonversiMatkul.BorderStyle = BorderStyle.None;
+            dgvKonversiMatkul.ColumnHeadersHeight = 36;
+            dgvKonversiMatkul.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvKonversiMatkul.Location = new Point(338, 523);
+            dgvKonversiMatkul.Name = "dgvKonversiMatkul";
+            dgvKonversiMatkul.RowHeadersVisible = false;
+            dgvKonversiMatkul.RowHeadersWidth = 51;
+            dgvKonversiMatkul.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvKonversiMatkul.RowTemplate.Height = 45;
+            dgvKonversiMatkul.Size = new Size(1170, 187);
+            dgvKonversiMatkul.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvKonversiMatkul.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvKonversiMatkul.TabIndex = 25;
             // 
             // tbxSKS
             // 
@@ -229,6 +229,7 @@
             btnAddMK.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnAddMK.TabIndex = 27;
             btnAddMK.Values.Text = "";
+            btnAddMK.Click += btnAddMK_Click;
             // 
             // Form_Convertion_Mahasiswa
             // 
@@ -238,7 +239,7 @@
             ClientSize = new Size(1582, 853);
             Controls.Add(btnAddMK);
             Controls.Add(tbxSKS);
-            Controls.Add(dgvPrestasi);
+            Controls.Add(dgvKonversiMatkul);
             Controls.Add(btnBackConvertion);
             Controls.Add(btnAddConvertion);
             Controls.Add(cbxMatkulPilihan);
@@ -253,7 +254,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Convertion Mahasiswa";
             FormClosing += Form_Convertion_Mahasiswa_FormClosing;
-            ((System.ComponentModel.ISupportInitialize)dgvPrestasi).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvKonversiMatkul).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,7 +269,7 @@
         private ComboBox cbxMatkulPilihan;
         private Krypton.Toolkit.KryptonButton btnAddConvertion;
         private Krypton.Toolkit.KryptonButton btnBackConvertion;
-        private Krypton.Toolkit.KryptonDataGridView dgvPrestasi;
+        private Krypton.Toolkit.KryptonDataGridView dgvKonversiMatkul;
         private TextBox tbxSKS;
         private Krypton.Toolkit.KryptonButton btnAddMK;
     }

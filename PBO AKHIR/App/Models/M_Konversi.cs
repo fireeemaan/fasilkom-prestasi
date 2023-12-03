@@ -14,9 +14,10 @@ namespace fasilkom_prestasi.App.Models
         public int id { get; set; }
         [Required]
         public string status { get; set; }
+        public long nim { get; set; }
         public int sks_used { get; set; }
         [ForeignKey("M_Prestasi")]
-        public int id_prestasi { get; set; }
+        public string id_prestasi { get; set; }
         [ForeignKey("M_Nilai")]
         public int id_nilai { get; set; }   
     }
