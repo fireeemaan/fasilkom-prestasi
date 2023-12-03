@@ -6,6 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using fasilkom_prestasi.App.Models;
 
 namespace fasilkom_prestasi.App.Model
 {
@@ -30,7 +31,7 @@ namespace fasilkom_prestasi.App.Model
         [ForeignKey("M_Dosen")]
         public long id_dosen { get; set; }
         [ForeignKey("M_Admin"), AllowNull]
-        public string id_admin { get; set; }
+        public long id_admin { get; set; }
         [AllowNull]
         public DateTime update_at { get; set; }
 

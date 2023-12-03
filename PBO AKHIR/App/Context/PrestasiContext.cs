@@ -32,7 +32,7 @@ namespace fasilkom_prestasi.App.Context
             {
                 query = $"SELECT  {table}.id as id_prestasi,{table}.id_mahasiswa as nim, mahasiswa.nama as nama_mahasiswa, {table}.nama_prestasi, bidang.bidang, region.region , tahapan.tahapan, {table}.sertifikat, dosen.nama as nama_dosen, {table}.surat_tugas,  validated, admin.nama as nama_admin, {table}.create_at, {table}.update_at " +
                     $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN mahasiswa ON {table}.id_mahasiswa = mahasiswa.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
-                    $"LEFT JOIN admin ON {table}.id_admin = admin.id";
+                    $"LEFT JOIN admin ON {table}.id_admin = admin.id WHERE validated = 'Process'";
 
 
             }
@@ -143,13 +143,15 @@ namespace fasilkom_prestasi.App.Context
         }
         public static void update_admin(M_Prestasi prestasiValidasi)
         {
-            string query = $"UPDATE {table} SET validated = @validated,surat_tugas = @surat_tugas WHERE id = @id";
+            string query = $"UPDATE {table} SET validated = @validated,surat_tugas = @surat_tugas, id_admin= @id_admin, update_at = CURRENT_TIMESTAMP WHERE id = @id";
 
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@id", NpgsqlDbType.Varchar){Value = prestasiValidasi.id},
                 new NpgsqlParameter("@validated", NpgsqlDbType.Unknown){Value =  prestasiValidasi.validated},
                 new NpgsqlParameter("@surat_tugas", NpgsqlDbType.Text){Value =  prestasiValidasi.surat_tugas},
+                new NpgsqlParameter("@id_admin",NpgsqlDbType.Bigint){Value =  prestasiValidasi.id_admin }
+
 
             };
 

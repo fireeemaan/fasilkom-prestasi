@@ -151,5 +151,10 @@ namespace fasilkom_prestasi
             dgvKonversiMatkul.Columns["id"].Visible = false;
 
         }
+
+        private void dgvKonversiMatkul_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
