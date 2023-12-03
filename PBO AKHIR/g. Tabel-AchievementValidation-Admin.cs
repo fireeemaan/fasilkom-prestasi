@@ -53,12 +53,11 @@ namespace fasilkom_prestasi
                 /*string idAdmin = (dgvValidation.Rows[e.RowIndex].Cells["nama_admin"].Value.ToString());*/
 
 
-                using (Form_AchievementValidation_Admin validasiPrestasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin))
-                {
-                    this.Hide();
-                    Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin);
-                    formValidasi.Show();
-                }
+
+                 this.Hide();
+                 Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin);
+                 formValidasi.Show();
+
                 dgvValidation.DataSource = null;
                 dgvValidation.DataSource = PrestasiContext.showAll(2);
 

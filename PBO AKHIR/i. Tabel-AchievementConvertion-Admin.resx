@@ -121,7 +121,7 @@
   <data name="btnAchievements.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
+        DAAACwwBP0AiyAAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
         iRp+8kOv3PWFlmuy6b8kpd7lsryRH7GsZHHm5d8lZdnaikIthNozwtSQlOsjuQp2v1uiaBhh6gXMK54K
         Eq11dQYqpWskTs2pTvICyqy4DPHInOokyncH5kI3XGCYU2eVplpnmaox5pr1zhCw/k8vpD5EBwLAQwOm
         RNki9gIunSG2DTG+xAZDDsXxgDQe30h3PMcwiOY8gLjmLM3Mqd0WAtDXTGEQzcc/Q4BsMMgL6Nr4ANlg
@@ -132,7 +132,7 @@
   <data name="btnConvertion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
+        DAAACwwBP0AiyAAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
         iRp+8kOv3PWFlmuy6b8kpd7lsryRH7GsZHHm5d8lZdnaikIthNozwtSQlOsjuQp2v1uiaBhh6gXMK54K
         Eq11dQYqpWskTs2pTvICyqy4DPHInOokyncH5kI3XGCYU2eVplpnmaox5pr1zhCw/k8vpD5EBwLAQwOm
         RNki9gIunSG2DTG+xAZDDsXxgDQe30h3PMcwiOY8gLjmLM3Mqd0WAtDXTGEQzcc/Q4BsMMgL6Nr4ANlg
@@ -143,7 +143,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABkAAAAOECAYAAAD5Tf2iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAXXRJREFUeF7t3euPrWl53/n9J/jdSPOKvMgrZ8YcO5rITIg0mmDAOCMrki1PYmQ5
+        DwAACw8BkvkDpQAAXXRJREFUeF7t3euPrWl53/n9J/jdSPOKvMgrZ8YcO5rITIg0mmDAOCMrki1PYmQ5
         toOxAbuDFR9oYGJjDBgm4wOSB/AkAXsCBhtiR/gwiJECthwbjN3mMDTnbpo+n+imj8/su3Y93fd++lp1
         1969r7q7r+fzkb7qvatWrVq1at9Cen6sqnMLUMqf/JUkSZIkSZIkyQACxUQHXZIkSZIkSZL2lgEEiokO
         uiRJkiRJkiTtLQMIFBMddEmSJEmSJEnaWwYQKCY66JIkSZIkSZK0twwgUEx00CVJkiRJkiRpbxlAoJjo

@@ -77,14 +77,13 @@ namespace fasilkom_prestasi
                 else
                 {
                     invalidUsernamePasswordControl1.Show();
-                    invalidUsernamePasswordControl1.Hide();
                     //MessageBox.Show("Username atau Password anda salah!", "Data Salah", MessageBoxButtons.OK);
                 }
             }
             catch
             {
                 invalidUsernamePasswordControl1.Show();
-                invalidUsernamePasswordControl1.Hide();
+
             }
         }
 

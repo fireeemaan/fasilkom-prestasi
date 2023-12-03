@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace fasilkom_prestasi
             this.id_admin = id_admin;
             InitializeComponent();
 
-            dgvKonversiMatkul.DataSource = KonversiContext.all();
+            dgvKonversi.DataSource = KonversiContext.all();
 
             DataGridViewButtonColumn validButton = new DataGridViewButtonColumn();
             validButton.HeaderText = "";
@@ -29,7 +30,7 @@ namespace fasilkom_prestasi
             validButton.Name = "validButton";
             validButton.UseColumnTextForButtonValue = true;
 
-            dgvKonversiMatkul.Columns.Insert(0, validButton);
+            dgvKonversi.Columns.Insert(0, validButton);
         }
 
         private void KonversiAdmin_Load(object sender, EventArgs e)
@@ -40,22 +41,24 @@ namespace fasilkom_prestasi
 
         private void dgvValidation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvKonversiMatkul.Columns["validButton"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvKonversi.Columns["validButton"].Index && e.RowIndex >= 0)
             {
 
-                int konversiValidasi =int.Parse(dgvKonversiMatkul.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                string idkonversiValidasi = dgvKonversiMatkul.Rows[e.RowIndex].Cells["id_konversi"].Value.ToString();
+                string idKonversi = dgvKonversi.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                string idPrestasi = dgvKonversi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
+                long nim = Convert.ToInt64(dgvKonversi.Rows[e.RowIndex].Cells["nim"].Value.ToString());
+
+
                 /*string idAdmin = (dgvValidation.Rows[e.RowIndex].Cells["nama_admin"].Value.ToString());*/
 
 
-                using (Form_ConvertionValidation_Admin validasiPrestasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi))
-                {
-                    this.Hide();
-                    Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi);
-                    formValidasi.Show();
-                }
-                dgvKonversiMatkul.DataSource = null;
-                dgvKonversiMatkul.DataSource = KonversiContext.all();
+
+                this.Hide();
+                Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idKonversi, idPrestasi, nim);
+                formValidasi.Show();
+
+                dgvKonversi.DataSource = null;
+                dgvKonversi.DataSource = KonversiContext.all();
             }
         }
 
@@ -64,6 +67,49 @@ namespace fasilkom_prestasi
             this.Hide();
             Validation validation = new Validation(id_admin);
             validation.Show();
+        }
+
+        private void dgvKonversi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvKonversi.Columns["dokumen"].Index && e.RowIndex >= 0)
+            {
+
+
+                string link = dgvKonversi.Rows[e.RowIndex].Cells["dokumen"].Value.ToString();
+
+
+                try
+                {
+                    ProcessStartInfo psInfo = new ProcessStartInfo
+                    {
+                        FileName = $"{link}",
+                        UseShellExecute = true
+                    };
+
+                    Process.Start(psInfo);
+                }
+
+
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        ProcessStartInfo psInfo = new ProcessStartInfo
+                        {
+                            FileName = $"https://{link}",
+                            UseShellExecute = true
+                        };
+
+                        Process.Start(psInfo);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Link tidak valid!");
+                    }
+
+
+                }
+            }
         }
     }
 }
