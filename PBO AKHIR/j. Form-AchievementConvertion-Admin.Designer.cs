@@ -29,42 +29,194 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ConvertionValidation_Admin));
-            textBox1 = new TextBox();
             kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
+            tbxBidang = new TextBox();
+            tbxNilai = new TextBox();
+            btnBackConvertion = new Krypton.Toolkit.KryptonButton();
+            btnAddConvertion = new Krypton.Toolkit.KryptonButton();
+            tbxRegion = new TextBox();
+            tbxNamaLomba = new TextBox();
+            tbxTahapan = new TextBox();
+            tbxNama = new TextBox();
+            tbxNIM = new TextBox();
+            tbxLinkDok = new TextBox();
+            rbtnInvalid = new RadioButton();
+            rbtnValid = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(681, 532);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(484, 20);
-            textBox1.TabIndex = 7;
             // 
             // kryptonDataGridView1
             // 
             kryptonDataGridView1.BorderStyle = BorderStyle.None;
             kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(338, 227);
+            kryptonDataGridView1.Location = new Point(331, 227);
             kryptonDataGridView1.Name = "kryptonDataGridView1";
             kryptonDataGridView1.RowHeadersWidth = 51;
             kryptonDataGridView1.RowTemplate.Height = 29;
             kryptonDataGridView1.Size = new Size(1170, 182);
             kryptonDataGridView1.TabIndex = 8;
             // 
-            // kryptonComboBox1
+            // tbxBidang
             // 
-            kryptonComboBox1.DropDownWidth = 490;
-            kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(681, 453);
-            kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(484, 25);
-            kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kryptonComboBox1.TabIndex = 9;
-            kryptonComboBox1.Text = "kryptonComboBox1";
+            tbxBidang.BackColor = Color.White;
+            tbxBidang.BorderStyle = BorderStyle.None;
+            tbxBidang.Enabled = false;
+            tbxBidang.Location = new Point(956, 617);
+            tbxBidang.Name = "tbxBidang";
+            tbxBidang.ReadOnly = true;
+            tbxBidang.Size = new Size(248, 20);
+            tbxBidang.TabIndex = 7;
+            // 
+            // tbxNilai
+            // 
+            tbxNilai.BackColor = Color.White;
+            tbxNilai.BorderStyle = BorderStyle.None;
+            tbxNilai.Enabled = false;
+            tbxNilai.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxNilai.Location = new Point(850, 688);
+            tbxNilai.Name = "tbxNilai";
+            tbxNilai.ReadOnly = true;
+            tbxNilai.Size = new Size(54, 45);
+            tbxNilai.TabIndex = 9;
+            tbxNilai.TextAlign = HorizontalAlignment.Center;
+            // 
+            // btnBackConvertion
+            // 
+            btnBackConvertion.CornerRoundingRadius = 10F;
+            btnBackConvertion.Location = new Point(352, 170);
+            btnBackConvertion.Margin = new Padding(2);
+            btnBackConvertion.MaximumSize = new Size(36, 36);
+            btnBackConvertion.MinimumSize = new Size(36, 36);
+            btnBackConvertion.Name = "btnBackConvertion";
+            btnBackConvertion.OverrideDefault.Back.Color1 = Color.WhiteSmoke;
+            btnBackConvertion.OverrideDefault.Back.Color2 = Color.WhiteSmoke;
+            btnBackConvertion.Size = new Size(36, 36);
+            btnBackConvertion.StateCommon.Back.Color1 = Color.Transparent;
+            btnBackConvertion.StateCommon.Back.Color2 = Color.Transparent;
+            btnBackConvertion.StateCommon.Back.Image = (Image)resources.GetObject("btnBackConvertion.StateCommon.Back.Image");
+            btnBackConvertion.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnBackConvertion.StateCommon.Border.Color1 = Color.White;
+            btnBackConvertion.StateCommon.Border.Color2 = Color.White;
+            btnBackConvertion.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnBackConvertion.StateCommon.Border.Rounding = 10F;
+            btnBackConvertion.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnBackConvertion.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnBackConvertion.TabIndex = 25;
+            btnBackConvertion.Values.Text = "";
+            // 
+            // btnAddConvertion
+            // 
+            btnAddConvertion.CornerRoundingRadius = 30F;
+            btnAddConvertion.Location = new Point(1161, 686);
+            btnAddConvertion.Margin = new Padding(2);
+            btnAddConvertion.MaximumSize = new Size(248, 47);
+            btnAddConvertion.MinimumSize = new Size(248, 47);
+            btnAddConvertion.Name = "btnAddConvertion";
+            btnAddConvertion.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.Size = new Size(248, 47);
+            btnAddConvertion.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddConvertion.StateCommon.Border.Rounding = 30F;
+            btnAddConvertion.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddConvertion.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddConvertion.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddConvertion.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddConvertion.TabIndex = 24;
+            btnAddConvertion.Values.Text = "Save Changes";
+            btnAddConvertion.Click += btnAddConvertion_Click;
+            // 
+            // tbxRegion
+            // 
+            tbxRegion.BackColor = Color.White;
+            tbxRegion.BorderStyle = BorderStyle.None;
+            tbxRegion.Enabled = false;
+            tbxRegion.Location = new Point(1246, 617);
+            tbxRegion.Name = "tbxRegion";
+            tbxRegion.ReadOnly = true;
+            tbxRegion.Size = new Size(153, 20);
+            tbxRegion.TabIndex = 26;
+            // 
+            // tbxNamaLomba
+            // 
+            tbxNamaLomba.BackColor = Color.White;
+            tbxNamaLomba.BorderStyle = BorderStyle.None;
+            tbxNamaLomba.Enabled = false;
+            tbxNamaLomba.Location = new Point(956, 451);
+            tbxNamaLomba.Name = "tbxNamaLomba";
+            tbxNamaLomba.ReadOnly = true;
+            tbxNamaLomba.Size = new Size(443, 20);
+            tbxNamaLomba.TabIndex = 27;
+            // 
+            // tbxTahapan
+            // 
+            tbxTahapan.BackColor = Color.White;
+            tbxTahapan.BorderStyle = BorderStyle.None;
+            tbxTahapan.Enabled = false;
+            tbxTahapan.Location = new Point(956, 537);
+            tbxTahapan.Name = "tbxTahapan";
+            tbxTahapan.ReadOnly = true;
+            tbxTahapan.Size = new Size(443, 20);
+            tbxTahapan.TabIndex = 28;
+            // 
+            // tbxNama
+            // 
+            tbxNama.BackColor = Color.White;
+            tbxNama.BorderStyle = BorderStyle.None;
+            tbxNama.Enabled = false;
+            tbxNama.Location = new Point(428, 451);
+            tbxNama.Name = "tbxNama";
+            tbxNama.ReadOnly = true;
+            tbxNama.Size = new Size(477, 20);
+            tbxNama.TabIndex = 29;
+            // 
+            // tbxNIM
+            // 
+            tbxNIM.BackColor = Color.White;
+            tbxNIM.BorderStyle = BorderStyle.None;
+            tbxNIM.Enabled = false;
+            tbxNIM.Location = new Point(428, 537);
+            tbxNIM.Name = "tbxNIM";
+            tbxNIM.ReadOnly = true;
+            tbxNIM.Size = new Size(477, 20);
+            tbxNIM.TabIndex = 30;
+            // 
+            // tbxLinkDok
+            // 
+            tbxLinkDok.BackColor = Color.White;
+            tbxLinkDok.BorderStyle = BorderStyle.None;
+            tbxLinkDok.Enabled = false;
+            tbxLinkDok.Location = new Point(428, 617);
+            tbxLinkDok.Name = "tbxLinkDok";
+            tbxLinkDok.ReadOnly = true;
+            tbxLinkDok.Size = new Size(477, 20);
+            tbxLinkDok.TabIndex = 31;
+            // 
+            // rbtnInvalid
+            // 
+            rbtnInvalid.AutoSize = true;
+            rbtnInvalid.BackColor = Color.White;
+            rbtnInvalid.Location = new Point(1058, 717);
+            rbtnInvalid.Name = "rbtnInvalid";
+            rbtnInvalid.Size = new Size(17, 16);
+            rbtnInvalid.TabIndex = 32;
+            rbtnInvalid.UseVisualStyleBackColor = false;
+            // 
+            // rbtnValid
+            // 
+            rbtnValid.AutoSize = true;
+            rbtnValid.BackColor = Color.White;
+            rbtnValid.Location = new Point(1058, 678);
+            rbtnValid.Name = "rbtnValid";
+            rbtnValid.Size = new Size(17, 16);
+            rbtnValid.TabIndex = 33;
+            rbtnValid.UseVisualStyleBackColor = false;
             // 
             // Form_ConvertionValidation_Admin
             // 
@@ -72,23 +224,42 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(kryptonComboBox1);
+            Controls.Add(rbtnValid);
+            Controls.Add(rbtnInvalid);
+            Controls.Add(tbxLinkDok);
+            Controls.Add(tbxNIM);
+            Controls.Add(tbxNama);
+            Controls.Add(tbxTahapan);
+            Controls.Add(tbxNamaLomba);
+            Controls.Add(tbxRegion);
+            Controls.Add(btnBackConvertion);
+            Controls.Add(btnAddConvertion);
+            Controls.Add(tbxNilai);
             Controls.Add(kryptonDataGridView1);
-            Controls.Add(textBox1);
+            Controls.Add(tbxBidang);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form_ConvertionValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Achievement Convertion Admin";
             ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox textBox1;
         private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private TextBox tbxBidang;
+        private TextBox tbxNilai;
+        private Krypton.Toolkit.KryptonButton btnBackConvertion;
+        private Krypton.Toolkit.KryptonButton btnAddConvertion;
+        private TextBox tbxRegion;
+        private TextBox tbxNamaLomba;
+        private TextBox tbxTahapan;
+        private TextBox tbxNama;
+        private TextBox tbxNIM;
+        private TextBox tbxLinkDok;
+        private RadioButton rbtnInvalid;
+        private RadioButton rbtnValid;
     }
 }

@@ -48,15 +48,22 @@ namespace fasilkom_prestasi
                 /*string idAdmin = (dgvValidation.Rows[e.RowIndex].Cells["nama_admin"].Value.ToString());*/
 
 
-                using (Form_ConvertionValidation_Admin validasiPrestasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi, id_admin))
+                using (Form_ConvertionValidation_Admin validasiPrestasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi))
                 {
                     this.Hide();
                     Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi, id_admin);
                     formValidasi.Show();
                 }
                 dgvKonversiMatkul.DataSource = null;
-                dgvKonversiMatkul.DataSource = KonversiContext.all() ;
+                dgvKonversiMatkul.DataSource = KonversiContext.all();
             }
+        }
+
+        private void btnAchievements_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Validation validation = new Validation(id_admin);
+            validation.ShowDialog();
         }
     }
 }

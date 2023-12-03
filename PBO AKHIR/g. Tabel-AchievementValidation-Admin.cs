@@ -190,7 +190,7 @@ namespace fasilkom_prestasi
 
         private void btnConvertion_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             KonversiAdmin konversi = new KonversiAdmin(id_admin);
             konversi.Show();
         }
