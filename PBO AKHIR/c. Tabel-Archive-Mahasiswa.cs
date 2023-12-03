@@ -135,10 +135,19 @@ namespace fasilkom_prestasi
                 {
                     PrestasiContext.destroy(idPrestasiHapus);
                     DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+
+                    dgvPrestasi.DataSource = null;
+                    dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                    dgvPrestasi.Refresh();
+                    dgvPrestasi.Update();
                 }
 
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = dataPrestasi;
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                dgvPrestasi.Refresh();
+                dgvPrestasi.Update();
+
+
             }
 
             if (e.ColumnIndex == dgvPrestasi.Columns["editButton"].Index && e.RowIndex >= 0)
@@ -152,9 +161,10 @@ namespace fasilkom_prestasi
                     this.Hide();
                     FormArchiveMahasiswa formEditPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah);
                     formEditPrestasi.Show();
+
                 }
                 dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = dataPrestasi;
+                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
             }
 
             if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() == "Validated")
@@ -206,11 +216,18 @@ namespace fasilkom_prestasi
 
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+
             }
+
             else if (e.ColumnIndex == dgvPrestasi.Columns["convertButton"].Index && e.RowIndex >= 0 && dgvPrestasi.Rows[e.RowIndex].Cells["validated"].Value.ToString() != "Validated")
             {
-                MessageBox.Show("Belum Validasi Goblok");
+                MessageBox.Show("Prestasi Belum Di VALIDASI! Harap Menunggu Hingga Proses Validasi Selesai.");
             }
+
+            dgvPrestasi.DataSource = null;
+            dgvPrestasi.DataSource = dataPrestasi;
+
+            
         }
 
         private void btnHome_Click(object sender, EventArgs e)
