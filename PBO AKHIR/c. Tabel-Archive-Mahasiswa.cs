@@ -21,7 +21,7 @@ namespace fasilkom_prestasi
         int userRole;
         long nim;
 
-        int idKonversiInvalid = 0;
+        string idKonversiInvalid = null;
 
         public Record(int userRole, long nim)
         {
@@ -191,7 +191,7 @@ namespace fasilkom_prestasi
                     {
                         DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
 
-                        int idKonversiInvalid = int.Parse(dataKonversiInvalid.Rows[0]["id"].ToString());
+                        string idKonversiInvalid = dataKonversiInvalid.Rows[0]["id"].ToString();
                     }
                 }
                 else
@@ -199,12 +199,10 @@ namespace fasilkom_prestasi
                     KonversiContext.store(konversiBaru);
                 }
 
-                using (Form_Convertion_Mahasiswa convertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid))
-                {
-                    this.Hide();
-                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
-                    formConvertPrestasi.ShowDialog();
-                }
+
+                this.Hide();
+                Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
+                formConvertPrestasi.ShowDialog();
 
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);

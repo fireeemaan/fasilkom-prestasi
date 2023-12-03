@@ -11,7 +11,7 @@ namespace fasilkom_prestasi.App.Models
     internal class M_Konversi
     {
         [Key]
-        public int id { get; set; }
+        public string id { get; set; }
         [Required]
         public string status { get; set; }
         public long nim { get; set; }

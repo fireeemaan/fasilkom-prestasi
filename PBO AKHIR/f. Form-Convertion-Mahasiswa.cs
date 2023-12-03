@@ -20,12 +20,17 @@ namespace fasilkom_prestasi
         int id_prodi;
         int id_bidang;
         int id_nilai;
-        int id_konversi;
-        int id_konversi_invalid;
+        string id_konversi;
+        string id_konversi_invalid;
+
+
+        int sks_mk;
+        int totalSKS;
+        int maxKonversiSKS;
 
 
 
-        public Form_Convertion_Mahasiswa(long nim, string idPrestasiKonversi, int idKonversiInvalid)
+        public Form_Convertion_Mahasiswa(long nim, string idPrestasiKonversi, string idKonversiInvalid)
         {
             this.nim = nim;
             this.idPrestasi = idPrestasiKonversi;
@@ -33,18 +38,33 @@ namespace fasilkom_prestasi
 
             InitializeComponent();
 
+
+            DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+            deleteButton.HeaderText = "";
+            deleteButton.Text = "Delete";
+            deleteButton.Name = "deleteButton";
+            deleteButton.UseColumnTextForButtonValue = true;
+            dgvKonversiMatkul.Columns.Insert(0, deleteButton);
+
+
             DataTable dataKonversi = KonversiContext.allSelected(nim, idPrestasi);
 
-            //MessageBox.Show($"{KonversiContext.checkData(idPrestasi)}");
+
+
+
 
             if (KonversiContext.checkData(idPrestasi) == 1)
             {
-                id_konversi = int.Parse(dataKonversi.Rows[0]["id"].ToString());
+                id_konversi = dataKonversi.Rows[0]["id"].ToString();
             }
 
 
             dgvKonversiMatkul.DataSource = null;
-            dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi);
+            DataTable dataKonversiMatkul = KonversiMatkulContext.show(id_konversi);
+            dgvKonversiMatkul.DataSource = dataKonversiMatkul;
+
+
+
             dgvKonversiMatkul.Columns["id"].Visible = false;
 
             DataTable dataMahasiswa = MahasiswaContext.show(nim);
@@ -77,6 +97,21 @@ namespace fasilkom_prestasi
 
             DataTable dataNilai = NilaiContext.getNilai(id_region, id_tahapan);
             id_nilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
+
+            maxKonversiSKS = int.Parse(dataNilai.Rows[0]["max_sks"].ToString());
+
+            List<int> sksList = new List<int>();
+            
+
+            foreach (DataRow row in dataKonversiMatkul.Rows)
+            {
+                sksList.Add(int.Parse(row["sks"].ToString()));
+            }
+
+            this.totalSKS = sksList.Sum();
+
+            maxKonversiSKS -= totalSKS;
+
 
             tbxNilai.Text = dataNilai.Rows[0]["nilai"].ToString();
 
@@ -112,10 +147,29 @@ namespace fasilkom_prestasi
 
             DataTable dataKonversiMatkul = KonversiMatkulContext.all();
 
-            if (dataKonversiMatkul.Select($"id_konversi = {id_konversi}") == null)
+            try
             {
-                KonversiContext.destroy(nim);
+                if (dataKonversiMatkul.Select($"id_konversi = {id_konversi}") == null)
+                {
+
+                }
             }
+            catch (Exception ex)
+            {
+                try
+                {
+                    KonversiContext.destroy(nim);
+                }
+                catch ( Exception ex2 )
+                {
+
+                }
+
+
+                
+            }
+
+
 
 
             this.Close();
@@ -130,6 +184,10 @@ namespace fasilkom_prestasi
 
         private void btnAddMK_Click(object sender, EventArgs e)
         {
+            dgvKonversiMatkul.Columns["id"].Visible = false;
+
+            
+
             KeyValuePair<int, string> selectedMatkul = (KeyValuePair<int, string>)cbxMatkulPilihan.SelectedItem;
             string namaMatkul = selectedMatkul.Value.ToString();
 
@@ -138,6 +196,7 @@ namespace fasilkom_prestasi
             string kdMatkul = dataProdiMatkul.Rows[0]["kd_matkul"].ToString();
             int semesterMK = int.Parse(dataProdiMatkul.Rows[0]["semester"].ToString());
             int sksMK = int.Parse(dataProdiMatkul.Rows[0]["sks"].ToString());
+            sks_mk = sksMK;
 
             M_KonversiMatkul konversiMatkulBaru = new M_KonversiMatkul
             {
@@ -147,7 +206,34 @@ namespace fasilkom_prestasi
                 sks = sksMK
             };
 
-            KonversiMatkulContext.store(konversiMatkulBaru);
+            DataTable dataKonversiMatkul = KonversiMatkulContext.show(id_konversi);
+
+            List<string> mkList = new List<string>();
+            foreach (DataRow row in dataKonversiMatkul.Rows)
+            {
+                mkList.Add(row["kode_matkul"].ToString());
+            }
+
+
+            if (maxKonversiSKS > sksMK)
+            {
+                if (mkList.Contains(kdMatkul))
+                {
+                    MessageBox.Show("Mata kuliah sudah di pilih!");
+                }
+                else
+                {
+                    maxKonversiSKS -= sksMK;
+                    KonversiMatkulContext.store(konversiMatkulBaru);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("SKS mata kuliah melebihi maksimum konversi!");
+            }
+
+            
 
             dgvKonversiMatkul.DataSource = null;
             dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi);
@@ -157,10 +243,22 @@ namespace fasilkom_prestasi
 
         private void btnAddConvertion_Click(object sender, EventArgs e)
         {
+
+            DataTable dataKonversiMatkul = KonversiMatkulContext.show(id_konversi);
+            List<int> sksList = new List<int>();
+
+            foreach (DataRow row in dataKonversiMatkul.Rows)
+            {
+                sksList.Add(int.Parse(row["sks"].ToString()));
+            }
+
+            this.totalSKS = sksList.Sum();
+
             M_Konversi updateStatus = new M_Konversi
             {
                 id = id_konversi,
-                status = "Process"
+                status = "Process",
+                sks_used = totalSKS
             };
 
             KonversiContext.updateStatus(updateStatus);
@@ -169,6 +267,24 @@ namespace fasilkom_prestasi
             Konversi konversi = new Konversi(nim);
             konversi.Show();
 
+        }
+
+        private void dgvKonversiMatkul_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (e.ColumnIndex == dgvKonversiMatkul.Columns["deleteButton"].Index && e.RowIndex >= 0)
+            {
+                
+                int idKonversiMatkulHapus = int.Parse(dgvKonversiMatkul.Rows[e.RowIndex].Cells["id"].Value.ToString());
+
+                KonversiMatkulContext.destroy(idKonversiMatkulHapus);
+
+                maxKonversiSKS += sks_mk;
+
+                dgvKonversiMatkul.DataSource = null;
+                dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi);
+                dgvKonversiMatkul.Columns["id"].Visible = false;
+            }
         }
     }
 }

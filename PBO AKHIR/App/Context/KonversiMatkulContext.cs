@@ -23,13 +23,13 @@ namespace fasilkom_prestasi.App.Context
 
             return dataKonversiMatkul;
         }
-        public static DataTable show(int id_konversi)
+        public static DataTable show(string id_konversi)
         {
-            string query = $"SELECT {table}.id as ID, {table}.kd_matkul as \"Kode Matkul\", matkul.matkul FROM {table} JOIN matkul ON {table}.kd_matkul = matkul.kode WHERE id_konversi = @id_konversi";
+            string query = $"SELECT {table}.id as ID, {table}.kd_matkul as kode_matkul, matkul.matkul, {table}.sks FROM {table} JOIN matkul ON {table}.kd_matkul = matkul.kode WHERE id_konversi = @id_konversi";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Integer) {Value = id_konversi}
+                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Varchar) {Value = id_konversi}
             };
 
             DataTable dataKonversi = queryExecutor(query, parameters);
@@ -53,17 +53,28 @@ namespace fasilkom_prestasi.App.Context
 
         public static int checkData(string id_prestasi)
         {
-            string query = $"SELECT COUNT(*) FROM {table} JOIN konversi ON {table}.id_konversi = konversi.id WHERE konversi.id_prestasi = @id_prestasi AND konversi.status = 'Invalid'";
+            string query = $"SELECT COUNT(*) FROM {table} JOIN konversi ON {table}.id_konversi = konversi.id WHERE konversi.status = 'Invalid'";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id_prestasi", NpgsqlDbType.Varchar) { Value = id_prestasi }
+                //new NpgsqlParameter("@id_prestasi", NpgsqlDbType.Varchar) { Value = id_prestasi }
             };
 
             int rowsCount = queryExecutorInt(query, parameters);
             return rowsCount;
         }
 
+        public static void destroy(int id)
+        {
+            string query = $"DELETE FROM {table} WHERE id = @id";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id", NpgsqlDbType.Integer) { Value = id }
+            };
+
+            commandExecutor(query, parameters);
+        }
 
         public static void store(M_KonversiMatkul konversiMatkul)
         {
@@ -71,7 +82,7 @@ namespace fasilkom_prestasi.App.Context
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Integer) {Value = konversiMatkul.id_konversi },
+                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Varchar) {Value = konversiMatkul.id_konversi },
                 new NpgsqlParameter("@kd_matkul", NpgsqlDbType.Varchar){Value = konversiMatkul.kd_matkul },
                 new NpgsqlParameter("@sks", NpgsqlDbType.Integer){Value = konversiMatkul.sks},
                 new NpgsqlParameter("@semester", NpgsqlDbType.Integer){Value = konversiMatkul.semester}

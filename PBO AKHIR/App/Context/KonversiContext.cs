@@ -55,11 +55,13 @@ namespace fasilkom_prestasi.App.Context
 
         public static void updateStatus(M_Konversi konversi)
         {
-            string query = $"UPDATE {table} SET status = @status WHERE id = @id";
+            string query = $"UPDATE {table} SET status = @status, sks_used = @sks WHERE id = @id";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter ("status", NpgsqlDbType.Unknown) {Value = konversi.status},
+                new NpgsqlParameter ("@id", NpgsqlDbType.Varchar) {Value = konversi.id},
+                new NpgsqlParameter ("@status", NpgsqlDbType.Unknown) {Value = konversi.status},
+                new NpgsqlParameter ("@sks", NpgsqlDbType.Integer) {Value = konversi.sks_used}
             };
             commandExecutor(query, parameters);
         }
