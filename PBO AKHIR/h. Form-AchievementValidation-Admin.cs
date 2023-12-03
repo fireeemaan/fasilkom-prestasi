@@ -43,7 +43,6 @@ namespace fasilkom_prestasi
             // Region
             DataTable dataRegion = RegionContext.all();
 
-            DataTable dataBidang = BidangContext.all();
 
             // Tahapan
             DataTable dataTahapan = TahapanContext.all();
@@ -56,6 +55,7 @@ namespace fasilkom_prestasi
 
             tbxSuratTugas.Text = dataPrestasi.Rows[0]["surat_tugas"].ToString();
 
+            DataTable dataBidang = BidangContext.all();
 
             int id_bidang = int.Parse(dataPrestasi.Rows[0]["id_bidang"].ToString());
             tbxBidang.Text = dataBidang.Select($"id = {id_bidang}")[0]["bidang"].ToString();
