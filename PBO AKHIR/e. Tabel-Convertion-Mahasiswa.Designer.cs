@@ -41,6 +41,10 @@
             // 
             // dgvKonversi
             // 
+            dgvKonversi.AllowUserToAddRows = false;
+            dgvKonversi.AllowUserToDeleteRows = false;
+            dgvKonversi.AllowUserToResizeColumns = false;
+            dgvKonversi.AllowUserToResizeRows = false;
             dgvKonversi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKonversi.BorderStyle = BorderStyle.None;
             dgvKonversi.ColumnHeadersHeight = 36;

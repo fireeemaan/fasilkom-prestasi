@@ -199,12 +199,10 @@ namespace fasilkom_prestasi
                     KonversiContext.store(konversiBaru);
                 }
 
-                using (Form_Convertion_Mahasiswa convertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid))
-                {
-                    this.Hide();
-                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
-                    formConvertPrestasi.ShowDialog();
-                }
+
+                this.Hide();
+                Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
+                formConvertPrestasi.ShowDialog();
 
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
