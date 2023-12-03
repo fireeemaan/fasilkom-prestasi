@@ -154,5 +154,21 @@ namespace fasilkom_prestasi
             dgvKonversiMatkul.Columns["id"].Visible = false;
 
         }
+
+        private void btnAddConvertion_Click(object sender, EventArgs e)
+        {
+            M_Konversi updateStatus = new M_Konversi
+            {
+                id = id_konversi,
+                status = "Process"
+            };
+
+            KonversiContext.updateStatus(updateStatus);
+
+            this.Close();
+            Konversi konversi = new Konversi(nim);
+            konversi.Show();
+
+        }
     }
 }

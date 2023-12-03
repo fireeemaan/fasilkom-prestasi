@@ -135,6 +135,7 @@
             btnAddConvertion.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
             btnAddConvertion.TabIndex = 23;
             btnAddConvertion.Values.Text = "Add Convertion";
+            btnAddConvertion.Click += btnAddConvertion_Click;
             // 
             // btnBackConvertion
             // 

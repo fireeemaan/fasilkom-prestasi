@@ -165,7 +165,7 @@ namespace fasilkom_prestasi
                 DataTable selectedDataPrestasi = PrestasiContext.show(idConvertPrestasi);
                 int idRegion = int.Parse(selectedDataPrestasi.Rows[0]["id_region"].ToString());
                 int idTahapan = int.Parse(selectedDataPrestasi.Rows[0]["id_tahapan"].ToString());
-                
+
                 DataTable dataNilai = NilaiContext.getNilai(idRegion, idTahapan);
                 int idNilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
 
@@ -183,7 +183,7 @@ namespace fasilkom_prestasi
                 DataTable dataKonversiSelected = KonversiContext.allSelected(nim);
 
                 int rowsCountKonversi = KonversiContext.checkData(idConvertPrestasi);
-                
+
 
                 if (KonversiContext.checkData(idConvertPrestasi) > 0)
                 {
@@ -220,6 +220,13 @@ namespace fasilkom_prestasi
             this.Hide();
             HomeGuide homeGuide = new HomeGuide(1, nim);
             homeGuide.ShowDialog();
+        }
+
+        private void btnConvertion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Konversi konversi = new Konversi(nim);
+            konversi.ShowDialog();
         }
     }
 }

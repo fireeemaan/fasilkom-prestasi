@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,25 @@ namespace fasilkom_prestasi
 {
     public partial class Konversi : Form
     {
-        public Konversi()
+        long nim;
+        public Konversi(long nim)
         {
+            this.nim = nim;
             InitializeComponent();
+
+            DataTable dataKonversi = KonversiContext.allSelected(nim);
+            dgvKonversi.DataSource = dataKonversi;
+
+            dgvKonversi.Columns["id"].Visible = false;
+
+
+        }
+
+        private void btnArchive_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Record record = new Record(nim);
+            record.ShowDialog();
         }
     }
 }
