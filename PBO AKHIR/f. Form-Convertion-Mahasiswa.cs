@@ -20,12 +20,12 @@ namespace fasilkom_prestasi
         int id_prodi;
         int id_bidang;
         int id_nilai;
-        int id_konversi;
-        int id_konversi_invalid;
+        string id_konversi;
+        string id_konversi_invalid;
 
 
 
-        public Form_Convertion_Mahasiswa(long nim, string idPrestasiKonversi, int idKonversiInvalid)
+        public Form_Convertion_Mahasiswa(long nim, string idPrestasiKonversi, string idKonversiInvalid)
         {
             this.nim = nim;
             this.idPrestasi = idPrestasiKonversi;
@@ -39,7 +39,7 @@ namespace fasilkom_prestasi
 
             if (KonversiContext.checkData(idPrestasi) == 1)
             {
-                id_konversi = int.Parse(dataKonversi.Rows[0]["id"].ToString());
+                id_konversi = dataKonversi.Rows[0]["id"].ToString();
             }
 
 
@@ -112,10 +112,19 @@ namespace fasilkom_prestasi
 
             DataTable dataKonversiMatkul = KonversiMatkulContext.all();
 
-            if (dataKonversiMatkul.Select($"id_konversi = {id_konversi}") == null)
+            try
+            {
+                if (dataKonversiMatkul.Select($"id_konversi = {id_konversi}") == null)
+                {
+                    
+                }
+            }
+            catch (Exception ex)
             {
                 KonversiContext.destroy(nim);
             }
+
+
 
 
             this.Close();

@@ -59,7 +59,8 @@ namespace fasilkom_prestasi.App.Context
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter ("status", NpgsqlDbType.Unknown) {Value = konversi.status},
+                new NpgsqlParameter ("@id", NpgsqlDbType.Varchar) {Value = konversi.id},
+                new NpgsqlParameter ("@status", NpgsqlDbType.Unknown) {Value = konversi.status},
             };
             commandExecutor(query, parameters);
         }

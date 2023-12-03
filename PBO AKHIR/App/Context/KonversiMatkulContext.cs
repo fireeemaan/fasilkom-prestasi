@@ -23,13 +23,13 @@ namespace fasilkom_prestasi.App.Context
 
             return dataKonversiMatkul;
         }
-        public static DataTable show(int id_konversi)
+        public static DataTable show(string id_konversi)
         {
             string query = $"SELECT {table}.id as ID, {table}.kd_matkul as \"Kode Matkul\", matkul.matkul FROM {table} JOIN matkul ON {table}.kd_matkul = matkul.kode WHERE id_konversi = @id_konversi";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Integer) {Value = id_konversi}
+                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Varchar) {Value = id_konversi}
             };
 
             DataTable dataKonversi = queryExecutor(query, parameters);
@@ -71,7 +71,7 @@ namespace fasilkom_prestasi.App.Context
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Integer) {Value = konversiMatkul.id_konversi },
+                new NpgsqlParameter("@id_konversi", NpgsqlDbType.Varchar) {Value = konversiMatkul.id_konversi },
                 new NpgsqlParameter("@kd_matkul", NpgsqlDbType.Varchar){Value = konversiMatkul.kd_matkul },
                 new NpgsqlParameter("@sks", NpgsqlDbType.Integer){Value = konversiMatkul.sks},
                 new NpgsqlParameter("@semester", NpgsqlDbType.Integer){Value = konversiMatkul.semester}

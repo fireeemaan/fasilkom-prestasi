@@ -21,7 +21,7 @@ namespace fasilkom_prestasi
         int userRole;
         long nim;
 
-        int idKonversiInvalid = 0;
+        string idKonversiInvalid = null;
 
         public Record(int userRole, long nim)
         {
@@ -191,7 +191,7 @@ namespace fasilkom_prestasi
                     {
                         DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
 
-                        int idKonversiInvalid = int.Parse(dataKonversiInvalid.Rows[0]["id"].ToString());
+                        string idKonversiInvalid = dataKonversiInvalid.Rows[0]["id"].ToString();
                     }
                 }
                 else

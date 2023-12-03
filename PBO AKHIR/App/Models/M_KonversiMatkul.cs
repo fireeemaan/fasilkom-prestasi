@@ -16,7 +16,7 @@ namespace fasilkom_prestasi.App.Models
         public int sks { get; set; }
         public int semester { get; set; }
         [ForeignKey("M_Konversi")]
-        public int id_konversi { get; set; }
+        public string id_konversi { get; set; }
         [ForeignKey("M_Matkul")]
         public string kd_matkul { get; set; }
 
