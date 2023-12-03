@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace fasilkom_prestasi
 {
     public partial class Form_ConvertionValidation_Admin : Form
     {
-        public Form_ConvertionValidation_Admin()
+        long id;
+        long id_admin;
+        string idKonversi;
+        public Form_ConvertionValidation_Admin(string idKonversi,long id, long id_admin)
         {
+            this.id = id;
+            this.id_admin = id_admin;
+            this.idKonversi = idKonversi;
             InitializeComponent();
+
+
         }
     }
 }

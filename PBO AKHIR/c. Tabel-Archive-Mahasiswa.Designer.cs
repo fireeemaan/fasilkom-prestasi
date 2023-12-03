@@ -142,6 +142,7 @@
             btnRecord.TabIndex = 10;
             btnRecord.Text = "Record";
             btnRecord.UseVisualStyleBackColor = false;
+            btnRecord.Click += btnRecord_Click;
             // 
             // panel2
             // 
@@ -218,7 +219,6 @@
             btnArchive.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnArchive.TabIndex = 11;
             btnArchive.Values.Text = "Archive";
-            
             // 
             // Record
             // 

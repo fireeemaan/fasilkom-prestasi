@@ -29,53 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Validation));
-            dgvValidation = new Krypton.Toolkit.KryptonDataGridView();
-            sidePanel = new Panel();
             btnArchive = new Krypton.Toolkit.KryptonButton();
             btnValidShow = new Krypton.Toolkit.KryptonButton();
             btnInvalidShow = new Krypton.Toolkit.KryptonButton();
+            btnAchievements = new Button();
+            btnConvertion = new Button();
+            dgvValidation = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvValidation).BeginInit();
             SuspendLayout();
-            // 
-            // dgvValidation
-            // 
-            dgvValidation.AllowUserToAddRows = false;
-            dgvValidation.AllowUserToDeleteRows = false;
-            dgvValidation.AllowUserToResizeColumns = false;
-            dgvValidation.AllowUserToResizeRows = false;
-            dgvValidation.BorderStyle = BorderStyle.None;
-            dgvValidation.ColumnHeadersHeight = 36;
-            dgvValidation.Location = new Point(338, 227);
-            dgvValidation.Name = "dgvValidation";
-            dgvValidation.ReadOnly = true;
-            dgvValidation.RowHeadersVisible = false;
-            dgvValidation.RowHeadersWidth = 51;
-            dgvValidation.RowTemplate.Height = 29;
-            dgvValidation.Size = new Size(1170, 502);
-            dgvValidation.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
-            dgvValidation.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            dgvValidation.TabIndex = 2;
-            dgvValidation.CellContentClick += dgvValidation_CellContentClick;
-            dgvValidation.CellContentDoubleClick += dgvValidation_CellContentDoubleClick;
-            // 
-            // sidePanel
-            // 
-            sidePanel.BackColor = Color.FromArgb(189, 209, 255);
-            sidePanel.ForeColor = Color.White;
-            sidePanel.Location = new Point(2, 159);
-            sidePanel.Margin = new Padding(2);
-            sidePanel.MaximumSize = new Size(8, 48);
-            sidePanel.MinimumSize = new Size(8, 48);
-            sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(8, 48);
-            sidePanel.TabIndex = 26;
-            sidePanel.Paint += sidePanel_Paint;
-
             // 
             // btnArchive
             // 
             btnArchive.CornerRoundingRadius = 10F;
-            btnArchive.Location = new Point(362, 113);
+            btnArchive.Location = new Point(1141, 175);
             btnArchive.Margin = new Padding(2);
             btnArchive.Name = "btnArchive";
             btnArchive.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -109,7 +75,7 @@
             // btnValidShow
             // 
             btnValidShow.CornerRoundingRadius = 10F;
-            btnValidShow.Location = new Point(479, 113);
+            btnValidShow.Location = new Point(1258, 175);
             btnValidShow.Margin = new Padding(2);
             btnValidShow.Name = "btnValidShow";
             btnValidShow.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -143,7 +109,7 @@
             // btnInvalidShow
             // 
             btnInvalidShow.CornerRoundingRadius = 10F;
-            btnInvalidShow.Location = new Point(607, 113);
+            btnInvalidShow.Location = new Point(1375, 175);
             btnInvalidShow.Margin = new Padding(2);
             btnInvalidShow.Name = "btnInvalidShow";
             btnInvalidShow.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -157,6 +123,7 @@
             btnInvalidShow.Size = new Size(113, 32);
             btnInvalidShow.StateCommon.Back.Color1 = Color.FromArgb(189, 209, 255);
             btnInvalidShow.StateCommon.Back.Color2 = Color.FromArgb(189, 209, 255);
+            btnInvalidShow.StateCommon.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.ExpertSquareHighlight;
             btnInvalidShow.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnInvalidShow.StateCommon.Border.Rounding = 10F;
             btnInvalidShow.StateCommon.Content.ShortText.Font = new Font("Poppins Medium", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -165,14 +132,68 @@
             btnInvalidShow.StateNormal.Border.Color1 = Color.FromArgb(189, 209, 255);
             btnInvalidShow.StateNormal.Border.Color2 = Color.FromArgb(189, 209, 255);
             btnInvalidShow.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnInvalidShow.StatePressed.Back.Color1 = Color.FromArgb(184, 206, 255);
-            btnInvalidShow.StatePressed.Back.Color2 = Color.FromArgb(184, 206, 255);
-            btnInvalidShow.StatePressed.Border.Color1 = Color.FromArgb(184, 206, 255);
-            btnInvalidShow.StatePressed.Border.Color2 = Color.FromArgb(184, 206, 255);
+            btnInvalidShow.StatePressed.Back.Color1 = Color.FromArgb(189, 209, 255);
+            btnInvalidShow.StatePressed.Back.Color2 = Color.FromArgb(189, 209, 255);
+            btnInvalidShow.StatePressed.Border.Color1 = Color.FromArgb(189, 209, 255);
+            btnInvalidShow.StatePressed.Border.Color2 = Color.FromArgb(189, 209, 255);
             btnInvalidShow.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnInvalidShow.TabIndex = 30;
             btnInvalidShow.Values.Text = "Invalid";
             btnInvalidShow.Click += btnInvalidShow_Click;
+            // 
+            // btnAchievements
+            // 
+            btnAchievements.BackColor = Color.White;
+            btnAchievements.FlatAppearance.BorderSize = 0;
+            btnAchievements.FlatStyle = FlatStyle.Flat;
+            btnAchievements.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAchievements.Image = (Image)resources.GetObject("btnAchievements.Image");
+            btnAchievements.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAchievements.Location = new Point(2, 159);
+            btnAchievements.Margin = new Padding(2);
+            btnAchievements.Name = "btnAchievements";
+            btnAchievements.Size = new Size(232, 62);
+            btnAchievements.TabIndex = 31;
+            btnAchievements.Text = "Achievement\r\nValidation";
+            btnAchievements.UseVisualStyleBackColor = false;
+            // 
+            // btnConvertion
+            // 
+            btnConvertion.BackColor = Color.White;
+            btnConvertion.FlatAppearance.BorderSize = 0;
+            btnConvertion.FlatStyle = FlatStyle.Flat;
+            btnConvertion.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConvertion.Image = (Image)resources.GetObject("btnConvertion.Image");
+            btnConvertion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConvertion.Location = new Point(2, 249);
+            btnConvertion.Margin = new Padding(2);
+            btnConvertion.Name = "btnConvertion";
+            btnConvertion.Size = new Size(232, 62);
+            btnConvertion.TabIndex = 32;
+            btnConvertion.Text = "Convertion\r\nValidation";
+            btnConvertion.UseVisualStyleBackColor = false;
+            btnConvertion.Click += btnConvertion_Click;
+            // 
+            // dgvValidation
+            // 
+            dgvValidation.AllowUserToAddRows = false;
+            dgvValidation.AllowUserToDeleteRows = false;
+            dgvValidation.AllowUserToResizeColumns = false;
+            dgvValidation.AllowUserToResizeRows = false;
+            dgvValidation.BorderStyle = BorderStyle.None;
+            dgvValidation.ColumnHeadersHeight = 36;
+            dgvValidation.Location = new Point(337, 227);
+            dgvValidation.Name = "dgvValidation";
+            dgvValidation.ReadOnly = true;
+            dgvValidation.RowHeadersVisible = false;
+            dgvValidation.RowHeadersWidth = 51;
+            dgvValidation.RowTemplate.Height = 29;
+            dgvValidation.Size = new Size(1170, 502);
+            dgvValidation.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvValidation.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvValidation.TabIndex = 2;
+            dgvValidation.CellContentClick += dgvValidation_CellContentClick;
+            dgvValidation.CellContentDoubleClick += dgvValidation_CellContentDoubleClick;
             // 
             // Validation
             // 
@@ -180,10 +201,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnConvertion);
+            Controls.Add(btnAchievements);
             Controls.Add(btnInvalidShow);
             Controls.Add(btnValidShow);
             Controls.Add(btnArchive);
-            Controls.Add(sidePanel);
             Controls.Add(dgvValidation);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -195,11 +217,11 @@
         }
 
         #endregion
-
-        private Krypton.Toolkit.KryptonDataGridView dgvValidation;
-        private Panel sidePanel;
         private Krypton.Toolkit.KryptonButton btnArchive;
         private Krypton.Toolkit.KryptonButton btnValidShow;
         private Krypton.Toolkit.KryptonButton btnInvalidShow;
+        private Button btnAchievements;
+        private Button btnConvertion;
+        private Krypton.Toolkit.KryptonDataGridView dgvValidation;
     }
 }

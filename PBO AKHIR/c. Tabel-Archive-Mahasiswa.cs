@@ -226,5 +226,10 @@ namespace fasilkom_prestasi
             Konversi konversi = new Konversi(nim);
             konversi.ShowDialog();
         }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
