@@ -40,22 +40,33 @@
             tbxNama = new TextBox();
             tbxNIM = new TextBox();
             tbxLinkDok = new TextBox();
-            rbtnInvalid = new RadioButton();
-            rbtnValid = new RadioButton();
-            tbxJumlah = new TextBox();
+            rbtnReject = new RadioButton();
+            rbtnAccept = new RadioButton();
+            tbxJumlahSKS = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvMatkulKonversi).BeginInit();
             SuspendLayout();
             // 
             // dgvMatkulKonversi
             // 
+            dgvMatkulKonversi.AllowUserToAddRows = false;
+            dgvMatkulKonversi.AllowUserToDeleteRows = false;
+            dgvMatkulKonversi.AllowUserToResizeColumns = false;
+            dgvMatkulKonversi.AllowUserToResizeRows = false;
+            dgvMatkulKonversi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMatkulKonversi.BorderStyle = BorderStyle.None;
             dgvMatkulKonversi.ColumnHeadersHeight = 36;
             dgvMatkulKonversi.Location = new Point(331, 227);
             dgvMatkulKonversi.Name = "dgvMatkulKonversi";
+            dgvMatkulKonversi.ReadOnly = true;
+            dgvMatkulKonversi.RowHeadersVisible = false;
             dgvMatkulKonversi.RowHeadersWidth = 51;
             dgvMatkulKonversi.RowTemplate.Height = 29;
             dgvMatkulKonversi.Size = new Size(1170, 182);
+            dgvMatkulKonversi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            dgvMatkulKonversi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            dgvMatkulKonversi.StateCommon.HeaderColumn.Content.TextV = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvMatkulKonversi.TabIndex = 8;
+            dgvMatkulKonversi.CellContentDoubleClick += dgvMatkulKonversi_CellContentDoubleClick;
             // 
             // tbxBidang
             // 
@@ -193,45 +204,43 @@
             // 
             tbxLinkDok.BackColor = Color.White;
             tbxLinkDok.BorderStyle = BorderStyle.None;
-            tbxLinkDok.Enabled = false;
             tbxLinkDok.Location = new Point(428, 617);
             tbxLinkDok.Name = "tbxLinkDok";
-            tbxLinkDok.ReadOnly = true;
             tbxLinkDok.Size = new Size(477, 20);
             tbxLinkDok.TabIndex = 31;
             // 
-            // rbtnInvalid
+            // rbtnReject
             // 
-            rbtnInvalid.AutoSize = true;
-            rbtnInvalid.BackColor = Color.White;
-            rbtnInvalid.Location = new Point(1058, 717);
-            rbtnInvalid.Name = "rbtnInvalid";
-            rbtnInvalid.Size = new Size(17, 16);
-            rbtnInvalid.TabIndex = 32;
-            rbtnInvalid.UseVisualStyleBackColor = false;
+            rbtnReject.AutoSize = true;
+            rbtnReject.BackColor = Color.White;
+            rbtnReject.Location = new Point(1058, 717);
+            rbtnReject.Name = "rbtnReject";
+            rbtnReject.Size = new Size(17, 16);
+            rbtnReject.TabIndex = 32;
+            rbtnReject.UseVisualStyleBackColor = false;
             // 
-            // rbtnValid
+            // rbtnAccept
             // 
-            rbtnValid.AutoSize = true;
-            rbtnValid.BackColor = Color.White;
-            rbtnValid.Location = new Point(1058, 678);
-            rbtnValid.Name = "rbtnValid";
-            rbtnValid.Size = new Size(17, 16);
-            rbtnValid.TabIndex = 33;
-            rbtnValid.UseVisualStyleBackColor = false;
+            rbtnAccept.AutoSize = true;
+            rbtnAccept.BackColor = Color.White;
+            rbtnAccept.Location = new Point(1058, 678);
+            rbtnAccept.Name = "rbtnAccept";
+            rbtnAccept.Size = new Size(17, 16);
+            rbtnAccept.TabIndex = 33;
+            rbtnAccept.UseVisualStyleBackColor = false;
             // 
-            // tbxJumlah
+            // tbxJumlahSKS
             // 
-            tbxJumlah.BackColor = Color.White;
-            tbxJumlah.BorderStyle = BorderStyle.None;
-            tbxJumlah.Enabled = false;
-            tbxJumlah.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            tbxJumlah.Location = new Point(760, 688);
-            tbxJumlah.Name = "tbxJumlah";
-            tbxJumlah.ReadOnly = true;
-            tbxJumlah.Size = new Size(54, 45);
-            tbxJumlah.TabIndex = 34;
-            tbxJumlah.TextAlign = HorizontalAlignment.Center;
+            tbxJumlahSKS.BackColor = Color.White;
+            tbxJumlahSKS.BorderStyle = BorderStyle.None;
+            tbxJumlahSKS.Enabled = false;
+            tbxJumlahSKS.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxJumlahSKS.Location = new Point(760, 688);
+            tbxJumlahSKS.Name = "tbxJumlahSKS";
+            tbxJumlahSKS.ReadOnly = true;
+            tbxJumlahSKS.Size = new Size(54, 45);
+            tbxJumlahSKS.TabIndex = 34;
+            tbxJumlahSKS.TextAlign = HorizontalAlignment.Center;
             // 
             // Form_ConvertionValidation_Admin
             // 
@@ -239,9 +248,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(tbxJumlah);
-            Controls.Add(rbtnValid);
-            Controls.Add(rbtnInvalid);
+            Controls.Add(tbxJumlahSKS);
+            Controls.Add(rbtnAccept);
+            Controls.Add(rbtnReject);
             Controls.Add(tbxLinkDok);
             Controls.Add(tbxNIM);
             Controls.Add(tbxNama);
@@ -275,8 +284,8 @@
         private TextBox tbxNama;
         private TextBox tbxNIM;
         private TextBox tbxLinkDok;
-        private RadioButton rbtnInvalid;
-        private RadioButton rbtnValid;
-        private TextBox tbxJumlah;
+        private RadioButton rbtnReject;
+        private RadioButton rbtnAccept;
+        private TextBox tbxJumlahSKS;
     }
 }

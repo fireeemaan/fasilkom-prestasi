@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace fasilkom_prestasi.App.Models
         public string status { get; set; }
         public long nim { get; set; }
         public int sks_used { get; set; }
+        [AllowNull]
+        public string dokumen { get; set; }
         [ForeignKey("M_Prestasi")]
         public string id_prestasi { get; set; }
         [ForeignKey("M_Nilai")]

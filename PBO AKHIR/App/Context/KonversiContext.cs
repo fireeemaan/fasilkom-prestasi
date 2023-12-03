@@ -79,6 +79,19 @@ namespace fasilkom_prestasi.App.Context
             commandExecutor(query, parameters);
         }
 
+        public static void update(M_Konversi konversi)
+        {
+            string query = $"UPDATE {table} SET status = @status, dokumen = @dokumen WHERE id = @id";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter ("@id", NpgsqlDbType.Varchar) {Value = konversi.id},
+                new NpgsqlParameter ("@status", NpgsqlDbType.Unknown) {Value = konversi.status},
+                new NpgsqlParameter ("@dokumen", NpgsqlDbType.Text) {Value = konversi.dokumen}
+            };
+            commandExecutor(query, parameters);
+        }
+
 
         public static DataTable all()
         {
