@@ -33,5 +33,12 @@ namespace fasilkom_prestasi
             Record record = new Record(nim);
             record.ShowDialog();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeGuide homeGuide = new HomeGuide(1, nim);
+            homeGuide.ShowDialog();
+        }
     }
 }

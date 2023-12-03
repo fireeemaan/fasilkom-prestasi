@@ -70,23 +70,7 @@
             sidePanel.Size = new Size(8, 48);
             sidePanel.TabIndex = 26;
             sidePanel.Paint += sidePanel_Paint;
-            // 
-            // btnRecord
-            // 
-            btnRecord.BackColor = Color.White;
-            btnRecord.FlatAppearance.BorderSize = 0;
-            btnRecord.FlatStyle = FlatStyle.Flat;
-            btnRecord.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRecord.Image = (Image)resources.GetObject("btnRecord.Image");
-            btnRecord.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRecord.Location = new Point(11, 159);
-            btnRecord.Margin = new Padding(2);
-            btnRecord.Name = "btnRecord";
-            btnRecord.Size = new Size(232, 48);
-            btnRecord.TabIndex = 27;
-            btnRecord.Text = "Validation";
-            btnRecord.UseVisualStyleBackColor = false;
-            btnRecord.Click += btnRecord_Click;
+
             // 
             // btnArchive
             // 

@@ -101,7 +101,7 @@ namespace fasilkom_prestasi
             maxKonversiSKS = int.Parse(dataNilai.Rows[0]["max_sks"].ToString());
 
             List<int> sksList = new List<int>();
-            
+
 
             foreach (DataRow row in dataKonversiMatkul.Rows)
             {
@@ -160,13 +160,13 @@ namespace fasilkom_prestasi
                 {
                     KonversiContext.destroy(nim);
                 }
-                catch ( Exception ex2 )
+                catch (Exception ex2)
                 {
 
                 }
 
 
-                
+
             }
 
 
@@ -186,7 +186,7 @@ namespace fasilkom_prestasi
         {
             dgvKonversiMatkul.Columns["id"].Visible = false;
 
-            
+
 
             KeyValuePair<int, string> selectedMatkul = (KeyValuePair<int, string>)cbxMatkulPilihan.SelectedItem;
             string namaMatkul = selectedMatkul.Value.ToString();
@@ -226,14 +226,14 @@ namespace fasilkom_prestasi
                     maxKonversiSKS -= sksMK;
                     KonversiMatkulContext.store(konversiMatkulBaru);
                 }
-                
+
             }
             else
             {
                 MessageBox.Show("SKS mata kuliah melebihi maksimum konversi!");
             }
 
-            
+
 
             dgvKonversiMatkul.DataSource = null;
             dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi);
@@ -271,10 +271,9 @@ namespace fasilkom_prestasi
 
         private void dgvKonversiMatkul_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (e.ColumnIndex == dgvKonversiMatkul.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
-                
+
                 int idKonversiMatkulHapus = int.Parse(dgvKonversiMatkul.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
                 KonversiMatkulContext.destroy(idKonversiMatkulHapus);

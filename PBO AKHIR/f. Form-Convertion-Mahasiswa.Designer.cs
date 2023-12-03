@@ -182,7 +182,7 @@
             dgvKonversiMatkul.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dgvKonversiMatkul.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvKonversiMatkul.TabIndex = 25;
-           
+            dgvKonversiMatkul.CellContentClick += dgvKonversiMatkul_CellContentClick;
             // 
             // tbxSKS
             // 
