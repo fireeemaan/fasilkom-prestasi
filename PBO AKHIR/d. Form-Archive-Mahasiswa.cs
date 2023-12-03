@@ -241,7 +241,7 @@ namespace fasilkom_prestasi
         {
             this.Hide();
             HomeGuide homeGuide = new HomeGuide(1, nim);
-            homeGuide.ShowDialog();
+            homeGuide.Show();
         }
     }
 }

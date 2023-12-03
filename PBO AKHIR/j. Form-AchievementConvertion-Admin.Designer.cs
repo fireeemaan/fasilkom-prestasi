@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ConvertionValidation_Admin));
-            kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            dgvMatkulKonversi = new Krypton.Toolkit.KryptonDataGridView();
             tbxBidang = new TextBox();
             tbxNilai = new TextBox();
             btnBackConvertion = new Krypton.Toolkit.KryptonButton();
@@ -42,19 +42,20 @@
             tbxLinkDok = new TextBox();
             rbtnInvalid = new RadioButton();
             rbtnValid = new RadioButton();
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).BeginInit();
+            tbxJumlah = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvMatkulKonversi).BeginInit();
             SuspendLayout();
             // 
-            // kryptonDataGridView1
+            // dgvMatkulKonversi
             // 
-            kryptonDataGridView1.BorderStyle = BorderStyle.None;
-            kryptonDataGridView1.ColumnHeadersHeight = 36;
-            kryptonDataGridView1.Location = new Point(331, 227);
-            kryptonDataGridView1.Name = "kryptonDataGridView1";
-            kryptonDataGridView1.RowHeadersWidth = 51;
-            kryptonDataGridView1.RowTemplate.Height = 29;
-            kryptonDataGridView1.Size = new Size(1170, 182);
-            kryptonDataGridView1.TabIndex = 8;
+            dgvMatkulKonversi.BorderStyle = BorderStyle.None;
+            dgvMatkulKonversi.ColumnHeadersHeight = 36;
+            dgvMatkulKonversi.Location = new Point(331, 227);
+            dgvMatkulKonversi.Name = "dgvMatkulKonversi";
+            dgvMatkulKonversi.RowHeadersWidth = 51;
+            dgvMatkulKonversi.RowTemplate.Height = 29;
+            dgvMatkulKonversi.Size = new Size(1170, 182);
+            dgvMatkulKonversi.TabIndex = 8;
             // 
             // tbxBidang
             // 
@@ -103,6 +104,7 @@
             btnBackConvertion.StatePressed.Back.Color2 = Color.WhiteSmoke;
             btnBackConvertion.TabIndex = 25;
             btnBackConvertion.Values.Text = "";
+            btnBackConvertion.Click += btnBackConvertion_Click;
             // 
             // btnAddConvertion
             // 
@@ -218,12 +220,26 @@
             rbtnValid.TabIndex = 33;
             rbtnValid.UseVisualStyleBackColor = false;
             // 
+            // tbxJumlah
+            // 
+            tbxJumlah.BackColor = Color.White;
+            tbxJumlah.BorderStyle = BorderStyle.None;
+            tbxJumlah.Enabled = false;
+            tbxJumlah.Font = new Font("Poppins", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            tbxJumlah.Location = new Point(760, 688);
+            tbxJumlah.Name = "tbxJumlah";
+            tbxJumlah.ReadOnly = true;
+            tbxJumlah.Size = new Size(54, 45);
+            tbxJumlah.TabIndex = 34;
+            tbxJumlah.TextAlign = HorizontalAlignment.Center;
+            // 
             // Form_ConvertionValidation_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(tbxJumlah);
             Controls.Add(rbtnValid);
             Controls.Add(rbtnInvalid);
             Controls.Add(tbxLinkDok);
@@ -235,20 +251,20 @@
             Controls.Add(btnBackConvertion);
             Controls.Add(btnAddConvertion);
             Controls.Add(tbxNilai);
-            Controls.Add(kryptonDataGridView1);
+            Controls.Add(dgvMatkulKonversi);
             Controls.Add(tbxBidang);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form_ConvertionValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Achievement Convertion Admin";
-            ((System.ComponentModel.ISupportInitialize)kryptonDataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMatkulKonversi).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonDataGridView dgvMatkulKonversi;
         private TextBox tbxBidang;
         private TextBox tbxNilai;
         private Krypton.Toolkit.KryptonButton btnBackConvertion;
@@ -261,5 +277,6 @@
         private TextBox tbxLinkDok;
         private RadioButton rbtnInvalid;
         private RadioButton rbtnValid;
+        private TextBox tbxJumlah;
     }
 }

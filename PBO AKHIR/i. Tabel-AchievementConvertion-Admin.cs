@@ -21,7 +21,7 @@ namespace fasilkom_prestasi
             this.id_admin = id_admin;
             InitializeComponent();
 
-            dgvKonversiMatkul.DataSource = KonversiMatkulContext.all();
+            dgvKonversiMatkul.DataSource = KonversiContext.all();
 
             DataGridViewButtonColumn validButton = new DataGridViewButtonColumn();
             validButton.HeaderText = "";
@@ -43,7 +43,7 @@ namespace fasilkom_prestasi
             if (e.ColumnIndex == dgvKonversiMatkul.Columns["validButton"].Index && e.RowIndex >= 0)
             {
 
-                long konversiValidasi = Convert.ToInt64(dgvKonversiMatkul.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                int konversiValidasi =int.Parse(dgvKonversiMatkul.Rows[e.RowIndex].Cells["id"].Value.ToString());
                 string idkonversiValidasi = dgvKonversiMatkul.Rows[e.RowIndex].Cells["id_konversi"].Value.ToString();
                 /*string idAdmin = (dgvValidation.Rows[e.RowIndex].Cells["nama_admin"].Value.ToString());*/
 
@@ -52,7 +52,7 @@ namespace fasilkom_prestasi
                 {
                     this.Hide();
                     Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idkonversiValidasi, konversiValidasi);
-                    formValidasi.ShowDialog();
+                    formValidasi.Show();
                 }
                 dgvKonversiMatkul.DataSource = null;
                 dgvKonversiMatkul.DataSource = KonversiContext.all();
@@ -63,7 +63,7 @@ namespace fasilkom_prestasi
         {
             this.Hide();
             Validation validation = new Validation(id_admin);
-            validation.ShowDialog();
+            validation.Show();
         }
     }
 }

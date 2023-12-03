@@ -63,14 +63,14 @@ namespace fasilkom_prestasi
 
                         this.Hide();
                         HomeGuide homeGuide = new HomeGuide(1, username);
-                        homeGuide.ShowDialog();
+                        homeGuide.Show();
 
                     }
                     else if (userRole == 2)
                     {
                         this.Hide();
                         Validation tableValidation = new Validation(username);
-                        tableValidation.ShowDialog();
+                        tableValidation.Show();
 
                     };
                 }

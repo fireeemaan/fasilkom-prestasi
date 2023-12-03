@@ -41,14 +41,14 @@ namespace fasilkom_prestasi
         {
             this.Hide();
             Record record = new Record(nim);
-            record.ShowDialog();
+            record.Show();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
             HomeGuide homeGuide = new HomeGuide(1, nim);
-            homeGuide.ShowDialog();
+            homeGuide.Show();
         }
 
         private void dgvKonversi_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -67,7 +67,7 @@ namespace fasilkom_prestasi
 
                 this.Hide();
                 Form_Convertion_Mahasiswa formKonversiMhs = new Form_Convertion_Mahasiswa(nim, idPrestasi, idKonversiDetail);
-                formKonversiMhs.ShowDialog();
+                formKonversiMhs.Show();
 
 
 

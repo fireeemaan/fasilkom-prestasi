@@ -17,13 +17,19 @@ namespace fasilkom_prestasi
     {
         long id;
         string idKonversi;
+        long id_admin;
         public Form_ConvertionValidation_Admin(string idKonversi, long id)
         {
             this.id = id;
             this.idKonversi = idKonversi;
             InitializeComponent();
 
-            // Prestasi
+            DataTable dataKonversi = KonversiMatkulContext.show(idKonversi);
+            dgvMatkulKonversi.DataSource = dataKonversi;
+
+
+
+            /*// Prestasi
             DataTable dataPrestasi = PrestasiContext.show(idPrestasi);
             tbxNamaLomba.Text = dataPrestasi.Rows[0]["nama_prestasi"].ToString();
 
@@ -46,7 +52,7 @@ namespace fasilkom_prestasi
 
             DataTable dataNilai = NilaiContext.getNilai(id_region, id_tahapan);
             id_nilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
-
+*/
 
         }
 
@@ -67,6 +73,13 @@ namespace fasilkom_prestasi
             {
                 statusValidasi = "Invalid";
             }
+        }
+
+        private void btnBackConvertion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KonversiAdmin konversi = new KonversiAdmin(id_admin);
+            konversi.Show();
         }
     }
 }
