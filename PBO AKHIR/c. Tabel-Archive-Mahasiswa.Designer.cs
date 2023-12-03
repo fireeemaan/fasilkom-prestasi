@@ -184,6 +184,7 @@
             btnConvertion.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnConvertion.TabIndex = 12;
             btnConvertion.Values.Text = "Convertion";
+            btnConvertion.Click += btnConvertion_Click;
             // 
             // btnArchive
             // 

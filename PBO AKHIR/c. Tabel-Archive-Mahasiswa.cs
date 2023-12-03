@@ -222,9 +222,11 @@ namespace fasilkom_prestasi
             homeGuide.ShowDialog();
         }
 
-        private void btnArchive_Click(object sender, EventArgs e)
+        private void btnConvertion_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Konversi konversi = new Konversi(nim);
+            konversi.ShowDialog();
         }
     }
 }
