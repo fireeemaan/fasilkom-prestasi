@@ -37,7 +37,7 @@
             // btnAddBidang
             // 
             btnAddBidang.CornerRoundingRadius = 30F;
-            btnAddBidang.Location = new Point(274, 322);
+            btnAddBidang.Location = new Point(274, 289);
             btnAddBidang.Margin = new Padding(2);
             btnAddBidang.MaximumSize = new Size(248, 47);
             btnAddBidang.MinimumSize = new Size(248, 47);
@@ -73,7 +73,7 @@
             // btnEditBidang
             // 
             btnEditBidang.CornerRoundingRadius = 30F;
-            btnEditBidang.Location = new Point(274, 271);
+            btnEditBidang.Location = new Point(274, 289);
             btnEditBidang.Margin = new Padding(2);
             btnEditBidang.MaximumSize = new Size(248, 47);
             btnEditBidang.MinimumSize = new Size(248, 47);

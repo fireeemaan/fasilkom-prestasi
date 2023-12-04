@@ -1,5 +1,4 @@
 ﻿using fasilkom_prestasi.App.Context;
-using fasilkom_prestasi.App.Model;
 using fasilkom_prestasi.App.Models;
 using Npgsql;
 using System;
@@ -14,52 +13,45 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-
-    public partial class addBidang : Form
+    public partial class addTahapan : Form
     {
-
-        int id_bidang;
-        public addBidang()
+        int id_tahapan;
+        public addTahapan()
         {
 
-
             InitializeComponent();
-            DataTable dataBidang = BidangContext.all();
-            btnEditBidang.Hide();
-
-        }
-        public addBidang(int id_bidang)
-        {
-            this.id_bidang = id_bidang;
-
-
-            InitializeComponent();
-            btnAddBidang.Hide();
-            DataTable dataBidang = BidangContext.all();
-            DataTable Bidang = BidangContext.show(id_bidang);
-            tbxNamaBidang.Text = dataBidang.Select($"id = {id_bidang}")[0]["bidang"].ToString();
+            DataTable dataTahapan = TahapanContext.all();
+            btnEditTahapan.Hide();
 
         }
 
-
-
-        private void btnAddBidang_Click(object sender, EventArgs e)
+        public addTahapan(int id_tahapan)
         {
-            var namaBidang = tbxNamaBidang.Text;
-            M_Bidang bidangBaru = new M_Bidang
+            this.id_tahapan = id_tahapan;
+            InitializeComponent();
+            btnAddTahapan.Hide();
+            DataTable dataTahapan = TahapanContext.all();
+            DataTable Tahapan = TahapanContext.show(id_tahapan);
+            tbxNamaTahapan.Text = dataTahapan.Select($"id = {id_tahapan}")[0]["tahapan"].ToString();
+        }
+
+        private void btnAddTahapan_Click(object sender, EventArgs e)
+        {
+            var namaTahapan = tbxNamaTahapan.Text;
+            M_Tahapan tahapanBaru = new M_Tahapan
             {
 
-                bidang = namaBidang
+                tahapan = namaTahapan
             };
 
             try
             {
-                BidangContext.store(bidangBaru);
+                TahapanContext.store(tahapanBaru);
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Bidang bidang = new Bidang();
-                bidang.Show();
+                Tahapan tahapan = new Tahapan();
+                tahapan.Show();
             }
             catch (NpgsqlException ex)
             {
@@ -71,24 +63,23 @@ namespace fasilkom_prestasi
             }
         }
 
-        private void btnEditBidang_Click(object sender, EventArgs e)
+        private void btnEditTahapan_Click(object sender, EventArgs e)
         {
-            var namaBidang = tbxNamaBidang.Text;
-
-            M_Bidang bidangBaru = new M_Bidang
+            var namaTahapan = tbxNamaTahapan.Text;
+            M_Tahapan tahapanBaru = new M_Tahapan
 
 
             {
-                id = id_bidang,
-                bidang = namaBidang
+                id = id_tahapan,
+                tahapan = namaTahapan
             };
             try
             {
-                BidangContext.update(bidangBaru);
+                TahapanContext.update(tahapanBaru);
                 MessageBox.Show("Data Berhasil diUbah !");
                 this.Close();
-                Bidang bidang = new Bidang();
-                bidang.Show();
+                Tahapan tahapan = new Tahapan();
+                tahapan.Show();
             }
             catch (NpgsqlException ex)
             {
@@ -98,7 +89,6 @@ namespace fasilkom_prestasi
             {
                 MessageBox.Show($"Error! : {ex}");
             }
-
         }
     }
 }

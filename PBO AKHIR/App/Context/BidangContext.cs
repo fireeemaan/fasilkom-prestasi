@@ -61,7 +61,7 @@ namespace fasilkom_prestasi.App.Context
 
         public static void destroy(int id)
         {
-            string query = $"DELETE FROM {table} WHERE id = @id sort by {table}.id ASC";
+            string query = $"DELETE FROM {table} WHERE id = @id";
 
             NpgsqlParameter[] parameters =
             {

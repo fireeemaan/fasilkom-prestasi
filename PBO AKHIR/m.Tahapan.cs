@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class Bidang : Form
+    public partial class Tahapan : Form
     {
-        public Bidang()
+        public Tahapan()
         {
             InitializeComponent();
 
-            dgvFormBidang.DataSource = BidangContext.all();
+            dgvFormTahapan.DataSource = TahapanContext.all();
+
 
             DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
             editButton.HeaderText = "";
@@ -32,64 +33,61 @@ namespace fasilkom_prestasi
             deleteButton.Name = "deleteButton";
             deleteButton.UseColumnTextForButtonValue = true;
 
-            dgvFormBidang.Columns.Insert(0, editButton);
-            dgvFormBidang.Columns.Insert(1, deleteButton);
-
+            dgvFormTahapan.Columns.Insert(0, editButton);
+            dgvFormTahapan.Columns.Insert(1, deleteButton);
 
         }
 
-        private void btnAddAchievement_Click(object sender, EventArgs e)
+        private void btnAddTahapan_Click(object sender, EventArgs e)
         {
             this.Hide();
 
 
-            addBidang bidang = new addBidang();
-            bidang.Show();
-
-
+            addTahapan tahapan = new addTahapan();
+            tahapan.Show();
 
         }
 
-        private void dgvFormBidang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFormTahapan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvFormBidang.Columns["deleteButton"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvFormTahapan.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
 
-                int idBidangHapus = int.Parse(dgvFormBidang.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                int idBidangHapus = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
                 DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
                 if (message == DialogResult.Yes)
                 {
                     try
                     {
-                        BidangContext.destroy(idBidangHapus);
+                        TahapanContext.destroy(idBidangHapus);
                         DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
                     }
-                    catch (Exception ex) 
+                    catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString()); ;
+                        MessageBox.Show("Data tidak bisa dihapus karena terpakai pada tabel lain !");
                     }
 
-                    dgvFormBidang.DataSource = null;
-                    dgvFormBidang.DataSource = BidangContext.all();
+                    dgvFormTahapan.DataSource = null;
+                    dgvFormTahapan.DataSource = TahapanContext.all();
                 }
 
-                
-              
-            }
-            if (e.ColumnIndex == dgvFormBidang.Columns["editButton"].Index && e.RowIndex >= 0)
-            {
-                int idBidangUbah = int.Parse(dgvFormBidang.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
-                
-                using (addBidang editBidang = new addBidang(idBidangUbah))
+
+            }
+            if (e.ColumnIndex == dgvFormTahapan.Columns["editButton"].Index && e.RowIndex >= 0)
+            {
+                int idTahapanUbah = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
+
+
+                using (addTahapan editTahapan = new addTahapan(idTahapanUbah))
                 {
                     this.Hide();
-                    addBidang formEditBidang = new addBidang(idBidangUbah);
-                    formEditBidang.Show();
+                    addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
+                    formEditTahapan.Show();
                 }
-                dgvFormBidang.DataSource = null;
-                dgvFormBidang.DataSource = BidangContext.all();
+                dgvFormTahapan.DataSource = null;
+                dgvFormTahapan.DataSource = TahapanContext.all();
 
             }
         }
