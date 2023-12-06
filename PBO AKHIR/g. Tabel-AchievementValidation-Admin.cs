@@ -54,9 +54,9 @@ namespace fasilkom_prestasi
 
 
 
-                 this.Hide();
-                 Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin);
-                 formValidasi.Show();
+                this.Hide();
+                Form_AchievementValidation_Admin formValidasi = new Form_AchievementValidation_Admin(prestasiValidasi, nimValidasi, id_admin);
+                formValidasi.Show();
 
                 dgvValidation.DataSource = null;
                 dgvValidation.DataSource = PrestasiContext.showAll(2);

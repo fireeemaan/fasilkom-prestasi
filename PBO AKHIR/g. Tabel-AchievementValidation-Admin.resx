@@ -121,7 +121,7 @@
   <data name="btnAchievements.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
+        EAAACxABrSO9dQAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
         iRp+8kOv3PWFlmuy6b8kpd7lsryRH7GsZHHm5d8lZdnaikIthNozwtSQlOsjuQp2v1uiaBhh6gXMK54K
         Eq11dQYqpWskTs2pTvICyqy4DPHInOokyncH5kI3XGCYU2eVplpnmaox5pr1zhCw/k8vpD5EBwLAQwOm
         RNki9gIunSG2DTG+xAZDDsXxgDQe30h3PMcwiOY8gLjmLM3Mqd0WAtDXTGEQzcc/Q4BsMMgL6Nr4ANlg
@@ -132,7 +132,7 @@
   <data name="btnConvertion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
+        DwAACw8BkvkDpQAAARJJREFUSEvtlIENgjAQRRkDWgodwRHYQDZwBB2BDVzBTRzBERjBEfQ+OZBiCa0t
         iRp+8kOv3PWFlmuy6b8kpd7lsryRH7GsZHHm5d8lZdnaikIthNozwtSQlOsjuQp2v1uiaBhh6gXMK54K
         Eq11dQYqpWskTs2pTvICyqy4DPHInOokyncH5kI3XGCYU2eVplpnmaox5pr1zhCw/k8vpD5EBwLAQwOm
         RNki9gIunSG2DTG+xAZDDsXxgDQe30h3PMcwiOY8gLjmLM3Mqd0WAtDXTGEQzcc/Q4BsMMgL6Nr4ANlg
@@ -143,7 +143,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABkAAAAOECAYAAAD5Tf2iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAW6tJREFUeF7t3euPrelZ3/n9J/BupLxyXsyrZAYb7I4mwiMijSbGDSajUSTQTGKE
+        EAAACxABrSO9dQAAW6tJREFUeF7t3euPrelZ3/n9J/BupLxyXsyrZAYb7I4mwiMijSbGDSajUSTQTGKE
         UCDG0G1oQOHg04SDwaZ7NEAsZWijZAzJmEOwQyIzMIiRgoMYx2DoYHuw26c+uM/ndrsPz+y7dj277/3s
         a9Vde3dddbuv5/ORvnJ31apVq1bVLUvPr1fVhQUo5ff/TJIkSZIkSZJkAIFiooMuSZIkSZIkSXvLAALF
         RAddkiRJkiRJkvaWAQSKiQ66JEmSJEmSJO0tAwgUEx10SZIkSZIkSdpbBhAoJjrokiRJkiRJkrS3DCBQ

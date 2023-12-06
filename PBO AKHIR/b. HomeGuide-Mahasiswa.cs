@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,12 @@ namespace fasilkom_prestasi
             InitializeComponent();
             this.nim = nim;
             this.userRole = userRole;
+
+            // Set name & NIM
+            DataTable dataUser = MahasiswaContext.show(nim);
+            lblNamaMhs.Text = dataUser.Rows[0]["nama"].ToString();
+            lblNIM.Text = nim.ToString();
+
         }
 
         private void HomeGuide_Load(object sender, EventArgs e)
@@ -38,7 +45,7 @@ namespace fasilkom_prestasi
 
         private void HomeGuide_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
     }
 }

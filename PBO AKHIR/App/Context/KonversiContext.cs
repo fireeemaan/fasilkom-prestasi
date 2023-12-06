@@ -52,6 +52,7 @@ namespace fasilkom_prestasi.App.Context
             DataTable dataKonversi = queryExecutor(query, parameters);
             return dataKonversi;
         }
+
         public static DataTable allSelected(long nim, string id_prestasi)
         {
             string query = $"SELECT * FROM {table} WHERE nim = @nim AND id_prestasi = @id_prestasi AND status = 'Invalid'";
@@ -64,6 +65,21 @@ namespace fasilkom_prestasi.App.Context
 
             DataTable dataKonversi = queryExecutor(query, parameters);
             return dataKonversi;
+        }
+
+        public static int checkDuplicate(long nim, string id_prestasi, string status)
+        {
+            string query = $"SELECT COUNT(*) FROM {table} WHERE nim = @nim AND id_prestasi = @id_prestasi AND status = @status";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@nim", NpgsqlDbType.Bigint){Value = nim},
+                new NpgsqlParameter("@id_prestasi", NpgsqlDbType.Varchar){Value = id_prestasi},
+                new NpgsqlParameter("@status", NpgsqlDbType.Unknown){Value = status}
+            };
+
+            int rowsCount = queryExecutorInt(query, parameters);
+            return rowsCount;
         }
 
         public static void updateStatus(M_Konversi konversi)

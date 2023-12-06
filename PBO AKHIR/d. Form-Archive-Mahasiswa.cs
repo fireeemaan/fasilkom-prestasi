@@ -27,7 +27,12 @@ namespace fasilkom_prestasi
             this.idPrestasi = idPrestasi;
             this.nim = nim;
 
-   
+
+
+            // Set name & NIM
+
+
+
             InitializeComponent();
 
             if (idPrestasi != null)
@@ -41,6 +46,11 @@ namespace fasilkom_prestasi
                 btnEditAchievement.Hide();
                 btnAddAchievement.Show();
             }
+
+            DataTable dataUser = MahasiswaContext.show(nim);
+
+            lblNamaMhs.Text = dataUser.Rows[0]["nama"].ToString();
+            lblNIM.Text = nim.ToString();
 
             // Bidang
             DataTable dataBidang = BidangContext.all();
@@ -252,6 +262,18 @@ namespace fasilkom_prestasi
         private void FormArchiveMahasiswa_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
         }
     }
 }

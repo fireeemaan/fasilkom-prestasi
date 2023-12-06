@@ -39,6 +39,12 @@ namespace fasilkom_prestasi
             InitializeComponent();
 
 
+            // Set name & NIM
+            DataTable dataUser = MahasiswaContext.show(nim);
+            lblNamaMhs.Text = dataUser.Rows[0]["nama"].ToString();
+            lblNIM.Text = nim.ToString();
+
+
             DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
             deleteButton.HeaderText = "";
             deleteButton.Text = "Delete";
@@ -57,7 +63,7 @@ namespace fasilkom_prestasi
 
             DataTable dataKonversiMatkul = null;
 
-            
+
             if (id_konversi != null)
             {
                 dataKonversiMatkul = KonversiMatkulContext.show(id_konversi);
@@ -161,11 +167,11 @@ namespace fasilkom_prestasi
                     deleteButton.Visible = false;
                 }
             }
-            
+
 
 
         }
-        
+
 
         private void btnBackConvertion_Click(object sender, EventArgs e)
         {
@@ -215,7 +221,7 @@ namespace fasilkom_prestasi
                 record.Show();
             }
 
-           
+
 
 
         }
@@ -326,6 +332,18 @@ namespace fasilkom_prestasi
                 dgvKonversiMatkul.DataSource = null;
                 dgvKonversiMatkul.DataSource = KonversiMatkulContext.show(id_konversi);
                 dgvKonversiMatkul.Columns["id"].Visible = false;
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
             }
         }
     }

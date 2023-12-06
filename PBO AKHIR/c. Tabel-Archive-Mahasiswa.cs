@@ -30,6 +30,12 @@ namespace fasilkom_prestasi
             this.userRole = userRole;
 
             InitializeComponent();
+
+            // Set name & NIM
+            DataTable dataUser = MahasiswaContext.show(nim);
+            lblNamaMhs.Text = dataUser.Rows[0]["nama"].ToString();
+            lblNIM.Text = nim.ToString();
+
             DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
             dgvPrestasi.DataSource = dataPrestasi;
@@ -64,6 +70,12 @@ namespace fasilkom_prestasi
         {
             this.nim = nim;
             InitializeComponent();
+
+            // Set name & NIM
+            DataTable dataUser = MahasiswaContext.show(nim);
+            lblNamaMhs.Text = dataUser.Rows[0]["nama"].ToString();
+            lblNIM.Text = nim.ToString();
+
             DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
             dgvPrestasi.DataSource = dataPrestasi;
@@ -172,50 +184,65 @@ namespace fasilkom_prestasi
 
                 string idConvertPrestasi = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
-                DataTable selectedDataPrestasi = PrestasiContext.show(idConvertPrestasi);
-                int idRegion = int.Parse(selectedDataPrestasi.Rows[0]["id_region"].ToString());
-                int idTahapan = int.Parse(selectedDataPrestasi.Rows[0]["id_tahapan"].ToString());
 
-                DataTable dataNilai = NilaiContext.getNilai(idRegion, idTahapan);
-                int idNilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
-
-                DataTable dataKonversi = KonversiContext.all();
-
-                DataTable dataKonversiMatkul = KonversiMatkulContext.all();
-
-                M_Konversi konversiBaru = new M_Konversi
+                if (KonversiContext.checkDuplicate(nim, idConvertPrestasi, "Process") > 0)
                 {
-                    id_prestasi = idConvertPrestasi,
-                    nim = this.nim,
-                    id_nilai = idNilai
-                };
-
-                DataTable dataKonversiSelected = KonversiContext.allSelected(nim);
-
-                int rowsCountKonversi = KonversiContext.checkData(idConvertPrestasi);
-
-
-                if (KonversiContext.checkData(idConvertPrestasi) > 0)
+                    MessageBox.Show("PRESTASI yang sama sedang dalam proses konversi!", "Konversi Gagal!");
+                }
+                else if (KonversiContext.checkDuplicate(nim, idConvertPrestasi, "Success") > 0)
                 {
-                    if (KonversiMatkulContext.checkData(idConvertPrestasi) > 0)
-                    {
-                        DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
-
-                        string idKonversiInvalid = dataKonversiInvalid.Rows[0]["id"].ToString();
-                    }
+                    MessageBox.Show("PRESTASI yang sama telah sukses di konversi!", "Konversi Gagal!");
                 }
                 else
                 {
-                    KonversiContext.store(konversiBaru);
+                    DataTable selectedDataPrestasi = PrestasiContext.show(idConvertPrestasi);
+                    int idRegion = int.Parse(selectedDataPrestasi.Rows[0]["id_region"].ToString());
+                    int idTahapan = int.Parse(selectedDataPrestasi.Rows[0]["id_tahapan"].ToString());
+
+                    DataTable dataNilai = NilaiContext.getNilai(idRegion, idTahapan);
+                    int idNilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
+
+                    DataTable dataKonversi = KonversiContext.all();
+
+                    DataTable dataKonversiMatkul = KonversiMatkulContext.all();
+
+                    M_Konversi konversiBaru = new M_Konversi
+                    {
+                        id_prestasi = idConvertPrestasi,
+                        nim = this.nim,
+                        id_nilai = idNilai
+                    };
+
+                    DataTable dataKonversiSelected = KonversiContext.allSelected(nim);
+
+                    int rowsCountKonversi = KonversiContext.checkData(idConvertPrestasi);
+
+
+                    if (KonversiContext.checkData(idConvertPrestasi) > 0)
+                    {
+                        if (KonversiMatkulContext.checkData(idConvertPrestasi) > 0)
+                        {
+                            DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
+
+                            string idKonversiInvalid = dataKonversiInvalid.Rows[0]["id"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        KonversiContext.store(konversiBaru);
+                    }
+
+
+                    this.Hide();
+                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
+                    formConvertPrestasi.Show();
+
+                    dgvPrestasi.DataSource = null;
+                    dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
                 }
 
 
-                this.Hide();
-                Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
-                formConvertPrestasi.Show();
-
-                dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                
 
             }
 
@@ -227,7 +254,7 @@ namespace fasilkom_prestasi
             dgvPrestasi.DataSource = null;
             dgvPrestasi.DataSource = dataPrestasi;
 
-            
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -246,6 +273,26 @@ namespace fasilkom_prestasi
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void lblNamaMhs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
+
 
         }
     }
