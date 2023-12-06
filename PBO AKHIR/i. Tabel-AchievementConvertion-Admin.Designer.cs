@@ -55,6 +55,7 @@
             dgvKonversi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvKonversi.TabIndex = 3;
             dgvKonversi.CellContentClick += dgvKonversi_CellContentClick;
+            dgvKonversi.CellContentDoubleClick += dgvKonversi_CellContentDoubleClick;
             // 
             // btnAchievements
             // 

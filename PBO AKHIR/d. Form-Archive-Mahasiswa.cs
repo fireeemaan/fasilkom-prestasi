@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,14 +17,17 @@ namespace fasilkom_prestasi
 {
     public partial class FormArchiveMahasiswa : Form
     {
+        private bool userClosing = true;
+
         long nim;
         string idPrestasi;
+
         public FormArchiveMahasiswa(long nim, string idPrestasi = null)
         {
             this.idPrestasi = idPrestasi;
             this.nim = nim;
 
-
+   
             InitializeComponent();
 
             if (idPrestasi != null)
@@ -183,6 +187,7 @@ namespace fasilkom_prestasi
 
         private void btnBackAchievement_Click(object sender, EventArgs e)
         {
+            userClosing = false;
             this.Close();
             Record record = new Record(nim);
             record.Show();
@@ -242,6 +247,11 @@ namespace fasilkom_prestasi
             this.Hide();
             HomeGuide homeGuide = new HomeGuide(1, nim);
             homeGuide.Show();
+        }
+
+        private void FormArchiveMahasiswa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

@@ -94,6 +94,7 @@
             Name = "HomeGuide";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home Guide";
+            FormClosing += HomeGuide_FormClosing;
             Load += HomeGuide_Load;
             ResumeLayout(false);
         }

@@ -12,6 +12,7 @@ namespace fasilkom_prestasi
 {
     public partial class HomeGuide : Form
     {
+
         long nim;
         int userRole;
 
@@ -29,10 +30,15 @@ namespace fasilkom_prestasi
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
 
             Record record = new Record(userRole, nim);
             record.ShowDialog();
+        }
+
+        private void HomeGuide_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

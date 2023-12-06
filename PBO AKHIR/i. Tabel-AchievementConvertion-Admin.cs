@@ -39,7 +39,15 @@ namespace fasilkom_prestasi
         }
 
 
-        private void dgvValidation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void btnAchievements_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Validation validation = new Validation(id_admin);
+            validation.Show();
+        }
+
+        private void dgvKonversi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgvKonversi.Columns["validButton"].Index && e.RowIndex >= 0)
             {
@@ -62,14 +70,7 @@ namespace fasilkom_prestasi
             }
         }
 
-        private void btnAchievements_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Validation validation = new Validation(id_admin);
-            validation.Show();
-        }
-
-        private void dgvKonversi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvKonversi_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dgvKonversi.Columns["dokumen"].Index && e.RowIndex >= 0)
             {

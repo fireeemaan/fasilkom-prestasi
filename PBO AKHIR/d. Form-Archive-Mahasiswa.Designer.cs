@@ -255,6 +255,7 @@
             Name = "FormArchiveMahasiswa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Archive Mahasiswa";
+            FormClosing += FormArchiveMahasiswa_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

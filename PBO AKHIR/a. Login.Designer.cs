@@ -34,6 +34,8 @@
             btnLogin = new Krypton.Toolkit.KryptonButton();
             checkBox1 = new CheckBox();
             invalidUsernamePasswordControl1 = new InvalidUsernamePasswordControl();
+            btnFillMhs = new Button();
+            btnFillAdmin = new Button();
             SuspendLayout();
             // 
             // UserBox
@@ -96,12 +98,34 @@
             invalidUsernamePasswordControl1.TabIndex = 6;
             invalidUsernamePasswordControl1.Load += invalidUsernamePasswordControl1_Load;
             // 
+            // btnFillMhs
+            // 
+            btnFillMhs.Location = new Point(1269, 755);
+            btnFillMhs.Name = "btnFillMhs";
+            btnFillMhs.Size = new Size(94, 29);
+            btnFillMhs.TabIndex = 7;
+            btnFillMhs.Text = "Mahasiswa";
+            btnFillMhs.UseVisualStyleBackColor = true;
+            btnFillMhs.Click += btnFillMhs_Click;
+            // 
+            // btnFillAdmin
+            // 
+            btnFillAdmin.Location = new Point(1066, 755);
+            btnFillAdmin.Name = "btnFillAdmin";
+            btnFillAdmin.Size = new Size(94, 29);
+            btnFillAdmin.TabIndex = 8;
+            btnFillAdmin.Text = "Admin";
+            btnFillAdmin.UseVisualStyleBackColor = true;
+            btnFillAdmin.Click += btnFillAdmin_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnFillAdmin);
+            Controls.Add(btnFillMhs);
             Controls.Add(invalidUsernamePasswordControl1);
             Controls.Add(checkBox1);
             Controls.Add(btnLogin);
@@ -123,5 +147,7 @@
         private Krypton.Toolkit.KryptonButton btnLogin;
         private CheckBox checkBox1;
         private InvalidUsernamePasswordControl invalidUsernamePasswordControl1;
+        private Button btnFillMhs;
+        private Button btnFillAdmin;
     }
 }
