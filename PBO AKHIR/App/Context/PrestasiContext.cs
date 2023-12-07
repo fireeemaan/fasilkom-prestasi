@@ -26,7 +26,6 @@ namespace fasilkom_prestasi.App.Context
                     $"FROM {table} JOIN bidang ON {table}.id_bidang = bidang.id JOIN region ON {table}.id_region = region.id JOIN tahapan ON {table}.id_tahapan = tahapan.id JOIN dosen ON {table}.id_dosen = dosen.id " +
                     $"LEFT JOIN admin ON {table}.id_admin = admin.id";
 
-                // HARUS DITAMBAHIN WHERE
 
             }
             else if (userRole == 2)

@@ -151,48 +151,63 @@ namespace fasilkom_prestasi
             var sertifikat = tbxSertifikat.Text;
 
 
-            // Bidang Selected ID
-            KeyValuePair<int, string> selectedBidang = (KeyValuePair<int, string>)cbxBidang.SelectedItem;
-            var idBidang = selectedBidang.Key;
-            // Region Selected ID
-            KeyValuePair<int, string> selectedRegion = (KeyValuePair<int, string>)cbxRegion.SelectedItem;
-            var idRegion = selectedRegion.Key;
-            // Tahapan Selected ID
-            KeyValuePair<int, string> selectedTahapan = (KeyValuePair<int, string>)cbxTahapan.SelectedItem;
-            var idTahapan = selectedTahapan.Key;
-            // Dosen Selected ID
-            KeyValuePair<int, string> selectedDosen = (KeyValuePair<int, string>)cbxDosen.SelectedItem;
-            var idDosen = selectedDosen.Key;
-
-            M_Prestasi prestasiBaru = new M_Prestasi
-            {
-                nama_prestasi = namaPrestasi,
-                id_mahasiswa = nim,
-                sertifikat = sertifikat,
-                id_bidang = idBidang,
-                id_region = idRegion,
-                id_tahapan = idTahapan,
-                id_dosen = idDosen
-
-            };
-
             try
             {
-                PrestasiContext.store(prestasiBaru);
-                MessageBox.Show("Data Berhasil Ditambahkan!");
+                if (tbxSertifikat.Text == null)
+                {
+                    MessageBox.Show("Sertifikat tidak boleh kosong!");
+                }
 
-                this.Close();
-                Record record = new Record(nim);
-                record.Show();
+
+                // Bidang Selected ID
+                KeyValuePair<int, string> selectedBidang = (KeyValuePair<int, string>)cbxBidang.SelectedItem;
+                var idBidang = selectedBidang.Key;
+                // Region Selected ID
+                KeyValuePair<int, string> selectedRegion = (KeyValuePair<int, string>)cbxRegion.SelectedItem;
+                var idRegion = selectedRegion.Key;
+                // Tahapan Selected ID
+                KeyValuePair<int, string> selectedTahapan = (KeyValuePair<int, string>)cbxTahapan.SelectedItem;
+                var idTahapan = selectedTahapan.Key;
+                // Dosen Selected ID
+                KeyValuePair<int, string> selectedDosen = (KeyValuePair<int, string>)cbxDosen.SelectedItem;
+                var idDosen = selectedDosen.Key;
+
+                M_Prestasi prestasiBaru = new M_Prestasi
+                {
+                    nama_prestasi = namaPrestasi,
+                    id_mahasiswa = nim,
+                    sertifikat = sertifikat,
+                    id_bidang = idBidang,
+                    id_region = idRegion,
+                    id_tahapan = idTahapan,
+                    id_dosen = idDosen
+
+                };
+
+                try
+                {
+                    PrestasiContext.store(prestasiBaru);
+                    MessageBox.Show("Data Berhasil Ditambahkan!");
+
+                    this.Close();
+                    Record record = new Record(nim);
+                    record.Show();
+                }
+                catch (NpgsqlException ex)
+                {
+                    MessageBox.Show($"Error! : {ex}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error! : {ex}");
+                }
             }
-            catch (NpgsqlException ex)
+            catch (NullReferenceException nullEx)
             {
-                MessageBox.Show($"Error! : {ex}");
+                MessageBox.Show("Data Tidak Boleh Kosong!", "Input Data Gagal");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
-            }
+
+            
         }
 
         private void btnBackAchievement_Click(object sender, EventArgs e)

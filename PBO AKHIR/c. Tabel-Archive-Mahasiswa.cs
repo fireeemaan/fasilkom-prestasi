@@ -146,18 +146,15 @@ namespace fasilkom_prestasi
                 if (message == DialogResult.Yes)
                 {
                     PrestasiContext.destroy(idPrestasiHapus);
-                    DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
 
                     dgvPrestasi.DataSource = null;
                     dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
-                    dgvPrestasi.Refresh();
-                    dgvPrestasi.Update();
+
+
+                    DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+
                 }
 
-                dgvPrestasi.DataSource = null;
-                dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
-                dgvPrestasi.Refresh();
-                dgvPrestasi.Update();
 
 
             }
@@ -252,8 +249,7 @@ namespace fasilkom_prestasi
             }
 
             dgvPrestasi.DataSource = null;
-            dgvPrestasi.DataSource = dataPrestasi;
-
+            dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
 
         }
 
