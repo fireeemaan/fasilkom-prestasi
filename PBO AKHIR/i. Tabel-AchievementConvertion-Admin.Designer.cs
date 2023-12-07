@@ -32,6 +32,8 @@
             dgvKonversi = new Krypton.Toolkit.KryptonDataGridView();
             btnAchievements = new Button();
             btnConvertion = new Button();
+            panel1 = new Panel();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKonversi).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             btnAchievements.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAchievements.Image = (Image)resources.GetObject("btnAchievements.Image");
             btnAchievements.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAchievements.Location = new Point(2, 159);
+            btnAchievements.Location = new Point(10, 159);
             btnAchievements.Margin = new Padding(2);
             btnAchievements.Name = "btnAchievements";
             btnAchievements.Size = new Size(232, 62);
@@ -82,13 +84,37 @@
             btnConvertion.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnConvertion.Image = (Image)resources.GetObject("btnConvertion.Image");
             btnConvertion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConvertion.Location = new Point(2, 249);
+            btnConvertion.Location = new Point(10, 249);
             btnConvertion.Margin = new Padding(2);
             btnConvertion.Name = "btnConvertion";
             btnConvertion.Size = new Size(232, 62);
             btnConvertion.TabIndex = 33;
             btnConvertion.Text = "Convertion\r\nValidation";
             btnConvertion.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(189, 209, 255);
+            panel1.Location = new Point(0, 249);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(10, 62);
+            panel1.TabIndex = 34;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(10, 315);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(232, 62);
+            button1.TabIndex = 35;
+            button1.Text = "Lainnya\r\n";
+            button1.UseVisualStyleBackColor = false;
             // 
             // KonversiAdmin
             // 
@@ -97,6 +123,8 @@
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(button1);
+            Controls.Add(panel1);
             Controls.Add(btnConvertion);
             Controls.Add(btnAchievements);
             Controls.Add(dgvKonversi);
@@ -114,5 +142,7 @@
         private Krypton.Toolkit.KryptonDataGridView dgvKonversi;
         private Button btnAchievements;
         private Button btnConvertion;
+        private Panel panel1;
+        private Button button1;
     }
 }
