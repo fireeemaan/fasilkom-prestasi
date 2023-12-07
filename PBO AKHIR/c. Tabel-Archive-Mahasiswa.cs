@@ -119,11 +119,10 @@ namespace fasilkom_prestasi
 
             DataTable dataPrestasi = PrestasiContext.showAll(1, nim);
 
-            using (FormArchiveMahasiswa addAchievement = new FormArchiveMahasiswa(nim))
-            {
-                FormArchiveMahasiswa addAchievementPage = new FormArchiveMahasiswa(nim);
-                addAchievementPage.Show();
-            }
+
+            FormArchiveMahasiswa addAchievementPage = new FormArchiveMahasiswa(nim);
+            addAchievementPage.Show();
+
             dgvPrestasi.DataSource = null;
             dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
         }
@@ -164,14 +163,10 @@ namespace fasilkom_prestasi
 
                 string idPrestasiUbah = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
 
+                this.Hide();
+                FormArchiveMahasiswa formEditPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah);
+                formEditPrestasi.Show();
 
-                using (FormArchiveMahasiswa editPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah))
-                {
-                    this.Hide();
-                    FormArchiveMahasiswa formEditPrestasi = new FormArchiveMahasiswa(nim, idPrestasiUbah);
-                    formEditPrestasi.Show();
-
-                }
                 dgvPrestasi.DataSource = null;
                 dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
             }

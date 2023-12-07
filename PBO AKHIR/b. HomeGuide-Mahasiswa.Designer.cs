@@ -138,6 +138,7 @@
             btnLogout.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnLogout.TabIndex = 16;
             btnLogout.Values.Text = "";
+            btnLogout.Click += btnLogout_Click;
             // 
             // lblNIM
             // 
