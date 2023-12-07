@@ -31,7 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Region));
             btnAddTahapan = new Krypton.Toolkit.KryptonButton();
             dgvFormRegion = new Krypton.Toolkit.KryptonDataGridView();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            btnAchievements = new Button();
+            btnOtherMenu = new Button();
+            btnConvertion = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvFormRegion).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnAddTahapan
@@ -91,17 +97,90 @@
             dgvFormRegion.TabIndex = 10;
             dgvFormRegion.CellContentClick += dgvFormRegion_CellContentClick;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(btnAchievements);
+            panel1.Controls.Add(btnOtherMenu);
+            panel1.Controls.Add(btnConvertion);
+            panel1.Location = new Point(0, 166);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(242, 233);
+            panel1.TabIndex = 47;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(189, 209, 255);
+            panel2.Location = new Point(-2, 157);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(10, 62);
+            panel2.TabIndex = 44;
+            // 
+            // btnAchievements
+            // 
+            btnAchievements.BackColor = Color.White;
+            btnAchievements.FlatAppearance.BorderSize = 0;
+            btnAchievements.FlatStyle = FlatStyle.Flat;
+            btnAchievements.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAchievements.Image = (Image)resources.GetObject("btnAchievements.Image");
+            btnAchievements.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAchievements.Location = new Point(8, 1);
+            btnAchievements.Margin = new Padding(2);
+            btnAchievements.Name = "btnAchievements";
+            btnAchievements.Size = new Size(232, 62);
+            btnAchievements.TabIndex = 41;
+            btnAchievements.Text = "Achievement\r\nValidation";
+            btnAchievements.UseVisualStyleBackColor = false;
+            btnAchievements.Click += btnAchievements_Click;
+            // 
+            // btnOtherMenu
+            // 
+            btnOtherMenu.BackColor = Color.White;
+            btnOtherMenu.FlatAppearance.BorderSize = 0;
+            btnOtherMenu.FlatStyle = FlatStyle.Flat;
+            btnOtherMenu.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOtherMenu.Image = (Image)resources.GetObject("btnOtherMenu.Image");
+            btnOtherMenu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOtherMenu.Location = new Point(8, 157);
+            btnOtherMenu.Margin = new Padding(2);
+            btnOtherMenu.Name = "btnOtherMenu";
+            btnOtherMenu.Size = new Size(232, 62);
+            btnOtherMenu.TabIndex = 43;
+            btnOtherMenu.Text = "Lainnya\r\n";
+            btnOtherMenu.UseVisualStyleBackColor = false;
+            // 
+            // btnConvertion
+            // 
+            btnConvertion.BackColor = Color.White;
+            btnConvertion.FlatAppearance.BorderSize = 0;
+            btnConvertion.FlatStyle = FlatStyle.Flat;
+            btnConvertion.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConvertion.Image = (Image)resources.GetObject("btnConvertion.Image");
+            btnConvertion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConvertion.Location = new Point(8, 91);
+            btnConvertion.Margin = new Padding(2);
+            btnConvertion.Name = "btnConvertion";
+            btnConvertion.Size = new Size(232, 62);
+            btnConvertion.TabIndex = 42;
+            btnConvertion.Text = "Convertion\r\nValidation";
+            btnConvertion.UseVisualStyleBackColor = false;
+            btnConvertion.Click += btnConvertion_Click;
+            // 
             // Region
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(panel1);
             Controls.Add(dgvFormRegion);
             Controls.Add(btnAddTahapan);
             Name = "Region";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Region";
             ((System.ComponentModel.ISupportInitialize)dgvFormRegion).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -109,5 +188,10 @@
 
         private Krypton.Toolkit.KryptonButton btnAddTahapan;
         private Krypton.Toolkit.KryptonDataGridView dgvFormRegion;
+        private Panel panel1;
+        private Panel panel2;
+        private Button btnAchievements;
+        private Button btnOtherMenu;
+        private Button btnConvertion;
     }
 }

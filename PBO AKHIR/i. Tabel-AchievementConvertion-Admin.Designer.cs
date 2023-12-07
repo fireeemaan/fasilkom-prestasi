@@ -33,7 +33,7 @@
             btnAchievements = new Button();
             btnConvertion = new Button();
             panel1 = new Panel();
-            button1 = new Button();
+            btnOtherMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKonversi).BeginInit();
             SuspendLayout();
             // 
@@ -100,21 +100,22 @@
             panel1.Size = new Size(10, 62);
             panel1.TabIndex = 34;
             // 
-            // button1
+            // btnOtherMenu
             // 
-            button1.BackColor = Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(10, 315);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(232, 62);
-            button1.TabIndex = 35;
-            button1.Text = "Lainnya\r\n";
-            button1.UseVisualStyleBackColor = false;
+            btnOtherMenu.BackColor = Color.White;
+            btnOtherMenu.FlatAppearance.BorderSize = 0;
+            btnOtherMenu.FlatStyle = FlatStyle.Flat;
+            btnOtherMenu.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOtherMenu.Image = (Image)resources.GetObject("btnOtherMenu.Image");
+            btnOtherMenu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOtherMenu.Location = new Point(10, 315);
+            btnOtherMenu.Margin = new Padding(2);
+            btnOtherMenu.Name = "btnOtherMenu";
+            btnOtherMenu.Size = new Size(232, 62);
+            btnOtherMenu.TabIndex = 35;
+            btnOtherMenu.Text = "Lainnya\r\n";
+            btnOtherMenu.UseVisualStyleBackColor = false;
+            btnOtherMenu.Click += btnOtherMenu_Click;
             // 
             // KonversiAdmin
             // 
@@ -123,7 +124,7 @@
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
-            Controls.Add(button1);
+            Controls.Add(btnOtherMenu);
             Controls.Add(panel1);
             Controls.Add(btnConvertion);
             Controls.Add(btnAchievements);
@@ -143,6 +144,6 @@
         private Button btnAchievements;
         private Button btnConvertion;
         private Panel panel1;
-        private Button button1;
+        private Button btnOtherMenu;
     }
 }

@@ -193,5 +193,12 @@ namespace fasilkom_prestasi
             KonversiAdmin konversi = new KonversiAdmin(id_admin);
             konversi.Show();
         }
+
+        private void btnOtherMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            otherMenu otherMenu = new otherMenu(id_admin);
+            otherMenu.Show();
+        }
     }
 }

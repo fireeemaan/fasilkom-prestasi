@@ -19,19 +19,22 @@ namespace fasilkom_prestasi
     {
 
         int id_bidang;
-        public addBidang()
-        {
+        long id_admin;
 
+
+        public addBidang(long id_admin)
+        {
+            this.id_admin = id_admin;
 
             InitializeComponent();
             DataTable dataBidang = BidangContext.all();
             btnEditBidang.Hide();
 
         }
-        public addBidang(int id_bidang)
+        public addBidang(long id_admin, int id_bidang)
         {
             this.id_bidang = id_bidang;
-
+            this.id_admin = id_admin;
 
             InitializeComponent();
             btnAddBidang.Hide();
@@ -58,7 +61,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Bidang bidang = new Bidang();
+                Bidang bidang = new Bidang(id_admin);
                 bidang.Show();
             }
             catch (NpgsqlException ex)
@@ -87,7 +90,7 @@ namespace fasilkom_prestasi
                 BidangContext.update(bidangBaru);
                 MessageBox.Show("Data Berhasil diUbah !");
                 this.Close();
-                Bidang bidang = new Bidang();
+                Bidang bidang = new Bidang(id_admin);
                 bidang.Show();
             }
             catch (NpgsqlException ex)

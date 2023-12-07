@@ -31,7 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bidang));
             dgvFormBidang = new Krypton.Toolkit.KryptonDataGridView();
             btnAddAchievement = new Krypton.Toolkit.KryptonButton();
+            panel2 = new Panel();
+            btnOtherMenu = new Button();
+            btnConvertion = new Button();
+            btnAchievements = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvFormBidang).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvFormBidang
@@ -91,6 +97,76 @@
             btnAddAchievement.Values.Text = "";
             btnAddAchievement.Click += btnAddAchievement_Click;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(189, 209, 255);
+            panel2.Location = new Point(-2, 157);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(10, 62);
+            panel2.TabIndex = 44;
+            // 
+            // btnOtherMenu
+            // 
+            btnOtherMenu.BackColor = Color.White;
+            btnOtherMenu.FlatAppearance.BorderSize = 0;
+            btnOtherMenu.FlatStyle = FlatStyle.Flat;
+            btnOtherMenu.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOtherMenu.Image = (Image)resources.GetObject("btnOtherMenu.Image");
+            btnOtherMenu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOtherMenu.Location = new Point(8, 157);
+            btnOtherMenu.Margin = new Padding(2);
+            btnOtherMenu.Name = "btnOtherMenu";
+            btnOtherMenu.Size = new Size(232, 62);
+            btnOtherMenu.TabIndex = 43;
+            btnOtherMenu.Text = "Lainnya\r\n";
+            btnOtherMenu.UseVisualStyleBackColor = false;
+            // 
+            // btnConvertion
+            // 
+            btnConvertion.BackColor = Color.White;
+            btnConvertion.FlatAppearance.BorderSize = 0;
+            btnConvertion.FlatStyle = FlatStyle.Flat;
+            btnConvertion.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConvertion.Image = (Image)resources.GetObject("btnConvertion.Image");
+            btnConvertion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConvertion.Location = new Point(8, 91);
+            btnConvertion.Margin = new Padding(2);
+            btnConvertion.Name = "btnConvertion";
+            btnConvertion.Size = new Size(232, 62);
+            btnConvertion.TabIndex = 42;
+            btnConvertion.Text = "Convertion\r\nValidation";
+            btnConvertion.UseVisualStyleBackColor = false;
+            btnConvertion.Click += btnConvertion_Click;
+            // 
+            // btnAchievements
+            // 
+            btnAchievements.BackColor = Color.White;
+            btnAchievements.FlatAppearance.BorderSize = 0;
+            btnAchievements.FlatStyle = FlatStyle.Flat;
+            btnAchievements.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAchievements.Image = (Image)resources.GetObject("btnAchievements.Image");
+            btnAchievements.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAchievements.Location = new Point(8, 1);
+            btnAchievements.Margin = new Padding(2);
+            btnAchievements.Name = "btnAchievements";
+            btnAchievements.Size = new Size(232, 62);
+            btnAchievements.TabIndex = 41;
+            btnAchievements.Text = "Achievement\r\nValidation";
+            btnAchievements.UseVisualStyleBackColor = false;
+            btnAchievements.Click += btnAchievements_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(btnAchievements);
+            panel1.Controls.Add(btnOtherMenu);
+            panel1.Controls.Add(btnConvertion);
+            panel1.Location = new Point(0, 166);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(242, 233);
+            panel1.TabIndex = 45;
+            // 
             // Bidang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -99,9 +175,12 @@
             ClientSize = new Size(1582, 853);
             Controls.Add(btnAddAchievement);
             Controls.Add(dgvFormBidang);
+            Controls.Add(panel1);
             Name = "Bidang";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Bidang";
             ((System.ComponentModel.ISupportInitialize)dgvFormBidang).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -109,5 +188,10 @@
 
         private Krypton.Toolkit.KryptonDataGridView dgvFormBidang;
         private Krypton.Toolkit.KryptonButton btnAddAchievement;
+        private Panel panel2;
+        private Button btnOtherMenu;
+        private Button btnConvertion;
+        private Button btnAchievements;
+        private Panel panel1;
     }
 }

@@ -13,8 +13,10 @@ namespace fasilkom_prestasi
 {
     public partial class Bidang : Form
     {
-        public Bidang()
+        long id_admin;
+        public Bidang(long id_admin)
         {
+            this.id_admin = id_admin;
             InitializeComponent();
 
             dgvFormBidang.DataSource = BidangContext.all();
@@ -43,7 +45,7 @@ namespace fasilkom_prestasi
             this.Hide();
 
 
-            addBidang bidang = new addBidang();
+            addBidang bidang = new addBidang(id_admin);
             bidang.Show();
 
 
@@ -65,7 +67,7 @@ namespace fasilkom_prestasi
                         BidangContext.destroy(idBidangHapus);
                         DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
                     }
-                    catch (Exception ex) 
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.ToString()); ;
                     }
@@ -74,24 +76,35 @@ namespace fasilkom_prestasi
                     dgvFormBidang.DataSource = BidangContext.all();
                 }
 
-                
-              
+
+
             }
             if (e.ColumnIndex == dgvFormBidang.Columns["editButton"].Index && e.RowIndex >= 0)
             {
                 int idBidangUbah = int.Parse(dgvFormBidang.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
-                
-                using (addBidang editBidang = new addBidang(idBidangUbah))
-                {
-                    this.Hide();
-                    addBidang formEditBidang = new addBidang(idBidangUbah);
-                    formEditBidang.Show();
-                }
+                this.Hide();
+                addBidang formEditBidang = new addBidang(id_admin, idBidangUbah);
+                formEditBidang.Show();
+
                 dgvFormBidang.DataSource = null;
                 dgvFormBidang.DataSource = BidangContext.all();
 
             }
+        }
+
+        private void btnConvertion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KonversiAdmin konversi = new KonversiAdmin(id_admin);
+            konversi.Show();
+        }
+
+        private void btnAchievements_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Validation validation = new Validation(id_admin);
+            validation.Show();
         }
     }
 }

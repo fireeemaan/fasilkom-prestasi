@@ -13,8 +13,10 @@ namespace fasilkom_prestasi
 {
     public partial class Region : Form
     {
-        public Region()
+        long id_admin;
+        public Region(long id_admin)
         {
+            this.id_admin = id_admin;
             InitializeComponent();
 
             dgvFormRegion.DataSource = RegionContext.all();
@@ -35,6 +37,7 @@ namespace fasilkom_prestasi
 
             dgvFormRegion.Columns.Insert(0, editButton);
             dgvFormRegion.Columns.Insert(1, deleteButton);
+            this.id_admin = id_admin;
         }
 
 
@@ -44,7 +47,7 @@ namespace fasilkom_prestasi
             this.Hide();
 
 
-            addRegion region = new addRegion();
+            addRegion region = new addRegion(id_admin);
             region.Show();
         }
 
@@ -75,13 +78,10 @@ namespace fasilkom_prestasi
                 {
                     int idRegionUbah = int.Parse(dgvFormRegion.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
+                    this.Hide();
+                    addRegion formEditRegion = new addRegion(idRegionUbah);
+                    formEditRegion.Show();
 
-                    using (addRegion editRegion = new addRegion(idRegionUbah))
-                    {
-                        this.Hide();
-                        addRegion formEditRegion = new addRegion(idRegionUbah);
-                        formEditRegion.Show();
-                    }
                     dgvFormRegion.DataSource = null;
                     dgvFormRegion.DataSource = RegionContext.all();
 
@@ -90,6 +90,20 @@ namespace fasilkom_prestasi
 
 
             }
+        }
+
+        private void btnConvertion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KonversiAdmin konversi = new KonversiAdmin(id_admin);
+            konversi.Show();
+        }
+
+        private void btnAchievements_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Validation validation = new Validation(id_admin);
+            validation.Show();
         }
     }
 }

@@ -13,8 +13,10 @@ namespace fasilkom_prestasi
 {
     public partial class Tahapan : Form
     {
-        public Tahapan()
+        long id_admin;
+        public Tahapan(long id_admin)
         {
+            this.id_admin = id_admin;
             InitializeComponent();
 
             dgvFormTahapan.DataSource = TahapanContext.all();
@@ -35,7 +37,7 @@ namespace fasilkom_prestasi
 
             dgvFormTahapan.Columns.Insert(0, editButton);
             dgvFormTahapan.Columns.Insert(1, deleteButton);
-
+            this.id_admin = id_admin;
         }
 
         private void btnAddTahapan_Click(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace fasilkom_prestasi
             this.Hide();
 
 
-            addTahapan tahapan = new addTahapan();
+            addTahapan tahapan = new addTahapan(id_admin);
             tahapan.Show();
 
         }
@@ -79,17 +81,28 @@ namespace fasilkom_prestasi
             {
                 int idTahapanUbah = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
+                this.Hide();
+                addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
+                formEditTahapan.Show();
 
-                using (addTahapan editTahapan = new addTahapan(idTahapanUbah))
-                {
-                    this.Hide();
-                    addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
-                    formEditTahapan.Show();
-                }
                 dgvFormTahapan.DataSource = null;
                 dgvFormTahapan.DataSource = TahapanContext.all();
 
             }
+        }
+
+        private void btnConvertion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KonversiAdmin konversi = new KonversiAdmin(id_admin);
+            konversi.Show();
+        }
+
+        private void btnAchievements_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Validation validation = new Validation(id_admin);
+            validation.Show();
         }
     }
 }

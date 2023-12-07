@@ -17,6 +17,7 @@ namespace fasilkom_prestasi
         long id_admin;
         string id_prestasi;
 
+
         public KonversiAdmin(long id_admin)
         {
             this.id_admin = id_admin;
@@ -32,6 +33,7 @@ namespace fasilkom_prestasi
 
             dgvKonversi.Columns.Insert(0, validButton);
         }
+
 
         private void KonversiAdmin_Load(object sender, EventArgs e)
         {
@@ -111,6 +113,13 @@ namespace fasilkom_prestasi
 
                 }
             }
+        }
+
+        private void btnOtherMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            otherMenu otherMenu = new otherMenu(id_admin);
+            otherMenu.Show();
         }
     }
 }

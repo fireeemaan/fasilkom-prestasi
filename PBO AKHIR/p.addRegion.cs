@@ -16,12 +16,15 @@ namespace fasilkom_prestasi
     public partial class addRegion : Form
     {
         int id_region;
-        public addRegion()
+        long id_admin;
+        public addRegion(long id_admin)
         {
+            this.id_admin = id_admin;
             InitializeComponent();
 
             DataTable dataBidang = RegionContext.all();
             btnEditRegion.Hide();
+            this.id_admin = id_admin;
         }
 
         public addRegion(int id_region)
@@ -55,7 +58,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Region region = new Region();
+                Region region = new Region(id_admin);
                 region.Show();
             }
             catch (NpgsqlException ex)
@@ -82,7 +85,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Region region = new Region();
+                Region region = new Region(id_admin);
                 region.Show();
             }
             catch (NpgsqlException ex)

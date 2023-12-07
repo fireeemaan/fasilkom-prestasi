@@ -16,13 +16,14 @@ namespace fasilkom_prestasi
     public partial class addTahapan : Form
     {
         int id_tahapan;
-        public addTahapan()
+        long id_admin;
+        public addTahapan(long id_admin)
         {
-
+            this.id_admin = id_admin;
             InitializeComponent();
             DataTable dataTahapan = TahapanContext.all();
             btnEditTahapan.Hide();
-
+            this.id_admin = id_admin;
         }
 
         public addTahapan(int id_tahapan)
@@ -50,7 +51,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Tahapan tahapan = new Tahapan();
+                Tahapan tahapan = new Tahapan(id_admin);
                 tahapan.Show();
             }
             catch (NpgsqlException ex)
@@ -78,7 +79,7 @@ namespace fasilkom_prestasi
                 TahapanContext.update(tahapanBaru);
                 MessageBox.Show("Data Berhasil diUbah !");
                 this.Close();
-                Tahapan tahapan = new Tahapan();
+                Tahapan tahapan = new Tahapan(id_admin);
                 tahapan.Show();
             }
             catch (NpgsqlException ex)
