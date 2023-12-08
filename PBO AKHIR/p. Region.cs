@@ -14,9 +14,9 @@ namespace fasilkom_prestasi
     public partial class Region : Form
     {
         long id_admin;
-        public Region(long id_admin)
+        public Region(long idAdmin)
         {
-            this.id_admin = id_admin;
+            this.id_admin = idAdmin;
             InitializeComponent();
 
             dgvFormRegion.DataSource = RegionContext.all();
@@ -37,18 +37,21 @@ namespace fasilkom_prestasi
 
             dgvFormRegion.Columns.Insert(0, editButton);
             dgvFormRegion.Columns.Insert(1, deleteButton);
-            this.id_admin = id_admin;
+            
         }
 
 
 
         private void btnAddRegion_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            using (addRegion addRegion = new addRegion(id_admin))
+            {
+                addRegion region = new addRegion(id_admin);
+                region.ShowDialog();
+            }
+            dgvFormRegion.DataSource = null;
+            dgvFormRegion.DataSource = RegionContext.all();
 
-
-            addRegion region = new addRegion(id_admin);
-            region.Show();
         }
 
         private void dgvFormRegion_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -77,10 +80,13 @@ namespace fasilkom_prestasi
                 if (e.ColumnIndex == dgvFormRegion.Columns["editButton"].Index && e.RowIndex >= 0)
                 {
                     int idRegionUbah = int.Parse(dgvFormRegion.Rows[e.RowIndex].Cells["id"].Value.ToString());
-
-                    this.Hide();
-                    addRegion formEditRegion = new addRegion(idRegionUbah);
-                    formEditRegion.Show();
+                    
+                    using (addRegion editRegion = new addRegion(id_admin, idRegionUbah))
+                    {
+                        addRegion formEditRegion = new addRegion(id_admin, idRegionUbah);
+                        formEditRegion.ShowDialog();
+                    }
+                   
 
                     dgvFormRegion.DataSource = null;
                     dgvFormRegion.DataSource = RegionContext.all();

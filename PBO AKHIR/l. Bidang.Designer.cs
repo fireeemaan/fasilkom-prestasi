@@ -181,7 +181,7 @@
             btnBack.Size = new Size(36, 36);
             btnBack.StateCommon.Back.Color1 = Color.Transparent;
             btnBack.StateCommon.Back.Color2 = Color.Transparent;
-            btnBack.StateCommon.Back.Image = (Image)resources.GetObject("btnBackAchievement.StateCommon.Back.Image");
+            btnBack.StateCommon.Back.Image = (Image)resources.GetObject("btnBack.StateCommon.Back.Image");
             btnBack.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
             btnBack.StateCommon.Border.Color1 = Color.White;
             btnBack.StateCommon.Border.Color2 = Color.White;

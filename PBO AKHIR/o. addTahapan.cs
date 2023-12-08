@@ -26,9 +26,10 @@ namespace fasilkom_prestasi
             this.id_admin = id_admin;
         }
 
-        public addTahapan(int id_tahapan)
+        public addTahapan(long id_admin, int id_tahapan)
         {
             this.id_tahapan = id_tahapan;
+            this.id_admin = id_admin;
             InitializeComponent();
             btnAddTahapan.Hide();
             DataTable dataTahapan = TahapanContext.all();

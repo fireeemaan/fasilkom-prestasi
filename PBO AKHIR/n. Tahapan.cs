@@ -14,9 +14,9 @@ namespace fasilkom_prestasi
     public partial class Tahapan : Form
     {
         long id_admin;
-        public Tahapan(long id_admin)
+        public Tahapan(long idAdmin)
         {
-            this.id_admin = id_admin;
+            this.id_admin = idAdmin;
             InitializeComponent();
 
             dgvFormTahapan.DataSource = TahapanContext.all();
@@ -42,11 +42,15 @@ namespace fasilkom_prestasi
 
         private void btnAddTahapan_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
 
-
-            addTahapan tahapan = new addTahapan(id_admin);
-            tahapan.Show();
+            using (addTahapan tahapanBaru = new addTahapan(id_admin))
+            {
+                addTahapan addTahapan = new addTahapan(id_admin);
+                addTahapan.ShowDialog();
+            }
+            dgvFormTahapan.DataSource = null;
+            dgvFormTahapan.DataSource = TahapanContext.all();
 
         }
 
@@ -81,10 +85,12 @@ namespace fasilkom_prestasi
             {
                 int idTahapanUbah = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
-                this.Hide();
-                addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
-                formEditTahapan.Show();
-
+                using (addTahapan editTahapan = new addTahapan(id_admin, idTahapanUbah))
+                {
+                    addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
+                    formEditTahapan.ShowDialog();
+                }
+               
                 dgvFormTahapan.DataSource = null;
                 dgvFormTahapan.DataSource = TahapanContext.all();
 

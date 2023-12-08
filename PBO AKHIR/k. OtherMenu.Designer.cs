@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(otherMenu));
             panel1 = new Panel();
+            btnMKKonversi = new Krypton.Toolkit.KryptonButton();
             panel2 = new Panel();
             btnOtherMenu = new Button();
             btnConvertion = new Button();
@@ -39,7 +40,6 @@
             btnTahapan = new Krypton.Toolkit.KryptonButton();
             btnRegion = new Krypton.Toolkit.KryptonButton();
             btnBidang = new Krypton.Toolkit.KryptonButton();
-            btnMKKonversi = new Krypton.Toolkit.KryptonButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,6 +61,37 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1582, 853);
             panel1.TabIndex = 0;
+            // 
+            // btnMKKonversi
+            // 
+            btnMKKonversi.CornerRoundingRadius = 25F;
+            btnMKKonversi.Location = new Point(338, 456);
+            btnMKKonversi.Name = "btnMKKonversi";
+            btnMKKonversi.OverrideDefault.Back.Color1 = Color.White;
+            btnMKKonversi.OverrideDefault.Back.Color2 = Color.White;
+            btnMKKonversi.OverrideDefault.Border.Color1 = Color.White;
+            btnMKKonversi.OverrideDefault.Border.Color2 = Color.White;
+            btnMKKonversi.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnMKKonversi.Size = new Size(203, 203);
+            btnMKKonversi.StateCommon.Back.Color1 = Color.White;
+            btnMKKonversi.StateCommon.Back.Color2 = Color.White;
+            btnMKKonversi.StateCommon.Back.Image = (Image)resources.GetObject("btnMKKonversi.StateCommon.Back.Image");
+            btnMKKonversi.StateCommon.Border.Color1 = Color.White;
+            btnMKKonversi.StateCommon.Border.Color2 = Color.White;
+            btnMKKonversi.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnMKKonversi.StateCommon.Border.Rounding = 25F;
+            btnMKKonversi.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnMKKonversi.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnMKKonversi.StatePressed.Border.Color1 = Color.WhiteSmoke;
+            btnMKKonversi.StatePressed.Border.Color2 = Color.WhiteSmoke;
+            btnMKKonversi.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnMKKonversi.StateTracking.Back.Color1 = Color.WhiteSmoke;
+            btnMKKonversi.StateTracking.Back.Color2 = Color.WhiteSmoke;
+            btnMKKonversi.StateTracking.Border.Color1 = Color.WhiteSmoke;
+            btnMKKonversi.StateTracking.Border.Color2 = Color.WhiteSmoke;
+            btnMKKonversi.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnMKKonversi.TabIndex = 41;
+            btnMKKonversi.Values.Text = "";
             // 
             // panel2
             // 
@@ -181,6 +212,7 @@
             btnNilai.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnNilai.TabIndex = 3;
             btnNilai.Values.Text = "";
+            btnNilai.Click += btnNilai_Click;
             // 
             // btnTahapan
             // 
@@ -277,37 +309,6 @@
             btnBidang.TabIndex = 0;
             btnBidang.Values.Text = "";
             btnBidang.Click += btnBidang_Click;
-            // 
-            // btnMKKonversi
-            // 
-            btnMKKonversi.CornerRoundingRadius = 25F;
-            btnMKKonversi.Location = new Point(338, 456);
-            btnMKKonversi.Name = "btnMKKonversi";
-            btnMKKonversi.OverrideDefault.Back.Color1 = Color.White;
-            btnMKKonversi.OverrideDefault.Back.Color2 = Color.White;
-            btnMKKonversi.OverrideDefault.Border.Color1 = Color.White;
-            btnMKKonversi.OverrideDefault.Border.Color2 = Color.White;
-            btnMKKonversi.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnMKKonversi.Size = new Size(203, 203);
-            btnMKKonversi.StateCommon.Back.Color1 = Color.White;
-            btnMKKonversi.StateCommon.Back.Color2 = Color.White;
-            btnMKKonversi.StateCommon.Back.Image = (Image)resources.GetObject("kryptonButton1.StateCommon.Back.Image");
-            btnMKKonversi.StateCommon.Border.Color1 = Color.White;
-            btnMKKonversi.StateCommon.Border.Color2 = Color.White;
-            btnMKKonversi.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnMKKonversi.StateCommon.Border.Rounding = 25F;
-            btnMKKonversi.StatePressed.Back.Color1 = Color.WhiteSmoke;
-            btnMKKonversi.StatePressed.Back.Color2 = Color.WhiteSmoke;
-            btnMKKonversi.StatePressed.Border.Color1 = Color.WhiteSmoke;
-            btnMKKonversi.StatePressed.Border.Color2 = Color.WhiteSmoke;
-            btnMKKonversi.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnMKKonversi.StateTracking.Back.Color1 = Color.WhiteSmoke;
-            btnMKKonversi.StateTracking.Back.Color2 = Color.WhiteSmoke;
-            btnMKKonversi.StateTracking.Border.Color1 = Color.WhiteSmoke;
-            btnMKKonversi.StateTracking.Border.Color2 = Color.WhiteSmoke;
-            btnMKKonversi.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnMKKonversi.TabIndex = 41;
-            btnMKKonversi.Values.Text = "";
             // 
             // otherMenu
             // 

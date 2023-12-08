@@ -54,5 +54,12 @@ namespace fasilkom_prestasi
             Tahapan tahapan = new Tahapan(id_admin);
             tahapan.Show();
         }
+
+        private void btnNilai_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Nilai nilai = new Nilai(id_admin);
+            nilai.Show();
+        }
     }
 }

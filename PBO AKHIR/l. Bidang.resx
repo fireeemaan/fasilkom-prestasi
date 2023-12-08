@@ -269,7 +269,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="btnBackAchievement.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBack.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAASRJREFUWEftlu0NgjAQhhmBn9AP+o7ABrqBbqAjuIFu4AiO4AiM4AiMwAjaM1cl

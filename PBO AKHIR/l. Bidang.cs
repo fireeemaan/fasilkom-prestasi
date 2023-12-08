@@ -14,9 +14,9 @@ namespace fasilkom_prestasi
     public partial class Bidang : Form
     {
         long id_admin;
-        public Bidang(long id_admin)
+        public Bidang(long idAdmin)
         {
-            this.id_admin = id_admin;
+            this.id_admin = idAdmin;
             InitializeComponent();
 
             dgvFormBidang.DataSource = BidangContext.all();
@@ -42,11 +42,15 @@ namespace fasilkom_prestasi
 
         private void btnAddAchievement_Click(object sender, EventArgs e)
         {
-            this.Hide();
 
 
-            addBidang bidang = new addBidang(id_admin);
-            bidang.Show();
+            using (addBidang tambahBidang = new addBidang(this.id_admin))
+            {
+                addBidang bidang = new addBidang(this.id_admin);
+                bidang.ShowDialog();
+            }
+            dgvFormBidang.DataSource = null;
+            dgvFormBidang.DataSource = BidangContext.all();
 
 
 
@@ -83,9 +87,11 @@ namespace fasilkom_prestasi
             {
                 int idBidangUbah = int.Parse(dgvFormBidang.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
-                this.Hide();
-                addBidang formEditBidang = new addBidang(id_admin, idBidangUbah);
-                formEditBidang.Show();
+                using (addBidang editBidang = new addBidang(id_admin, idBidangUbah))
+                {
+                    addBidang formEditBidang = new addBidang(id_admin, idBidangUbah);
+                    formEditBidang.ShowDialog();
+                }
 
                 dgvFormBidang.DataSource = null;
                 dgvFormBidang.DataSource = BidangContext.all();

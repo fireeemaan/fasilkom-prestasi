@@ -17,9 +17,9 @@ namespace fasilkom_prestasi
     {
         int id_region;
         long id_admin;
-        public addRegion(long id_admin)
+        public addRegion(long idAdmin)
         {
-            this.id_admin = id_admin;
+            this.id_admin = idAdmin;
             InitializeComponent();
 
             DataTable dataBidang = RegionContext.all();
@@ -27,10 +27,10 @@ namespace fasilkom_prestasi
             this.id_admin = id_admin;
         }
 
-        public addRegion(int id_region)
+        public addRegion(long idAdmin, int id_region)
         {
             this.id_region = id_region;
-
+            this.id_admin = idAdmin;
 
             InitializeComponent();
             btnAddRegion.Hide();

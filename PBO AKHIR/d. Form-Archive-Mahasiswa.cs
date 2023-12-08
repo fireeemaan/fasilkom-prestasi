@@ -29,7 +29,7 @@ namespace fasilkom_prestasi
 
 
 
-            // Set name & NIM
+            
 
 
 
@@ -49,6 +49,7 @@ namespace fasilkom_prestasi
 
             DataTable dataUser = MahasiswaContext.show(nim);
 
+            // Set name & NIM
             lblNamaMhs.Text = dataUser.Rows[0]["nama"].ToString();
             lblNIM.Text = nim.ToString();
 

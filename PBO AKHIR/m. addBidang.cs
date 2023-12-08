@@ -61,8 +61,8 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Bidang bidang = new Bidang(id_admin);
-                bidang.Show();
+                //Bidang bidang = new Bidang(id_admin);
+                //bidang.Show();
             }
             catch (NpgsqlException ex)
             {
@@ -90,8 +90,8 @@ namespace fasilkom_prestasi
                 BidangContext.update(bidangBaru);
                 MessageBox.Show("Data Berhasil diUbah !");
                 this.Close();
-                Bidang bidang = new Bidang(id_admin);
-                bidang.Show();
+                //Bidang bidang = new Bidang(id_admin);
+                //bidang.Show();
             }
             catch (NpgsqlException ex)
             {
