@@ -36,6 +36,7 @@
             btnAchievements = new Button();
             btnOtherMenu = new Button();
             btnConvertion = new Button();
+            btnBack = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)dgvFormRegion).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -167,12 +168,38 @@
             btnConvertion.UseVisualStyleBackColor = false;
             btnConvertion.Click += btnConvertion_Click;
             // 
+            // btnBack
+            // 
+            btnBack.CornerRoundingRadius = 10F;
+            btnBack.Location = new Point(360, 170);
+            btnBack.Margin = new Padding(2);
+            btnBack.MaximumSize = new Size(36, 36);
+            btnBack.MinimumSize = new Size(36, 36);
+            btnBack.Name = "btnBack";
+            btnBack.OverrideDefault.Back.Color1 = Color.WhiteSmoke;
+            btnBack.OverrideDefault.Back.Color2 = Color.WhiteSmoke;
+            btnBack.Size = new Size(36, 36);
+            btnBack.StateCommon.Back.Color1 = Color.Transparent;
+            btnBack.StateCommon.Back.Color2 = Color.Transparent;
+            btnBack.StateCommon.Back.Image = (Image)resources.GetObject("btnBack.StateCommon.Back.Image");
+            btnBack.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnBack.StateCommon.Border.Color1 = Color.White;
+            btnBack.StateCommon.Border.Color2 = Color.White;
+            btnBack.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnBack.StateCommon.Border.Rounding = 10F;
+            btnBack.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnBack.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnBack.TabIndex = 48;
+            btnBack.Values.Text = "";
+            btnBack.Click += btnBack_Click;
+            // 
             // Region
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnBack);
             Controls.Add(panel1);
             Controls.Add(dgvFormRegion);
             Controls.Add(btnAddTahapan);
@@ -193,5 +220,6 @@
         private Button btnAchievements;
         private Button btnOtherMenu;
         private Button btnConvertion;
+        private Krypton.Toolkit.KryptonButton btnBack;
     }
 }

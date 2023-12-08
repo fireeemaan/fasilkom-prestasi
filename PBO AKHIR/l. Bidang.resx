@@ -269,6 +269,17 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="btnBackAchievement.StateCommon.Back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAASRJREFUWEftlu0NgjAQhhmBn9AP+o7ABrqBbqAjuIFu4AiO4AiM4AiMwAjaM1cl
+        aNBWwJD0SS6EHr174dorSSQyKwCUUqLk22mh5FqZRknTTC6ilfx6N1Hs2TU+MblLLoW52Npv+yzPsbbX
+        39fHy5t7mpamVqo4pClSDunHrwKckRAbCxzWj7clyLD5aKI42WfrUUTQZ2VXL1kGaIXzY540Fbv8CRVB
+        KInqOQ9LHvbnpRw5duzqhZI+5xRHHg6jJeLrVmznpE6AljjxcDgkwnefDyrAl3YJlMB0XdRxb0hOQIYF
+        D48P1b69DamHsCsM+pSu338yW+tjp4HV1Bc4VBi0gFxAHxskOREgoKGjO/gw6mIX0PJt3++YFljhX/+M
+        kchMSZIbepLXV6apHSYAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABkAAAAOECAYAAAD5Tf2iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

@@ -106,5 +106,12 @@ namespace fasilkom_prestasi
             Validation validation = new Validation(id_admin);
             validation.Show();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            otherMenu otherMenu = new otherMenu(id_admin);
+            otherMenu.Show();
+        }
     }
 }

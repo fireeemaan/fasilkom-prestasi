@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class Tahapan : Form
+    public partial class Region : Form
     {
         long id_admin;
-        public Tahapan(long id_admin)
+        public Region(long id_admin)
         {
             this.id_admin = id_admin;
             InitializeComponent();
 
-            dgvFormTahapan.DataSource = TahapanContext.all();
+            dgvFormRegion.DataSource = RegionContext.all();
 
 
             DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
@@ -35,58 +35,59 @@ namespace fasilkom_prestasi
             deleteButton.Name = "deleteButton";
             deleteButton.UseColumnTextForButtonValue = true;
 
-            dgvFormTahapan.Columns.Insert(0, editButton);
-            dgvFormTahapan.Columns.Insert(1, deleteButton);
+            dgvFormRegion.Columns.Insert(0, editButton);
+            dgvFormRegion.Columns.Insert(1, deleteButton);
             this.id_admin = id_admin;
         }
 
-        private void btnAddTahapan_Click(object sender, EventArgs e)
+
+
+        private void btnAddRegion_Click(object sender, EventArgs e)
         {
             this.Hide();
 
 
-            addTahapan tahapan = new addTahapan(id_admin);
-            tahapan.Show();
-
+            addRegion region = new addRegion(id_admin);
+            region.Show();
         }
 
-        private void dgvFormTahapan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFormRegion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvFormTahapan.Columns["deleteButton"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvFormRegion.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
 
-                int idBidangHapus = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                int idRegionHapus = int.Parse(dgvFormRegion.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
                 DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
                 if (message == DialogResult.Yes)
                 {
                     try
                     {
-                        TahapanContext.destroy(idBidangHapus);
+                        RegionContext.destroy(idRegionHapus);
                         DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Data tidak bisa dihapus karena terpakai pada tabel lain !");
+                        MessageBox.Show(ex.ToString());
                     }
 
-                    dgvFormTahapan.DataSource = null;
-                    dgvFormTahapan.DataSource = TahapanContext.all();
+                    dgvFormRegion.DataSource = null;
+                    dgvFormRegion.DataSource = RegionContext.all();
+                }
+                if (e.ColumnIndex == dgvFormRegion.Columns["editButton"].Index && e.RowIndex >= 0)
+                {
+                    int idRegionUbah = int.Parse(dgvFormRegion.Rows[e.RowIndex].Cells["id"].Value.ToString());
+
+                    this.Hide();
+                    addRegion formEditRegion = new addRegion(idRegionUbah);
+                    formEditRegion.Show();
+
+                    dgvFormRegion.DataSource = null;
+                    dgvFormRegion.DataSource = RegionContext.all();
+
                 }
 
 
-
-            }
-            if (e.ColumnIndex == dgvFormTahapan.Columns["editButton"].Index && e.RowIndex >= 0)
-            {
-                int idTahapanUbah = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
-
-                this.Hide();
-                addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
-                formEditTahapan.Show();
-
-                dgvFormTahapan.DataSource = null;
-                dgvFormTahapan.DataSource = TahapanContext.all();
 
             }
         }
@@ -103,6 +104,13 @@ namespace fasilkom_prestasi
             this.Hide();
             Validation validation = new Validation(id_admin);
             validation.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            otherMenu otherMenu = new otherMenu(id_admin);
+            otherMenu.Show();
         }
     }
 }
