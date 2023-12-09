@@ -85,6 +85,17 @@ namespace fasilkom_prestasi.App.Context
             commandExecutor(query, parameters);
         }
 
+        public static void destroy (int idHapus)
+        {
+            string query = $"DELETE FROM {table} WHERE id = @idHapus";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@idHapus", NpgsqlDbType.Integer){Value = idHapus}
+            };
+            commandExecutor(query, parameters);
+        }
+
         public static int checkDuplicate(M_Nilai dataNilai)
         {
             string query = $"SELECT COUNT(*) FROM {table} WHERE id_region = @id_region AND id_tahapan = @id_tahapan AND \"isValid\" = @isValid";

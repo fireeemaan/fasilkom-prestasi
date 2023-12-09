@@ -36,8 +36,8 @@
             cbxRegion = new ComboBox();
             cbxNilai = new ComboBox();
             cbtnStatus = new Krypton.Toolkit.KryptonCheckButton();
-            btnAddNilai = new Krypton.Toolkit.KryptonButton();
             btnEditNilai = new Krypton.Toolkit.KryptonButton();
+            btnAddNilai = new Krypton.Toolkit.KryptonButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -151,34 +151,6 @@
             cbtnStatus.TabIndex = 0;
             cbtnStatus.Values.Text = "";
             // 
-            // btnAddNilai
-            // 
-            btnAddNilai.CornerRoundingRadius = 30F;
-            btnAddNilai.Location = new Point(274, 338);
-            btnAddNilai.Margin = new Padding(2);
-            btnAddNilai.MaximumSize = new Size(248, 47);
-            btnAddNilai.MinimumSize = new Size(248, 47);
-            btnAddNilai.Name = "btnAddNilai";
-            btnAddNilai.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.Size = new Size(248, 47);
-            btnAddNilai.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnAddNilai.StateCommon.Border.Rounding = 30F;
-            btnAddNilai.StateCommon.Content.ShortText.Color1 = Color.White;
-            btnAddNilai.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnAddNilai.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAddNilai.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddNilai.TabIndex = 29;
-            btnAddNilai.Values.Text = "Add";
-            btnAddNilai.Click += btnAddNilai_Click;
-            // 
             // btnEditNilai
             // 
             btnEditNilai.CornerRoundingRadius = 30F;
@@ -207,6 +179,34 @@
             btnEditNilai.Values.Text = "Save Changes";
             btnEditNilai.Click += btnEditNilai_Click;
             // 
+            // btnAddNilai
+            // 
+            btnAddNilai.CornerRoundingRadius = 30F;
+            btnAddNilai.Location = new Point(274, 338);
+            btnAddNilai.Margin = new Padding(2);
+            btnAddNilai.MaximumSize = new Size(248, 47);
+            btnAddNilai.MinimumSize = new Size(248, 47);
+            btnAddNilai.Name = "btnAddNilai";
+            btnAddNilai.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.Size = new Size(248, 47);
+            btnAddNilai.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddNilai.StateCommon.Border.Rounding = 30F;
+            btnAddNilai.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddNilai.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddNilai.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddNilai.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.TabIndex = 29;
+            btnAddNilai.Values.Text = "Add";
+            btnAddNilai.Click += btnAddNilai_Click;
+            // 
             // addNilai
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -214,6 +214,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Name = "addNilai";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "addNilai";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

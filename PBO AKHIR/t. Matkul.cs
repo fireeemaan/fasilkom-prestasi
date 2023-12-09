@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fasilkom_prestasi.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,23 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using fasilkom_prestasi.App.Context;
 
 namespace fasilkom_prestasi
 {
-    public partial class Nilai : Form
+    public partial class Matkul : Form
     {
         long id_admin;
-        public Nilai(long id_admin)
+        public Matkul(long idAdmin)
         {
-            this.id_admin = id_admin;
+            this.id_admin = idAdmin;
             InitializeComponent();
 
-
-
-            dgvNilai.DataSource = NilaiContext.all();
-
-            dgvNilai.Columns["id"].Visible = false;
+            dgvMatkul.DataSource = MatkulContext.all();
 
             DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
             editButton.HeaderText = "";
@@ -38,49 +34,50 @@ namespace fasilkom_prestasi
             deleteButton.Name = "deleteButton";
             deleteButton.UseColumnTextForButtonValue = true;
 
-            dgvNilai.Columns.Insert(0, editButton);
-            dgvNilai.Columns.Insert(1, deleteButton);
+            dgvMatkul.Columns.Insert(0, editButton);
+            dgvMatkul.Columns.Insert(1, deleteButton);
+            dgvMatkul.Columns[0].Width = 180;
+            dgvMatkul.Columns[1].Width = 180;
         }
 
-        private void btnAddNilai_Click(object sender, EventArgs e)
+        private void btnAddMatkul_Click(object sender, EventArgs e)
         {
-            using (addNilai nilai = new addNilai(id_admin))
+            using (addMatkul matkul = new addMatkul())
             {
-                addNilai tambahNilai = new addNilai(id_admin);
-                tambahNilai.ShowDialog();
+                addMatkul tambahMatkul = new addMatkul();
+                tambahMatkul.ShowDialog();
             }
-            dgvNilai.DataSource = null;
-            dgvNilai.DataSource = NilaiContext.all();
-            dgvNilai.Columns["id"].Visible = false;
+
+            dgvMatkul.DataSource = null;
+            dgvMatkul.DataSource = MatkulContext.all();
         }
 
-        private void dgvNilai_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvMatkul_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvNilai.Columns["editButton"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvMatkul.Columns["editButton"].Index && e.RowIndex >= 0)
             {
+                string kdMatkulUbah = dgvMatkul.Rows[e.RowIndex].Cells["kode"].Value.ToString();
 
-                int idNilaiUbah = int.Parse(dgvNilai.Rows[e.RowIndex].Cells["id"].Value.ToString());
-
-                using (addNilai nilai = new addNilai(id_admin, idNilaiUbah))
+                using (addMatkul matkul = new addMatkul(kdMatkulUbah))
                 {
-                    addNilai editNilai = new addNilai(id_admin, idNilaiUbah);
-                    editNilai.ShowDialog();
+                    addMatkul tambahMatkul = new addMatkul(kdMatkulUbah);
+                    tambahMatkul.ShowDialog();
                 }
 
-                dgvNilai.DataSource = null;
-                dgvNilai.DataSource = NilaiContext.all();
-                dgvNilai.Columns["id"].Visible = false;
+                dgvMatkul.DataSource = null;
+                dgvMatkul.DataSource = MatkulContext.all();
+
             }
-            if (e.ColumnIndex == dgvNilai.Columns["deleteButton"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvMatkul.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
-                int idNilaiHapus = int.Parse(dgvNilai.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                string kdMatkulHapus = dgvMatkul.Rows[e.RowIndex].Cells["kode"].Value.ToString();
 
                 try
                 {
                     DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
                     if (message == DialogResult.Yes)
                     {
-                        NilaiContext.destroy(idNilaiHapus);
+                        MatkulContext.destroy(kdMatkulHapus);
                         DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
                     }
 
@@ -90,9 +87,10 @@ namespace fasilkom_prestasi
                     MessageBox.Show("Nilai sedang dipakai di tabel lain!", "Hapus Data Gagal!");
                 }
 
-                dgvNilai.DataSource = null;
-                dgvNilai.DataSource = NilaiContext.all();
-                dgvNilai.Columns["id"].Visible = false;
+
+                dgvMatkul.DataSource = null;
+                dgvMatkul.DataSource = MatkulContext.all();
+
             }
         }
 

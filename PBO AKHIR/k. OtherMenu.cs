@@ -61,5 +61,12 @@ namespace fasilkom_prestasi
             Nilai nilai = new Nilai(id_admin);
             nilai.Show();
         }
+
+        private void btnMatkul_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Matkul matkul = new Matkul(id_admin);
+            matkul.Show();
+        }
     }
 }

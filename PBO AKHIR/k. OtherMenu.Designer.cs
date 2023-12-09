@@ -181,6 +181,7 @@
             btnMatkul.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnMatkul.TabIndex = 4;
             btnMatkul.Values.Text = "";
+            btnMatkul.Click += btnMatkul_Click;
             // 
             // btnNilai
             // 

@@ -38,6 +38,7 @@
             btnConvertion = new Button();
             btnBack = new Krypton.Toolkit.KryptonButton();
             dgvNilai = new Krypton.Toolkit.KryptonDataGridView();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNilai).BeginInit();
@@ -87,8 +88,10 @@
             btnAddNilai.StateCommon.Border.Color2 = Color.White;
             btnAddNilai.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnAddNilai.StateCommon.Border.Rounding = 10F;
+            btnAddNilai.StatePressed.Back.Image = (Image)resources.GetObject("btnAddNilai.StatePressed.Back.Image");
             btnAddNilai.StateTracking.Back.Color1 = Color.WhiteSmoke;
             btnAddNilai.StateTracking.Back.Color2 = Color.WhiteSmoke;
+            btnAddNilai.StateTracking.Back.Image = (Image)resources.GetObject("btnAddNilai.StateTracking.Back.Image");
             btnAddNilai.TabIndex = 51;
             btnAddNilai.Values.Text = "";
             btnAddNilai.Click += btnAddNilai_Click;
@@ -237,5 +240,6 @@
         private Button btnOtherMenu;
         private Button btnConvertion;
         private Krypton.Toolkit.KryptonButton btnAddNilai;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
