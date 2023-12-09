@@ -1,6 +1,6 @@
 ﻿namespace fasilkom_prestasi
 {
-    partial class KonversiMatkul
+    partial class MatkulKonversi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KonversiMatkul));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatkulKonversi));
             dgvFormMatkulKonversi = new Krypton.Toolkit.KryptonDataGridView();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -40,6 +40,7 @@
             btnTeknologiInformasi = new Krypton.Toolkit.KryptonButton();
             btnAll = new Krypton.Toolkit.KryptonButton();
             btnInformatika = new Krypton.Toolkit.KryptonButton();
+            btnBack = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)dgvFormMatkulKonversi).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -100,6 +101,7 @@
             btnAchievements.TabIndex = 41;
             btnAchievements.Text = "Achievement\r\nValidation";
             btnAchievements.UseVisualStyleBackColor = false;
+            btnAchievements.Click += btnAchievements_Click;
             // 
             // btnOtherMenu
             // 
@@ -132,6 +134,7 @@
             btnConvertion.TabIndex = 42;
             btnConvertion.Text = "Convertion\r\nValidation";
             btnConvertion.UseVisualStyleBackColor = false;
+            btnConvertion.Click += btnConvertion_Click;
             // 
             // btnAddMatkulKonversi
             // 
@@ -171,7 +174,7 @@
             // btnSistemInformasi
             // 
             btnSistemInformasi.CornerRoundingRadius = 10F;
-            btnSistemInformasi.Location = new Point(494, 177);
+            btnSistemInformasi.Location = new Point(583, 176);
             btnSistemInformasi.Margin = new Padding(2);
             btnSistemInformasi.Name = "btnSistemInformasi";
             btnSistemInformasi.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -205,7 +208,7 @@
             // btnTeknologiInformasi
             // 
             btnTeknologiInformasi.CornerRoundingRadius = 10F;
-            btnTeknologiInformasi.Location = new Point(622, 177);
+            btnTeknologiInformasi.Location = new Point(711, 176);
             btnTeknologiInformasi.Margin = new Padding(2);
             btnTeknologiInformasi.Name = "btnTeknologiInformasi";
             btnTeknologiInformasi.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -239,7 +242,7 @@
             // btnAll
             // 
             btnAll.CornerRoundingRadius = 10F;
-            btnAll.Location = new Point(367, 177);
+            btnAll.Location = new Point(456, 176);
             btnAll.Margin = new Padding(2);
             btnAll.Name = "btnAll";
             btnAll.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -273,7 +276,7 @@
             // btnInformatika
             // 
             btnInformatika.CornerRoundingRadius = 10F;
-            btnInformatika.Location = new Point(750, 177);
+            btnInformatika.Location = new Point(839, 176);
             btnInformatika.Margin = new Padding(2);
             btnInformatika.Name = "btnInformatika";
             btnInformatika.OverrideDefault.Back.Color1 = Color.FromArgb(189, 209, 255);
@@ -304,12 +307,38 @@
             btnInformatika.Values.Text = "IF";
             btnInformatika.Click += btnInformatika_Click;
             // 
-            // KonversiMatkul
+            // btnBack
+            // 
+            btnBack.CornerRoundingRadius = 10F;
+            btnBack.Location = new Point(360, 170);
+            btnBack.Margin = new Padding(2);
+            btnBack.MaximumSize = new Size(36, 36);
+            btnBack.MinimumSize = new Size(36, 36);
+            btnBack.Name = "btnBack";
+            btnBack.OverrideDefault.Back.Color1 = Color.WhiteSmoke;
+            btnBack.OverrideDefault.Back.Color2 = Color.WhiteSmoke;
+            btnBack.Size = new Size(36, 36);
+            btnBack.StateCommon.Back.Color1 = Color.Transparent;
+            btnBack.StateCommon.Back.Color2 = Color.Transparent;
+            btnBack.StateCommon.Back.Image = (Image)resources.GetObject("btnBack.StateCommon.Back.Image");
+            btnBack.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnBack.StateCommon.Border.Color1 = Color.White;
+            btnBack.StateCommon.Border.Color2 = Color.White;
+            btnBack.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnBack.StateCommon.Border.Rounding = 10F;
+            btnBack.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnBack.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnBack.TabIndex = 54;
+            btnBack.Values.Text = "";
+            btnBack.Click += btnBack_Click;
+            // 
+            // MatkulKonversi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnBack);
             Controls.Add(btnInformatika);
             Controls.Add(btnAll);
             Controls.Add(btnTeknologiInformasi);
@@ -317,7 +346,8 @@
             Controls.Add(btnAddMatkulKonversi);
             Controls.Add(panel1);
             Controls.Add(dgvFormMatkulKonversi);
-            Name = "KonversiMatkul";
+            Name = "MatkulKonversi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "KonversiMatkul";
             ((System.ComponentModel.ISupportInitialize)dgvFormMatkulKonversi).EndInit();
             panel1.ResumeLayout(false);
@@ -337,5 +367,6 @@
         private Krypton.Toolkit.KryptonButton btnTeknologiInformasi;
         private Krypton.Toolkit.KryptonButton btnAll;
         private Krypton.Toolkit.KryptonButton btnInformatika;
+        private Krypton.Toolkit.KryptonButton btnBack;
     }
 }

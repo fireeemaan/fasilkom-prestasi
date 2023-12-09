@@ -68,5 +68,12 @@ namespace fasilkom_prestasi
             Matkul matkul = new Matkul(id_admin);
             matkul.Show();
         }
+
+        private void btnMKKonversi_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MatkulKonversi matkulKonversi = new MatkulKonversi(id_admin);
+            matkulKonversi.Show();
+        }
     }
 }

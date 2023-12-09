@@ -12,10 +12,12 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class KonversiMatkul : Form
+    public partial class MatkulKonversi : Form
     {
-        public KonversiMatkul()
+        long id_admin;
+        public MatkulKonversi(long idAdmin)
         {
+            this.id_admin = idAdmin;
             InitializeComponent();
             dgvFormMatkulKonversi.DataSource = prodiMatkulContext.all();
 
@@ -39,13 +41,61 @@ namespace fasilkom_prestasi
             dgvFormMatkulKonversi.Columns["matkul"].Width = 300;
 
             dgvFormMatkulKonversi.Columns["id"].Visible = false;
+            this.id_admin = id_admin;
         }
 
 
 
         private void dgvFormMatkulKonversi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == dgvFormMatkulKonversi.Columns["editButton"].Index && e.RowIndex >= 0)
+            {
+                int idMatkulKonversiUbah = int.Parse(dgvFormMatkulKonversi.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
+                using (addMatkulKonversi matkulKonversi = new addMatkulKonversi(idMatkulKonversiUbah))
+                {
+                    addMatkulKonversi tambahMatkulKonversi = new addMatkulKonversi(idMatkulKonversiUbah);
+                    tambahMatkulKonversi.ShowDialog();
+                }
+
+                dgvFormMatkulKonversi.DataSource = null;
+                dgvFormMatkulKonversi.DataSource = prodiMatkulContext.all();
+                dgvFormMatkulKonversi.Columns["matkul"].Width = 300;
+                dgvFormMatkulKonversi.Columns[0].Width = 100;
+                dgvFormMatkulKonversi.Columns[1].Width = 100;
+
+                dgvFormMatkulKonversi.Columns["id"].Visible = false;
+
+            }
+            if (e.ColumnIndex == dgvFormMatkulKonversi.Columns["deleteButton"].Index && e.RowIndex >= 0)
+            {
+                int idMatkulKonversiHapus = int.Parse(dgvFormMatkulKonversi.Rows[e.RowIndex].Cells["id"].Value.ToString());
+
+                try
+                {
+                    DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                    if (message == DialogResult.Yes)
+                    {
+                        prodiMatkulContext.destroy(idMatkulKonversiHapus);
+                        DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+                    }
+
+                }
+                catch
+                {
+                    MessageBox.Show("Nilai sedang dipakai di tabel lain!", "Hapus Data Gagal!");
+                }
+
+
+                dgvFormMatkulKonversi.DataSource = null;
+                dgvFormMatkulKonversi.DataSource = prodiMatkulContext.all();
+                dgvFormMatkulKonversi.Columns["matkul"].Width = 300;
+                dgvFormMatkulKonversi.Columns[0].Width = 100;
+                dgvFormMatkulKonversi.Columns[1].Width = 100;
+
+                dgvFormMatkulKonversi.Columns["id"].Visible = false;
+
+            }
         }
 
         private void btnAddMatkulKonversi_Click(object sender, EventArgs e)
@@ -106,6 +156,27 @@ namespace fasilkom_prestasi
             dgvFormMatkulKonversi.Columns[0].Width = 100;
             dgvFormMatkulKonversi.Columns[1].Width = 100;
             dgvFormMatkulKonversi.Columns["id"].Visible = false;
+        }
+
+        private void btnConvertion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KonversiAdmin konversi = new KonversiAdmin(id_admin);
+            konversi.Show();
+        }
+
+        private void btnAchievements_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Validation validation = new Validation(id_admin);
+            validation.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            otherMenu otherMenu = new otherMenu(id_admin);
+            otherMenu.Show();
         }
     }
 }

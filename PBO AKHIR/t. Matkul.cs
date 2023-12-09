@@ -50,6 +50,8 @@ namespace fasilkom_prestasi
 
             dgvMatkul.DataSource = null;
             dgvMatkul.DataSource = MatkulContext.all();
+            dgvMatkul.Columns[0].Width = 180;
+            dgvMatkul.Columns[1].Width = 180;
         }
 
         private void dgvMatkul_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,6 +68,8 @@ namespace fasilkom_prestasi
 
                 dgvMatkul.DataSource = null;
                 dgvMatkul.DataSource = MatkulContext.all();
+                dgvMatkul.Columns[0].Width = 180;
+                dgvMatkul.Columns[1].Width = 180;
 
             }
             if (e.ColumnIndex == dgvMatkul.Columns["deleteButton"].Index && e.RowIndex >= 0)
@@ -90,6 +94,8 @@ namespace fasilkom_prestasi
 
                 dgvMatkul.DataSource = null;
                 dgvMatkul.DataSource = MatkulContext.all();
+                dgvMatkul.Columns[0].Width = 180;
+                dgvMatkul.Columns[1].Width = 180;
 
             }
         }

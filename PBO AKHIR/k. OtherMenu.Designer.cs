@@ -92,6 +92,7 @@
             btnMKKonversi.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnMKKonversi.TabIndex = 41;
             btnMKKonversi.Values.Text = "";
+            btnMKKonversi.Click += btnMKKonversi_Click;
             // 
             // panel2
             // 

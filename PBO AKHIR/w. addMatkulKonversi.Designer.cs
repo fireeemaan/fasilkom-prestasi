@@ -29,42 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addMatkulKonversi));
-            btnaddKonversiMatkul = new Krypton.Toolkit.KryptonButton();
+            btnAddMatkulKonversi = new Krypton.Toolkit.KryptonButton();
             cbxProdi = new ComboBox();
             tbxSKS = new TextBox();
             tbxSemester = new TextBox();
             btnBack = new Krypton.Toolkit.KryptonButton();
             cbxMatkul = new ComboBox();
             cbxBidang = new ComboBox();
+            btnEditMatkulKonversi = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
-            // btnaddKonversiMatkul
+            // btnAddMatkulKonversi
             // 
-            btnaddKonversiMatkul.CornerRoundingRadius = 30F;
-            btnaddKonversiMatkul.Location = new Point(265, 330);
-            btnaddKonversiMatkul.Margin = new Padding(2);
-            btnaddKonversiMatkul.MaximumSize = new Size(248, 47);
-            btnaddKonversiMatkul.MinimumSize = new Size(248, 47);
-            btnaddKonversiMatkul.Name = "btnaddKonversiMatkul";
-            btnaddKonversiMatkul.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.Size = new Size(248, 47);
-            btnaddKonversiMatkul.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnaddKonversiMatkul.StateCommon.Border.Rounding = 30F;
-            btnaddKonversiMatkul.StateCommon.Content.ShortText.Color1 = Color.White;
-            btnaddKonversiMatkul.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnaddKonversiMatkul.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnaddKonversiMatkul.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnaddKonversiMatkul.TabIndex = 33;
-            btnaddKonversiMatkul.Values.Text = "Save Changes";
-            btnaddKonversiMatkul.Click += btnaddKonversiMatkul_Click;
+            btnAddMatkulKonversi.CornerRoundingRadius = 30F;
+            btnAddMatkulKonversi.Location = new Point(265, 330);
+            btnAddMatkulKonversi.Margin = new Padding(2);
+            btnAddMatkulKonversi.MaximumSize = new Size(248, 47);
+            btnAddMatkulKonversi.MinimumSize = new Size(248, 47);
+            btnAddMatkulKonversi.Name = "btnAddMatkulKonversi";
+            btnAddMatkulKonversi.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.Size = new Size(248, 47);
+            btnAddMatkulKonversi.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddMatkulKonversi.StateCommon.Border.Rounding = 30F;
+            btnAddMatkulKonversi.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddMatkulKonversi.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddMatkulKonversi.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddMatkulKonversi.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddMatkulKonversi.TabIndex = 33;
+            btnAddMatkulKonversi.Values.Text = "Add";
+            btnAddMatkulKonversi.Click += btnaddKonversiMatkul_Click;
             // 
             // cbxProdi
             // 
@@ -136,6 +137,34 @@
             cbxBidang.Size = new Size(309, 28);
             cbxBidang.TabIndex = 50;
             // 
+            // btnEditMatkulKonversi
+            // 
+            btnEditMatkulKonversi.CornerRoundingRadius = 30F;
+            btnEditMatkulKonversi.Location = new Point(265, 330);
+            btnEditMatkulKonversi.Margin = new Padding(2);
+            btnEditMatkulKonversi.MaximumSize = new Size(248, 47);
+            btnEditMatkulKonversi.MinimumSize = new Size(248, 47);
+            btnEditMatkulKonversi.Name = "btnEditMatkulKonversi";
+            btnEditMatkulKonversi.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.Size = new Size(248, 47);
+            btnEditMatkulKonversi.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnEditMatkulKonversi.StateCommon.Border.Rounding = 30F;
+            btnEditMatkulKonversi.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnEditMatkulKonversi.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnEditMatkulKonversi.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditMatkulKonversi.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditMatkulKonversi.TabIndex = 52;
+            btnEditMatkulKonversi.Values.Text = "Save Changes";
+            btnEditMatkulKonversi.Click += btnEditMatkulKonversi_Click;
+            // 
             // addMatkulKonversi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -148,8 +177,10 @@
             Controls.Add(tbxSemester);
             Controls.Add(tbxSKS);
             Controls.Add(cbxProdi);
-            Controls.Add(btnaddKonversiMatkul);
+            Controls.Add(btnEditMatkulKonversi);
+            Controls.Add(btnAddMatkulKonversi);
             Name = "addMatkulKonversi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "addMatkulKonversi";
             ResumeLayout(false);
             PerformLayout();
@@ -157,12 +188,13 @@
 
         #endregion
 
-        private Krypton.Toolkit.KryptonButton btnaddKonversiMatkul;
+        private Krypton.Toolkit.KryptonButton btnAddMatkulKonversi;
         private ComboBox cbxProdi;
         private TextBox tbxSKS;
         private TextBox tbxSemester;
         private Krypton.Toolkit.KryptonButton btnBack;
         private ComboBox cbxMatkul;
         private ComboBox cbxBidang;
+        private Krypton.Toolkit.KryptonButton btnEditMatkulKonversi;
     }
 }
