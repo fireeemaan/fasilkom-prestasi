@@ -187,50 +187,58 @@ namespace fasilkom_prestasi
                 }
                 else
                 {
-                    DataTable selectedDataPrestasi = PrestasiContext.show(idConvertPrestasi);
-                    int idRegion = int.Parse(selectedDataPrestasi.Rows[0]["id_region"].ToString());
-                    int idTahapan = int.Parse(selectedDataPrestasi.Rows[0]["id_tahapan"].ToString());
-
-                    DataTable dataNilai = NilaiContext.getNilai(idRegion, idTahapan);
-                    int idNilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
-
-                    DataTable dataKonversi = KonversiContext.all();
-
-                    DataTable dataKonversiMatkul = KonversiMatkulContext.all();
-
-                    M_Konversi konversiBaru = new M_Konversi
+                    try
                     {
-                        id_prestasi = idConvertPrestasi,
-                        nim = this.nim,
-                        id_nilai = idNilai
-                    };
+                        DataTable selectedDataPrestasi = PrestasiContext.show(idConvertPrestasi);
+                        int idRegion = int.Parse(selectedDataPrestasi.Rows[0]["id_region"].ToString());
+                        int idTahapan = int.Parse(selectedDataPrestasi.Rows[0]["id_tahapan"].ToString());
 
-                    DataTable dataKonversiSelected = KonversiContext.allSelected(nim);
+                        DataTable dataNilai = NilaiContext.getNilai(idRegion, idTahapan);
+                        int idNilai = int.Parse(dataNilai.Rows[0]["id"].ToString());
 
-                    int rowsCountKonversi = KonversiContext.checkData(idConvertPrestasi);
+                        DataTable dataKonversi = KonversiContext.all();
 
+                        DataTable dataKonversiMatkul = KonversiMatkulContext.all();
 
-                    if (KonversiContext.checkData(idConvertPrestasi) > 0)
-                    {
-                        if (KonversiMatkulContext.checkData(idConvertPrestasi) > 0)
+                        M_Konversi konversiBaru = new M_Konversi
                         {
-                            DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
+                            id_prestasi = idConvertPrestasi,
+                            nim = this.nim,
+                            id_nilai = idNilai
+                        };
 
-                            string idKonversiInvalid = dataKonversiInvalid.Rows[0]["id"].ToString();
+                        DataTable dataKonversiSelected = KonversiContext.allSelected(nim);
+
+                        int rowsCountKonversi = KonversiContext.checkData(idConvertPrestasi);
+
+
+                        if (KonversiContext.checkData(idConvertPrestasi) > 0)
+                        {
+                            if (KonversiMatkulContext.checkData(idConvertPrestasi) > 0)
+                            {
+                                DataTable dataKonversiInvalid = KonversiMatkulContext.showData(idConvertPrestasi);
+
+                                string idKonversiInvalid = dataKonversiInvalid.Rows[0]["id"].ToString();
+                            }
                         }
+                        else
+                        {
+                            KonversiContext.store(konversiBaru);
+                        }
+
+
+                        this.Hide();
+                        Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
+                        formConvertPrestasi.Show();
+
+                        dgvPrestasi.DataSource = null;
+                        dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
                     }
-                    else
+                    catch (IndexOutOfRangeException)
                     {
-                        KonversiContext.store(konversiBaru);
+                        MessageBox.Show("Nilai konversi belum tersedia! Silahkan hubungi TIM PERCEPATAN PRESTASI.");
                     }
-
-
-                    this.Hide();
-                    Form_Convertion_Mahasiswa formConvertPrestasi = new Form_Convertion_Mahasiswa(nim, idConvertPrestasi, idKonversiInvalid);
-                    formConvertPrestasi.Show();
-
-                    dgvPrestasi.DataSource = null;
-                    dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                    
                 }
 
 

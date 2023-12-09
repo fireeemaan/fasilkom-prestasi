@@ -36,6 +36,8 @@ namespace fasilkom_prestasi
 
             dgvFormBidang.Columns.Insert(0, editButton);
             dgvFormBidang.Columns.Insert(1, deleteButton);
+            dgvFormBidang.Columns[0].Width = 200;
+            dgvFormBidang.Columns[1].Width = 200;
 
 
         }

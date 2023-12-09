@@ -55,7 +55,7 @@
             dgvFormBidang.ReadOnly = true;
             dgvFormBidang.RowHeadersVisible = false;
             dgvFormBidang.RowHeadersWidth = 51;
-            dgvFormBidang.RowTemplate.Height = 29;
+            dgvFormBidang.RowTemplate.Height = 50;
             dgvFormBidang.Size = new Size(1170, 502);
             dgvFormBidang.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dgvFormBidang.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;

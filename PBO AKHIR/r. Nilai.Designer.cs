@@ -128,6 +128,7 @@
             btnAchievements.TabIndex = 41;
             btnAchievements.Text = "Achievement\r\nValidation";
             btnAchievements.UseVisualStyleBackColor = false;
+            btnAchievements.Click += btnAchievements_Click;
             // 
             // btnOtherMenu
             // 
@@ -160,6 +161,7 @@
             btnConvertion.TabIndex = 42;
             btnConvertion.Text = "Convertion\r\nValidation";
             btnConvertion.UseVisualStyleBackColor = false;
+            btnConvertion.Click += btnConvertion_Click;
             // 
             // btnBack
             // 
@@ -184,6 +186,7 @@
             btnBack.StatePressed.Back.Color2 = Color.WhiteSmoke;
             btnBack.TabIndex = 49;
             btnBack.Values.Text = "";
+            btnBack.Click += btnBack_Click;
             // 
             // dgvNilai
             // 
@@ -206,6 +209,7 @@
             dgvNilai.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dgvNilai.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;
             dgvNilai.TabIndex = 1;
+            dgvNilai.CellContentClick += dgvNilai_CellContentClick;
             // 
             // Nilai
             // 

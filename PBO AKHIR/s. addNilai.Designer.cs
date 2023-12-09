@@ -32,11 +32,12 @@
             panel1 = new Panel();
             tbxMaxSKS = new TextBox();
             tbxMinSKS = new TextBox();
-            btnAddTahapan = new Krypton.Toolkit.KryptonButton();
             cbxTahapan = new ComboBox();
             cbxRegion = new ComboBox();
             cbxNilai = new ComboBox();
             cbtnStatus = new Krypton.Toolkit.KryptonCheckButton();
+            btnAddNilai = new Krypton.Toolkit.KryptonButton();
+            btnEditNilai = new Krypton.Toolkit.KryptonButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,11 +46,12 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(tbxMaxSKS);
             panel1.Controls.Add(tbxMinSKS);
-            panel1.Controls.Add(btnAddTahapan);
             panel1.Controls.Add(cbxTahapan);
             panel1.Controls.Add(cbxRegion);
             panel1.Controls.Add(cbxNilai);
             panel1.Controls.Add(cbtnStatus);
+            panel1.Controls.Add(btnEditNilai);
+            panel1.Controls.Add(btnAddNilai);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -73,33 +75,6 @@
             tbxMinSKS.Size = new Size(248, 20);
             tbxMinSKS.TabIndex = 30;
             tbxMinSKS.KeyPress += tbxMinSKS_KeyPress;
-            // 
-            // btnAddTahapan
-            // 
-            btnAddTahapan.CornerRoundingRadius = 30F;
-            btnAddTahapan.Location = new Point(274, 338);
-            btnAddTahapan.Margin = new Padding(2);
-            btnAddTahapan.MaximumSize = new Size(248, 47);
-            btnAddTahapan.MinimumSize = new Size(248, 47);
-            btnAddTahapan.Name = "btnAddTahapan";
-            btnAddTahapan.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.Size = new Size(248, 47);
-            btnAddTahapan.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnAddTahapan.StateCommon.Border.Rounding = 30F;
-            btnAddTahapan.StateCommon.Content.ShortText.Color1 = Color.White;
-            btnAddTahapan.StateCommon.Content.ShortText.Color2 = Color.White;
-            btnAddTahapan.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAddTahapan.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
-            btnAddTahapan.TabIndex = 29;
-            btnAddTahapan.Values.Text = "Tambahkan";
             // 
             // cbxTahapan
             // 
@@ -176,6 +151,62 @@
             cbtnStatus.TabIndex = 0;
             cbtnStatus.Values.Text = "";
             // 
+            // btnAddNilai
+            // 
+            btnAddNilai.CornerRoundingRadius = 30F;
+            btnAddNilai.Location = new Point(274, 338);
+            btnAddNilai.Margin = new Padding(2);
+            btnAddNilai.MaximumSize = new Size(248, 47);
+            btnAddNilai.MinimumSize = new Size(248, 47);
+            btnAddNilai.Name = "btnAddNilai";
+            btnAddNilai.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.Size = new Size(248, 47);
+            btnAddNilai.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnAddNilai.StateCommon.Border.Rounding = 30F;
+            btnAddNilai.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnAddNilai.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnAddNilai.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddNilai.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnAddNilai.TabIndex = 29;
+            btnAddNilai.Values.Text = "Add";
+            btnAddNilai.Click += btnAddNilai_Click;
+            // 
+            // btnEditNilai
+            // 
+            btnEditNilai.CornerRoundingRadius = 30F;
+            btnEditNilai.Location = new Point(274, 338);
+            btnEditNilai.Margin = new Padding(2);
+            btnEditNilai.MaximumSize = new Size(248, 47);
+            btnEditNilai.MinimumSize = new Size(248, 47);
+            btnEditNilai.Name = "btnEditNilai";
+            btnEditNilai.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.Size = new Size(248, 47);
+            btnEditNilai.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnEditNilai.StateCommon.Border.Rounding = 30F;
+            btnEditNilai.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnEditNilai.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnEditNilai.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditNilai.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnEditNilai.TabIndex = 32;
+            btnEditNilai.Values.Text = "Save Changes";
+            btnEditNilai.Click += btnEditNilai_Click;
+            // 
             // addNilai
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -196,8 +227,9 @@
         private ComboBox cbxNilai;
         private ComboBox cbxTahapan;
         private ComboBox cbxRegion;
-        private Krypton.Toolkit.KryptonButton btnAddTahapan;
+        private Krypton.Toolkit.KryptonButton btnAddNilai;
         private TextBox tbxMaxSKS;
         private TextBox tbxMinSKS;
+        private Krypton.Toolkit.KryptonButton btnEditNilai;
     }
 }
