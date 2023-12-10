@@ -255,6 +255,7 @@
             lblNamaMhs.BackColor = Color.Transparent;
             lblNamaMhs.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblNamaMhs.Location = new Point(9, 0);
+            lblNamaMhs.MaximumSize = new Size(160, 26);
             lblNamaMhs.Name = "lblNamaMhs";
             lblNamaMhs.Size = new Size(92, 26);
             lblNamaMhs.TabIndex = 14;

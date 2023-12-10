@@ -29,7 +29,7 @@ namespace fasilkom_prestasi
 
 
 
-            
+
 
 
 
@@ -208,7 +208,7 @@ namespace fasilkom_prestasi
                 MessageBox.Show("Data Tidak Boleh Kosong!", "Input Data Gagal");
             }
 
-            
+
         }
 
         private void btnBackAchievement_Click(object sender, EventArgs e)

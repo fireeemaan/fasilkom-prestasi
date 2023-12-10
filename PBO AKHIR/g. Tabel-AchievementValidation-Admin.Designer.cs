@@ -244,8 +244,9 @@
             lblNamaAdmin.BackColor = Color.Transparent;
             lblNamaAdmin.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblNamaAdmin.Location = new Point(9, 0);
+            lblNamaAdmin.MaximumSize = new Size(160, 26);
             lblNamaAdmin.Name = "lblNamaAdmin";
-            lblNamaAdmin.Size = new Size(86, 26);
+            lblNamaAdmin.Size = new Size(92, 26);
             lblNamaAdmin.TabIndex = 14;
             lblNamaAdmin.Text = "John Doe";
             // 

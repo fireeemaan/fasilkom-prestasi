@@ -238,11 +238,11 @@ namespace fasilkom_prestasi
                     {
                         MessageBox.Show("Nilai konversi belum tersedia! Silahkan hubungi TIM PERCEPATAN PRESTASI.");
                     }
-                    
+
                 }
 
 
-                
+
 
             }
 
