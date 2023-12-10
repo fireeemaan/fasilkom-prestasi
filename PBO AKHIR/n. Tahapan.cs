@@ -69,14 +69,14 @@ namespace fasilkom_prestasi
             if (e.ColumnIndex == dgvFormTahapan.Columns["deleteButton"].Index && e.RowIndex >= 0)
             {
 
-                int idBidangHapus = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
+                int idTahapanHapus = int.Parse(dgvFormTahapan.Rows[e.RowIndex].Cells["id"].Value.ToString());
 
                 DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
                 if (message == DialogResult.Yes)
                 {
                     try
                     {
-                        TahapanContext.destroy(idBidangHapus);
+                        TahapanContext.destroy(idTahapanHapus);
                         DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
                     }
                     catch (Exception ex)
@@ -102,7 +102,7 @@ namespace fasilkom_prestasi
 
                 using (addTahapan editTahapan = new addTahapan(id_admin, idTahapanUbah))
                 {
-                    addTahapan formEditTahapan = new addTahapan(idTahapanUbah);
+                    addTahapan formEditTahapan = new addTahapan(id_admin,idTahapanUbah);
                     formEditTahapan.ShowDialog();
                 }
                
@@ -110,7 +110,7 @@ namespace fasilkom_prestasi
                 dgvFormTahapan.DataSource = TahapanContext.all();
                 dgvFormTahapan.Columns[0].Width = 100;
                 dgvFormTahapan.Columns[1].Width = 100;
-                dgvFormTahapan.Columns["tahapan "].Width = 300;
+                dgvFormTahapan.Columns["tahapan"].Width = 300;
 
                 dgvFormTahapan.Columns["id"].Visible = false;
 

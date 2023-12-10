@@ -13,47 +13,52 @@ using System.Windows.Forms;
 
 namespace fasilkom_prestasi
 {
-    public partial class addTahapan : Form
+    public partial class addProdi : Form
     {
-        int id_tahapan;
         long id_admin;
-        public addTahapan(long id_admin)
+        int id_prodi;
+        public addProdi(long id_admin)
         {
+
             this.id_admin = id_admin;
             InitializeComponent();
-            DataTable dataTahapan = TahapanContext.all();
-            btnEditTahapan.Hide();
+            DataTable dataProdi = ProdiContext.all();
+            btnEditProdi.Hide();
             this.id_admin = id_admin;
         }
 
-        public addTahapan(long id_admin, int id_tahapan)
+        public addProdi(long id_admin, int id_prodi)
         {
-            this.id_tahapan = id_tahapan;
+
+            this.id_prodi = id_prodi;
             this.id_admin = id_admin;
             InitializeComponent();
-            btnAddTahapan.Hide();
-            DataTable dataTahapan = TahapanContext.all();
-            tbxNamaTahapan.Text = dataTahapan.Select($"id = {id_tahapan}")[0]["tahapan"].ToString();
-            DataTable Tahapan = TahapanContext.show(id_tahapan);
+            btnAddProdi.Hide();
+            DataTable dataProdi = ProdiContext.all();
+            DataTable Prodi = ProdiContext.show(id_prodi);
+            tbxNamaProdi.Text = dataProdi.Select($"id = {id_prodi}")[0]["prodi"].ToString();
         }
 
-        private void btnAddTahapan_Click(object sender, EventArgs e)
+
+
+
+        private void btnAddProdi_Click(object sender, EventArgs e)
         {
-            var namaTahapan = tbxNamaTahapan.Text;
-            M_Tahapan tahapanBaru = new M_Tahapan
+            var namaProdi = tbxNamaProdi.Text;
+            M_Prodi prodiBaru = new M_Prodi
             {
 
-                tahapan = namaTahapan
+                prodi = namaProdi
             };
 
             try
             {
-                TahapanContext.store(tahapanBaru);
+                ProdiContext.store(prodiBaru);
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Tahapan tahapan = new Tahapan(id_admin);
-                tahapan.Show();
+                Prodi prodi = new Prodi(id_admin);
+                prodi.Show();
             }
             catch (NpgsqlException ex)
             {
@@ -65,23 +70,23 @@ namespace fasilkom_prestasi
             }
         }
 
-        private void btnEditTahapan_Click(object sender, EventArgs e)
+        private void btnEditProdi_Click(object sender, EventArgs e)
         {
-            var namaTahapan = tbxNamaTahapan.Text;
-            M_Tahapan tahapanBaru = new M_Tahapan
+            var namaProdi = tbxNamaProdi.Text;
+            M_Prodi prodiBaru = new M_Prodi
 
 
             {
-                id = id_tahapan,
-                tahapan = namaTahapan
+                id = id_prodi,
+                prodi = namaProdi
             };
             try
             {
-                TahapanContext.update(tahapanBaru);
+                ProdiContext.update(prodiBaru);
                 MessageBox.Show("Data Berhasil diUbah !");
                 this.Close();
-                Tahapan tahapan = new Tahapan(id_admin);
-                tahapan.Show();
+                Prodi prodi = new Prodi(id_admin);
+                prodi.Show();
             }
             catch (NpgsqlException ex)
             {
