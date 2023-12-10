@@ -73,14 +73,16 @@ namespace fasilkom_prestasi
 
         private void btnAddRegion_Click(object sender, EventArgs e)
         {
-            var namaRegion = tbxNamaRegion.Text;
-            M_Region regionBaru = new M_Region
-            {
-                region = namaRegion
-            };
+
 
             try
             {
+                var namaRegion = tbxNamaRegion.Text;
+                M_Region regionBaru = new M_Region
+                {
+                    region = namaRegion
+                };
+
                 RegionContext.store(regionBaru);
                 MessageBox.Show("Data Berhasil Ditambah !");
 
@@ -88,13 +90,9 @@ namespace fasilkom_prestasi
                 Region region = new Region(id_admin);
                 region.Show();
             }
-            catch (NpgsqlException ex)
+            catch
             {
-                MessageBox.Show($"Error! : {ex}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
+                MessageBox.Show("Data Tidak Boleh Kosong!");
             }
         }
     }

@@ -48,15 +48,16 @@ namespace fasilkom_prestasi
 
         private void btnAddBidang_Click(object sender, EventArgs e)
         {
-            var namaBidang = tbxNamaBidang.Text;
-            M_Bidang bidangBaru = new M_Bidang
-            {
 
-                bidang = namaBidang
-            };
 
             try
             {
+                var namaBidang = tbxNamaBidang.Text;
+                M_Bidang bidangBaru = new M_Bidang
+                {
+
+                    bidang = namaBidang
+                };
                 BidangContext.store(bidangBaru);
                 MessageBox.Show("Data Berhasil Ditambah !");
 
@@ -64,13 +65,9 @@ namespace fasilkom_prestasi
                 //Bidang bidang = new Bidang(id_admin);
                 //bidang.Show();
             }
-            catch (NpgsqlException ex)
+            catch
             {
-                MessageBox.Show($"Error! : {ex}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
+                MessageBox.Show("Data Tidak Boleh Kosong!");
             }
         }
 

@@ -113,33 +113,40 @@ namespace fasilkom_prestasi
             var maxSKS = Convert.ToInt32(tbxMaxSKS.Text);
             bool IsValid = cbtnStatus.Checked;
 
-
-            // Region Selected ID
-            KeyValuePair<int, string> selectedRegion = (KeyValuePair<int, string>)cbxRegion.SelectedItem;
-            var idRegion = selectedRegion.Key;
-            // Tahapan Selected ID
-            KeyValuePair<int, string> selectedTahapan = (KeyValuePair<int, string>)cbxTahapan.SelectedItem;
-            var idTahapan = selectedTahapan.Key;
-
-            M_Nilai nilaiBaru = new M_Nilai()
+            try
             {
-                nilai = Nilai,
-                min_sks = minSKS,
-                max_sks = maxSKS,
-                isValid = IsValid,
-                id_region = idRegion,
-                id_tahapan = idTahapan,
-            };
+                // Region Selected ID
+                KeyValuePair<int, string> selectedRegion = (KeyValuePair<int, string>)cbxRegion.SelectedItem;
+                var idRegion = selectedRegion.Key;
+                // Tahapan Selected ID
+                KeyValuePair<int, string> selectedTahapan = (KeyValuePair<int, string>)cbxTahapan.SelectedItem;
+                var idTahapan = selectedTahapan.Key;
 
-            if (NilaiContext.checkDuplicate(nilaiBaru) > 0)
-            {
-                MessageBox.Show("Terdapat NILAI dengan REGION dan TAHAPAN yang sama sedang aktif!", "Input Nilai Gagal!");
+                M_Nilai nilaiBaru = new M_Nilai()
+                {
+                    nilai = Nilai,
+                    min_sks = minSKS,
+                    max_sks = maxSKS,
+                    isValid = IsValid,
+                    id_region = idRegion,
+                    id_tahapan = idTahapan,
+                };
+
+                if (NilaiContext.checkDuplicate(nilaiBaru) > 0)
+                {
+                    MessageBox.Show("Terdapat NILAI dengan REGION dan TAHAPAN yang sama sedang aktif!", "Input Nilai Gagal!");
+                }
+                else
+                {
+                    NilaiContext.store(nilaiBaru);
+                    this.Close();
+                }
             }
-            else
+            catch
             {
-                NilaiContext.store(nilaiBaru);
-                this.Close();
+                MessageBox.Show("Data Tidak Boleh Kosong!");
             }
+
 
         }
 

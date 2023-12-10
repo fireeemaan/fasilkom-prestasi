@@ -43,21 +43,30 @@ namespace fasilkom_prestasi
             var Kode = tbxKodeMatkul.Text;
             var Matkul = tbxNamaMatkul.Text;
 
-            M_Matkul matkulBaru = new M_Matkul()
-            {
-                kode = Kode,
-                matkul = Matkul
-            };
 
-            if (tbxKodeMatkul.Text != null && tbxNamaMatkul.Text != null)
+            try
             {
-                MatkulContext.store(matkulBaru);
-                this.Close();
+                M_Matkul matkulBaru = new M_Matkul()
+                {
+                    kode = Kode,
+                    matkul = Matkul
+                };
+
+                if (tbxKodeMatkul.Text != null && tbxNamaMatkul.Text != null)
+                {
+                    MatkulContext.store(matkulBaru);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Data Tidak Boleh Kosong!", "Input Data Gagal");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Data Tidak Boleh Kosong!", "Input Data Gagal");
+                MessageBox.Show("Terdapat Kode Matkul Yang Sama!", "Input Data Gagal");
             }
+            
 
         }
 
@@ -66,21 +75,29 @@ namespace fasilkom_prestasi
             var Kode = tbxKodeMatkul.Text;
             var Matkul = tbxNamaMatkul.Text;
 
-            M_Matkul matkulBaru = new M_Matkul()
+            try
             {
-                kode = Kode,
-                matkul = Matkul
-            };
+                M_Matkul matkulBaru = new M_Matkul()
+                {
+                    kode = Kode,
+                    matkul = Matkul
+                };
 
-            if (tbxKodeMatkul.Text != null && tbxNamaMatkul.Text != null)
-            {
-                MatkulContext.update(matkulBaru, kd_matkul);
-                this.Close();
+                if (tbxKodeMatkul.Text != null && tbxNamaMatkul.Text != null)
+                {
+                    MatkulContext.update(matkulBaru, kd_matkul);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Data Tidak Boleh Kosong!", "Input Data Gagal");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Data Tidak Boleh Kosong!", "Input Data Gagal");
+                MessageBox.Show("Terdapat Kode Matkul Yang Sama!", "Input Data Gagal");
             }
+
         }
     }
 }

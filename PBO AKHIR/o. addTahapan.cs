@@ -39,15 +39,16 @@ namespace fasilkom_prestasi
 
         private void btnAddTahapan_Click(object sender, EventArgs e)
         {
-            var namaTahapan = tbxNamaTahapan.Text;
-            M_Tahapan tahapanBaru = new M_Tahapan
-            {
 
-                tahapan = namaTahapan
-            };
 
             try
             {
+                var namaTahapan = tbxNamaTahapan.Text;
+                M_Tahapan tahapanBaru = new M_Tahapan
+                {
+
+                    tahapan = namaTahapan
+                };
                 TahapanContext.store(tahapanBaru);
                 MessageBox.Show("Data Berhasil Ditambah !");
 
@@ -55,13 +56,9 @@ namespace fasilkom_prestasi
                 Tahapan tahapan = new Tahapan(id_admin);
                 tahapan.Show();
             }
-            catch (NpgsqlException ex)
+            catch
             {
-                MessageBox.Show($"Error! : {ex}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
+                MessageBox.Show("Data Tidak Boleh Kosong!");
             }
         }
 
