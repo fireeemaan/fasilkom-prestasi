@@ -145,7 +145,7 @@ namespace fasilkom_prestasi
 
 
                 this.Close();
-                Validation validation = new Validation(nim);
+                Validation validation = new Validation(id_admin);
                 validation.Show();
             }
             catch (NpgsqlException ex)
