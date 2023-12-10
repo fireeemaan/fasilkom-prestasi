@@ -17,7 +17,7 @@ namespace fasilkom_prestasi
         long id_admin;
         public Prodi(long idAdmin)
         {
-            
+
             this.id_admin = idAdmin;
             InitializeComponent();
 
@@ -63,7 +63,7 @@ namespace fasilkom_prestasi
             dgvFormProdi.Columns["id"].Visible = false;
         }
 
-        
+
 
         private void btnAchievements_Click(object sender, EventArgs e)
         {
@@ -125,7 +125,7 @@ namespace fasilkom_prestasi
 
                 using (addProdi editProdi = new addProdi(id_admin, idProdiUbah))
                 {
-                    addProdi formeditProdi = new addProdi(id_admin,idProdiUbah);
+                    addProdi formeditProdi = new addProdi(id_admin, idProdiUbah);
                     formeditProdi.ShowDialog();
                 }
 

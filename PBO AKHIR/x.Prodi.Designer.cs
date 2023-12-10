@@ -191,6 +191,7 @@
             btnBack.StatePressed.Back.Color2 = Color.WhiteSmoke;
             btnBack.TabIndex = 48;
             btnBack.Values.Text = "";
+            btnBack.Click += btnBack_Click;
             // 
             // Prodi
             // 
