@@ -19,6 +19,11 @@ namespace fasilkom_prestasi
             this.id_admin = idAdmin;
             InitializeComponent();
 
+            // Set Data Admin
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
+
             dgvFormTahapan.DataSource = TahapanContext.all();
 
 
@@ -47,7 +52,7 @@ namespace fasilkom_prestasi
 
         private void btnAddTahapan_Click(object sender, EventArgs e)
         {
-            
+
 
             using (addTahapan tahapanBaru = new addTahapan(id_admin))
             {
@@ -102,10 +107,10 @@ namespace fasilkom_prestasi
 
                 using (addTahapan editTahapan = new addTahapan(id_admin, idTahapanUbah))
                 {
-                    addTahapan formEditTahapan = new addTahapan(id_admin,idTahapanUbah);
+                    addTahapan formEditTahapan = new addTahapan(id_admin, idTahapanUbah);
                     formEditTahapan.ShowDialog();
                 }
-               
+
                 dgvFormTahapan.DataSource = null;
                 dgvFormTahapan.DataSource = TahapanContext.all();
                 dgvFormTahapan.Columns[0].Width = 100;
@@ -136,6 +141,18 @@ namespace fasilkom_prestasi
             this.Close();
             otherMenu otherMenu = new otherMenu(id_admin);
             otherMenu.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
         }
     }
 }

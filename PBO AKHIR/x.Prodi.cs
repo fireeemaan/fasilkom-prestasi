@@ -21,6 +21,11 @@ namespace fasilkom_prestasi
             this.id_admin = idAdmin;
             InitializeComponent();
 
+            // Set Data Admin
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
+
             dgvFormProdi.DataSource = ProdiContext.all();
 
 
@@ -139,6 +144,18 @@ namespace fasilkom_prestasi
 
             }
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
         }
     }
 }

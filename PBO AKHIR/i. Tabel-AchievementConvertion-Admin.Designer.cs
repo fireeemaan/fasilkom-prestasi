@@ -140,7 +140,7 @@
             lblNamaAdmin.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblNamaAdmin.Location = new Point(9, 0);
             lblNamaAdmin.Name = "lblNamaAdmin";
-            lblNamaAdmin.Size = new Size(86, 26);
+            lblNamaAdmin.Size = new Size(92, 26);
             lblNamaAdmin.TabIndex = 14;
             lblNamaAdmin.Text = "John Doe";
             // 
@@ -176,6 +176,7 @@
             btnLogout.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnLogout.TabIndex = 16;
             btnLogout.Values.Text = "";
+            btnLogout.Click += btnLogout_Click;
             // 
             // lblNIP
             // 

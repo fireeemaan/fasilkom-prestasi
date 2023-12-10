@@ -87,5 +87,17 @@ namespace fasilkom_prestasi
             Prodi prodi = new Prodi(id_admin);
             prodi.Show();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
+        }
     }
 }

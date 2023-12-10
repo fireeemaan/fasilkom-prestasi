@@ -41,6 +41,11 @@
             btnBackAchievement = new Krypton.Toolkit.KryptonButton();
             btnEditAchievement = new Krypton.Toolkit.KryptonButton();
             radioButton1 = new RadioButton();
+            panel2 = new Panel();
+            lblNamaAdmin = new Label();
+            btnLogout = new Krypton.Toolkit.KryptonButton();
+            lblNIP = new Label();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // tbxSuratTugas
@@ -203,12 +208,79 @@
             radioButton1.TabIndex = 26;
             radioButton1.UseVisualStyleBackColor = false;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(lblNamaAdmin);
+            panel2.Controls.Add(btnLogout);
+            panel2.Controls.Add(lblNIP);
+            panel2.Location = new Point(2, 807);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(241, 47);
+            panel2.TabIndex = 38;
+            // 
+            // lblNamaAdmin
+            // 
+            lblNamaAdmin.AutoSize = true;
+            lblNamaAdmin.BackColor = Color.Transparent;
+            lblNamaAdmin.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNamaAdmin.Location = new Point(9, 0);
+            lblNamaAdmin.Name = "lblNamaAdmin";
+            lblNamaAdmin.Size = new Size(92, 26);
+            lblNamaAdmin.TabIndex = 14;
+            lblNamaAdmin.Text = "John Doe";
+            // 
+            // btnLogout
+            // 
+            btnLogout.CornerRoundingRadius = 6F;
+            btnLogout.Location = new Point(202, 7);
+            btnLogout.Name = "btnLogout";
+            btnLogout.OverrideDefault.Back.Color1 = Color.White;
+            btnLogout.OverrideDefault.Back.Color2 = Color.White;
+            btnLogout.OverrideDefault.Border.Color1 = Color.White;
+            btnLogout.OverrideDefault.Border.Color2 = Color.White;
+            btnLogout.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnLogout.Size = new Size(32, 32);
+            btnLogout.StateCommon.Back.Color1 = Color.White;
+            btnLogout.StateCommon.Back.Color2 = Color.White;
+            btnLogout.StateCommon.Back.Image = (Image)resources.GetObject("btnLogout.StateCommon.Back.Image");
+            btnLogout.StateCommon.Border.Color1 = Color.White;
+            btnLogout.StateCommon.Border.Color2 = Color.White;
+            btnLogout.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnLogout.StateCommon.Border.Rounding = 6F;
+            btnLogout.StateNormal.Back.Color1 = Color.White;
+            btnLogout.StateNormal.Back.Color2 = Color.White;
+            btnLogout.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnLogout.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnLogout.StatePressed.Border.Color1 = Color.WhiteSmoke;
+            btnLogout.StatePressed.Border.Color2 = Color.WhiteSmoke;
+            btnLogout.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnLogout.StateTracking.Back.Color1 = Color.WhiteSmoke;
+            btnLogout.StateTracking.Back.Color2 = Color.WhiteSmoke;
+            btnLogout.StateTracking.Border.Color1 = Color.WhiteSmoke;
+            btnLogout.StateTracking.Border.Color2 = Color.WhiteSmoke;
+            btnLogout.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnLogout.TabIndex = 16;
+            btnLogout.Values.Text = "";
+            // 
+            // lblNIP
+            // 
+            lblNIP.AutoSize = true;
+            lblNIP.BackColor = Color.Transparent;
+            lblNIP.Font = new Font("Poppins Light", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNIP.Location = new Point(9, 21);
+            lblNIP.Name = "lblNIP";
+            lblNIP.Size = new Size(96, 26);
+            lblNIP.TabIndex = 15;
+            lblNIP.Text = "1234567890";
+            // 
             // Form_AchievementValidation_Admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(panel2);
             Controls.Add(radioButton1);
             Controls.Add(btnEditAchievement);
             Controls.Add(btnBackAchievement);
@@ -226,6 +298,8 @@
             Name = "Form_AchievementValidation_Admin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form Achievement Validation Admin";
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,5 +318,9 @@
         private Krypton.Toolkit.KryptonButton btnBackAchievement;
         private Krypton.Toolkit.KryptonButton btnEditAchievement;
         private RadioButton radioButton1;
+        private Panel panel2;
+        private Label lblNamaAdmin;
+        private Krypton.Toolkit.KryptonButton btnLogout;
+        private Label lblNIP;
     }
 }

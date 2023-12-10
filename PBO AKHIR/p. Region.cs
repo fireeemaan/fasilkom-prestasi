@@ -19,6 +19,11 @@ namespace fasilkom_prestasi
             this.id_admin = idAdmin;
             InitializeComponent();
 
+            // Set Data Admin
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
+
             dgvFormRegion.DataSource = RegionContext.all();
 
 
@@ -98,13 +103,13 @@ namespace fasilkom_prestasi
                 if (e.ColumnIndex == dgvFormRegion.Columns["editButton"].Index && e.RowIndex >= 0)
                 {
                     int idRegionUbah = int.Parse(dgvFormRegion.Rows[e.RowIndex].Cells["id"].Value.ToString());
-                    
+
                     using (addRegion editRegion = new addRegion(id_admin, idRegionUbah))
                     {
                         addRegion formEditRegion = new addRegion(id_admin, idRegionUbah);
                         formEditRegion.ShowDialog();
                     }
-                   
+
 
                     dgvFormRegion.DataSource = null;
                     dgvFormRegion.DataSource = RegionContext.all();
@@ -141,6 +146,18 @@ namespace fasilkom_prestasi
             this.Close();
             otherMenu otherMenu = new otherMenu(id_admin);
             otherMenu.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
         }
     }
 }

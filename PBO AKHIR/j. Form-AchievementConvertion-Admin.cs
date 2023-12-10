@@ -24,12 +24,18 @@ namespace fasilkom_prestasi
         long nim;
 
 
-        public Form_ConvertionValidation_Admin(string idKonversi, string idPrestasi, long nim)
+        public Form_ConvertionValidation_Admin(string idKonversi, string idPrestasi, long nim, long idAdmin)
         {
             this.id = id;
             this.idKonversi = idKonversi;
             this.nim = nim;
+            this.id_admin = idAdmin;
             InitializeComponent();
+
+            // Set Data Admin
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
 
             DataTable dataKonversiMatkul = KonversiMatkulContext.show(idKonversi);
             dgvMatkulKonversi.DataSource = dataKonversiMatkul;

@@ -18,15 +18,15 @@ namespace fasilkom_prestasi
         string id_prestasi;
 
 
-        public KonversiAdmin(long id_admin)
+        public KonversiAdmin(long idAdmin)
         {
-            this.id_admin = id_admin;
+            this.id_admin = idAdmin;
             InitializeComponent();
 
             DataTable datauser = AdminContext.show(id_admin);
             lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
             lblNIP.Text = id_admin.ToString();
-          
+
 
             dgvKonversi.DataSource = KonversiContext.all();
 
@@ -69,7 +69,7 @@ namespace fasilkom_prestasi
 
 
                 this.Hide();
-                Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idKonversi, idPrestasi, nim);
+                Form_ConvertionValidation_Admin formValidasi = new Form_ConvertionValidation_Admin(idKonversi, idPrestasi, nim, id_admin);
                 formValidasi.Show();
 
                 dgvKonversi.DataSource = null;
@@ -125,6 +125,18 @@ namespace fasilkom_prestasi
             this.Hide();
             otherMenu otherMenu = new otherMenu(id_admin);
             otherMenu.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult message = MessageBox.Show("Apakah anda yakin ingin logout?", "Konfirmasi logout", MessageBoxButtons.YesNo);
+
+            if (message == DialogResult.Yes)
+            {
+                this.Close();
+                Login login = new Login();
+                login.Show();
+            }
         }
     }
 }

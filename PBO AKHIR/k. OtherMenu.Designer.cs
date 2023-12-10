@@ -30,35 +30,34 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(otherMenu));
             panel1 = new Panel();
+            panel2 = new Panel();
+            panel4 = new Panel();
+            btnAchievements = new Button();
+            btnOtherMenu = new Button();
+            btnConvertion = new Button();
+            btnProdi = new Krypton.Toolkit.KryptonButton();
             panel3 = new Panel();
             lblNamaAdmin = new Label();
             btnLogout = new Krypton.Toolkit.KryptonButton();
             lblNIP = new Label();
             btnMKKonversi = new Krypton.Toolkit.KryptonButton();
-            panel2 = new Panel();
-            btnOtherMenu = new Button();
-            btnConvertion = new Button();
-            btnAchievements = new Button();
             btnMatkul = new Krypton.Toolkit.KryptonButton();
             btnNilai = new Krypton.Toolkit.KryptonButton();
             btnTahapan = new Krypton.Toolkit.KryptonButton();
             btnRegion = new Krypton.Toolkit.KryptonButton();
             btnBidang = new Krypton.Toolkit.KryptonButton();
-            btnProdi = new Krypton.Toolkit.KryptonButton();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnProdi);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(btnMKKonversi);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(btnOtherMenu);
-            panel1.Controls.Add(btnConvertion);
-            panel1.Controls.Add(btnAchievements);
             panel1.Controls.Add(btnMatkul);
             panel1.Controls.Add(btnNilai);
             panel1.Controls.Add(btnTahapan);
@@ -69,6 +68,109 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1582, 853);
             panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(btnAchievements);
+            panel2.Controls.Add(btnOtherMenu);
+            panel2.Controls.Add(btnConvertion);
+            panel2.Location = new Point(0, 166);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(242, 233);
+            panel2.TabIndex = 46;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(189, 209, 255);
+            panel4.Location = new Point(-2, 157);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 62);
+            panel4.TabIndex = 44;
+            // 
+            // btnAchievements
+            // 
+            btnAchievements.BackColor = Color.White;
+            btnAchievements.FlatAppearance.BorderSize = 0;
+            btnAchievements.FlatStyle = FlatStyle.Flat;
+            btnAchievements.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAchievements.Image = (Image)resources.GetObject("btnAchievements.Image");
+            btnAchievements.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAchievements.Location = new Point(8, 1);
+            btnAchievements.Margin = new Padding(2);
+            btnAchievements.Name = "btnAchievements";
+            btnAchievements.Size = new Size(232, 62);
+            btnAchievements.TabIndex = 41;
+            btnAchievements.Text = "Achievement\r\nValidation";
+            btnAchievements.UseVisualStyleBackColor = false;
+            btnAchievements.Click += btnAchievements_Click;
+            // 
+            // btnOtherMenu
+            // 
+            btnOtherMenu.BackColor = Color.White;
+            btnOtherMenu.FlatAppearance.BorderSize = 0;
+            btnOtherMenu.FlatStyle = FlatStyle.Flat;
+            btnOtherMenu.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOtherMenu.Image = (Image)resources.GetObject("btnOtherMenu.Image");
+            btnOtherMenu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOtherMenu.Location = new Point(8, 157);
+            btnOtherMenu.Margin = new Padding(2);
+            btnOtherMenu.Name = "btnOtherMenu";
+            btnOtherMenu.Size = new Size(232, 62);
+            btnOtherMenu.TabIndex = 43;
+            btnOtherMenu.Text = "Lainnya\r\n";
+            btnOtherMenu.UseVisualStyleBackColor = false;
+            // 
+            // btnConvertion
+            // 
+            btnConvertion.BackColor = Color.White;
+            btnConvertion.FlatAppearance.BorderSize = 0;
+            btnConvertion.FlatStyle = FlatStyle.Flat;
+            btnConvertion.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConvertion.Image = (Image)resources.GetObject("btnConvertion.Image");
+            btnConvertion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConvertion.Location = new Point(8, 91);
+            btnConvertion.Margin = new Padding(2);
+            btnConvertion.Name = "btnConvertion";
+            btnConvertion.Size = new Size(232, 62);
+            btnConvertion.TabIndex = 42;
+            btnConvertion.Text = "Convertion\r\nValidation";
+            btnConvertion.UseVisualStyleBackColor = false;
+            btnConvertion.Click += btnConvertion_Click;
+            // 
+            // btnProdi
+            // 
+            btnProdi.CornerRoundingRadius = 25F;
+            btnProdi.Location = new Point(584, 456);
+            btnProdi.Name = "btnProdi";
+            btnProdi.OverrideDefault.Back.Color1 = Color.White;
+            btnProdi.OverrideDefault.Back.Color2 = Color.White;
+            btnProdi.OverrideDefault.Border.Color1 = Color.White;
+            btnProdi.OverrideDefault.Border.Color2 = Color.White;
+            btnProdi.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnProdi.Size = new Size(203, 203);
+            btnProdi.StateCommon.Back.Color1 = Color.White;
+            btnProdi.StateCommon.Back.Color2 = Color.White;
+            btnProdi.StateCommon.Back.Image = (Image)resources.GetObject("btnProdi.StateCommon.Back.Image");
+            btnProdi.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            btnProdi.StateCommon.Border.Color1 = Color.White;
+            btnProdi.StateCommon.Border.Color2 = Color.White;
+            btnProdi.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnProdi.StateCommon.Border.Rounding = 25F;
+            btnProdi.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            btnProdi.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            btnProdi.StatePressed.Border.Color1 = Color.WhiteSmoke;
+            btnProdi.StatePressed.Border.Color2 = Color.WhiteSmoke;
+            btnProdi.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnProdi.StateTracking.Back.Color1 = Color.WhiteSmoke;
+            btnProdi.StateTracking.Back.Color2 = Color.WhiteSmoke;
+            btnProdi.StateTracking.Border.Color1 = Color.WhiteSmoke;
+            btnProdi.StateTracking.Border.Color2 = Color.WhiteSmoke;
+            btnProdi.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnProdi.TabIndex = 43;
+            btnProdi.Values.Text = "";
+            btnProdi.Click += btnProdi_Click;
             // 
             // panel3
             // 
@@ -88,7 +190,7 @@
             lblNamaAdmin.Font = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblNamaAdmin.Location = new Point(9, 0);
             lblNamaAdmin.Name = "lblNamaAdmin";
-            lblNamaAdmin.Size = new Size(86, 26);
+            lblNamaAdmin.Size = new Size(92, 26);
             lblNamaAdmin.TabIndex = 14;
             lblNamaAdmin.Text = "John Doe";
             // 
@@ -124,6 +226,7 @@
             btnLogout.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btnLogout.TabIndex = 16;
             btnLogout.Values.Text = "";
+            btnLogout.Click += btnLogout_Click;
             // 
             // lblNIP
             // 
@@ -167,64 +270,6 @@
             btnMKKonversi.TabIndex = 41;
             btnMKKonversi.Values.Text = "";
             btnMKKonversi.Click += btnMKKonversi_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(189, 209, 255);
-            panel2.Location = new Point(0, 315);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(10, 62);
-            panel2.TabIndex = 40;
-            // 
-            // btnOtherMenu
-            // 
-            btnOtherMenu.BackColor = Color.White;
-            btnOtherMenu.FlatAppearance.BorderSize = 0;
-            btnOtherMenu.FlatStyle = FlatStyle.Flat;
-            btnOtherMenu.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOtherMenu.Image = (Image)resources.GetObject("btnOtherMenu.Image");
-            btnOtherMenu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOtherMenu.Location = new Point(10, 315);
-            btnOtherMenu.Margin = new Padding(2);
-            btnOtherMenu.Name = "btnOtherMenu";
-            btnOtherMenu.Size = new Size(232, 62);
-            btnOtherMenu.TabIndex = 39;
-            btnOtherMenu.Text = "Lainnya\r\n";
-            btnOtherMenu.UseVisualStyleBackColor = false;
-            // 
-            // btnConvertion
-            // 
-            btnConvertion.BackColor = Color.White;
-            btnConvertion.FlatAppearance.BorderSize = 0;
-            btnConvertion.FlatStyle = FlatStyle.Flat;
-            btnConvertion.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnConvertion.Image = (Image)resources.GetObject("btnConvertion.Image");
-            btnConvertion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConvertion.Location = new Point(10, 249);
-            btnConvertion.Margin = new Padding(2);
-            btnConvertion.Name = "btnConvertion";
-            btnConvertion.Size = new Size(232, 62);
-            btnConvertion.TabIndex = 38;
-            btnConvertion.Text = "Convertion\r\nValidation";
-            btnConvertion.UseVisualStyleBackColor = false;
-            btnConvertion.Click += btnConvertion_Click;
-            // 
-            // btnAchievements
-            // 
-            btnAchievements.BackColor = Color.White;
-            btnAchievements.FlatAppearance.BorderSize = 0;
-            btnAchievements.FlatStyle = FlatStyle.Flat;
-            btnAchievements.Font = new Font("Poppins SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAchievements.Image = (Image)resources.GetObject("btnAchievements.Image");
-            btnAchievements.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAchievements.Location = new Point(10, 159);
-            btnAchievements.Margin = new Padding(2);
-            btnAchievements.Name = "btnAchievements";
-            btnAchievements.Size = new Size(232, 62);
-            btnAchievements.TabIndex = 37;
-            btnAchievements.Text = "Achievement\r\nValidation";
-            btnAchievements.UseVisualStyleBackColor = false;
-            btnAchievements.Click += btnAchievements_Click;
             // 
             // btnMatkul
             // 
@@ -386,39 +431,6 @@
             btnBidang.Values.Text = "";
             btnBidang.Click += btnBidang_Click;
             // 
-            // btnProdi
-            // 
-            btnProdi.CornerRoundingRadius = 25F;
-            btnProdi.Location = new Point(584, 456);
-            btnProdi.Name = "btnProdi";
-            btnProdi.OverrideDefault.Back.Color1 = Color.White;
-            btnProdi.OverrideDefault.Back.Color2 = Color.White;
-            btnProdi.OverrideDefault.Border.Color1 = Color.White;
-            btnProdi.OverrideDefault.Border.Color2 = Color.White;
-            btnProdi.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnProdi.Size = new Size(203, 203);
-            btnProdi.StateCommon.Back.Color1 = Color.White;
-            btnProdi.StateCommon.Back.Color2 = Color.White;
-            btnProdi.StateCommon.Back.Image = (Image)resources.GetObject("kryptonButton1.StateCommon.Back.Image");
-            btnProdi.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            btnProdi.StateCommon.Border.Color1 = Color.White;
-            btnProdi.StateCommon.Border.Color2 = Color.White;
-            btnProdi.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnProdi.StateCommon.Border.Rounding = 25F;
-            btnProdi.StatePressed.Back.Color1 = Color.WhiteSmoke;
-            btnProdi.StatePressed.Back.Color2 = Color.WhiteSmoke;
-            btnProdi.StatePressed.Border.Color1 = Color.WhiteSmoke;
-            btnProdi.StatePressed.Border.Color2 = Color.WhiteSmoke;
-            btnProdi.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnProdi.StateTracking.Back.Color1 = Color.WhiteSmoke;
-            btnProdi.StateTracking.Back.Color2 = Color.WhiteSmoke;
-            btnProdi.StateTracking.Border.Color1 = Color.WhiteSmoke;
-            btnProdi.StateTracking.Border.Color2 = Color.WhiteSmoke;
-            btnProdi.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            btnProdi.TabIndex = 43;
-            btnProdi.Values.Text = "";
-            btnProdi.Click += btnProdi_Click;
-            // 
             // otherMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -430,6 +442,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Fasilkom Prestasi";
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -443,15 +456,16 @@
         private Krypton.Toolkit.KryptonButton btnNilai;
         private Krypton.Toolkit.KryptonButton btnTahapan;
         private Krypton.Toolkit.KryptonButton btnRegion;
-        private Button btnOtherMenu;
-        private Button btnConvertion;
-        private Button btnAchievements;
-        private Panel panel2;
         private Krypton.Toolkit.KryptonButton btnMKKonversi;
         private Panel panel3;
         private Label lblNamaAdmin;
         private Krypton.Toolkit.KryptonButton btnLogout;
         private Label lblNIP;
         private Krypton.Toolkit.KryptonButton btnProdi;
+        private Panel panel2;
+        private Panel panel4;
+        private Button btnAchievements;
+        private Button btnOtherMenu;
+        private Button btnConvertion;
     }
 }

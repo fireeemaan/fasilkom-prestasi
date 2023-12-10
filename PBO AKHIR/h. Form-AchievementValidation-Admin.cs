@@ -17,15 +17,15 @@ namespace fasilkom_prestasi
 {
     public partial class Form_AchievementValidation_Admin : Form
     {
-        
+
         long nim;
         string idPrestasi;
         long id_admin;
-        
 
-        
-        
-        
+
+
+
+
         public Form_AchievementValidation_Admin(string idPrestasi, long nim, long id_admin)
         {
             this.nim = nim;
@@ -33,7 +33,10 @@ namespace fasilkom_prestasi
             this.id_admin = id_admin;
             InitializeComponent();
 
-           
+            // Set Data Admin
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
 
 
 
@@ -102,7 +105,7 @@ namespace fasilkom_prestasi
         private void btnBackAchievement_Click(object sender, EventArgs e)
         {
             this.Close();
-            Validation validation = new Validation(nim);
+            Validation validation = new Validation(id_admin);
             validation.Show();
         }
 
@@ -131,8 +134,8 @@ namespace fasilkom_prestasi
                 surat_tugas = tbxSuratTugas.Text,
                 validated = statusValidasi,
                 id_admin = id_admin
-                 
-                
+
+
             };
 
             try
