@@ -23,6 +23,11 @@ namespace fasilkom_prestasi
             this.id_admin = id_admin;
             InitializeComponent();
 
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
+          
+
             dgvKonversi.DataSource = KonversiContext.all();
 
             DataGridViewButtonColumn validButton = new DataGridViewButtonColumn();

@@ -1,4 +1,5 @@
-﻿using fasilkom_prestasi.App.Models;
+﻿using fasilkom_prestasi.App.Context;
+using fasilkom_prestasi.App.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,10 @@ namespace fasilkom_prestasi
         {
             this.id_admin = id_admin;
             InitializeComponent();
+
+            DataTable datauser = AdminContext.show(id_admin);
+            lblNamaAdmin.Text = datauser.Rows[0]["nama"].ToString();
+            lblNIP.Text = id_admin.ToString();
         }
 
         private void btnBidang_Click(object sender, EventArgs e)

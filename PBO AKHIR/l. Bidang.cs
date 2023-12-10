@@ -36,9 +36,12 @@ namespace fasilkom_prestasi
 
             dgvFormBidang.Columns.Insert(0, editButton);
             dgvFormBidang.Columns.Insert(1, deleteButton);
-            dgvFormBidang.Columns[0].Width = 200;
-            dgvFormBidang.Columns[1].Width = 200;
+            dgvFormBidang.Columns[0].Width = 100;
+            dgvFormBidang.Columns[1].Width = 100;
 
+            dgvFormBidang.Columns["bidang"].Width = 300;
+
+            dgvFormBidang.Columns["id"].Visible = false;
 
         }
 
@@ -53,6 +56,13 @@ namespace fasilkom_prestasi
             }
             dgvFormBidang.DataSource = null;
             dgvFormBidang.DataSource = BidangContext.all();
+            dgvFormBidang.Columns[0].Width = 100;
+            dgvFormBidang.Columns[1].Width = 100;
+
+            dgvFormBidang.Columns["bidang"].Width = 300;
+
+            dgvFormBidang.Columns["id"].Visible = false;
+
 
 
 
@@ -80,6 +90,13 @@ namespace fasilkom_prestasi
 
                     dgvFormBidang.DataSource = null;
                     dgvFormBidang.DataSource = BidangContext.all();
+                    dgvFormBidang.Columns[0].Width = 100;
+                    dgvFormBidang.Columns[1].Width = 100;
+
+                    dgvFormBidang.Columns["bidang"].Width = 300;
+
+                    dgvFormBidang.Columns["id"].Visible = false;
+
                 }
 
 
@@ -97,6 +114,12 @@ namespace fasilkom_prestasi
 
                 dgvFormBidang.DataSource = null;
                 dgvFormBidang.DataSource = BidangContext.all();
+                dgvFormBidang.Columns[0].Width = 100;
+                dgvFormBidang.Columns[1].Width = 100;
+
+                dgvFormBidang.Columns["bidang"].Width = 300;
+
+                dgvFormBidang.Columns["id"].Visible = false;
 
             }
         }

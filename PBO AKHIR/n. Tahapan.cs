@@ -37,6 +37,11 @@ namespace fasilkom_prestasi
 
             dgvFormTahapan.Columns.Insert(0, editButton);
             dgvFormTahapan.Columns.Insert(1, deleteButton);
+            dgvFormTahapan.Columns[0].Width = 100;
+            dgvFormTahapan.Columns[1].Width = 100;
+            dgvFormTahapan.Columns["tahapan"].Width = 300;
+
+            dgvFormTahapan.Columns["id"].Visible = false;
             this.id_admin = id_admin;
         }
 
@@ -51,6 +56,11 @@ namespace fasilkom_prestasi
             }
             dgvFormTahapan.DataSource = null;
             dgvFormTahapan.DataSource = TahapanContext.all();
+            dgvFormTahapan.Columns[0].Width = 100;
+            dgvFormTahapan.Columns[1].Width = 100;
+            dgvFormTahapan.Columns["tahapan"].Width = 300;
+
+            dgvFormTahapan.Columns["id"].Visible = false;
 
         }
 
@@ -76,6 +86,11 @@ namespace fasilkom_prestasi
 
                     dgvFormTahapan.DataSource = null;
                     dgvFormTahapan.DataSource = TahapanContext.all();
+                    dgvFormTahapan.Columns[0].Width = 100;
+                    dgvFormTahapan.Columns[1].Width = 100;
+                    dgvFormTahapan.Columns["tahapan"].Width = 300;
+
+                    dgvFormTahapan.Columns["id"].Visible = false;
                 }
 
 
@@ -93,6 +108,11 @@ namespace fasilkom_prestasi
                
                 dgvFormTahapan.DataSource = null;
                 dgvFormTahapan.DataSource = TahapanContext.all();
+                dgvFormTahapan.Columns[0].Width = 100;
+                dgvFormTahapan.Columns[1].Width = 100;
+                dgvFormTahapan.Columns["tahapan "].Width = 300;
+
+                dgvFormTahapan.Columns["id"].Visible = false;
 
             }
         }

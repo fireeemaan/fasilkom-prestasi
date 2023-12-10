@@ -37,7 +37,13 @@ namespace fasilkom_prestasi
 
             dgvFormRegion.Columns.Insert(0, editButton);
             dgvFormRegion.Columns.Insert(1, deleteButton);
-            
+            dgvFormRegion.Columns[0].Width = 100;
+            dgvFormRegion.Columns[1].Width = 100;
+
+            dgvFormRegion.Columns["region"].Width = 300;
+
+            dgvFormRegion.Columns["id"].Visible = false;
+
         }
 
 
@@ -51,6 +57,12 @@ namespace fasilkom_prestasi
             }
             dgvFormRegion.DataSource = null;
             dgvFormRegion.DataSource = RegionContext.all();
+            dgvFormRegion.Columns[0].Width = 100;
+            dgvFormRegion.Columns[1].Width = 100;
+
+            dgvFormRegion.Columns["region"].Width = 300;
+
+            dgvFormRegion.Columns["id"].Visible = false;
 
         }
 
@@ -76,6 +88,12 @@ namespace fasilkom_prestasi
 
                     dgvFormRegion.DataSource = null;
                     dgvFormRegion.DataSource = RegionContext.all();
+                    dgvFormRegion.Columns[0].Width = 100;
+                    dgvFormRegion.Columns[1].Width = 100;
+
+                    dgvFormRegion.Columns["region"].Width = 300;
+
+                    dgvFormRegion.Columns["id"].Visible = false;
                 }
                 if (e.ColumnIndex == dgvFormRegion.Columns["editButton"].Index && e.RowIndex >= 0)
                 {
@@ -90,6 +108,12 @@ namespace fasilkom_prestasi
 
                     dgvFormRegion.DataSource = null;
                     dgvFormRegion.DataSource = RegionContext.all();
+                    dgvFormRegion.Columns[0].Width = 100;
+                    dgvFormRegion.Columns[1].Width = 100;
+
+                    dgvFormRegion.Columns["region"].Width = 300;
+
+                    dgvFormRegion.Columns["id"].Visible = false;
 
                 }
 
