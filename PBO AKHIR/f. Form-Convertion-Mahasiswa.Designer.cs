@@ -44,6 +44,7 @@
             lblNamaMhs = new Label();
             btnLogout = new Krypton.Toolkit.KryptonButton();
             lblNIM = new Label();
+            btnLihatDokumen = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)dgvKonversiMatkul).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -306,12 +307,41 @@
             lblNIM.TabIndex = 15;
             lblNIM.Text = "1234567890";
             // 
+            // btnLihatDokumen
+            // 
+            btnLihatDokumen.CornerRoundingRadius = 30F;
+            btnLihatDokumen.Location = new Point(797, 731);
+            btnLihatDokumen.Margin = new Padding(2);
+            btnLihatDokumen.MaximumSize = new Size(248, 47);
+            btnLihatDokumen.MinimumSize = new Size(248, 47);
+            btnLihatDokumen.Name = "btnLihatDokumen";
+            btnLihatDokumen.OverrideDefault.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.OverrideDefault.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.OverrideFocus.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.OverrideFocus.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.Size = new Size(248, 47);
+            btnLihatDokumen.StateCommon.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.StateCommon.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btnLihatDokumen.StateCommon.Border.Rounding = 30F;
+            btnLihatDokumen.StateCommon.Content.ShortText.Color1 = Color.White;
+            btnLihatDokumen.StateCommon.Content.ShortText.Color2 = Color.White;
+            btnLihatDokumen.StateCommon.Content.ShortText.Font = new Font("Poppins ExtraBold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLihatDokumen.StateNormal.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.StateNormal.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.StatePressed.Back.Color1 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.StatePressed.Back.Color2 = Color.FromArgb(128, 167, 255);
+            btnLihatDokumen.TabIndex = 31;
+            btnLihatDokumen.Values.Text = "Dokumen Konversi";
+            btnLihatDokumen.Click += btnLihatDokumen_Click;
+            // 
             // Form_Convertion_Mahasiswa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(btnLihatDokumen);
             Controls.Add(panel1);
             Controls.Add(btnAddMK);
             Controls.Add(tbxSKS);
@@ -354,5 +384,6 @@
         private Label lblNamaMhs;
         private Krypton.Toolkit.KryptonButton btnLogout;
         private Label lblNIM;
+        private Krypton.Toolkit.KryptonButton btnLihatDokumen;
     }
 }

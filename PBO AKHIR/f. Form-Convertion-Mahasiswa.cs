@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace fasilkom_prestasi
 {
@@ -38,6 +40,7 @@ namespace fasilkom_prestasi
 
             InitializeComponent();
 
+            btnLihatDokumen.Hide();
 
             // Set name & NIM
             DataTable dataUser = MahasiswaContext.show(nim);
@@ -56,6 +59,8 @@ namespace fasilkom_prestasi
             DataTable dataKonversi = KonversiContext.allSelected(nim, idPrestasi);
 
 
+
+            // Jika terdapat Konversi yang berstatus "Invalid", maka akan dimunculkan seluruh matkulnya
             if (KonversiContext.checkData(idPrestasi) == 1)
             {
                 id_konversi = dataKonversi.Rows[0]["id"].ToString();
@@ -70,10 +75,11 @@ namespace fasilkom_prestasi
             }
             else
             {
+                // Jika terdapat Konversi yang tidak bernilai "Invalid" maka show KonversiMatkul sesuai id_konversi
                 dataKonversiMatkul = KonversiMatkulContext.show(id_konversi_invalid);
             }
 
-            //DataTable dataKonversiMatkul = KonversiMatkulContext.show(id_konversi_invalid);
+            
             dgvKonversiMatkul.DataSource = null;
             dgvKonversiMatkul.DataSource = dataKonversiMatkul;
 
@@ -83,7 +89,6 @@ namespace fasilkom_prestasi
 
             DataTable dataMahasiswa = MahasiswaContext.show(nim);
 
-            //Console.WriteLine(dataMahasiswa.Rows.Count);
 
             semester = int.Parse(dataMahasiswa.Rows[0]["semester"].ToString());
             id_prodi = int.Parse(dataMahasiswa.Rows[0]["id_prodi"].ToString());
@@ -126,7 +131,6 @@ namespace fasilkom_prestasi
 
             maxKonversiSKS -= totalSKS;
 
-
             tbxNilai.Text = dataNilai.Rows[0]["nilai"].ToString();
 
             // Kuota SKS
@@ -134,8 +138,6 @@ namespace fasilkom_prestasi
 
 
             // Mata Kuliah
-
-
             DataTable dataProdiMatkul = prodiMatkulContext.all(id_prodi, id_bidang, semester);
 
             List<KeyValuePair<int, string>> matkul = new List<KeyValuePair<int, string>>();
@@ -155,6 +157,7 @@ namespace fasilkom_prestasi
             cbxMatkulPilihan.DisplayMember = "Value";
 
 
+            // Hide button, karena hanya untuk melihat detail.
             if (id_konversi_invalid != null)
             {
                 dataKonversi = KonversiContext.show(id_konversi_invalid);
@@ -164,6 +167,7 @@ namespace fasilkom_prestasi
                     cbxMatkulPilihan.Enabled = false;
                     btnAddMK.Hide();
                     btnAddConvertion.Hide();
+                    btnLihatDokumen.Show();
                     deleteButton.Visible = false;
                 }
             }
@@ -344,6 +348,46 @@ namespace fasilkom_prestasi
                 this.Close();
                 Login login = new Login();
                 login.Show();
+            }
+        }
+
+        private void btnLihatDokumen_Click(object sender, EventArgs e)
+        {
+            DataTable dataKonversi = KonversiContext.show(id_konversi_invalid);
+
+            string link = dataKonversi.Rows[0]["dokumen"].ToString();
+
+            try
+            {
+                
+                ProcessStartInfo psInfo = new ProcessStartInfo
+                {
+                    FileName = $"{link}",
+                    UseShellExecute = true
+                };
+
+                Process.Start(psInfo);
+            }
+
+
+            catch (Exception ex)
+            {
+                try
+                {
+                    ProcessStartInfo psInfo = new ProcessStartInfo
+                    {
+                        FileName = $"https://{link}",
+                        UseShellExecute = true
+                    };
+
+                    Process.Start(psInfo);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Link tidak valid!");
+                }
+
+
             }
         }
     }
