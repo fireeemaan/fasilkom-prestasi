@@ -161,7 +161,7 @@
             dgvFormProdi.ReadOnly = true;
             dgvFormProdi.RowHeadersVisible = false;
             dgvFormProdi.RowHeadersWidth = 51;
-            dgvFormProdi.RowTemplate.Height = 29;
+            dgvFormProdi.RowTemplate.Height = 45;
             dgvFormProdi.Size = new Size(1170, 502);
             dgvFormProdi.StateCommon.BackStyle = Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             dgvFormProdi.StateCommon.HeaderColumn.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Center;

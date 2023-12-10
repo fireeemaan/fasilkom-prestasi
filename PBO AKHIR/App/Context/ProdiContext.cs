@@ -35,7 +35,7 @@ namespace fasilkom_prestasi.App.Context
 
         public static void store(M_Prodi prodiBaru)
         {
-            string query = $"INSERT INTO {table}(prodi) VALUES(@prodi)";
+            string query = $"INSERT INTO {table}(id, prodi) SELECT COALESCE(MAX(id), 0) + 1, @prodi FROM {table}";
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@prodi", NpgsqlDbType.Varchar){Value = prodiBaru.prodi},

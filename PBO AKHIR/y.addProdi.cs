@@ -44,57 +44,48 @@ namespace fasilkom_prestasi
 
         private void btnAddProdi_Click(object sender, EventArgs e)
         {
-            var namaProdi = tbxNamaProdi.Text;
-            M_Prodi prodiBaru = new M_Prodi
-            {
-
-                prodi = namaProdi
-            };
+            
 
             try
             {
+                var namaProdi = tbxNamaProdi.Text;
+                M_Prodi prodiBaru = new M_Prodi
+                {
+
+                    prodi = namaProdi
+                };
                 ProdiContext.store(prodiBaru);
                 MessageBox.Show("Data Berhasil Ditambah !");
 
                 this.Close();
-                Prodi prodi = new Prodi(id_admin);
-                prodi.Show();
+
             }
-            catch (NpgsqlException ex)
+            catch
             {
-                MessageBox.Show($"Error! : {ex}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
+                MessageBox.Show("Data Tidak Boleh Kosong", "Input Data Gagal");
             }
         }
 
         private void btnEditProdi_Click(object sender, EventArgs e)
         {
-            var namaProdi = tbxNamaProdi.Text;
-            M_Prodi prodiBaru = new M_Prodi
-
-
-            {
-                id = id_prodi,
-                prodi = namaProdi
-            };
+            
             try
             {
+                var namaProdi = tbxNamaProdi.Text;
+                M_Prodi prodiBaru = new M_Prodi
+
+
+                {
+                    id = id_prodi,
+                    prodi = namaProdi
+                };
                 ProdiContext.update(prodiBaru);
                 MessageBox.Show("Data Berhasil diUbah !");
                 this.Close();
-                Prodi prodi = new Prodi(id_admin);
-                prodi.Show();
             }
-            catch (NpgsqlException ex)
+            catch
             {
-                MessageBox.Show($"Error! : {ex}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error! : {ex}");
+                MessageBox.Show("Data Tidak Boleh Kosong", "Input Data Gagal");
             }
         }
     }
