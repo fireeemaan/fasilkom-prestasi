@@ -89,14 +89,7 @@ namespace fasilkom_prestasi
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                PassBox.PasswordChar = '\0';
-            }
-            else if (!checkBox1.Checked)
-            {
-                PassBox.PasswordChar = '*';
-            }
+
         }
 
         private void btnFillAdmin_Click(object sender, EventArgs e)
@@ -114,6 +107,18 @@ namespace fasilkom_prestasi
         private void invalidUsernamePasswordControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void hideButton_Click(object sender, EventArgs e)
+        {
+            if (hideButton.Checked)
+            {
+                PassBox.PasswordChar = '\0';
+            }
+            else if (!hideButton.Checked)
+            {
+                PassBox.PasswordChar = '*';
+            }
         }
     }
 }

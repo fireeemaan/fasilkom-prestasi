@@ -32,10 +32,10 @@
             UserBox = new TextBox();
             PassBox = new TextBox();
             btnLogin = new Krypton.Toolkit.KryptonButton();
-            checkBox1 = new CheckBox();
             invalidUsernamePasswordControl1 = new InvalidUsernamePasswordControl();
             btnFillMhs = new Button();
             btnFillAdmin = new Button();
+            hideButton = new Krypton.Toolkit.KryptonCheckButton();
             SuspendLayout();
             // 
             // UserBox
@@ -54,7 +54,7 @@
             PassBox.Location = new Point(983, 532);
             PassBox.Name = "PassBox";
             PassBox.PasswordChar = '*';
-            PassBox.Size = new Size(487, 27);
+            PassBox.Size = new Size(438, 27);
             PassBox.TabIndex = 1;
             // 
             // btnLogin
@@ -77,17 +77,6 @@
             btnLogin.TabIndex = 2;
             btnLogin.Values.Text = "Login";
             btnLogin.Click += btnLogin_Click;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(1338, 601);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(132, 24);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Show Password";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // invalidUsernamePasswordControl1
             // 
@@ -118,16 +107,70 @@
             btnFillAdmin.UseVisualStyleBackColor = true;
             btnFillAdmin.Click += btnFillAdmin_Click;
             // 
+            // hideButton
+            // 
+            hideButton.CornerRoundingRadius = 6F;
+            hideButton.Location = new Point(1425, 525);
+            hideButton.Name = "hideButton";
+            hideButton.OverrideDefault.Back.Color1 = Color.White;
+            hideButton.OverrideDefault.Back.Color2 = Color.White;
+            hideButton.OverrideDefault.Border.Color1 = Color.White;
+            hideButton.OverrideDefault.Border.Color2 = Color.White;
+            hideButton.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.Size = new Size(45, 45);
+            hideButton.StateCheckedNormal.Back.Color1 = Color.White;
+            hideButton.StateCheckedNormal.Back.Color2 = Color.White;
+            hideButton.StateCheckedNormal.Back.Image = (Image)resources.GetObject("hideButton.StateCheckedNormal.Back.Image");
+            hideButton.StateCheckedNormal.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            hideButton.StateCheckedNormal.Border.Color1 = Color.White;
+            hideButton.StateCheckedNormal.Border.Color2 = Color.White;
+            hideButton.StateCheckedNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.StateCheckedPressed.Back.Color1 = Color.WhiteSmoke;
+            hideButton.StateCheckedPressed.Back.Color2 = Color.WhiteSmoke;
+            hideButton.StateCheckedPressed.Back.Image = (Image)resources.GetObject("hideButton.StateCheckedPressed.Back.Image");
+            hideButton.StateCheckedPressed.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            hideButton.StateCheckedPressed.Border.Color1 = Color.WhiteSmoke;
+            hideButton.StateCheckedPressed.Border.Color2 = Color.WhiteSmoke;
+            hideButton.StateCheckedPressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.StateCheckedTracking.Back.Color1 = Color.WhiteSmoke;
+            hideButton.StateCheckedTracking.Back.Color2 = Color.WhiteSmoke;
+            hideButton.StateCheckedTracking.Back.Image = (Image)resources.GetObject("hideButton.StateCheckedTracking.Back.Image");
+            hideButton.StateCheckedTracking.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            hideButton.StateCheckedTracking.Border.Color1 = Color.WhiteSmoke;
+            hideButton.StateCheckedTracking.Border.Color2 = Color.WhiteSmoke;
+            hideButton.StateCheckedTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.StateCommon.Back.Color1 = Color.White;
+            hideButton.StateCommon.Back.Color2 = Color.White;
+            hideButton.StateCommon.Back.Image = (Image)resources.GetObject("hideButton.StateCommon.Back.Image");
+            hideButton.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
+            hideButton.StateCommon.Border.Color1 = Color.White;
+            hideButton.StateCommon.Border.Color2 = Color.White;
+            hideButton.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.StateCommon.Border.Rounding = 6F;
+            hideButton.StatePressed.Back.Color1 = Color.WhiteSmoke;
+            hideButton.StatePressed.Back.Color2 = Color.WhiteSmoke;
+            hideButton.StatePressed.Border.Color1 = Color.WhiteSmoke;
+            hideButton.StatePressed.Border.Color2 = Color.WhiteSmoke;
+            hideButton.StatePressed.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.StateTracking.Back.Color1 = Color.WhiteSmoke;
+            hideButton.StateTracking.Back.Color2 = Color.WhiteSmoke;
+            hideButton.StateTracking.Border.Color1 = Color.WhiteSmoke;
+            hideButton.StateTracking.Border.Color2 = Color.WhiteSmoke;
+            hideButton.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            hideButton.TabIndex = 9;
+            hideButton.Values.Text = "";
+            hideButton.Click += hideButton_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
+            Controls.Add(hideButton);
             Controls.Add(btnFillAdmin);
             Controls.Add(btnFillMhs);
             Controls.Add(invalidUsernamePasswordControl1);
-            Controls.Add(checkBox1);
             Controls.Add(btnLogin);
             Controls.Add(PassBox);
             Controls.Add(UserBox);
@@ -145,9 +188,9 @@
         private TextBox UserBox;
         private TextBox PassBox;
         private Krypton.Toolkit.KryptonButton btnLogin;
-        private CheckBox checkBox1;
         private InvalidUsernamePasswordControl invalidUsernamePasswordControl1;
         private Button btnFillMhs;
         private Button btnFillAdmin;
+        private Krypton.Toolkit.KryptonCheckButton hideButton;
     }
 }
