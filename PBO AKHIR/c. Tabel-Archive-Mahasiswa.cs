@@ -140,19 +140,26 @@ namespace fasilkom_prestasi
             {
 
                 string idPrestasiHapus = dgvPrestasi.Rows[e.RowIndex].Cells["id_prestasi"].Value.ToString();
-
-                DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
-                if (message == DialogResult.Yes)
+                try
                 {
-                    PrestasiContext.destroy(idPrestasiHapus);
+                    DialogResult message = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo);
+                    if (message == DialogResult.Yes)
+                    {
+                        PrestasiContext.destroy(idPrestasiHapus);
 
-                    dgvPrestasi.DataSource = null;
-                    dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
+                        dgvPrestasi.DataSource = null;
+                        dgvPrestasi.DataSource = PrestasiContext.showAll(1, nim);
 
 
-                    DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
+                        DialogResult deleteMessage = MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK);
 
+                    }
                 }
+                catch
+                {
+                    MessageBox.Show("Prestasi yang telah di konversi tidak dapat dihapus!");
+                }
+                    
 
 
 

@@ -33,8 +33,6 @@
             PassBox = new TextBox();
             btnLogin = new Krypton.Toolkit.KryptonButton();
             invalidUsernamePasswordControl1 = new InvalidUsernamePasswordControl();
-            btnFillMhs = new Button();
-            btnFillAdmin = new Button();
             hideButton = new Krypton.Toolkit.KryptonCheckButton();
             SuspendLayout();
             // 
@@ -86,26 +84,6 @@
             invalidUsernamePasswordControl1.Size = new Size(543, 73);
             invalidUsernamePasswordControl1.TabIndex = 6;
             invalidUsernamePasswordControl1.Load += invalidUsernamePasswordControl1_Load;
-            // 
-            // btnFillMhs
-            // 
-            btnFillMhs.Location = new Point(1269, 755);
-            btnFillMhs.Name = "btnFillMhs";
-            btnFillMhs.Size = new Size(94, 29);
-            btnFillMhs.TabIndex = 7;
-            btnFillMhs.Text = "Mahasiswa";
-            btnFillMhs.UseVisualStyleBackColor = true;
-            btnFillMhs.Click += btnFillMhs_Click;
-            // 
-            // btnFillAdmin
-            // 
-            btnFillAdmin.Location = new Point(1066, 755);
-            btnFillAdmin.Name = "btnFillAdmin";
-            btnFillAdmin.Size = new Size(94, 29);
-            btnFillAdmin.TabIndex = 8;
-            btnFillAdmin.Text = "Admin";
-            btnFillAdmin.UseVisualStyleBackColor = true;
-            btnFillAdmin.Click += btnFillAdmin_Click;
             // 
             // hideButton
             // 
@@ -168,8 +146,6 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1582, 853);
             Controls.Add(hideButton);
-            Controls.Add(btnFillAdmin);
-            Controls.Add(btnFillMhs);
             Controls.Add(invalidUsernamePasswordControl1);
             Controls.Add(btnLogin);
             Controls.Add(PassBox);
@@ -189,8 +165,6 @@
         private TextBox PassBox;
         private Krypton.Toolkit.KryptonButton btnLogin;
         private InvalidUsernamePasswordControl invalidUsernamePasswordControl1;
-        private Button btnFillMhs;
-        private Button btnFillAdmin;
         private Krypton.Toolkit.KryptonCheckButton hideButton;
     }
 }
